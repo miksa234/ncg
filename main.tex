@@ -1,0 +1,359 @@
+\documentclass[a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{mathptmx}
+
+\usepackage{subcaption}
+\usepackage[shortlabels]{enumitem}
+\usepackage{amsmath,amssymb}
+\usepackage{amsthm}
+\usepackage{bbm}
+\usepackage{graphicx}
+\usepackage[colorlinks=true,naturalnames=true,plainpages=false,pdfpagelabels=true]{hyperref}
+\usepackage[parfill]{parskip}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+\theoremstyle{definition}
+\newtheorem{question}{Question}
+
+\theoremstyle{theorem}
+\newtheorem{theorem}{Theorem}
+
+\theoremstyle{theorem}
+\newtheorem{exercise}{Exercise}
+
+\theoremstyle{definition}
+\newtheorem{solution}{Solution}
+
+\newtheorem*{idea}{Proof Idea}
+
+
+\title{Notes on \\ Noncommutative Geometry and Particle Physics}
+\author{Popovic Milutin}
+\date{Week 1: 05.02 - 12.02}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{Noncommutative Geometric Spaces}
+\subsection{Matrix Algebras and Finite Spaces}
+\subsubsection{$*$-Algebra}
+\begin{definition}
+    A \textit{vector space} $A$ over $\mathbb{C}$ is called a \textit{complex, unital Algebra} if, \\
+    $\forall a,b \in A$ :
+    \begin{enumerate}
+        \item
+            $A \times A \rightarrow A$       \hspace{0.1\textwidth} \textit{bilinear} \\
+            $(a, b)\ \mapsto \ a\cdot b$
+        \item
+            $1a = a1 =a$                     \hspace{0.08\textwidth}  \textit{unitary} \\
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}
+    A $*$-algebra is an algebra $A$ with a \textit{conjugate linear map (involution)} $*:A\ \rightarrow  A$,
+    $\forall a, b \in A$ satisfying:
+    \begin{enumerate}
+        \item
+            $(ab)^* = b^*a^*$         \hspace{0.05\textwidth} \textit{antidistributive}
+        \item
+            $(a^*)^* = a$                   \hspace{0.1\textwidth} \textit{closure}
+    \end{enumerate}
+\end{definition}
+In the following all unitary algebras are referred to as algebras.
+
+\subsubsection{Functions on Discrete Spaces}
+Let $X$ be a \textit{discretized topological} space with $N$ points.
+Consider functions of a continuous $*$-algebra $C(X)$ assigning values to $\mathbb{C}$, for $f, g \in C(X)$,
+$\lambda \in \mathbb{C}$ and $x \in X$ they provide the following structures:
+
+\begin{itemize}
+    \item \textit{pointwise linear} \\
+      $(f + g)(x) = f(x) + g(x)$\\
+      $(\lambda f)(x) = \lambda (f(x))$
+    \item \textit{pointwise multiplication} \\
+        $fg(x) = f(x)g(x)$ \hspace{0.1\textwidth} same as $(fg)(x) = f(x)g(x))$?
+    \item \textit{pointwise involution} \\
+        $f^*(x) = \overline{f(x)}$
+\end{itemize}
+
+\begin{question}
+    Mathematical difference between Topological Discreet Spaces and just Discreet Spaces?
+\end{question}
+
+The author indicates that $\mathbb{C}$-valued functions on $X$ are automatically continuous.
+\begin{idea}
+    CAN WE USE THE METRIC? >> NO!
+    We know that $X$ is a \textit{finite discrete space}, meaning in an $\epsilon$-$\delta$ approach
+    for each $x \in X$ the only $y \in X$, that is small enough is $x$ by itself, which implies
+    $\epsilon$ is always bigger than zero, thus every function $f:X\ \rightarrow\ \mathbb{C}$ is continuous.
+\end{idea}
+
+\subsubsection{Isomorphism Property}
+Furthermore $C(X)$ $*$-algebra is \textit{isomorphic} to a $*$-algebra $\mathbb{C}^N$ with involution
+($N$ number of points in $X$), written as $C(X) \simeq \mathbb{C}^N$.
+A function $f:X\ \rightarrow\ \mathbb{C}$ can be represented with $N \times N$ diagonal matrices,
+where the value $(ii)$ is the value of the function at the corresponding
+$i$-th point ($i = 1,...,N$). The structure is preserved because of the definitions of
+matrix multiplication and the hermitian conjugate of matrices.
+
+\begin{question}
+    Can isomorphisms between $C(X)$ and $\mathbb{C}^N$ be shown with matrix factorization?
+\end{question}
+    isomorphisms are bijective perserve strucure and dont lose physical information
+
+\subsubsection{Mapping Finite Discrete Spaces}
+
+\begin{definition}
+    A \textit{map} between finite discrete spaces $X_1$ and $X_2$ is a function $\phi:\ X_1 \rightarrow\ X_2$
+\end{definition}
+
+For every map between finite discrete spaces there exists a corresponding map \\
+$\phi ^*:C(X_2)\ \rightarrow C(X_1)$, which `pulls back' values even if $\phi$ is not bijective.
+
+This map is called a pullback (or a $*$-homomorphism or a $*$-algebra map under pointwise product).
+Under the pointwise product:
+\begin{itemize}
+    \item $\phi ^*(fg) = \phi ^*(f) \phi ^*(g)$
+    \item $\phi ^*(\overline{f}) = \overline{\phi ^*(f)}$
+    \item $\phi ^*(\lambda f + g) = \lambda \phi ^*(f) + \phi ^*(g)$
+\end{itemize}
+
+\begin{question}
+    $\phi$ is in most cases not bijective, so how can we prove that there exists such a
+    pullback for every map between discreet spaces which preserves information? For bijective
+    it is given by its inverse, which by definition exists because $\phi$ is a map.
+    Or I didn't understand this correctly?
+\end{question}
+
+\begin{exercise}
+    Show that $\phi :X_1\ \rightarrow \ X_2$ is injective (surjective) map of finite spaces iff
+    $\phi ^* :C(X_2)\ \rightarrow \ C(X_1)$ is surjective (injective).
+\end{exercise}
+\begin{solution}
+    Consider $X_1$ with $n$ points and $X_2$ with $m$ points. Then there are three cases:
+    \begin{enumerate}
+        \item $n=m$ \\
+            Obviously $\phi$ is bijective and $\phi ^*$ is given by $\phi ^{-1}$.
+        \item $n > m$ \\
+            $\phi$ assigns $n$ points to $m$ points when $n > m$,
+            which is by definition surjective. \\
+            $\phi ^*$ assigns $m$ points to $n$ points when $n > m$,
+            which is by definition injective. \\
+        \item $n < m $ \\
+            analogous
+    \end{enumerate}
+\end{solution}
+
+\subsubsection{Matrix Algebras}
+\begin{definition}
+    A \textit{(complex) matrix algebra} A is a direct sum, for $n_i, N \in \mathbb{N}$.
+    \begin{align*}
+        A = \bigoplus _{i=1}^{N} M_{n_i}(\mathbb{C})
+    \end{align*}
+    The involution is the hermitian conjugate, a $*$ algebra with involution is referred to as
+    a matrix algebra
+\end{definition}
+
+So from a topological discreet space $X$, we can construct a $*$-algebra $C(X)$ which is isomorphic
+to a matrix algebra $A$. The question is can we construct $X$ given $A$? $A$ is a matrix algebra,
+which are in most cases is not commutative, so the answer is generally no.
+
+There are two options. We can restrict ourselves to commutative matrix algebras,
+which are the vast minority and not physically interesting.
+Or we can allow more morphisms(isomorphisms) between matrix algebras.
+
+\begin{question}
+    Why are non-commutative algebras not physically interesting?
+    Maybe too far fetched,but because physical observables (QM-Operators) are not commutative?
+\end{question}
+
+\subsubsection{Finite Inner Product Spaces and Representations}
+Until now we looked at a finite topological discreet space, moreover we can consider a
+finite dimensional inner product space $H$ (finite Hilbert-spaces), with inner product
+$(\cdot,\cdot)\rightarrow \mathbb{C}$. $L(H)$ is the $*$-algebra of operators on $H$
+with product given by composition and involution given by the adjoint, $T \mapsto T^*$.
+$L(H)$ is a \textit{normed vector space} with
+\begin{align*}
+    &\|T\|^2 = \text{sup}_{h \in H}\{(Th,Th): (h,h) \leq 1\} \hspace{0.1\textwidth} T \in L(H) \\
+    &\|T\| = \text{sup}\{\sqrt{\lambda}: \lambda \text{ eigenvalue of } T\}
+\end{align*}
+
+
+\begin{definition}
+    The \textit{representation} of a finite dimensional $*$-algebra A is a pair $(H, \pi)$.
+    $H$ is a finite, dimensional inner product space and $\pi$ is a $*$-\textit{algebra map}
+    \begin{align*}
+        \pi:A\ \rightarrow \ L(H)
+    \end{align*}
+\end{definition}
+\begin{definition}
+    $(H, \pi)$ is called \textit{irreducible} if:
+    \begin{itemize}
+        \item $H \neq \emptyset$
+        \item only $\emptyset$ or $H$ is invariant under the action of $A$ on $H$
+    \end{itemize}
+\end{definition}
+
+Examples for reducible and irreducible representations
+\begin{itemize}
+    \item $A = M_n(\mathbb{C})$, representation $H=\mathbb{C}^n$, $A$ acts as matrix multiplication\\
+            $H$ is irreducible.
+    \item $A = M_n(\mathbb{C})$, representation $H=\mathbb{C}^n\oplus \mathbb{C}^n$, with $a \in A$ acting
+        in block form \\ $\pi: a \mapsto \big(\begin{smallmatrix} a & 0\\ 0 & a \end{smallmatrix}\big)$ is
+            reducible.
+\end{itemize}
+
+\begin{definition}
+    Let $(H_1, \pi _1)$ and $(H_2, \pi _2)$ be representations of a $*$-algebra $A$. They are called
+    \textit{unitarily equivalent} if there exists a map $U: H_1 \rightarrow H_2$ such that.
+    \begin{align*}
+        \pi _1(a) = U^* \pi _2(a) U
+    \end{align*}
+\end{definition}
+
+\begin{question}
+    In matrix representation this is diagonalization condition? (unitary diagonalization)
+\end{question}
+
+\begin{definition}
+    $A$ a $*$-algebra then, $\hat{A}$ is called the structure space of all \textit{unitary equivalence classes
+    of irreducible representations of A}
+\end{definition}
+
+\begin{question}
+    Gelfand duality and the spectrum of $\hat{A}$, examples Fourier-Transform and Laplace-Transform
+    for simple spaces.
+\end{question}
+
+\begin{exercise}
+    Given $(H, \pi)$ of a $*$-algebra $A$, the \textbf{commutant} $\pi (A)'$ of $\pi (A)$ is defined as a set
+    of operators in $L(H)$ that commute with all $\pi (a)$
+    \begin{align*}
+        \pi (A)' = \{T \in L(H):\pi (a)T = T\pi (a) \;\;\; \forall a\in A\}
+    \end{align*}
+    \begin{enumerate}
+        \item Show that $\pi (A)'$ is a $*$-algebra.
+        \item Show that a representation $(H, \pi)$ of $A$ is irreducible iff the commutant $\pi (A)'$
+                consists of multiples of the identity
+    \end{enumerate}
+\end{exercise}
+\begin{solution}
+    1. To show that $\pi (A)'$ is a $*$-algebra we have to show that it is unital, associative and involute.
+    And note that $\pi (a) \in L(H)\ \forall a \in A$.
+    Unity is given by the unitary operator of the $*$-algebra of operators $L(H)$, which exists by definition
+    because H is a inner product space. Associativity is given by $*$-algebra of $L(H)$, $L(H) \times L(H) \mapsto L(H)$,
+    which is associative by definition. Involutnes is also given by the $*$-algebra $L(H)$
+    with a map $*: L(H) \mapsto L(H)$ only for $T$ that commute with $\pi (a)$.
+    \\
+    2.?
+\end{solution}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item If $A$ is a unital $*$-algebra, show that the $n \times n$ matrices $M_n(A)$ with entries
+            in $A$ form a unital $*$-algebra.
+        \item Let $\pi :A\ \rightarrow \ L(H)$ be a representation of a $*$-algebra $A$ and set
+            $H^n = H \oplus ... \oplus H$, $n$ times. Show that $\tilde{\pi}:M_n(A) \rightarrow L(H^n)$
+            of $M_n(A)$ with\\
+            $\tilde{\pi}((a_{ij})) = (\tilde{\pi}(a_{ij})) \in M_n(A)$.
+        \item Let $\tilde{\pi}:M_n(A) \rightarrow L(H^n)$ be a $*$ algebra representation of $M_n(A)$.
+            Show that $\pi: A \rightarrow L(H^n)$ is a representation of $A$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    1. We know $A$ is a $*$ algebra. Unitary operaton in $M_n(A)$ is given by the identity Matrix, which
+    has to exists because every entry in $M_n(A)$ has to behave like in $A$. Associativity is given by
+    matrix multiplication. Involutnes is given by the conjugate transpose.\\
+    2. $A \simeq M_n(A)$ and $H \simeq H^n$ meaning $\tilde{\pi}$ is a valid reducible representation.\\
+    3. $\tilde{\pi}$ and $\pi$ are unitary equivalent, there is a map $U: H^n \rightarrow H^n$ given by
+    $U=\mathbbm{1}_n$:\\
+    $\pi (a) = \mathbbm{1}_n^*\ \tilde{\pi}((a_{ij}))\ \mathbbm{1}_n = \tilde{\pi}((a_{ij})) = \pi (a_{ij})
+    \Rightarrow a_{ij} = a\mathbbm{1}_n$.
+\end{solution}
+
+\subsection{Commutative Matrix Algebras}
+\begin{itemize}
+    \item Commutative matrix algebras can be used to reconstruct a discrete space given
+        a matrix \textit{commutative} matrix algebra.
+    \item The structure space $\hat{A}$ is used for this. Because $A \simeq \mathbb{C}^N$ we all any
+        irreducible representation are of the form
+        $\pi _i:(\lambda_1,...,\lambda_N)\in \mathbb{C}^N \mapsto \lambda_i \in \mathbb{C}$ \\
+        for $i = 1,...,N \Rightarrow \hat{A} \simeq \{1,...,N\}.$
+    \item Conclusion is that there is a duality between discreet spaces and commutative matrix algebra
+        this duality is called the \textit{finite dimensional Gelfand duality}
+\end{itemize}
+
+\begin{question}
+    More about Gelfand duality?
+\end{question}
+
+\subsection{Noncommutative Matrix Algebras}
+Aim is to construct duality between finite dimensional spaces and \textit{equivalence classes}
+of matrix algebras, to preserve general non-commutivity of matrices.
+\begin{itemize}
+    \item Equivalence classes are described by a generalized notion of ispomorphisms between matrix
+        algebras (\textit{Morita Equivalence})
+\end{itemize}
+
+\subsubsection{Algebraic Modules}
+\begin{definition}
+    Let $A$, $B$ be algebras (need not be matrix algebras)
+    \begin{enumerate}
+        \item \textit{left} A-module is a vector space $E$, that carries a left representation of $A$,
+            that is $\exists$ a bilinear map $\gamma: A \times E \rightarrow E$ with
+            \begin{align*}
+                (a_1a_2)\cdot e = a_1 \cdot (a_2 \cdot e);\;\;\; a_1, a_2 \in A, e \in E
+            \end{align*}
+        \item \textit{right} B-module is a vector space $F$, that carries a right representation of $A$,
+            that is $\exists$ a bilinear map $\gamma: F \times B \rightarrow F$ with
+            \begin{align*}
+                f \cdot (b_1b_2)= (f \cdot b_1) \cdot b_2;\;\;\; b_1, b_2 \in B, f \in F
+            \end{align*}
+        \item \textit{left} A-module and \textit{right} B-module is a \textit{bimodule}, a vector space $E$
+            satisfying
+            \begin{align*}
+                a \cdot (e \cdot b)= (a \cdot e) \cdot b;\;\;\;  a \in A, b \in B, e \in E
+            \end{align*}
+    \end{enumerate}
+\end{definition}
+Notion of A-\textbf{module homomorphism} as linear map $\phi: E\rightarrow F$ which respects the
+representation of A, e.g. for left module.
+\begin{align*}
+    \phi (ae) = a \phi (e); \;\;\; a \in A, e \in E.
+\end{align*}
+Remark on the notation
+\begin{itemize}
+    \item ${}_A E$ left $A$-module $E$;
+    \item ${}_A E_B$ right $B$-module $F$;
+    \item ${}_A E_B$ $A$-$B$-bimodule $E$;
+\end{itemize}
+
+\begin{exercise}
+    Check that a representation of $\pi : A \rightarrow L(H)$ of a $*$-algebra A turns H into a
+    left module ${}_A H$.
+\end{exercise}
+\begin{solution}
+    Not quite sure but \\
+    $a \in A$, $h_1, h_2 \in H$, we know $\pi (a) = T \in L(H)$ than
+    \begin{align*}
+        <\pi (a) h_1, \pi (a) h_2> = <T h_1, T h_2> = <T^*T h_1, h_2> = <h_1, h_2>
+    \end{align*}
+\end{solution}
+
+\begin{exercise}
+    Show that $A$ is a bimodule ${}_A A_A$ with itself.
+\end{exercise}
+
+\begin{solution}
+    $\gamma: A\times A\times A \rightarrow A$ which is trivially given by the inner product of the $*$-algebra.
+\end{solution}
+
+\end{document}
