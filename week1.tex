@@ -106,7 +106,7 @@ matrix multiplication and the hermitian conjugate of matrices.
 \begin{question}
     Can isomorphisms between $C(X)$ and $\mathbb{C}^N$ be shown with matrix factorization?
 \end{question}
-    isomorphisms are bijective perserve strucure and dont lose physical information
+    Isomorphisms are bijective preserve structure and don't lose physical information/
 
 \subsubsection{Mapping Finite Discrete Spaces}
 
@@ -116,6 +116,8 @@ matrix multiplication and the hermitian conjugate of matrices.
 
 For every map between finite discrete spaces there exists a corresponding map \\
 $\phi ^*:C(X_2)\ \rightarrow C(X_1)$, which `pulls back' values even if $\phi$ is not bijective.
+Note that the pullback doesn't map points back, but maps functions on an $*$-algebra $C(X)$.
+
 
 This map is called a pullback (or a $*$-homomorphism or a $*$-algebra map under pointwise product).
 Under the pointwise product:
@@ -140,7 +142,7 @@ Under the pointwise product:
     Consider $X_1$ with $n$ points and $X_2$ with $m$ points. Then there are three cases:
     \begin{enumerate}
         \item $n=m$ \\
-            Obviously $\phi$ is bijective and $\phi ^*$ is given by $\phi ^{-1}$.
+            Obviously $\phi$ is bijective and $\phi ^*$ too.
         \item $n > m$ \\
             $\phi$ assigns $n$ points to $m$ points when $n > m$,
             which is by definition surjective. \\
@@ -173,6 +175,7 @@ Or we can allow more morphisms(isomorphisms) between matrix algebras.
     Why are non-commutative algebras not physically interesting?
     Maybe too far fetched,but because physical observables (QM-Operators) are not commutative?
 \end{question}
+Exactly.
 
 \subsubsection{Finite Inner Product Spaces and Representations}
 Until now we looked at a finite topological discreet space, moreover we can consider a
@@ -221,6 +224,7 @@ Examples for reducible and irreducible representations
 \begin{question}
     In matrix representation this is diagonalization condition? (unitary diagonalization)
 \end{question}
+Yes
 
 \begin{definition}
     $A$ a $*$-algebra then, $\hat{A}$ is called the structure space of all \textit{unitary equivalence classes
@@ -231,6 +235,7 @@ Examples for reducible and irreducible representations
     Gelfand duality and the spectrum of $\hat{A}$, examples Fourier-Transform and Laplace-Transform
     for simple spaces.
 \end{question}
+More on that in later chapters.
 
 \begin{exercise}
     Given $(H, \pi)$ of a $*$-algebra $A$, the \textbf{commutant} $\pi (A)'$ of $\pi (A)$ is defined as a set
@@ -291,10 +296,6 @@ Examples for reducible and irreducible representations
         this duality is called the \textit{finite dimensional Gelfand duality}
 \end{itemize}
 
-\begin{question}
-    More about Gelfand duality?
-\end{question}
-
 \subsection{Noncommutative Matrix Algebras}
 Aim is to construct duality between finite dimensional spaces and \textit{equivalence classes}
 of matrix algebras, to preserve general non-commutivity of matrices.
@@ -353,7 +354,7 @@ Remark on the notation
 \end{exercise}
 
 \begin{solution}
-    $\gamma: A\times A\times A \rightarrow A$ which is trivially given by the inner product of the $*$-algebra.
+    $\gamma: A\times A\times A \rightarrow A$ which is given by the inner product of the $*$-algebra.
 \end{solution}
 
 \end{document}
