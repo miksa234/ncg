@@ -1,0 +1,181 @@
+\documentclass[a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{mathptmx}
+
+\usepackage{subcaption}
+\usepackage[shortlabels]{enumitem}
+\usepackage{amsmath,amssymb}
+\usepackage{amsthm}
+\usepackage{bbm}
+\usepackage{graphicx}
+\usepackage[colorlinks=true,naturalnames=true,plainpages=false,pdfpagelabels=true]{hyperref}
+\usepackage[parfill]{parskip}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+\theoremstyle{definition}
+\newtheorem{question}{Question}
+
+\theoremstyle{theorem}
+\newtheorem{theorem}{Theorem}
+
+\theoremstyle{theorem}
+\newtheorem{exercise}{Exercise}
+
+\theoremstyle{definition}
+\newtheorem{solution}{Solution}
+
+\newtheorem*{idea}{Proof Idea}
+
+
+\title{Notes on \\ Noncommutative Geometry and Particle Physics}
+\author{Popovic Milutin}
+\date{Week 2: 12.02 - 19.02}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{Noncommutative Geometric Spaces}
+\subsection{Noncommutative Matrix Algebras}
+\subsubsection{Balanced Tensor Product and Hilbert Bimodules}
+
+\begin{definition}
+    Let $A$ be an algebra, $E$ be a \textit{right} $A$-module and $F$ be a \textit{left} $A$-module.
+    The \textit{balanced tensor product} of $E$ and $F$ forms a $A$-bimodule.
+    \begin{align*}
+        E \otimes _A F := E \otimes F /\left\{\sum _i e_i a_i \otimes f_i - e_i \otimes a_i f_i : \;\;\;
+                                         a_i \in A,\ e_i \in E,\ f_i \in F \right\}
+    \end{align*}
+\end{definition}
+In other words the balanced tensor product forms only elements of
+\begin{itemize}
+    \item $E$ that preserver the \textit{left} representation of $A$ and
+    \item $F$ that preserver the \textit{right} representation of $A$.
+\end{itemize}
+Which is the same saying:
+\begin{align*}
+    E \otimes _A F = \left\{e a\otimes _A f = e \otimes _A a f: \;\;\; a \in A,\ e \in E,\ f \in F \right\}
+\end{align*}
+
+\begin{definition}
+    Let $A$, $B$ be \textit{matrix algebras}. The \textit{Hilbert bimodule} for $(A, B)$ is given by
+    \begin{itemize}
+        \item $E$, an $A$-$B$-bimodue $E$ and by
+        \item an $B$-valued \textit{inner product} $\langle \cdot,\cdot\rangle_E: E\times E \rightarrow B$
+    \end{itemize}
+$\langle \cdot,\cdot\rangle_E$ needs to satisfy the following for $e, e_1, e_2 \in E,\ a \in A$ and $b \in B$.
+\begin{align*}
+    \langle e_1, a\cdot e_2\rangle_E &= \langle a^*\cdot e_1, e_2\rangle_E \;\;\;\; & \text{sesquilinear in $A$}\\
+    \langle e_1, e_2 \cdot b\rangle_E &= \langle e_1, e_2\rangle_E b \;\;\;\; & \text{scalar in $B$} \\
+    \langle e_1, e_2\rangle_E &= \langle e_2,e_1\rangle^*_E \;\;\;\; & \text{hermitian} \\
+    \langle e, e\rangle_E &\ge 0 \;\;\;\; & \text{equality holds iff $e=0$}
+\end{align*}
+
+\end{definition}
+
+We denote $KK_f(A,B)$ the set of all \textit{Hilbert bimodules} of $(A,B)$.
+
+\begin{exercise}
+    Check that a representation $\pi:\ A \ \rightarrow L(H)$ of a matrix algebra $A$ turns $H$ into
+    a Hilbert bimodule for $(A, \mathbb{C})$.
+\end{exercise}
+
+\begin{solution}
+\end{solution}
+
+\begin{exercise}
+    Show that the $A-A$ bimodule given by $A$ is in $KK_f(A,A)$ by taking the following inner product
+    $\langle \cdot,\cdot\rangle_A:A \times A \rightarrow A$:
+    \begin{align*}
+        \langle a, a\rangle_A = a^*a' \;\;\;\; a,a'\in A
+    \end{align*}
+\end{exercise}
+\begin{solution}
+\end{solution}
+
+\subsubsection{Kasparov Product and Morita Equivalence}
+\begin{definition}
+    Let $E \in KK_f(A, B)$ and $F \in KK_F(B, D)$ the \textit{Kasparov product} is defined as
+    with the balanced tensor product
+    \begin{align*}
+        F \circ E := E \otimes _B F
+    \end{align*}
+    Such that $F\circ E \in KK_f(A,D)$ with a $D$-valued inner product.
+    \begin{align*}
+        <e_1 \otimes f_1, e_2 \otimes f_2>_{E\otimes _B F} = <f_1,<e_1, e_2>_E f_2>_F
+    \end{align*}
+\end{definition}
+
+\begin{question}
+What is the meaning of 'associative up to isomorphism? Isomorphism of $F \circ E$ or of $A, B$ or $D$?
+\end{question}
+
+\begin{exercise}
+    Show that the association $\phi \leadsto E_\phi$ (from the previous Example) is natrual
+    in the sense
+    \begin{itemize}
+        \item $E_{\text{id}_A} \simeq A \in KK_f(A,A)$
+        \item for $*$-algebra homomorphism $\phi: A \rightarrow B$ and $\psi: B \rightarrow C$ we have
+            an isomorphism
+            \begin{align*}
+                E_{\psi} \circ E_{\phi}\ \equiv\ E_{\phi} \otimes _B E_{\psi}\ \simeq\
+                E_{\psi \circ \phi} \in KK_f(A,C)
+            \end{align*}
+    \end{itemize}
+\end{exercise}
+
+\begin{solution}
+\end{solution}
+
+\begin{exercise}
+    In the definition of Morita equivalence:
+    \begin{itemize}
+        \item Check that $E \otimes _B F$ is a $A-D$ bimodule
+        \item Check that $<\cdot,\cdot>_{E\oplus _B F}$ defines a $D$ valued inner product
+        \item Check that $<a^*(e_1 \otimes f_1), e_2 \otimes f_2>_{E \otimes _B F} = <e_1 \otimes f_1, a(e_2 \otimes f_2)>_{E \otimes _B F}$.
+    \end{itemize}
+\end{exercise}
+
+\begin{solution}
+\end{solution}
+
+\begin{definition}
+    Let $A$, $B$ be \textit{matrix algebras}. They are called \textit{Morita eqivalent} if there
+    exists an $E \in KK_f(A, B)$ and an $F \in KK_f(B, A)$ such that:
+    \begin{align*}
+        E \otimes _B F \simeq A \;\;\; \text{and} \;\;\; F \otimes _A E \simeq B
+    \end{align*}
+    Where $\simeq$ denotes the isomorphism between Hilbert bimodules, note that $A$ or $B$ is a bimodule by
+    itself.
+\end{definition}
+
+\begin{question}
+    Why are $E$ and $F$ each others inverse in the Kasparov Product?
+\end{question}
+
+\begin{theorem}
+    Two matrix algebras are Morita Equivalent iff their their Structure spaces
+    are isomorphic as discreet spaces (have the same cardinality / same number of elements)
+\end{theorem}
+\begin{proof}
+    Let $A$, $B$ be \textit{Morita equivalent}. So there exists $_A E_B$ and $_B F_A$ with
+    \begin{align*}
+        E \otimes _B F \simeq A \;\;\; \text{and} \;\;\; F \otimes _A E \simeq B
+    \end{align*}
+    Consider $[(\pi _B, H)] \in \hat{B}$ than we construct a representation of $A$,
+    $\pi _A \rightarrow L(E \otimes _B H)$ with $\pi _A(a) (e \otimes v) = a e \otimes w$
+    \begin{question}
+        Is $E \simeq H$ and $F \simeq W$?
+    \end{question}
+    \textit{vice versa}, consider $[(\pi _A, W)] \in \hat{A} \Rightarrow
+    \pi _B: B \rightarrow L(F \otimes _A W)$ and $\pi _B(b) (f\otimes w) = bf\otimes w$
+    These maps are each others inverses, thus $\hat{A} \simeq \hat{B}$
+\end{proof}
+
+\end{document}
