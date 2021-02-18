@@ -55,10 +55,13 @@
     Let $A$ be an algebra, $E$ be a \textit{right} $A$-module and $F$ be a \textit{left} $A$-module.
     The \textit{balanced tensor product} of $E$ and $F$ forms a $A$-bimodule.
     \begin{align*}
-        E \otimes _A F := E \otimes F /\left\{\sum _i e_i a_i \otimes f_i - e_i \otimes a_i f_i : \;\;\;
+        E \otimes _A F := E \otimes F / \left\{\sum _i e_i a_i \otimes f_i - e_i \otimes a_i f_i : \;\;\;
                                          a_i \in A,\ e_i \in E,\ f_i \in F \right\}
     \end{align*}
 \end{definition}
+\begin{question}
+    Does $/$ denote the complement, because one usually writes $\setminus$.
+\end{question}
 In other words the balanced tensor product forms only elements of
 \begin{itemize}
     \item $E$ that preserver the \textit{left} representation of $A$ and
@@ -93,6 +96,16 @@ We denote $KK_f(A,B)$ the set of all \textit{Hilbert bimodules} of $(A,B)$.
 \end{exercise}
 
 \begin{solution}
+    We check if the representation of $a \in A$, $\pi(a)=T \in L(H)$ fulfills
+    the conditions on the $\mathbb{C}$-valued inner product for $h_1, h_2 \in H$:
+    \begin{itemize}
+        \item $\langle h_1, \pi(a) h)2\rangle _\mathbb{C} = \langle h_1, T h_2\rangle _\mathbb{C} =
+            \langle T^* h_1, h_2\rangle _\mathbb{C}$, $T^*$ given by the adjoint
+        \item $\langle h_1, h_2 \pi(a)\rangle _\mathbb{C} = \langle h_1, h_2 T\rangle _\mathbb{C} = \langle h_1, h_2\rangle _\mathbb{C}$, $T$ acts from the left
+        \item $\langle h_1, h_2\rangle _\mathbb{C}^* = \langle h_2,h_1\rangle _\mathbb{C}$, hermitian because of the
+            $\mathbb{C}$-valued inner product
+        \item $\langle h_1, h_2\rangle  \ge 0$, $\mathbb{C}$-valued inner product.
+    \end{itemize}
 \end{solution}
 
 \begin{exercise}
@@ -104,6 +117,12 @@ We denote $KK_f(A,B)$ the set of all \textit{Hilbert bimodules} of $(A,B)$.
     \label{exercise: inner-product}
 \end{exercise}
 \begin{solution}
+    We check again the conditions on $\langle \cdot, \cdot\rangle _A$, let $a, a_1, a_2 \in A$:
+    \begin{itemize}
+        \item $\langle a_1, a\cdot a_2\rangle _A = a^*\ a\cdot a_2 = (a^*a_1)^* a_2 = \langle  a^*a_1, a_2\rangle  $
+        \item $\langle a_1, a_2 \cdot a\rangle _A = a^*_1 (a_2\cdot a) = (a^*a_2)\cdot a = \langle a_1, a_2\rangle _A a$
+        \item $\langle a_1, a_2\rangle _A^* = (a_1^* a_2)^* = a_2^*(a_1^*)^* = a_2^* a_1 = \langle a_2, a_1\rangle $
+    \end{itemize}
 \end{solution}
 
 \begin{example}
@@ -127,18 +146,23 @@ We denote $KK_f(A,B)$ the set of all \textit{Hilbert bimodules} of $(A,B)$.
     \end{align*}
     Such that $F\circ E \in KK_f(A,D)$ with a $D$-valued inner product.
     \begin{align*}
-        <e_1 \otimes f_1, e_2 \otimes f_2>_{E\otimes _B F} = <f_1,<e_1, e_2>_E f_2>_F
+        \langle e_1 \otimes f_1, e_2 \otimes f_2\rangle _{E\otimes _B F} = \langle f_1,\langle e_1, e_2\rangle _E f_2\rangle _F
     \end{align*}
 \end{definition}
 
 \begin{question}
-What is the meaning of 'associative up to isomorphism? Isomorphism of $F \circ E$ or of $A, B$ or $D$?
+ How do we go from $\langle e_1 \otimes f_1, e_2 \otimes f_2\rangle _{E\otimes _B F}$ to $
+    \langle f_1,\langle e_1, e_2\rangle _E f_2\rangle _F$ \label{q: tensorproduct}
+\end{question}
+
+\begin{question}
+What is the meaning of `associative up to isomorphism'? Isomorphism of $F \circ E$ or of $A, B$ or $D$?
 \end{question}
 
 \begin{exercise}
-    Show that the association $\phi \leadsto E_\phi$ (from the previous Example) is natrual
+    Show that the association $\phi \leadsto E_\phi$ (from the previous Example) is natural
     in the sense
-    \begin{itemize}
+    \begin{enumerate}
         \item $E_{\text{id}_A} \simeq A \in KK_f(A,A)$
         \item for $*$-algebra homomorphism $\phi: A \rightarrow B$ and $\psi: B \rightarrow C$ we have
             an isomorphism
@@ -146,26 +170,50 @@ What is the meaning of 'associative up to isomorphism? Isomorphism of $F \circ E
                 E_{\psi} \circ E_{\phi}\ \equiv\ E_{\phi} \otimes _B E_{\psi}\ \simeq\
                 E_{\psi \circ \phi} \in KK_f(A,C)
             \end{align*}
-    \end{itemize}
+    \end{enumerate}
 \end{exercise}
 
 \begin{solution}
+    \begin{enumerate}
+        \
+        \item $\text{id}_A: A \rightarrow A$.\\
+            To construct $E_{\phi}\in KK_f(A,A)$, we let $E_{\phi}$ be $A$ with a natural right
+            representation, so $\Rightarrow E_{\phi}\simeq A$.\\
+            With an inner product, acting on $A$ from the left with $\phi$, $a', a\in A$\\
+            $a'a = (\phi(a') a) \in A $, which is satisfied by $\text{id}_A$, so $\phi = \text{id}_A$.
+        \item Not sure but: $a \cdot b \cdot c = \psi(\phi(a) \cdot b) \cdot c$ which is in a sense
+            $\psi \circ \phi$
+    \end{enumerate}
 \end{solution}
 
 \begin{exercise}
     In the definition of Morita equivalence:
-    \begin{itemize}
+    \begin{enumerate}
         \item Check that $E \otimes _B F$ is a $A-D$ bimodule
-        \item Check that $<\cdot,\cdot>_{E\oplus _B F}$ defines a $D$ valued inner product
-        \item Check that $<a^*(e_1 \otimes f_1), e_2 \otimes f_2>_{E \otimes _B F} = <e_1 \otimes f_1, a(e_2 \otimes f_2)>_{E \otimes _B F}$.
-    \end{itemize}
+        \item Check that $\langle \cdot,\cdot\rangle _{E\oplus _B F}$ defines a $D$ valued inner product
+        \item Check that $\langle a^*(e_1 \otimes f_1), e_2 \otimes f_2\rangle _{E \otimes _B F} = \langle e_1 \otimes f_1, a(e_2 \otimes f_2)\rangle _{E \otimes _B F}$.
+    \end{enumerate}
 \end{exercise}
 
 \begin{solution}
+    \
+    \begin{enumerate}
+        \item $E \otimes _B F = E \otimes F / \{\sum_i e_i b_i \otimes f_i - e_i \otimes b_i f_i;
+            e_i \in E_i, b_i \in B, f_i \in F\}$ the last part takes out all tensor product elements of
+            $E$ and $F$ that don't preserver the left/right representation.
+        \item $\langle e_1, e_2\rangle _E \in B$ and $\langle f_1, f_2\rangle _F \in C$ by definition. So let $\langle e_1, e_2\rangle _E =b$. \\
+            Then $\langle e_1 \otimes f_1, e_2 \otimes f_2\rangle _{E\otimes _B F} = \langle f_1, \langle e_1, e_2\rangle _E f_2\rangle _F =
+            \langle f_1, b f_2\rangle _F \in C$
+        \item Check Question \ref{q: tensorproduct}.\\
+            But let $G := E\otimes _B F \in KK_f(A,C)$ then $\forall g_1, g_2 \in G$ and $a \in A$ we need
+            by definition $\langle g_1, ag_2\rangle _G = \langle a^*g_1, g_2\rangle _G$ and we set $g_1 = e_1 \otimes f_1$ and
+            $g_2 = e_2 \otimes f_2$ for some $e_1, e_2 \in E$ and $f_1, f_2 \in F$, or else
+            $G \notin KK_f(A,C)$ which would violate the Kasparov product
+    \end{enumerate}
 \end{solution}
 
 \begin{definition}
-    Let $A$, $B$ be \textit{matrix algebras}. They are called \textit{Morita eqivalent} if there
+    Let $A$, $B$ be \textit{matrix algebras}. They are called \textit{Morita equivalent} if there
     exists an $E \in KK_f(A, B)$ and an $F \in KK_f(B, A)$ such that:
     \begin{align*}
         E \otimes _B F \simeq A \;\;\; \text{and} \;\;\; F \otimes _A E \simeq B
@@ -193,10 +241,10 @@ What is the meaning of 'associative up to isomorphism? Isomorphism of $F \circ E
     On the other hand let $F = \mathbb{C}^n$, which is a $(\mathbb{C}, M_n(\mathbb{C}))$ Hilbert
     bimodule by right matrix multiplication with $M_n(\mathbb{C})$ valued inner product:
     \begin{align*}
-        <v_1, v_2>=\bar{v_1}v_2^t \;\; \in M_n(\mathbb{C})
+        \langle v_1, v_2\rangle =\bar{v_1}v_2^t \;\; \in M_n(\mathbb{C})
     \end{align*}
     Now we take the Kasparov product of $E$ and $F$:
-    \begin{itemize}
+   \begin{itemize}
         \item $F\circ E\ =\  E\otimes _{\mathbb{C}}F\ \;\;\;\;\;\; \simeq \  M_n(\mathbb{C})$
         \item $E\circ F\ =\ F\otimes _{M_n(\mathbb{C})}E\ \simeq\ \mathbb{C}$
     \end{itemize}
@@ -228,18 +276,28 @@ What is the meaning of 'associative up to isomorphism? Isomorphism of $F \circ E
 
 \begin{exercise}
     Fill in the gaps in the above proof:
-    \begin{itemize}
+    \begin{enumerate}
         \item show that the representation of $\pi _A$ defined is irreducible iff $\pi _B$ is.
         \item Show that the association of the class $[\pi _A]$ to $[\pi _B]$ is independent
             of the choice of representatives $\pi _A$ and $\pi _B$
-    \end{itemize}
+    \end{enumerate}
 \end{exercise}
 
 \begin{solution}
+    \
+    \begin{enumerate}
+        \item $(\pi _B, H)$ is irreducible means $H \neq \emptyset$ and only $\emptyset$ or $H$
+            is invariant under the Action of $B$ on $H$.
+            Than $E\otimes _B H$ cannot be empty, because also $E$ preserves left representation of $A$
+            and also $E\otimes _B H \simeq A$.
+        \item The important thing is that $[\pi _A] \in \hat{A}$ respectively $[\pi _B] \in \hat{B}$,
+            hence any choice of representation is irreducible, because the structure space denotes all unitary
+            equivalence classes of irreducible representations.
+    \end{enumerate}
 \end{solution}
 
-\begin{lemma}
-    The matrix algebra $M_n(\mathbb{C})$ has a unique inrreducible representation (up to isomorphism)
+    \begin{lemma}
+    The matrix algebra $M_n(\mathbb{C})$ has a unique irreducible representation (up to isomorphism)
     given by the defining representation on $\mathbb{C}^n$.
 \end{lemma}
 \begin{proof}

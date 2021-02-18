@@ -89,7 +89,7 @@ $\lambda \in \mathbb{C}$ and $x \in X$ they provide the following structures:
 
 The author indicates that $\mathbb{C}$-valued functions on $X$ are automatically continuous.
 \begin{idea}
-    CAN WE USE THE METRIC? >> NO!
+    CAN WE USE THE METRIC? NO!
     We know that $X$ is a \textit{finite discrete space}, meaning in an $\epsilon$-$\delta$ approach
     for each $x \in X$ the only $y \in X$, that is small enough is $x$ by itself, which implies
     $\epsilon$ is always bigger than zero, thus every function $f:X\ \rightarrow\ \mathbb{C}$ is continuous.
@@ -143,12 +143,12 @@ Under the pointwise product:
     \begin{enumerate}
         \item $n=m$ \\
             Obviously $\phi$ is bijective and $\phi ^*$ too.
-        \item $n > m$ \\
-            $\phi$ assigns $n$ points to $m$ points when $n > m$,
+        \item $n \rangle  m$ \\
+            $\phi$ assigns $n$ points to $m$ points when $n \rangle  m$,
             which is by definition surjective. \\
-            $\phi ^*$ assigns $m$ points to $n$ points when $n > m$,
+            $\phi ^*$ assigns $m$ points to $n$ points when $n \rangle  m$,
             which is by definition injective. \\
-        \item $n < m $ \\
+        \item $n \langle  m $ \\
             analogous
     \end{enumerate}
 \end{solution}
@@ -345,8 +345,15 @@ Remark on the notation
     Not quite sure but \\
     $a \in A$, $h_1, h_2 \in H$, we know $\pi (a) = T \in L(H)$ than
     \begin{align*}
-        <\pi (a) h_1, \pi (a) h_2> = <T h_1, T h_2> = <T^*T h_1, h_2> = <h_1, h_2>
+        \langle \pi (a) h_1, \pi (a) h_2\rangle  = \langle T h_1, T h_2\rangle  = \langle T^*T h_1, h_2\rangle  = \langle h_1, h_2\rangle
     \end{align*}
+    Or maybe this \\
+    If $_A H$ than $(a_1a_2) h = a_1 (a_2 h)$ for $a_1, a_2 \in A$ and $h \in H$.\\
+    Then we take the representation of an $a \in A$, $\pi (a)$:
+    \begin{align*}
+        (\pi(a_1)\pi(a_2))h = \pi(a_1)(\pi(a_2) h) = (T_1T_2) h = T_1 (T_2 h)
+    \end{align*}
+    For $T_1, T_2 \in L(H)$, which operate naturally from the left on $h$.
 \end{solution}
 
 \begin{exercise}
