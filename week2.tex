@@ -20,11 +20,17 @@
 \theoremstyle{definition}
 \newtheorem{question}{Question}
 
+\theoremstyle{definition}
+\newtheorem{example}{Example}
+
 \theoremstyle{theorem}
 \newtheorem{theorem}{Theorem}
 
 \theoremstyle{theorem}
 \newtheorem{exercise}{Exercise}
+
+\theoremstyle{theorem}
+\newtheorem{lemma}{Lemma}
 
 \theoremstyle{definition}
 \newtheorem{solution}{Solution}
@@ -95,9 +101,22 @@ We denote $KK_f(A,B)$ the set of all \textit{Hilbert bimodules} of $(A,B)$.
     \begin{align*}
         \langle a, a\rangle_A = a^*a' \;\;\;\; a,a'\in A
     \end{align*}
+    \label{exercise: inner-product}
 \end{exercise}
 \begin{solution}
 \end{solution}
+
+\begin{example}
+    Consider a $*$ homomorphism between two matrix algebras $\phi:A\rightarrow B$.
+    From it we can construct a Hilbert bimodule $E_{\phi} \in KK_f(A, B)$ in the following way.
+    We let $E_{\phi}$ be $B$ in the vector space sense and an inner product from the above
+    Exercise \ref{exercise: inner-product}, with $A$ acting on the left with $\phi$.
+    \begin{align*}
+        a\cdot b = \phi(a)b \;\;\;\; a\in A, b\in E_{\phi}
+    \end{align*}
+\end{example}
+
+
 
 \subsubsection{Kasparov Product and Morita Equivalence}
 \begin{definition}
@@ -159,6 +178,31 @@ What is the meaning of 'associative up to isomorphism? Isomorphism of $F \circ E
     Why are $E$ and $F$ each others inverse in the Kasparov Product?
 \end{question}
 
+\begin{example}
+    \
+    \begin{itemize}
+        \item Hilber bimodule of $(A,A)$ is $A$
+        \item Let $E \in KK_f(A,B)$, we take $E \circ A = A\oplus _A E \simeq E$
+        \item we conclude, that $_A A_A$ is the identity in the Kasparov product (up to isomorphism)
+    \end{itemize}
+\end{example}
+
+\begin{example}
+    Let $E = \mathbb{C}^n$, which is a $(M_n(\mathbb{C}), \mathbb{C})$ Hilbert bimodule with the
+    standard $\mathbb{C}$ inner product.\\
+    On the other hand let $F = \mathbb{C}^n$, which is a $(\mathbb{C}, M_n(\mathbb{C}))$ Hilbert
+    bimodule by right matrix multiplication with $M_n(\mathbb{C})$ valued inner product:
+    \begin{align*}
+        <v_1, v_2>=\bar{v_1}v_2^t \;\; \in M_n(\mathbb{C})
+    \end{align*}
+    Now we take the Kasparov product of $E$ and $F$:
+    \begin{itemize}
+        \item $F\circ E\ =\  E\otimes _{\mathbb{C}}F\ \;\;\;\;\;\; \simeq \  M_n(\mathbb{C})$
+        \item $E\circ F\ =\ F\otimes _{M_n(\mathbb{C})}E\ \simeq\ \mathbb{C}$
+    \end{itemize}
+    $M_n(\mathbb{C})$ and $\mathbb{C}$ are Morita equivalent
+\end{example}
+
 \begin{theorem}
     Two matrix algebras are Morita Equivalent iff their their Structure spaces
     are isomorphic as discreet spaces (have the same cardinality / same number of elements)
@@ -169,13 +213,81 @@ What is the meaning of 'associative up to isomorphism? Isomorphism of $F \circ E
         E \otimes _B F \simeq A \;\;\; \text{and} \;\;\; F \otimes _A E \simeq B
     \end{align*}
     Consider $[(\pi _B, H)] \in \hat{B}$ than we construct a representation of $A$,
-    $\pi _A \rightarrow L(E \otimes _B H)$ with $\pi _A(a) (e \otimes v) = a e \otimes w$
+    \begin{align*}
+        \pi _A \rightarrow L(E \otimes _B H)\;\;\; \text{with} \;\;\; \pi _A(a) (e \otimes v) = a e \otimes w
+    \end{align*}
     \begin{question}
         Is $E \simeq H$ and $F \simeq W$?
     \end{question}
-    \textit{vice versa}, consider $[(\pi _A, W)] \in \hat{A} \Rightarrow
-    \pi _B: B \rightarrow L(F \otimes _A W)$ and $\pi _B(b) (f\otimes w) = bf\otimes w$
+    \textit{vice versa}, consider $[(\pi _A, W)] \in \hat{A}$ we can construct $\pi _B$
+    \begin{align*}
+        \pi _B: B \rightarrow L(F \otimes _A W) \;\;\; \text{and}\;\;\; \pi _B(b) (f\otimes w) = bf\otimes w
+    \end{align*}
     These maps are each others inverses, thus $\hat{A} \simeq \hat{B}$
 \end{proof}
+
+\begin{exercise}
+    Fill in the gaps in the above proof:
+    \begin{itemize}
+        \item show that the representation of $\pi _A$ defined is irreducible iff $\pi _B$ is.
+        \item Show that the association of the class $[\pi _A]$ to $[\pi _B]$ is independent
+            of the choice of representatives $\pi _A$ and $\pi _B$
+    \end{itemize}
+\end{exercise}
+
+\begin{solution}
+\end{solution}
+
+\begin{lemma}
+    The matrix algebra $M_n(\mathbb{C})$ has a unique inrreducible representation (up to isomorphism)
+    given by the defining representation on $\mathbb{C}^n$.
+\end{lemma}
+\begin{proof}
+    We know $\mathbb{C}^n$ is a irreducible representation of $A= M_n(\mathbb{C})$. Let $H$ be irreducible
+    and of dimension $k$, then we define a map
+    \begin{align*}
+        \phi : A\oplus...\oplus A &\rightarrow H^* \\
+        (a_1,...,a_k)             &\mapsto e^1\circ a_1^t+...+e^k\circ a_k^t
+    \end{align*}
+    With $\{e^1,...,e^k\}$ being the basis of the dual space $H^*$ and $(\circ)$ being the pre-composition
+    of elements in $H^*$ and $A$ acting on $H$. This forms a morphism of $M_n(\mathbb{C})$ modules,
+    provided a matrix $a \in A$ acts on $H^*$ with $v\mapsto v\circ a^t$ ($v\in H^*$).
+    Furthermore this morphism is surjective, thus making the pullback $\phi ^*:H\mapsto (A^k)^*$ injective.
+    Now identify $(A^k)^*$ with $A^k$ as a $A$-module and note that
+    $A=M_n(\mathbb{C}) \simeq \oplus ^n \mathbb{C}^n$ as a n A module.
+    It follows that $H$ is a submodule of $A^k \simeq \oplus ^{nk}\mathbb{C}$. By irreducibility
+    $H \simeq \mathbb{C}$.
+\end{proof}
+
+\begin{example}
+    Consider two matrix algebras $A$, and $B$.
+    \begin{align*}
+        A = \bigoplus ^N_{i=1} M_{n_i}(\mathbb{C}) \;\;\; B = \bigoplus ^M_{j=1} M_{m_j}(\mathbb{C})
+    \end{align*}
+    Let $\hat{A} \simeq \hat{B}$ that implies $N=M$ and define $E$ with $A$ acting by block-diagonal
+    matrices on the first tensor and B acting in the same way on the second tensor. Define $F$ vice versa.
+    \begin{align*}
+        E:= \bigoplus _{i=1}^N \mathbb{C}^{n_i} \otimes \mathbb{C}^{m_i} \;\;\;
+        F:= \bigoplus _{i=1}^N \mathbb{C}^{m_i} \otimes \mathbb{C}^{n_i}
+    \end{align*}
+    Then we calculate the Kasparov product.
+    \begin{align*}
+        E \otimes _B F &\simeq \bigoplus _{i=1}^N (\mathbb{C}^{n_i}\otimes\mathbb{C}^{m_i})
+            \otimes _{M_{m_i}(\mathbb{C})} (\mathbb{C}^{m_i}\otimes\mathbb{C}^{n_i}) \\
+                       &\simeq \bigoplus _{i=1}^N \mathbb{C}^{n_i}\otimes
+                       \left(\mathbb{C}^{m_i}\otimes _{M_{m_i}(\mathbb{C})}\mathbb{C}^{m_i}\right)
+                        \oplus \mathbb{C}^{n_i} \\
+                       &\simeq \bigoplus _{i=1}^N \mathbb{C}^{m_i}\otimes\mathbb{C}^{n_i} \simeq A
+    \end{align*}
+    and from $F \otimes _A E \simeq B$.
+\end{example}
+
+We conclude that.
+\begin{itemize}
+    \item There is a duality between finite spaces and Morita equivalence classes of matrix algebras.
+    \item By replacing $*$-homomorphism $A\rightarrow B$ with Hilbert bimodules $(A,B)$ we introduce
+        a richer structure of morphism between matrix algebras.
+\end{itemize}
+
 
 \end{document}
