@@ -52,7 +52,7 @@
             $A \times A \rightarrow A$       \hspace{0.1\textwidth} \textit{bilinear} \\
             $(a, b)\ \mapsto \ a\cdot b$
         \item
-            $1a = a1 =a$                     \hspace{0.08\textwidth}  \textit{unitary} \\
+            $1a = a1 =a$                     \hspace{0.08\textwidth}  \textit{unital} \\
     \end{enumerate}
 \end{definition}
 
@@ -66,7 +66,7 @@
             $(a^*)^* = a$                   \hspace{0.1\textwidth} \textit{closure}
     \end{enumerate}
 \end{definition}
-In the following all unitary algebras are referred to as algebras.
+In the following all unital algebras are referred to as algebras.
 
 \subsubsection{Functions on Discrete Spaces}
 Let $X$ be a \textit{discretized topological} space with $N$ points.
@@ -129,7 +129,7 @@ Under the pointwise product:
 
 \begin{question}
     $\phi$ is in most cases not bijective, so how can we prove that there exists such a
-    pullback for every map between discreet spaces which preserves information? For bijective
+    pullback for every map between discrete spaces which preserves information? For bijective
     it is given by its inverse, which by definition exists because $\phi$ is a map.
     Or I didn't understand this correctly?
 \end{question}
@@ -163,7 +163,7 @@ Under the pointwise product:
     a matrix algebra
 \end{definition}
 
-So from a topological discreet space $X$, we can construct a $*$-algebra $C(X)$ which is isomorphic
+So from a topological discrete space $X$, we can construct a $*$-algebra $C(X)$ which is isomorphic
 to a matrix algebra $A$. The question is can we construct $X$ given $A$? $A$ is a matrix algebra,
 which are in most cases is not commutative, so the answer is generally no.
 
@@ -178,7 +178,7 @@ Or we can allow more morphisms(isomorphisms) between matrix algebras.
 Exactly.
 
 \subsubsection{Finite Inner Product Spaces and Representations}
-Until now we looked at a finite topological discreet space, moreover we can consider a
+Until now we looked at a finite topological discrete space, moreover we can consider a
 finite dimensional inner product space $H$ (finite Hilbert-spaces), with inner product
 $(\cdot,\cdot)\rightarrow \mathbb{C}$. $L(H)$ is the $*$-algebra of operators on $H$
 with product given by composition and involution given by the adjoint, $T \mapsto T^*$.
@@ -215,7 +215,7 @@ Examples for reducible and irreducible representations
 
 \begin{definition}
     Let $(H_1, \pi _1)$ and $(H_2, \pi _2)$ be representations of a $*$-algebra $A$. They are called
-    \textit{unitarily equivalent} if there exists a map $U: H_1 \rightarrow H_2$ such that.
+    \textit{unitary equivalent} if there exists a map $U: H_1 \rightarrow H_2$ such that.
     \begin{align*}
         \pi _1(a) = U^* \pi _2(a) U
     \end{align*}
@@ -252,7 +252,7 @@ More on that in later chapters.
 \begin{solution}
     1. To show that $\pi (A)'$ is a $*$-algebra we have to show that it is unital, associative and involute.
     And note that $\pi (a) \in L(H)\ \forall a \in A$.
-    Unity is given by the unitary operator of the $*$-algebra of operators $L(H)$, which exists by definition
+    Unitarity is given by the unital operator of the $*$-algebra of operators $L(H)$, which exists by definition
     because H is a inner product space. Associativity is given by $*$-algebra of $L(H)$, $L(H) \times L(H) \mapsto L(H)$,
     which is associative by definition. Involutnes is also given by the $*$-algebra $L(H)$
     with a map $*: L(H) \mapsto L(H)$ only for $T$ that commute with $\pi (a)$.
@@ -292,7 +292,7 @@ More on that in later chapters.
         irreducible representation are of the form
         $\pi _i:(\lambda_1,...,\lambda_N)\in \mathbb{C}^N \mapsto \lambda_i \in \mathbb{C}$ \\
         for $i = 1,...,N \Rightarrow \hat{A} \simeq \{1,...,N\}.$
-    \item Conclusion is that there is a duality between discreet spaces and commutative matrix algebra
+    \item Conclusion is that there is a duality between discrete spaces and commutative matrix algebra
         this duality is called the \textit{finite dimensional Gelfand duality}
 \end{itemize}
 
