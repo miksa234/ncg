@@ -63,7 +63,7 @@
     Does $/$ denote the complement, because one usually writes $\setminus$.
     \url{https://en.wikipedia.org/wiki/Quotient_space_(linear_algebra)}
 \end{question}
-In other words the balanced tensor product forms only elements of
+READ THE WIKI In other words the balanced tensor product forms only elements of
 \begin{itemize}
     \item $E$ that preserver the \textit{left} representation of $A$ and
     \item $F$ that preserver the \textit{right} representation of $A$.
@@ -94,6 +94,7 @@ We denote $KK_f(A,B)$ the set of all \textit{Hilbert bimodules} of $(A,B)$.
 \begin{exercise}
     Check that a representation $\pi:\ A \ \rightarrow L(H)$ of a matrix algebra $A$ turns $H$ into
     a Hilbert bimodule for $(A, \mathbb{C})$.
+    \label{ex: bimodule}
 \end{exercise}
 
 \begin{solution}
@@ -153,7 +154,8 @@ We denote $KK_f(A,B)$ the set of all \textit{Hilbert bimodules} of $(A,B)$.
 
 \begin{question}
  How do we go from $\langle e_1 \otimes f_1, e_2 \otimes f_2\rangle _{E\otimes _B F}$ to $
-    \langle f_1,\langle e_1, e_2\rangle _E f_2\rangle _F$ \label{q: tensorproduct}
+    \langle f_1,\langle e_1, e_2\rangle _E f_2\rangle _F$ \label{q: tensorproduct}\\
+    This statement is still in the definition.
 \end{question}
 
 \begin{question}
@@ -224,10 +226,10 @@ What is the meaning of `associative up to isomorphism'? Isomorphism of $F \circ 
 \end{definition}
 
 \begin{question}
-    Why are $E$ and $F$ each others inverse in the Kasparov Product?
-    They are inverse because we land in the same space as we started
-    $E \in KK_f(A, B)$ we start from A and $E \otimes _B F$ lands in $A$
-    and vice versa.
+    Why are $E$ and $F$ each others inverse in the Kasparov Product? \\
+    They are each others inverse with respect to the Kasparov Product because we land in the same space as we started.
+    In the definition we have $E \in KK_f(A, B)$ we start from $A$ and $E \otimes _B F$ lands in $A$.\\
+    On the other hand we have $F \in KK_f(B, D)$ we start from $B$ and $F \otimes _A E$ lands in $B$.
 \end{question}
 
 \begin{example}
@@ -269,7 +271,12 @@ What is the meaning of `associative up to isomorphism'? Isomorphism of $F \circ 
         \pi _A \rightarrow L(E \otimes _B H)\;\;\; \text{with} \;\;\; \pi _A(a) (e \otimes v) = a e \otimes w
     \end{align*}
     \begin{question}
-        Is $E \simeq H$ and $F \simeq W$?
+        Is $E \simeq H$ and $F \simeq W$? \\
+        Not in particular, there is a theorem that all infinite dimensional Hilbert spaces are isomorphic.
+        Here we are looking at finite dimensional Hilbert spaces.\\
+        Another thing to is that $[\pi _B, H] \in \hat{B}$ and looking at Exercise \ref{ex: bimodule}
+        we know that $H$ is a bimodule of $B$, hence $E \otimes _B H\simeq A$, and for $[\pi _A, W]$
+        the same.
     \end{question}
     \textit{vice versa}, consider $[(\pi _A, W)] \in \hat{A}$ we can construct $\pi _B$
     \begin{align*}
