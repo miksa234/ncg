@@ -1,0 +1,196 @@
+\documentclass[a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{mathptmx}
+
+\usepackage{subcaption}
+\usepackage[shortlabels]{enumitem}
+\usepackage{amsmath,amssymb}
+\usepackage{amsthm}
+\usepackage{bbm}
+\usepackage{graphicx}
+\usepackage[colorlinks=true,naturalnames=true,plainpages=false,pdfpagelabels=true]{hyperref}
+\usepackage[parfill]{parskip}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+\theoremstyle{definition}
+\newtheorem{question}{Question}
+
+\theoremstyle{definition}
+\newtheorem{example}{Example}
+
+\theoremstyle{theorem}
+\newtheorem{theorem}{Theorem}
+
+\theoremstyle{theorem}
+\newtheorem{exercise}{Exercise}
+
+\theoremstyle{theorem}
+\newtheorem{lemma}{Lemma}
+
+\theoremstyle{definition}
+\newtheorem{solution}{Solution}
+
+\newtheorem*{idea}{Proof Idea}
+
+
+\title{Notes on \\ Noncommutative Geometry and Particle Physics}
+\author{Popovic Milutin}
+\date{Week 2: 26.02 - 4.03}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\section{Excurse to Group Theory and Lie Groups}
+\subsection{Groups and Representations}
+    \begin{definition}
+        A Group $G$ is a set with a binary operation on $G$ satisfying.
+        \begin{enumerate}
+        \item $f, g \in G$ we have $fg = h \in G$.
+        \item $f(gh) = (fg) h$
+        \item  $\exists\ e \in G\ \forall f\in G$ with $ef=fe=f$
+        \item $\forall f \in G\ \exists\ f^{-1}\in G$ with $ff^{-1}=f^{-1}f=e$
+        \end{enumerate}
+    \end{definition}
+
+    \begin{definition}
+        A Representation of a Group $G$ is a mapping, $D$ of elements of $G$ onto a set of \textit{linear
+        operators} such that:
+        \begin{enumerate}
+            \item $D(e) = 1$, $1$ is the identity operator in the space on which linear operators act
+            \item $D(g_1)D(g_2) = D(g_1g_2)$, the mapping is linear in group the group operation
+        \end{enumerate}
+    \end{definition}
+
+    Just by looking at symmetries of a Group we can find a nice representation, and if the group is finite we
+    can even find a matrix representation (Cheyley's Theorem). We all ready know a lot about linear algebra
+    which will then allow us to study these Groups very thoroughly and derive physical properties with
+    minimal information.
+
+
+\subsection{Lie Groups}
+    Group elements now depend \textit{smoothly} on a set \textit{continuous parameters} $g(\alpha) \in G$.
+    We are looking at continuous symmetries, e.g. a Sphere in $\mathbb{R}^3$ can be rotated in any direction
+    without changing. The collection of rotations forms a Lie group because the group elements are smoothly
+    differentiable.
+
+\subsubsection{Generators}
+    We parameterize $g(\alpha)|_{\alpha=0} = e$ and we assume that near the identity element, the group
+    elements can be described by a finite set of elements $\alpha_a$ for $a = 1,..,N$. For a representation
+    $D$ of this group, linear operators need to be parametrized the same way:
+    \begin{align}
+        D(\alpha)|_{\alpha=0} = 1
+    \end{align}
+
+    Because of the smoothness and continuity we can Taylor expand a representation near the identity:
+    \begin{align}
+        D(\alpha) &= 1 + id\alpha_a X_a + \cdots && \\
+        \text{with}&\;\; X_a = -i \frac{\partial D(\alpha)}{\partial \alpha_a}\bigg\arrowvert _{\alpha=0}
+        && \text{\footnote{Einstein Summation Convention, summation over repeated indices}}
+    \end{align}
+
+    We call $X_a$ the \textit{generators of the group}.
+    \begin{itemize}
+        \item If the parametrization is \textit{parsimonious}\footnote{parsimonious -
+            All parameters are needed to distinguish between group elements} then all
+            of $X_a$ will be independent.
+
+        \item If the representation is unitary then $X_a$ will be \textit{hermitian}, because of the
+            $i$ in the definition.
+
+        \item Sophus Lie showed how to derive generators without representations.
+    \end{itemize}
+
+    Now let us go in some fixed infinitesimal direction from the identity.
+    \begin{align}
+        D(d\alpha) = 1+ id\alpha _a X_a
+    \end{align}
+    Because of the group property of closure with respect to the group operation we can raise $D(d\alpha)$
+    to a large power and still get a group element.
+    \begin{align}
+        D(\alpha) = \lim_{k\rightarrow \infty}(1+i\frac{\alpha_a X_a}{k})^k = e^{i\alpha_a X_a}
+    \end{align}
+    This is called the \textit{exponential parameterization}. Looking at the expression we see that
+    group elements can be expressed in terms of generators, and generators form a vector space.
+    They are often referred to any element in the real linear space spanned by $X_a's$.
+
+\subsubsection{Lie Algebras}
+    Let us consider a parameter family of group elements created by one generator $X_a$:
+    \begin{align}
+        U(\lambda) = e^{i\lambda \alpha _a X_a}
+    \end{align}
+    We know for that for the same generator the group multiplication is linear meaning:
+    \begin{align}
+        U(\lambda _1)U(\lambda _2) = U(\lambda_1 + \lambda_2)
+    \end{align}
+    But if we multiply elements generated by two different generators the general case is
+    \begin{align}
+        e^{i\alpha_a X_a} e^{i\beta_b X_b} \neq  e^{i (\alpha _a + \beta_b) X_a}
+    \end{align}
+    Yet because the exponentials are a representation of a group, and a group has closure under
+    group operation we know the above needs to be true for some $\delta _a$
+    \begin{align}
+        e^{i\alpha_a X_a} e^{i\beta_b X_b} = e^{i \delta _a X_a}
+    \end{align}
+    To further examine the exponent we rewrite the expression and Taylor expand $ln(1+K)$
+    to the second of $K = e^{i\alpha_a X_a} e^{i\beta_b X_b} -1$
+    \begin{align*}
+        i\delta _a X_a =& ln(1 + K) = K - \frac{K^2}{2} + \cdots \\
+        \text{and}\;\;\; K =&\ e^{i\alpha_a X_a} e^{i\beta_b X_b} -1 \\
+          =&\ (1 + i\alpha _a X_a - \frac{1}{2}(\alpha _a X_a)^2 + \cdots) \\
+          \cdot&\ (1 + i\beta _b X_b - \frac{1}{2}(\beta _b X_b)^2 + \cdots) -1 \\
+          =&\ i\alpha _a X_a + i\beta _b X_b - \alpha_a X_a \beta _b X_b \\
+          -&\ \frac{1}{2}(\alpha _a X_a)^2 - \frac{1}{2}(\beta _b X_b)^2 + \cdots
+    \end{align*}
+    So:
+    \begin{align*}
+        i\delta _a X_a =&\ i\alpha _a X_a + i\beta _b X_b - \alpha_a X_a \beta _b X_b \\
+          -&\ \frac{1}{2}(\alpha _a X_a)^2 - \frac{1}{2}(\beta _b X_b)^2 \\
+          +&\ \frac{1}{2}(\ai\alpha _a X_a + i\beta _b X_b - \alpha_a X_a \beta _b X_b)^2 \\
+          =&\ i\alpha _a X_a + i\beta _b X_b - \alpha_a X_a \beta _b X_b \\
+          -&\ \frac{1}{2}(\alpha _a X_a)^2 - \frac{1}{2}(\beta _b X_b)^2  \\
+          +&\ \frac{1}{2}(\alpha _a X_a)^2 + \frac{1}{2}(\beta _b X_b)^2 \\
+          +& \frac{1}{2}\alpha _a X_a \beta _b X_b + \frac{1}{2}\beta _b X_b \alpha _a X_a
+    \end{align*}
+    Because $X$'s are linear operators $\alpha _a X_a \beta _b X_b \neq \beta _b X_b \alpha _a X_a$.
+    These generators form an \textit{algebra under commutation} and we get
+    \begin{align*}
+        i\delta _a X_a =&\ i\alpha _a X_a + i\beta _b X_b - \alpha_a X_a \beta _b X_b \\
+                    -&\ \frac{1}{2}[\alpha _a X_a, \beta _b X_b] + \cdots
+    \end{align*}
+    Thus rewriting the equation gives us
+    \begin{align*}
+        [\alpha _a X_a, \beta _b X_b] = -2i(\delta _c -\alpha _c -\beta _c) X_c \cdots \equiv i\gamma _c X_c
+    \end{align*}
+    Because this is true for all $\alpha$ and $\beta$, and considering the group closure, there exists some
+    \textit{real} $f_{abc}$ called the \textit{structure constant} satisfying.
+    \begin{equation}
+        \gamma _c = \alpha _a \beta _b f_{abc}
+    \end{equation}
+    Which is the same as.
+    \begin{equation}
+        [X_a, X_b] = i f_{abc} X_c
+    \end{equation}
+    This is called the \textit{Lie algebra of a group}
+    \newline
+    \newline
+    So $f$ is antisymmetric because $[A, B] = -[B, A]$, which means $f_{abc} = -f_{bac}$.
+    \newline
+    And $\delta$ can now be written as
+    \begin{equation}
+        \delta _a = \alpha _a + \beta _a - \frac{1}{2} \gamma _a \cdots
+    \end{equation}
+    Just by following the properties of Lie Groups (dependence on parameters and smoothness) in a fixed
+    direction near die identity to find physical statements. E.g.
+    $[\hat{r}_i, \hat{p}_j] = i \hslash \delta _{ij}$ tells us that we can't know the position
+    and the momentum of a particle exactly at a given time.
+
+
+
+
+\end{document}
