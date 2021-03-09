@@ -59,20 +59,10 @@
                                          a_i \in A,\ e_i \in E,\ f_i \in F \right\}
     \end{align*}
 \end{definition}
-\begin{question}
-    Does $/$ denote the complement, because one usually writes $\setminus$.
-    $/$ denotes the Qutotient \url{https://en.wikipedia.org/wiki/Quotient_space_(linear_algebra)}
-\end{question}
-%In other words the balanced tensor product forms only elements of
-%\begin{itemize}
-%    \item $E$ that preserver the \textit{left} representation of $A$ and
-%    \item $F$ that preserver the \textit{right} representation of $A$.
-%\end{itemize}
-%Which is the same saying:
-%\begin{align*}
-%    E \otimes _A F = \left\{e a\otimes _A f = e \otimes _A a f: \;\;\; a \in A,\ e \in E,\ f \in F \right\}
-%\end{align*}
-
+Note $/$ denotes the quotient space. So $\otimes _A$ takes two left/right modules and makes a
+bimodule with the help the tensor product of the two modules and the quotient space that takes
+out all the elements from the tensor product that dont preserver the left/right representation and that
+are duplicates.
 \begin{definition}
     Let $A$, $B$ be \textit{matrix algebras}. The \textit{Hilbert bimodule} for $(A, B)$ is given by
     \begin{itemize}
@@ -158,9 +148,9 @@ We denote $KK_f(A,B)$ the set of all \textit{Hilbert bimodules} of $(A,B)$.
     This statement is still in the definition.
 \end{question}
 
-\begin{question}
-What is the meaning of `associative up to isomorphism'? Isomorphism of $F \circ E$ or of $A, B$ or $D$?
-\end{question}
+%\begin{question}
+%What is the meaning of `associative up to isomorphism'? Isomorphism of $F \circ E$ or of $A, B$ or $D$?
+%\end{question}
 
 \begin{exercise}
     Show that the association $\phi \leadsto E_\phi$ (from the previous Example) is natural
@@ -184,8 +174,8 @@ What is the meaning of `associative up to isomorphism'? Isomorphism of $F \circ 
             representation, so $\Rightarrow E_{\phi}\simeq A$.\\
             With an inner product, acting on $A$ from the left with $\phi$, $a', a\in A$\\
             $a'a = (\phi(a') a) \in A $, which is satisfied by $\text{id}_A$, so $\phi = \text{id}_A$.
-        \item Not sure but: $a \cdot b \cdot c = \psi(\phi(a) \cdot b) \cdot c$ which is in a sense
-            $\psi \circ \phi$
+        \item $a \cdot b \cdot c = \psi(\phi(a) \cdot b) \cdot c$ for $a \in A$, $b\in B$, and $c\in C$
+                which is $\psi \circ \phi$
     \end{enumerate}
 \end{solution}
 
@@ -203,7 +193,7 @@ What is the meaning of `associative up to isomorphism'? Isomorphism of $F \circ 
     \begin{enumerate}
         \item $E \otimes _B F = E \otimes F / \{\sum_i e_i b_i \otimes f_i - e_i \otimes b_i f_i;
             e_i \in E_i, b_i \in B, f_i \in F\}$ the last part takes out all tensor product elements of
-            $E$ and $F$ that don't preserver the left/right representation.
+            $E$ and $F$ that don't preserver the left/right representation and that are duplicates.
         \item $\langle e_1, e_2\rangle _E \in B$ and $\langle f_1, f_2\rangle _F \in C$ by definition. So let $\langle e_1, e_2\rangle _E =b$. \\
             Then $\langle e_1 \otimes f_1, e_2 \otimes f_2\rangle _{E\otimes _B F} = \langle f_1, \langle e_1, e_2\rangle _E f_2\rangle _F =
             \langle f_1, b f_2\rangle _F \in C$
