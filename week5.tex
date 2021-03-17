@@ -227,6 +227,51 @@ exercises.
     differential operators` given $A$, that act on $H$?
 \end{question}
 Then there is a map $d:A\rightarrow \Omega _D ^1 (A)$, $d = [D, \cdot]$.
+\begin{exercise}
+    Verify that 'd` is a derivation of the C* algebra
+    \begin{align*}
+        d(ab) = d(a)b + ad(b) \\
+        d(a^*) = -d(a)^*
+    \end{align*}
+\end{exercise}
+\begin{solution}
+    For the record $d(\cdot) = [D, \cdot]$, then we have
+    \begin{enumerate}
+        \item
+            \begin{align*}
+                d(ab) &= [D, ab] = [D, a]b + a[D,b]\\
+                &= d(a)b + ad(b)
+            \end{align*}
+        \item
+            \begin{align*}
+                d(a^*) &= [D, a^*] = Da^* - a^*D \\
+                &=-(D^*a - aD^*) = -[D^*, a] \\
+                &= -d(a)^*
+            \end{align*}
+    \end{enumerate}
+\end{solution}
+\begin{exercise}
+    Verify that $\Omega _D^1 (A)$ is an $A$-bimodule by rewriting
+    \begin{align*}
+        a(a_k[D, b_k]b = \sum_k a'_k[D, b'_k] \;\;\;\; a'_k, b'_k \in A
+    \end{align*}
+\end{exercise}
+\begin{solution}
+    First off we know the algebra is associative then we know that elements
+    in $A$ can be represented faithfully on a Hilbert space $H$. Because of
+    the Hilbert Basis $\{\textbf{n}_i\}_{i\in \mathbb{N}}$ of the Hilbert space we can decompose these elements
+    in therms of the basis elements.
+    \begin{align*}
+        aa_k &= \sum _{\textbf{n}}(\langle a, \textbf{n} \rangle) a_k \\
+        &= \sum _{k} a'_{k}
+    \end{align*}
+    Which would than be the same as the sum of some elements
+    $\a'_{k} \in A$. Then we calculate the commutator:
+    \begin{align*}
+        [D, b_k] b = d(b_k)b = d(b_kb) - b_kd(b)\\
+    \end{align*}
+I don't think this is correct I'll try it again
+\end{solution}
 
 \begin{lemma}
     Let $(A, H, D) = (M_n(\mathbb{C}, \mathbb{C}^n, D)$, with $D$ a hermitian
@@ -240,13 +285,27 @@ Then there is a map $d:A\rightarrow \Omega _D ^1 (A)$, $d = [D, \cdot]$.
     Assume $D = \sum _i \lambda _i e_{ii}$ (diagonal), $\lambda _i \in \mathbb{R}$ and
     $\{e_{ij}\}$ the basis of $M_n(\mathbb{C}$. For fixed $i$, $j$ choose $k$
     such that $\lambda _k \neq \lambda _j$ then
-    \begin{align*}
+    \begin{align} \label{basis}
         \left(\frac{1}{\lambda _k - \lambda _j} e_{ik}\right) [D, e_{kj}] =
         e_{ij}
-    \end{align*}
+    \end{align}
     $e_{ij}\in \Omega _D ^1 (A)$ by the above definition. And $\Omega _D ^1
     (A) \subset L(\mathbb{C}^n) = H \simeq M_n(\mathbb{C}) = A$
 \end{proof}
+
+\begin{exercise}
+     Consider $(A=\mathbb{C}^2, H=\mathbb{C}^2,
+     D = \begin{pmatrix} 0 & \lambda \\ \bar{\lambda} & 0
+     \end{pmatrix})$ with $\lambda \neq 0$. Show that $\Omega _D^1(A)
+     \simeq M_2(\mathbb{C})$
+\end{exercise}
+\begin{solution}
+    Because of the Hilbert Basis $D$ can be extended in terms of
+    the basis of $M_2(\mathbb{C})$, plugging this into Equation
+    \ref{basis} will get us the same cyclic result, thus
+    $\Omega _D^1(A) \simeq M_2(\mathbb{C})$
+\
+\end{solution}
 
 \subsection{Morphisms Between Finite Spectral Triples}
 \begin{definition}
@@ -271,6 +330,54 @@ Some remarks
     \item $UDU^* = D + U[D, U^*]$ of the form of elements in
         $\Omega _D^1 (A)$.
 \end{itemize}
+
+\begin{exercise}
+    Show that the unitary equivalence between finite spectral
+    triples is a equivalence relation
+\end{exercise}
+
+\begin{solution}
+    An equivalence relation needs to satisfy reflexivity, symmetry
+    transitivity.
+    Let $(A_1, H_1, D_1)$, $(A_2, H_2, D_2)$ and $(A_3, H_3, D_3)$
+    be three finite spectral triples.
+    \newline
+
+    For reflexivity $(A_1, H_1, D_1) \sim (A_1, H_1, D_1)$. So there
+    exists a $U: H_1 \rightarrow H_1$ unitary, which is the identity
+    and always exists.
+    \newline
+
+    For symmetry we need
+    \begin{align*}
+        (A_1, H_1, D_1) \sim (A_2, H_2, D_2) \Leftrightarrow
+        (A_2, H_2, D_2) \sim (A_1, H_1, D_1)
+    \end{align*}
+    because $U$ is unitary:
+    \begin{align*}
+        &U\pi_1(a)U^* = \pi_2(a) \;\;\; | \cdot U^*\boxdot U \\
+        &U^*U\pi_1(a)U^*U = \pi_1(a) = U^*\pi_2(a)U \\
+    \end{align*}
+    The same with the symmetric operator $D$.
+
+    \newline
+    For transitivity we need
+    \begin{align*}
+        (A_1, H_1, D_1) &\sim (A_2, H_2, D_2) \;\;\; \text{and} \;\;\;
+        (A_2, H_2, D_2) \sim (A_3, H_3, D_3) \\
+        &\Rightarrow (A_1, H_1, D_1) \sim (A_3, H_3, D_3)
+    \end{align*}
+    There are two unitary maps $U_{12}:H_1 \rightarrow H_2$ and
+    $U_{23}: H_2 \rightarrow H_3$ then
+    \begin{align*}
+        U_{23}U_{12} \pi_1(a) U^*_{12}U^*_{23} &= U_{23}
+        \pi_2(a) U_23^* \\
+        &= \pi_3(a) \\
+        U_{23}U_{12} D_1U^*_{12}U^*_{23} &= U_{23}
+        D_2 U_23^* \\
+        &= D_3
+    \end{align*}
+\end{solution}
 
 Extending the this relation we look again at  the notion of equivalence from
 Morita equivalence of Matrix Algebras.
