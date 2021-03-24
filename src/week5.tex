@@ -85,6 +85,7 @@
 
 \section{Noncommutative Geometric Spaces }
 \subsection{Exercises}
+
 \begin{MyExercise}
 \textbf{
     Make the proof of the last theorem (see week4.pdf) explicit for $N=3$.
@@ -118,10 +119,10 @@
             0 & x_1 \\ x_1 & 0
         \end{pmatrix} \oplus
         \begin{pmatrix}
-            0 & x_1 \\ x_1 & 0
+            0 & x_2 \\ x_2 & 0
         \end{pmatrix} \oplus
         \begin{pmatrix}
-            0 & x_1 \\ x_1 & 0
+            0 & x_3 \\ x_3 & 0
         \end{pmatrix} \nonumber \\
         &=
         \begin{pmatrix}
@@ -135,19 +136,19 @@
     \end{align}
     Then the norm of the commutator would be the largest eigenvalue
     \begin{align}
-        &||[D, \pi(a)]|| = ||D\pi(a) - \pi(a)D||\nonumber
- %       &=
- %       \left|\left|
- %   \setlength{\arraycolsep}{0.1cm}
- %     \renewcommand{\arraystretch}{0.1}
- %       \begin{pmatrix}
- %           0   & x_1(a(2)-a(1)) & 0 & 0 & 0 & 0 \\
- %           -x_1(a(2)-a(1)) & 0   & 0 & 0 & 0 & 0 \\
- %           0   & 0   & 0 & x_2(a(3)-a(1)) & 0 & 0 \\
- %           0   & 0   & -x_2(a(3)-a(1)) & 0 & 0 & 0 \\
- %           0   & 0   & 0 & 0 & 0 & x_3(a(3)-a(2)) \\
- %           0   & 0   & 0 & 0 & -x_3(a(2)-a(3)) & 0 \\
- %       \end{pmatrix}\right|\right| \label{skew matrix}
+        &||[D, \pi(a)]|| = ||D\pi(a) - \pi(a)D||\nonumber\\
+        &=
+        \left|\left|
+    \setlength{\arraycolsep}{0.1cm}
+      \renewcommand{\arraystretch}{0.1}
+        \begin{pmatrix}
+            0   & x_1(a(2)-a(1)) & 0 & 0 & 0 & 0 \\
+            -x_1(a(2)-a(1)) & 0   & 0 & 0 & 0 & 0 \\
+            0   & 0   & 0 & x_2(a(3)-a(1)) & 0 & 0 \\
+            0   & 0   & -x_2(a(3)-a(1)) & 0 & 0 & 0 \\
+            0   & 0   & 0 & 0 & 0 & x_3(a(3)-a(2)) \\
+            0   & 0   & 0 & 0 & -x_3(a(2)-a(3)) & 0 \\
+        \end{pmatrix}\right|\right| \label{skew matrix}
     \end{align}
 The matrix in Equation \ref{shew matrix} is a skew symmetric matrix its eigenvalues
 are $i\lambda_1, i\lambda_2, i\lambda_3, i\lambda_4$, where the $\lambda$'s are on the
@@ -155,7 +156,18 @@ upper and lower diagonal check \url{https://en.wikipedia.org/wiki/Skew-symmetric
 matrix#Skew-symmetrizable_matrix}. The matrix norm of would be the maximum of the norm of
 the larges eigenvalues:
 \begin{align}
-    ||[D, \pi(a)]|| = \max_{a\in A}\{x_i|a(j)-a(k)|\}
+    ||[D, \pi(a)]|| = \max_{a\in A}\{&x_1|a(2)-a(1)|,\\
+    &x_2|(a(3)-a(1))|,\nonumber\\
+    &x_3|(a(3)-a(2))|,\}\nonumber
+\end{align}
+The metric is then:
+\begin{align}
+    d =
+    \begin{pmatrix}
+        0 & a(1)-a(2) & a(1)-a(3)\\
+        a(2)-a(1) & 0 & a(2)-a(3)\\
+        a(3)-a(1) & a(3)-a(2) & 0
+    \end{pmatrix}
 \end{align}
 \end{MyExercise}
 
@@ -183,8 +195,16 @@ the larges eigenvalues:
         0 & a(2)-a(1) & 0 \\
         -(a(2)-a(1)) & 0 & 0 \\
         0 & 0 & 0
-    \end{pmatrix} \right|\right| \\
-        &= d^{-1} |a(2) - a(1)|
+    \end{pmatrix} \right|\right|
+    \end{align}
+    The metric is then
+    \begin{align}
+    d =
+        \begin{pmatrix}
+            0 & a(1)-a(2) & a(1)  \\
+            a(2)-a(1) & 0 & a(2) \\
+            -a(1) & -a(2) & 0
+        \end{pmatrix}
     \end{align}
 \end{MyExercise}
 
@@ -234,6 +254,10 @@ holds. For $i = k$ then $d_{ik} = 0$ and equality holds. Else set $d_{ik} =
     What does the author mean when he sais 'acts faithfully on a
     Hilbertspace`? Then the representation is fully reducible, or that the
     presentation is irreducible?
+    \newline
+
+    For a *-representation 'faithful` if it is injective. For a
+    *-homomorphism 'faithful` means one-to-one correspondance
 \end{question}
 
 \begin{example}
@@ -243,14 +267,18 @@ holds. For $i = k$ then $d_{ik} = 0$ and equality holds. Else set $d_{ik} =
 \end{example}
 
 $D$ is referred to as a finite Dirac operator as in as its $\infty$
-dimensional on Riemannian Spin manifolds coming in Chapter 4. Now we
-introduce it as
+dimensional on Riemannian Spin manifolds coming in Chapter 4.
+\newline
+
+Now can introduce a 'differential 'geometric structure` on the finite space X
+with the \textbf{devided difference}
 \begin{equation}
     \frac{a(i)-a(j)}{d_{ij}}
 \end{equation}
-for each pair $i$, $j$ $\in X$ the finite dimensional discrete space.
+for each pair $i$, $j$ $\in X$ the finite dimensional discrete space $X$.
 This appears in the entries in the commutator $[D, a]$ in the above
 exercises.
+
 \begin{definition}
     Given an finite spectral triple $(A, H, D)$, the $A$-bimodule of
     Connes' differential one form is:
@@ -293,7 +321,7 @@ Then there is a map $d:A\rightarrow \Omega _D ^1 (A)$, $d = [D, \cdot]$.
     Verify that $\Omega _D^1 (A)$ is an $A$-bimodule by rewriting
     }
     \begin{align*}
-        a(a_k[D, b_k]b = \sum_k a'_k[D, b'_k] \;\;\;\; a'_k, b'_k \in A
+        a(a_k[D, b_k])b = \sum_k a'_k[D, b'_k] \;\;\;\; a'_k, b'_k \in A
     \end{align*}
     \newline
 
@@ -493,10 +521,10 @@ With the information thus far we can prove the following theorem
         &-(\nabla'(e)a + e\otimes[D',a])\\
         &=\bar{\nabla}a + e\otimes(Da-aD-D'a+aD')\\
         &=\bar{\nabla}a + e\otimes((D-D')a-a(D-D'))\\
-        &=\bar{\nabla}a + e\otimes[\prime{D}, a]\\
+        &=\bar{\nabla}a + e\otimes[D', a]\\
         &=\bar{\nabla}(ea)
     \end{align*}
-    For some $\bar{\nabla}=\nabla-\nabla'$.
+    Therefore $\nabla-\nabla'$ is a linear map.
 \end{MyExercise}
 
 \begin{MyExercise}
@@ -519,9 +547,17 @@ With the information thus far we can prove the following theorem
             $\nabla = d + \omega$
     \end{enumerate}
 }
-
-    I did some notes on this one, but they are not really correct. I'll try
-    it again next session.
+    \begin{enumerate}
+        \item $\nabla(e \cdot a) =  d(a)$
+        \item
+            $D'(a\xi) = a(D\xi) + (\nabla a) \xi = D(a\xi)$
+        \item Use the identity element $e \in A$\\
+                $\nabla (e\cdot a) = \nabla(e) a + 1 \otimes d(a)=d(a)
+                \nabla(e) a$
+            \item $D'(a\otimes \xi) = D'(a \xi) = a(D\xi) + (\nabla a)\xi =
+                a(D\xi) + \nabla(e \cdot a) \xi \\
+                = D(a\xi) + \nabla(e) (a\xi)$
+    \end{enumerate}
 \end{MyExercise}
 
 \subsection{Graphing Finite Spectral Triples}
