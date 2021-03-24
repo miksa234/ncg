@@ -14,22 +14,65 @@
 \usepackage[colorlinks=true,naturalnames=true,plainpages=false,pdfpagelabels=true]{hyperref}
 \usepackage[parfill]{parskip}
 
+\usepackage{tikz}
+\usetikzlibrary{patterns,decorations.pathmorphing,positioning}
+
+\usepackage[framemethod=TikZ]{mdframed}
+
+\tikzstyle{titlered} =
+    [draw=black, thick, fill=white,%
+        text=black, rectangle,
+        right, minimum height=.7cm]
+
+\newcounter{exercise}
+
+\renewcommand*\theexercise{Exercise~\arabic{exercise}}
+
+\makeatletter
+\mdfdefinestyle{exercisestyle}{%
+    outerlinewidth=1em,%
+    outerlinecolor=white,%
+    leftmargin=-1em,%
+    rightmargin=-1em,%
+    middlelinewidth=1.2pt,%
+    roundcorner=5pt,%
+    linecolor=black,%
+    backgroundcolor=blue!5,
+    innertopmargin=1.2\baselineskip,
+    skipabove={\dimexpr0.5\baselineskip+\topskip\relax},
+    skipbelow={-1em},
+    needspace=3\baselineskip,
+    frametitlefont=\sffamily\bfseries,
+    settings={\global\stepcounter{exercise}},
+    singleextra={%
+        \node[titlered,xshift=1cm] at (P-|O) %
+            {~\mdf@frametitlefont{\theexercise}~};},%
+    firstextra={%
+            \node[titlered,xshift=1cm] at (P-|O) %
+                    {~\mdf@frametitlefont{\theexercise}~};},
+}
+\makeatother
+
+\newenvironment{MyExercise}%
+{\begin{mdframed}[style=exercisestyle]}{\end{mdframed}}
+
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}
 
 \theoremstyle{definition}
 \newtheorem{question}{Question}
 
+\theoremstyle{definition}
+\newtheorem{example}{Example}
+
 \theoremstyle{theorem}
 \newtheorem{theorem}{Theorem}
 
 \theoremstyle{theorem}
-\newtheorem{exercise}{Exercise}
-
-\theoremstyle{definition}
-\newtheorem{solution}{Solution}
+\newtheorem{lemma}{Lemma}
 
 \newtheorem*{idea}{Proof Idea}
+
 
 
 \title{Notes on \\ Noncommutative Geometry and Particle Physics}
@@ -134,11 +177,12 @@ Under the pointwise product:
     Or I didn't understand this correctly?
 \end{question}
 
-\begin{exercise}
+\begin{MyExercise}
+    \textbf{
     Show that $\phi :X_1\ \rightarrow \ X_2$ is injective (surjective) map of finite spaces iff
     $\phi ^* :C(X_2)\ \rightarrow \ C(X_1)$ is surjective (injective).
-\end{exercise}
-\begin{solution}
+}\newline
+
     Consider $X_1$ with $n$ points and $X_2$ with $m$ points. Then there are three cases:
     \begin{enumerate}
         \item $n=m$ \\
@@ -151,7 +195,7 @@ Under the pointwise product:
         \item $n \langle  m $ \\
             analogous
     \end{enumerate}
-\end{solution}
+\end{MyExercise}
 
 \subsubsection{Matrix Algebras}
 \begin{definition}
@@ -237,7 +281,8 @@ Yes
 \end{question}
 More on that in later chapters.
 
-\begin{exercise}
+\begin{MyExercise}
+    \textbf{
     Given $(H, \pi)$ of a $*$-algebra $A$, the \textbf{commutant} $\pi (A)'$ of $\pi (A)$ is defined as a set
     of operators in $L(H)$ that commute with all $\pi (a)$
     \begin{align*}
@@ -248,8 +293,8 @@ More on that in later chapters.
         \item Show that a representation $(H, \pi)$ of $A$ is irreducible iff the commutant $\pi (A)'$
                 consists of multiples of the identity
     \end{enumerate}
-\end{exercise}
-\begin{solution}
+}
+
     1. To show that $\pi (A)'$ is a $*$-algebra we have to show that it is unital, associative and involute.
     And note that $\pi (a) \in L(H)\ \forall a \in A$.
     Unitarity is given by the unital operator of the $*$-algebra of operators $L(H)$, which exists by definition
@@ -258,9 +303,10 @@ More on that in later chapters.
     with a map $*: L(H) \mapsto L(H)$ only for $T$ that commute with $\pi (a)$.
     \\
     2.?
-\end{solution}
+\end{MyExercise}
 
-\begin{exercise}
+\begin{MyExercise}
+    \textbf{
     \begin{enumerate}
         \item If $A$ is a unital $*$-algebra, show that the $n \times n$ matrices $M_n(A)$ with entries
             in $A$ form a unital $*$-algebra.
@@ -271,9 +317,7 @@ More on that in later chapters.
         \item Let $\tilde{\pi}:M_n(A) \rightarrow L(H^n)$ be a $*$ algebra representation of $M_n(A)$.
             Show that $\pi: A \rightarrow L(H^n)$ is a representation of $A$.
     \end{enumerate}
-\end{exercise}
-
-\begin{solution}
+}
     1. We know $A$ is a $*$ algebra. Unitary operaton in $M_n(A)$ is given by the identity Matrix, which
     has to exists because every entry in $M_n(A)$ has to behave like in $A$. Associativity is given by
     matrix multiplication. Involutnes is given by the conjugate transpose.\\
@@ -282,7 +326,7 @@ More on that in later chapters.
     $U=\mathbbm{1}_n$:\\
     $\pi (a) = \mathbbm{1}_n^*\ \tilde{\pi}((a_{ij}))\ \mathbbm{1}_n = \tilde{\pi}((a_{ij})) = \pi (a_{ij})
     \Rightarrow a_{ij} = a\mathbbm{1}_n$.
-\end{solution}
+\end{MyExercise}
 
 \subsection{Commutative Matrix Algebras}
 \begin{itemize}
@@ -337,11 +381,12 @@ Remark on the notation
     \item ${}_A E_B$ $A$-$B$-bimodule $E$;
 \end{itemize}
 
-\begin{exercise}
+\begin{MyExercise}
+    \textbf{
     Check that a representation of $\pi : A \rightarrow L(H)$ of a $*$-algebra A turns H into a
     left module ${}_A H$.
-\end{exercise}
-\begin{solution}
+}\newline
+
     Not quite sure but \\
     $a \in A$, $h_1, h_2 \in H$, we know $\pi (a) = T \in L(H)$ than
     \begin{align*}
@@ -354,14 +399,14 @@ Remark on the notation
         (\pi(a_1)\pi(a_2))h = \pi(a_1)(\pi(a_2) h) = (T_1T_2) h = T_1 (T_2 h)
     \end{align*}
     For $T_1, T_2 \in L(H)$, which operate naturally from the left on $h$.
-\end{solution}
+\end{MyExercise}
 
-\begin{exercise}
+\begin{MyExercise}
+    \textbf{
     Show that $A$ is a bimodule ${}_A A_A$ with itself.
-\end{exercise}
+}\newline
 
-\begin{solution}
     $\gamma: A\times A\times A \rightarrow A$ which is given by the inner product of the $*$-algebra.
-\end{solution}
+\end{MyExercise}
 
 \end{document}

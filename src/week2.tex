@@ -14,6 +14,48 @@
 \usepackage[colorlinks=true,naturalnames=true,plainpages=false,pdfpagelabels=true]{hyperref}
 \usepackage[parfill]{parskip}
 
+\usepackage{tikz}
+\usetikzlibrary{patterns,decorations.pathmorphing,positioning}
+
+\usepackage[framemethod=TikZ]{mdframed}
+
+\tikzstyle{titlered} =
+    [draw=black, thick, fill=white,%
+        text=black, rectangle,
+        right, minimum height=.7cm]
+
+\newcounter{exercise}
+
+\renewcommand*\theexercise{Exercise~\arabic{exercise}}
+
+\makeatletter
+\mdfdefinestyle{exercisestyle}{%
+    outerlinewidth=1em,%
+    outerlinecolor=white,%
+    leftmargin=-1em,%
+    rightmargin=-1em,%
+    middlelinewidth=1.2pt,%
+    roundcorner=5pt,%
+    linecolor=black,%
+    backgroundcolor=blue!5,
+    innertopmargin=1.2\baselineskip,
+    skipabove={\dimexpr0.5\baselineskip+\topskip\relax},
+    skipbelow={-1em},
+    needspace=3\baselineskip,
+    frametitlefont=\sffamily\bfseries,
+    settings={\global\stepcounter{exercise}},
+    singleextra={%
+        \node[titlered,xshift=1cm] at (P-|O) %
+            {~\mdf@frametitlefont{\theexercise}~};},%
+    firstextra={%
+            \node[titlered,xshift=1cm] at (P-|O) %
+                    {~\mdf@frametitlefont{\theexercise}~};},
+}
+\makeatother
+
+\newenvironment{MyExercise}%
+{\begin{mdframed}[style=exercisestyle]}{\end{mdframed}}
+
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}
 
@@ -27,16 +69,9 @@
 \newtheorem{theorem}{Theorem}
 
 \theoremstyle{theorem}
-\newtheorem{exercise}{Exercise}
-
-\theoremstyle{theorem}
 \newtheorem{lemma}{Lemma}
 
-\theoremstyle{definition}
-\newtheorem{solution}{Solution}
-
 \newtheorem*{idea}{Proof Idea}
-
 
 \title{Notes on \\ Noncommutative Geometry and Particle Physics}
 \author{Popovic Milutin}
@@ -81,13 +116,14 @@ $\langle \cdot,\cdot\rangle_E$ needs to satisfy the following for $e, e_1, e_2 \
 
 We denote $KK_f(A,B)$ the set of all \textit{Hilbert bimodules} of $(A,B)$.
 
-\begin{exercise}
+\begin{MyExercise}
+    \textbf{
     Check that a representation $\pi:\ A \ \rightarrow L(H)$ of a matrix algebra $A$ turns $H$ into
     a Hilbert bimodule for $(A, \mathbb{C})$.
     \label{ex: bimodule}
-\end{exercise}
+}\newline
 
-\begin{solution}
+
     We check if the representation of $a \in A$, $\pi(a)=T \in L(H)$ fulfills
     the conditions on the $\mathbb{C}$-valued inner product for $h_1, h_2 \in H$:
     \begin{itemize}
@@ -98,24 +134,26 @@ We denote $KK_f(A,B)$ the set of all \textit{Hilbert bimodules} of $(A,B)$.
             $\mathbb{C}$-valued inner product
         \item $\langle h_1, h_2\rangle  \ge 0$, $\mathbb{C}$-valued inner product.
     \end{itemize}
-\end{solution}
+\end{MyExercise}
 
-\begin{exercise}
+\begin{MyExercise}
+    \textbf{
     Show that the $A-A$ bimodule given by $A$ is in $KK_f(A,A)$ by taking the following inner product
     $\langle \cdot,\cdot\rangle_A:A \times A \rightarrow A$:
     \begin{align*}
         \langle a, a\rangle_A = a^*a' \;\;\;\; a,a'\in A
     \end{align*}
     \label{exercise: inner-product}
-\end{exercise}
-\begin{solution}
+}\newline
+
+
     We check again the conditions on $\langle \cdot, \cdot\rangle _A$, let $a, a_1, a_2 \in A$:
     \begin{itemize}
         \item $\langle a_1, a\cdot a_2\rangle _A = a^*\ a\cdot a_2 = (a^*a_1)^* a_2 = \langle  a^*a_1, a_2\rangle  $
         \item $\langle a_1, a_2 \cdot a\rangle _A = a^*_1 (a_2\cdot a) = (a^*a_2)\cdot a = \langle a_1, a_2\rangle _A a$
         \item $\langle a_1, a_2\rangle _A^* = (a_1^* a_2)^* = a_2^*(a_1^*)^* = a_2^* a_1 = \langle a_2, a_1\rangle $
     \end{itemize}
-\end{solution}
+\end{MyExercise}
 
 \begin{example}
     Consider a $*$ homomorphism between two matrix algebras $\phi:A\rightarrow B$.
@@ -152,7 +190,8 @@ We denote $KK_f(A,B)$ the set of all \textit{Hilbert bimodules} of $(A,B)$.
 %What is the meaning of `associative up to isomorphism'? Isomorphism of $F \circ E$ or of $A, B$ or $D$?
 %\end{question}
 
-\begin{exercise}
+    \begin{MyExercise}
+        \textbf{
     Show that the association $\phi \leadsto E_\phi$ (from the previous Example) is natural
     in the sense
     \begin{enumerate}
@@ -164,32 +203,27 @@ We denote $KK_f(A,B)$ the set of all \textit{Hilbert bimodules} of $(A,B)$.
                 E_{\psi \circ \phi} \in KK_f(A,C)
             \end{align*}
     \end{enumerate}
-\end{exercise}
-
-\begin{solution}
+}
     \begin{enumerate}
-        \
         \item $\text{id}_A: A \rightarrow A$.\\
             To construct $E_{\phi}\in KK_f(A,A)$, we let $E_{\phi}$ be $A$ with a natural right
             representation, so $\Rightarrow E_{\phi}\simeq A$.\\
             With an inner product, acting on $A$ from the left with $\phi$, $a', a\in A$\\
             $a'a = (\phi(a') a) \in A $, which is satisfied by $\text{id}_A$, so $\phi = \text{id}_A$.
-        \item $a \cdot b \cdot c = \psi(\phi(a) \cdot b) \cdot c$ for $a \in A$, $b\in B$, and $c\in C$
+        \item $a \cdot b \cdot c = \psi(\phi (a) \cdot b) \cdot c$ for $a \in A$, $b\in B$, and $c\in C$
                 which is $\psi \circ \phi$
     \end{enumerate}
-\end{solution}
+\end{MyExercise}
 
-\begin{exercise}
+\begin{MyExercise}
+    \textbf{
     In the definition of Morita equivalence:
     \begin{enumerate}
         \item Check that $E \otimes _B F$ is a $A-D$ bimodule
         \item Check that $\langle \cdot,\cdot\rangle _{E\oplus _B F}$ defines a $D$ valued inner product
         \item Check that $\langle a^*(e_1 \otimes f_1), e_2 \otimes f_2\rangle _{E \otimes _B F} = \langle e_1 \otimes f_1, a(e_2 \otimes f_2)\rangle _{E \otimes _B F}$.
     \end{enumerate}
-\end{exercise}
-
-\begin{solution}
-    \
+}
     \begin{enumerate}
         \item $E \otimes _B F = E \otimes F / \{\sum_i e_i b_i \otimes f_i - e_i \otimes b_i f_i;
             e_i \in E_i, b_i \in B, f_i \in F\}$ the last part takes out all tensor product elements of
@@ -203,7 +237,7 @@ We denote $KK_f(A,B)$ the set of all \textit{Hilbert bimodules} of $(A,B)$.
             $g_2 = e_2 \otimes f_2$ for some $e_1, e_2 \in E$ and $f_1, f_2 \in F$, or else
             $G \notin KK_f(A,C)$ which would violate the Kasparov product
     \end{enumerate}
-\end{solution}
+    \end{MyExercise}
 
 \begin{definition}
     Let $A$, $B$ be \textit{matrix algebras}. They are called \textit{Morita equivalent} if there
@@ -275,17 +309,16 @@ We denote $KK_f(A,B)$ the set of all \textit{Hilbert bimodules} of $(A,B)$.
     These maps are each others inverses, thus $\hat{A} \simeq \hat{B}$
 \end{proof}
 
-\begin{exercise}
+\begin{MyExercise}
+    \textbf{
     Fill in the gaps in the above proof:
     \begin{enumerate}
         \item show that the representation of $\pi _A$ defined is irreducible iff $\pi _B$ is.
         \item Show that the association of the class $[\pi _A]$ to $[\pi _B]$ is independent
             of the choice of representatives $\pi _A$ and $\pi _B$
     \end{enumerate}
-\end{exercise}
+}
 
-\begin{solution}
-    \
     \begin{enumerate}
         \item $(\pi _B, H)$ is irreducible means $H \neq \emptyset$ and only $\emptyset$ or $H$
             is invariant under the Action of $B$ on $H$.
@@ -295,7 +328,7 @@ We denote $KK_f(A,B)$ the set of all \textit{Hilbert bimodules} of $(A,B)$.
             hence any choice of representation is irreducible, because the structure space denotes all unitary
             equivalence classes of irreducible representations.
     \end{enumerate}
-\end{solution}
+\end{MyExercise}
 
     \begin{lemma}
     The matrix algebra $M_n(\mathbb{C})$ has a unique irreducible representation (up to isomorphism)
