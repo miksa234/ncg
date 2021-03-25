@@ -85,5 +85,193 @@
 
 \section{Finite Real Noncommutative Spaces}
 \subsection{Finite Real Spectral Triples}
+Add on to finite real spectral triples a \textit{real structure}. The
+requirement is that $H$ is a $A$-$A$-bimodule (before only a $A$-left
+module).
+\newline
+
+For this we introduce a $\mathbb{Z}_2$-grading $\gamma$ with
+\begin{align}
+    &\gamma ^* = \gamma \\
+    &\gamma ^2 = 1 \\
+    &\gamma D = - D \gamma\\
+    &\gamma a = a \gamma \;\;\;\; a\in A
+\end{align}
+
+\begin{definition}
+    A \textit{finite real spectral triple} is given by a finite spectral
+    triple $(A, H, D)$ and a anti-unitary operator $J:H\rightarrow H$ called
+    the \textit{real structure}, such that
+    \begin{align}
+        a^\circ := J a^* J^{-1}
+    \end{align}
+    is a right representation of $A$ on $H$, that is $(ab)^\circ = b^\circ
+    a^\circ$. With two requirements
+    \begin{align}
+        &[a, b^\circ] = 0\\
+        &[[D, a],b^\circ] = 0.
+    \end{align}
+    They are called the \textit{commutant property}, and mean that the left
+    action of an element in $A$ and $\Omega _D^1(A)$ commutes with the right
+    action on $A$.
+\end{definition}
+\begin{definition}
+    The $KO$-dimension of a real spectral triple is determined by the sings
+    $\epsilon, \epsilon ' ,\epsilon '' \in \{-1, 1\}$ appearing in
+    \begin{align}
+        &J^2 = \epsilon \\
+        &JD = \epsilon \ DJ\\
+        &J\gamma = \epsilon '' \gamma J.
+    \end{align}
+\end{definition}
+\begin{table}[h!]
+    \centering
+    \caption{$KO$-dimension $k$ modulo $8$ of a real spectral triple}
+    \begin{tabular}{ c | c c c c c c c c}
+        \hline
+        $k$        & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\
+        \hline
+     $\epsilon$    & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 \\
+     $\epsilon '$  & 1 & -1 & 1 & 1 & 1 & -1 & 1 & 1 \\
+     $\epsilon ''$ & 1 &  & -1 &  & 1 &  & -1 &  \\
+     \hline
+    \end{tabular}
+\end{table}
+
+
+\begin{definition}
+An opposite-algebra $A^\circ$ of a $A$ is defined to be equal to $A$ as a
+vector space with the opposite product
+\begin{align}
+    &a\circ b := ba\\
+    &\Rihtarrow a^\circ = Ja^* J^{-1} \;\;\; \text{defines the left
+    representation of $A^\circ$ on $H$}
+\end{align}
+\end{definition}
+
+\begin{example}
+    Matrix algebra $M_N(\mathbb{C})$ acting on $H=M_N(\mathbb{C})$ by left
+    matrix multiplication with the Hilbert Schmidt inner product.
+    \begin{align}
+        \langle a , b \rangle = \text{Tr}(a^* b)
+    \end{align}
+    Then we define $\gamma (a) = a$ and $J(a) = a^*$ with $a\in H$.
+    Since $D$ mus be odd with respect to $\gamma$ it vanishes identically.
+\end{example}
+
+\subsection{Morphisms Between Finite Real Spectral Triples}
+Extend unitary equivalence of finite spectral triples to real ones (with $J$
+and $\gamma$)
+
+\begin{definition}
+    We call two finite real spectral triples $(A_1, H_1 ,D_1 ; J_1 , \gamma
+    _1)$ and $(A_2, H_2, D_2; J_2, \gamma _2)$ unitarily equivalent if $A_1 =
+    A_2$ and if there exists a unitary operator $U: H_1 \rightarrow H_2$ such
+    that
+    \begin{align}
+        &U\pi_1(a) U^* = \pi _2(a)\\
+        &UD_1U^*=D_2\\
+        &U\gamma _1 U^* = \gamma _2\\
+        &UJ_1 U^* = J_2
+    \end{align}
+\end{definiton}
+\begin{definiton}
+    Let $E$ be a $B$-$A$ bimodule. The \textit{conjugate Module} $E^\circ$ is
+    given by the $A$-$B$-bimodule.
+    \begin{align}
+        E^\circ = \{\bar{e} : e\in E\}
+    \end{align}
+    with
+    \begin{align}
+    a \cdot \bar{e} \cdot b = b^* \bar{e} a^* \;\;\;\; \forall a\in A, b \in
+        B
+    \end{align}
+\end{definiton}
+$E^\circ$ is not a Hilbert bimodule for $(A, B)$ because it doesn't have a
+natural $B$-valued inner product. But there is a $A$-valued inner product on
+the left $A$-module $E^\circ$ with
+\begin{align}
+    \langle \bar{e}_1, \bar{e}_2 \rangle = \langle e_2 , e_1 \rangle
+    \;\;\;\; e_1, e_2 \in E
+\end{align}
+and linearity in $A$:
+\begin{aling}
+    \langle a \bar{e}_1, \bar{e}_2 \rangle = a \langle \bar{e}_1, \bar{e}_2
+    \rangle \;\;\;\; \forall a \in A.
+\end{aling}
+\subsubsection{Construction of a Finite Real Spectral Triple from a Finite
+Real Spectral Triple}
+Given a Hilbert bimodule $E$ for $(B, A)$ we construct a spectral triple
+$(B, H', D'; J', \gamma ')$ from $(A, H, D; J, \gamma)$
+
+For the $H'$ we make a $\mathbb{C}$-valued inner product on $H'$ by combining
+the $A$ valued inner product on $E$ and $E^\circ$ with the
+$\mathbb{C}$-valued inner product on $H$.
+\begin{align}
+    H' := E\otimes _A H \otimes _A E^\circ
+\end{align}
+
+Then the action of $B$ on $H'$ is:
+\begin{align}
+    b(e_2 \otimes \xi \otimes \bar{e}_2 ) = (be_1) \otimes \xi \otimes
+    \bar{e}_2
+\end{align}
+The right action of $B$ on $H'$ defined by action on the right component
+$E^\circ$
+\begin{align}
+    J'(e_1 \otimes \xi \otimes \bar{e}_2) = e_2 \otimes J \xi \otimes
+    \bar{e}_1
+\end{align}
+with $b^\circ = J' b^* (J')^{-1}$, $b^* \in B$ action on $H'$.
+\newline
+
+Then the connections
+\begin{align}
+    &\nabla: E \rightarrow E\otimes _A \Omega _D ^1(A) \\
+    &\bar{\nabla}:E^\circ \rightarrow \Omega _D^1(A) \otimes _A E^\circ
+\end{align}
+give us the Dirac operator on $H' = E \otimes _A H \otimes _A E^\circ$
+\begin{align}
+    D'(e_1 \otimes \xi \otimes \bar{e}_2) = (\nabla e_1) \xi \otimes
+    \bar{e_2}+ e_1 \otimes D\xi \otimes \bar{e}_2 + e_1 \otimes
+    \xi(\bar{\nabla}\bar{e}_2)
+\end{align}
+
+And the right action of $\omega \in \Omega _D ^1(A)$ on $\xi \in H$ is
+defined by
+\begin{align}
+    \xi \mapsto \epsilon' J \omega ^* J^{-1}\xi
+\end{align}
+
+Finally for the grading
+\begin{align}
+    \gamma ' = 1 \otimes \gamma \otimes 1
+\end{align}
+
+\begin{theorem}
+    Suppose $(A, H, D; J, \gamma)$ is a finite spectral triple of
+    $KO$-dimension $k$, let $\nabla$ be like above satisfying the
+    compatibility condition (like with finite spectral triples).
+
+    Then $(B, H',D'; J', \gamma')$ is a finite spectral triple of
+    $KO$-Dimension $k$. ($H', D', J', \gamma'$ like above)
+\end{theorem}
+
+\begin{proof}
+    The only thing left is to check if the $KO$-dimension is preserved,
+    for this we check if the $\epsilon$'s are the same.
+    \begin{align*}
+        &(J')^2 = 1 \otimes J^2 \otimes 1 = \epsilon\\
+        &J' \gamma '= \epsilon ''\gamma'J'
+    \end{align*}
+    and for $\epsilon '$
+    \begin{align*}
+        J'D'(e_1 \otimes \xi \otimes \bar{e}_2)&=J'((\nabla e_1) \xi \otimes
+        \bar{e_2} + e_1 \otims D\xi \otimes \bar{e}_2 + e_1 \otimes \xi (\tau
+        \nabla e_2))\\
+        &= \epsilon' D'(e_2 \otimes J\xi \otimes \bar{e}_2)\\
+        &= \epsilon' D'J'(e_1 \otimes \xi \bar{e}_2)
+    \end{align*}
+\end{proof}
 
 \end{document}
