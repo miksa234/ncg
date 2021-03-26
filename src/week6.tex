@@ -144,7 +144,7 @@ An opposite-algebra $A^\circ$ of a $A$ is defined to be equal to $A$ as a
 vector space with the opposite product
 \begin{align}
     &a\circ b := ba\\
-    &\Rihtarrow a^\circ = Ja^* J^{-1} \;\;\; \text{defines the left
+    &\Rightarrow a^\circ = Ja^* J^{-1} \;\;\; \text{defines the left
     representation of $A^\circ$ on $H$}
 \end{align}
 \end{definition}
@@ -158,6 +158,17 @@ vector space with the opposite product
     Then we define $\gamma (a) = a$ and $J(a) = a^*$ with $a\in H$.
     Since $D$ mus be odd with respect to $\gamma$ it vanishes identically.
 \end{example}
+\begin{MyExercise}
+    \textbf{
+        In the previous example, show that the right action on $M_N(\mathbb{C})$
+    on $H = M_N(\mathbb{C})$ as defined by $a \mapsto a^\circ$
+    is given by right matrix multiplication.
+}\newline
+
+    \begin{align*}
+        a^\circ \xi = J a^* J^{-1} = Ja^* \xi^* = J\xi a=\xi^* a
+    \end{align*}
+\end{MyExercise}
 
 \subsection{Morphisms Between Finite Real Spectral Triples}
 Extend unitary equivalence of finite spectral triples to real ones (with $J$
@@ -174,8 +185,8 @@ and $\gamma$)
         &U\gamma _1 U^* = \gamma _2\\
         &UJ_1 U^* = J_2
     \end{align}
-\end{definiton}
-\begin{definiton}
+\end{definition}
+\begin{definition}
     Let $E$ be a $B$-$A$ bimodule. The \textit{conjugate Module} $E^\circ$ is
     given by the $A$-$B$-bimodule.
     \begin{align}
@@ -186,7 +197,7 @@ and $\gamma$)
     a \cdot \bar{e} \cdot b = b^* \bar{e} a^* \;\;\;\; \forall a\in A, b \in
         B
     \end{align}
-\end{definiton}
+\end{definition}
 $E^\circ$ is not a Hilbert bimodule for $(A, B)$ because it doesn't have a
 natural $B$-valued inner product. But there is a $A$-valued inner product on
 the left $A$-module $E^\circ$ with
@@ -195,10 +206,10 @@ the left $A$-module $E^\circ$ with
     \;\;\;\; e_1, e_2 \in E
 \end{align}
 and linearity in $A$:
-\begin{aling}
+\begin{align}
     \langle a \bar{e}_1, \bar{e}_2 \rangle = a \langle \bar{e}_1, \bar{e}_2
     \rangle \;\;\;\; \forall a \in A.
-\end{aling}
+\end{align}
 \subsubsection{Construction of a Finite Real Spectral Triple from a Finite
 Real Spectral Triple}
 Given a Hilbert bimodule $E$ for $(B, A)$ we construct a spectral triple
@@ -267,7 +278,7 @@ Finally for the grading
     and for $\epsilon '$
     \begin{align*}
         J'D'(e_1 \otimes \xi \otimes \bar{e}_2)&=J'((\nabla e_1) \xi \otimes
-        \bar{e_2} + e_1 \otims D\xi \otimes \bar{e}_2 + e_1 \otimes \xi (\tau
+        \bar{e_2} + e_1 \otimes D\xi \otimes \bar{e}_2 + e_1 \otimes \xi (\tau
         \nabla e_2))\\
         &= \epsilon' D'(e_2 \otimes J\xi \otimes \bar{e}_2)\\
         &= \epsilon' D'J'(e_1 \otimes \xi \bar{e}_2)
