@@ -1,0 +1,192 @@
+\documentclass[fleqn]{beamer}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{mathptmx}
+\usepackage{subcaption}
+\usepackage{amsthm}
+\usepackage{tikz}
+%\usepackage[colorlinks=true,naturalnames=true,plainpages=false,pdfpagelabels=true]{hyperref}
+\usetikzlibrary{patterns,decorations.pathmorphing,positioning, arrows, chains}
+
+\usepackage[backend=biber]{biblatex}
+\addbibresource{uni.bib}
+
+% vertical separator macro
+\newcommand{\vsep}{
+  \column{0.0\textwidth}
+    \begin{tikzpicture}
+      \draw[very thick,black!10] (0,0) -- (0,7.3);
+    \end{tikzpicture}
+}
+\setlength{\mathindent}{0pt}
+
+% Beamer theme
+\usetheme{UniVienna}
+\usefonttheme[onlysmall]{structurebold}
+\mode<presentation>
+\setbeamercovered{transparent=10}
+
+\title
+{Noncommutative Geometry}
+\subtitle{Bachelor's seminar}
+\author[Popovic Milutin]
+{Popovic Milutin \newline Supervisor: Dr. Lisa Glaser}
+\date{16. April 2021}
+
+\begin{document}
+    \begin{frame}
+        \titlepage
+    \end{frame}
+
+    \begin{frame}{Introduction}
+        \begin{itemize}
+            \item Noncommutative geometry (NCG) brings many\\
+                  mathematical fields together
+            \item Interesting physics application
+            \item First understand duality between (classical) geometry and commutative Algebras
+            \item Gelfand-Naimark-Theoreme in Functional Analysis in the 1940s
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}{Spaces and commutative Algebras}
+        Introduce:
+        \begin{block}
+            {Finite topological Space $X$ consisting of $N$ points. (discrete topology)}
+            \begin{figure}[h!]
+            \centering
+            \begin{tikzpicture}[
+                dot/.style = {draw, circle, inner sep=0.05cm, fill},
+                smalldot/.style = {draw, circle, inner sep=0.015cm,fill},
+                ]
+                \node[dot] at (-3,0.) [label=below:$1$]{};
+                \node[dot] at (-1.5,0) [label=below:$2$]{};
+                \node[dot] at (2.1,0) [label=below:$N$]{};
+                \node[smalldot] at (-0.4,0) {};
+                \node[smalldot] at (0.1,0) {};
+                \node[smalldot] at (0.6,0) {};
+                \end{tikzpicture}
+            \end{figure}
+
+        \end{block}
+        \begin{block}{Commutative algebra of continuous functions on $X$}
+            \centering
+             $C(X) = \{ f: X \rightarrow \mathbb{C}:\;\;
+             \text{$f$ is continuous}\}$
+        \end{block}
+    \end{frame}
+    \begin{frame}
+        {Spaces and commutative Algebras}
+        Results of the Theorem:
+            \begin{itemize}
+                \item $X$ and $C(X)$ contain the same information (duality)
+                \item Construct $X$, given $C(X)$.
+                \item Translate geometrical properties of $X$ to algebraic data\\
+                    (metric, differential forms, vector fields, curvature, etc.)
+            \end{itemize}
+    \end{frame}
+
+    \begin{frame}{The Finite Spectral Triple}
+        \begin{itemize}
+            \item NCG extends this duality to noncommutative algebras
+            \item Provides methods to deal with these algebras
+            \item NCG is encoded in a spectral triple
+        \end{itemize}
+        \begin{block}
+            {\centering The Finite Spectral Triple}
+            \centering
+            $(A, H, D)$
+        \end{block}
+        \begin{itemize}
+            \item $A$ - Algebra
+            \item $H$ - Hilbertspace
+            \item $D$ - Symmetric operator acting on $H$
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}{Introducing the Metric}
+        \begin{itemize}
+            \item The metric describes distances between points on a space
+            \item Simple example the discrete metric on a discrete space
+        \end{itemize}
+        \centering
+            \begin{align*}
+                d_{ij} =
+                \begin{cases}
+                    1\;\;\; \text{if}\;\;\; i \neq j \\
+                    0\;\;\; \text{if}\;\;\; i = j
+                \end{cases}
+            \end{align*}
+            \begin{figure}[h!] \centering
+            \begin{tikzpicture}[
+                dot/.style = {draw, circle, inner sep=0.05cm, fill},
+                smalldot/.style = {draw, circle, inner sep=0.015cm,fill},
+                ]
+                \node[dot](m1) at (-3,0.) [label=left:$1$] {};
+                \node[dot](m2) at (-1.5, 2) [label=above right:$2$] {};
+                \node[dot](m3) at (2.1,0) [label=right:$3$] {};
+
+                \draw[<->, >=stealth](m1) -- ++(m2) node [midway, fill=white] {$d_{12}$};
+                \draw[<->, >=stealth](m2) -- ++(m3) node [midway, fill=white] {$d_{23}$};
+                \draw[<->, >=stealth](m3) -- ++(m1) node [midway, fill=white] {$d_{13}$};
+                \end{tikzpicture}
+            \end{figure}
+    \end{frame}
+
+    \begin{frame}{Metric on NCG}
+        \begin{itemize}
+            \item In NCG we can also define a metric
+            \item replace algebra with a noncommutative matrix Algebra $A$
+            \item a finite-dimensional Hilbertspace $H$\\
+            \item and a hermitian matrix $D$
+        \end{itemize}
+        \begin{block}{A metric constructed with $(A, H, D)$}
+            \centering
+            $d_{ij} = \sup_{a \in A}\{ |\text{Tr}(a(i)) - \text{Tr}(a(j)) :
+            ||[D, a]|| < 1\}$
+        \end{block}
+    \end{frame}
+
+    \begin{frame}{Differential One Forms}
+        \begin{itemize}
+                \item Example: 1D calculus $f(x)dx$\\
+                \item In NCG defining the differential one form requires only\\
+                    the spectral Triple $(A, H, D)$
+        \end{itemize}
+        \begin{block}{Connes' Differential One Form}
+            \begin{center}
+                $\Omega_D^1 (A) = \{\sum_k a_k [D, b_k]: a_k, b_k \in A\}$
+            \end{center}
+            With a consequent derivation of a algebra
+            $d: A \rightarrow \Omega_D^1$, $d(\cdot) = [D, \cdot]$
+        \end{block}
+   \end{frame}
+
+    \begin{frame}{Generalization to the Continuum}
+        \begin{itemize}
+            \item Introduce a richer geometry
+            \item From finite topological space to Manifolds generalized with noncommutativity
+            \item From finite to general spectral triples with a \\
+                self adjoint operator (Dirac Operator)
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}{Applications In Physics}
+        \begin{itemize}
+            \item NCG of Electrodynamics
+            \item NCG of the Quantum Hall Effect
+            \item NCG of the Standard Model, full Lagrangian
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}{Bibliography}
+        \nocite{ncgwalter}
+        \nocite{liealgebra}
+        \nocite{ncg4pages}
+        \nocite{ncgshort}
+        \printbibliography
+    \end{frame}
+\end{document}
+
