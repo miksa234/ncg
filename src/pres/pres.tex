@@ -1,0 +1,264 @@
+\documentclass[fleqn]{beamer}
+\beamertemplatenavigationsymbolsempty
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{mathptmx}
+\usepackage{subcaption}
+\usepackage{amsthm}
+\usepackage{tikz}
+%\usepackage[colorlinks=true,naturalnames=true,plainpages=false,pdfpagelabels=true]{hyperref}
+\usetikzlibrary{patterns,decorations.pathmorphing,positioning, arrows, chains}
+
+\usepackage[backend=biber, sorting=none]{biblatex}
+\addbibresource{uni.bib}
+
+% vertical separator macro
+\newcommand{\vsep}{
+  \column{0.0\textwidth}
+    \begin{tikzpicture}
+      \draw[very thick,black!10] (0,0) -- (0,7.3);
+    \end{tikzpicture}
+}
+\setlength{\mathindent}{0pt}
+
+% Beamer theme
+\usetheme{UniVienna}
+\usefonttheme[onlysmall]{structurebold}
+\mode<presentation>
+\setbeamercovered{transparent=10}
+
+\title
+{Noncommutative Geometry}
+\subtitle{Bachelor's seminar}
+\author[Popovic Milutin]
+{Popovic Milutin \newline Supervisor: Dr. Lisa Glaser}
+\date{16. April 2021}
+
+\begin{document}
+    \begin{frame}
+        \titlepage
+    \end{frame}
+
+    \begin{frame}{Introduction}
+        \begin{itemize}
+            \item Noncommutative geometry (NCG) brings many\\
+                mathematical fields together (e.g. K-Theory, Differential Geometry)
+            \item Physics application (spectral Standard Model)
+            \item Gelfand-Naimark-Theorem in Functional Analysis in the 1940s \\
+              duality between (classical) geometry and Algebra
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}{Spaces and Algebras}
+        Introduce:
+        \begin{block}
+            {Algebra}
+            \centering
+            Vectorspace with a multiplication operation\\
+            (associative and possesses an identity element)
+        \end{block}
+        \begin{block}
+            {Finite topological Space $X$ consisting of $N$ points. (discrete topology)}
+            \begin{figure}[h!]
+            \centering
+            \begin{tikzpicture}[
+                dot/.style = {draw, circle, inner sep=0.05cm, fill},
+                smalldot/.style = {draw, circle, inner sep=0.015cm,fill},
+                ]
+                \node[dot] at (-3,0.) [label=below:$1$]{};
+                \node[dot] at (-1.5,0) [label=below:$2$]{};
+                \node[dot] at (2.1,0) [label=below:$N$]{};
+                \node[smalldot] at (-0.4,0) {};
+                \node[smalldot] at (0.1,0) {};
+                \node[smalldot] at (0.6,0) {};
+                \end{tikzpicture}
+            \end{figure}
+
+        \end{block}
+        \begin{block}{Commutative algebra of continuous functions on $X$}
+            \centering
+             $C(X) = \{ f: X \rightarrow \mathbb{C}:\;\;
+             \text{$f$ is continuous}\}$
+        \end{block}
+    \end{frame}
+    \begin{frame}
+        {Spaces and commutative Algebras}
+        Results of the Theorem:
+            \begin{itemize}
+                \item $X$ and $C(X)$ contain the same information (duality)
+                \item Construct $X$, given $C(X)$.
+                \item Translate geometrical properties of $X$ to algebraic data\\
+                    (metric, differential forms, vector fields, curvature, etc.)
+            \end{itemize}
+    \end{frame}
+
+    \begin{frame}{Geometry as a Spectral Triple}
+        \begin{block}
+            {\centering The Spectral Triple}
+            \centering
+            $(\;A,\;\; H,\;\; D\;)$
+        \end{block}
+        \begin{itemize}
+            \item $A$ - Algebra
+            \item $H$ - Hilbertspace
+            \item $D$ - self adjoint Operator acting on $H$
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}{Geometry as a Spectral Triple}
+        \begin{block}
+            {The Spectral Triple of a Circle $\mathbb{S}^1$}
+        \centering
+                $ (\; C^{\infty}(\mathbb{S}^1),\;\; L^2(\mathbb{S}^1),\;\; -i\frac{d}{dt} \;)$
+        \end{block}
+    \end{frame}
+
+    \begin{frame}{Introducing the Metric}
+        \begin{itemize}
+            \item The metric describes distances between points on a space
+        \end{itemize}
+  \begin{columns}[T]
+    \column{0.4\textwidth}
+        \begin{block}{\centering Discrete Metric}
+            \centering
+            $
+                d_{ij} =
+                \begin{cases}
+                    0\;\;\; \text{if}\;\;\; i = j \\
+                    1\;\;\; \text{if}\;\;\; i \neq j
+                \end{cases}
+            $
+      \end{block}
+
+    \column{0.4\textwidth}
+    \begin{block}{\centering Minkowski Metric}
+        \centering
+        $
+            \eta _{\mu \nu} =
+                \begin{pmatrix}
+                    -1 & 0 & 0 & 0 \\
+                    0 & 1 & 0 & 0 \\
+                    0 & 0 & 1 & 0 \\
+                    0 & 0 & 0 & 1
+                \end{pmatrix}
+        $
+    \end{block}
+    \end{columns}
+
+    \begin{figure}[h!] \centering
+    \begin{tikzpicture}[
+        dot/.style = {draw, circle, inner sep=0.05cm, fill},
+        smalldot/.style = {draw, circle, inner sep=0.015cm,fill},
+        ]
+        \node[dot](m1) at (-3,0.) [label=left:$1$] {};
+        \node[dot](m2) at (-1.5, 2) [label=above right:$2$] {};
+        \node[dot](m3) at (2.1,0) [label=right:$3$] {};
+
+        \draw[<->, >=stealth](m1) -- ++(m2) node [midway, fill=white] {$d_{12}$};
+        \draw[<->, >=stealth](m2) -- ++(m3) node [midway, fill=white] {$d_{23}$};
+        \draw[<->, >=stealth](m3) -- ++(m1) node [midway, fill=white] {$d_{13}$};
+        \end{tikzpicture}
+        \end{figure}
+
+    \end{frame}
+
+
+    \begin{frame}{Algebraic Formulation of the Metric}
+        \begin{itemize}
+        \item Utilize results of the Gelfand-Naimark Theorem
+        \item Characterize the Metric with\\
+            \begin{itemize}
+                \item[\bullet] commutative Algebra
+                \item[\bullet] finite-dimensional Hilbertspace $H$
+                \item[\bullet] symmetric operator $D$
+            \end{itemize}
+        \end{itemize}
+        \begin{block}{Metric with $(A, H, D)$ on finite Space (commutative case)}
+            \centering
+            $d_{ij} = \sup_{a \in A}\{ |a(i) - a(j)| : ||[D, a]|| \leq 1\}$
+        \end{block}
+    \end{frame}
+
+    \begin{frame}{Algebraic Formulation of the Metric}
+     In the noncommutative Case:
+        \begin{itemize}
+            \item replace Algebra with matrix Algebra (noncommutative)
+            \item define in terms of invariants
+        \end{itemize}
+        \begin{block}{Metric with $(A, H, D)$ on finite Space (noncommutative case)}
+            \centering
+            $d_{ij} = \sup_{a \in A}\{ |\text{Tr}(a(i)) - \text{Tr}(a(j))| :||[D, a]|| \leq 1\}$
+        \end{block}
+    \end{frame}
+
+    \begin{frame}{Algebraic Formulation of the Metric}
+        \begin{itemize}
+            \item describe the Metric on a Manifold $M$
+            \item We need \\
+                \begin{itemize}
+                    \item[\bullet] $C^\infty(M)$ - Algebra
+                    \item[\bullet] $H^2(S)$ - Hilbertspace
+                    \item[\bullet] $D$ - Dirac Operator
+                \end{itemize}
+        \end{itemize}
+        \begin{block}{Metric with $(C^\infty(M),\;\; H^2(S),\;\; D)$ on a Manifod}
+            \centering
+            $d(x, y) = \sup_{f \in C^\infty(M) }\{ |f(x) - f(y)| :
+            ||[D, f]|| \leq 1\}$
+        \end{block}
+    \begin{figure}[h!] \centering
+    \begin{tikzpicture}[
+        dot/.style = {draw, circle, inner sep=0.06cm, fill},
+        smalldot/.style = {draw, circle, inner sep=0.015cm,fill},
+        ]
+        \node[dot](b) at (0,0) [label=below left:$x$] {};
+        \node[dot](a) at (2, 0) [label=below right:$y$] {};
+        \node[dot](a) at (5, 0) [label=below left:$x$] {};
+        \node[dot](a) at (8, 0) [label=below right:$y$] {};
+        %        \node[dot](m3) at (2.1,0) [label=right:$3$] {};
+
+         \draw[<->, >=stealth, line width=0.4mm, style=dashed](0, 0.2) -- ++(2, 0) {};
+         \draw[line width=0.5mm] (-0.3, 0) -- (2.3, 0) {};
+
+         \draw[line width=0.5mm] (4.7, 0) -- (8.3, 0) {};
+         \draw[<->, >=stealth, line width=0.4mm, style=dashed](8, 2) -- (8, 0.1) {};
+         \draw[line width=0.5mm] (5, 0) -- (8, 2) node [pos=.75, label=:$f$] {} ;
+        \end{tikzpicture}
+        \end{figure}
+    \end{frame}
+
+%\begin{frame}{Noncommutative Case}
+%    \begin{itemize}
+%        \item Introduce a richer geometry
+%        \item From finite topological space to a Manifold with noncommutativity
+%            \item From finite to general spectral triples with a \\
+%                self adjoint Operator (Dirac Operator)
+%        \end{itemize}
+%    \end{frame}
+
+    \begin{frame}{Applications In Physics}
+        \begin{itemize}
+            \item NCG of the Quantum Hall Effect
+            \item NCG of the Standard Model
+                \begin{itemize}
+                    \item[\bullet] going to noncommutative Manifolds
+                    \item[\bullet] obtain Standard Model gauge fields (scalar Higgs filed)
+                    \item[\bullet] construct the Full Lagrangian
+                    \item[\bullet] minimal coupling to gravity
+                \end{itemize}
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}{Bibliography}
+        \nocite{ncgwalter}
+        \nocite{liealgebra}
+        \nocite{ncg4pages}
+        \nocite{ncgshort}
+        \printbibliography
+    \end{frame}
+\end{document}
+
