@@ -149,6 +149,7 @@ vector space with the opposite product
 \end{align}
 \end{definition}
 
+
 \begin{example}
     Matrix algebra $M_N(\mathbb{C})$ acting on $H=M_N(\mathbb{C})$ by left
     matrix multiplication with the Hilbert Schmidt inner product.
@@ -158,6 +159,19 @@ vector space with the opposite product
     Then we define $\gamma (a) = a$ and $J(a) = a^*$ with $a\in H$.
     Since $D$ mus be odd with respect to $\gamma$ it vanishes identically.
 \end{example}
+
+\begin{definition}
+    We call $\xi \in H$ \textbf{cyclic vector} in $A$ if:
+    \begin{align}
+        A\xi := { a\xi:\;\; a\in A} = H
+    \end{align}
+
+    We call $\xi \in H$ \textbf{separating vector} in $A$ if:
+    \begin{align}
+        a\xi = 0\;\; \Rightarrow \;\; a=0;\;\;\; a\in A
+    \end{align}
+\end{definition}
+
 \begin{MyExercise}
     \textbf{
         In the previous example, show that the right action on $M_N(\mathbb{C})$
@@ -166,10 +180,65 @@ vector space with the opposite product
 }\newline
 
     \begin{align*}
-        a^\circ \xi = J a^* J^{-1} = Ja^* \xi^* = J\xi a=\xi^* a
+        a^\circ \xi = J a^* J^{-1}\xi = Ja^* \xi^* = J\xi a=\xi^* a
     \end{align*}
 \end{MyExercise}
+\begin{MyExercise}
+    \textbf{
+        Let $A= \bigoplus _i M_{n_i}(\mathbb{C})$, represented on $H = \bigoplus_i \mathbb{C}^{n_i}
+        \otimes \mathbb{C}^{m_i}$, meaning that the irreducible representation $\textbf{n}_i$ has
+        multiplicity $m_i$.
+        \begin{enumerate}
+            \item Show that the commutant $A'$ of $A$ is $A'\simeq \bigoplus_i M_{m_i} (\mathbb{C})$. As a consequence show $A'' \simeq A$.
+            \item Show that if $\xi$ is a separating vector for $A$ than it is cyclic for $A'$.
+        \end{enumerate}
+    }\newline
 
+
+    \begin{enumerate}
+        \item We know the multiplicity space is $V_i = \mathbb{C}^{m_i}$. We know that
+            for $T\in H$ and
+            $a\in A'$ to work we need $aT=Ta$ by laws of matrix multiplication we need
+            $A' \simeq \oplus _i M_{m_i}(\mathbb{C})$ for this to work since $H = \bigoplus_i
+            \mathbb{C}^{n_i}
+        \otimes \mathbb{C}^{m_i}$
+
+        \item Suppose $\xi$ is cyclic for $A$ then $A'\xi = \{0\}$. Under the action of $A$ we
+            then have $A'A\xi = AA' \xi = 0 \Rightarrow A' = 0$.\\
+            Suppose now $\xi$ is separating for $A'$, we have $A'\xi = \{0\}$. We can define a
+            projection in $A'$, $A\xi = P'$. With this projection we have $(1-P')\xi = 0
+            \Rightarrow 1-P' = 0 \Rightarrow A\xi = H$.
+    \end{enumerate}
+\end{MyExercise}
+\begin{MyExercise}
+    \textbf{ Suppose $(A, H, D = 0)$ is a finite spectral triple such that $H$ possesses a
+        cyclic and separating vector for $A$.
+        \begin{enumerate}
+            \item Show that the formula $S(a \xi) = a* \xi$ defines a anti-linear operator\\
+                $S: H \rightarrow H$.
+            \item Show that $S$ is invertible
+            \item Let $J: H \rightarrow H$ be the operator in $S = J \Delta ^{1/2}$ with
+                $\Delta = S*S$. Show that $J$ is anti-unitary
+        \end{enumerate}
+    }\newline
+
+
+    \begin{enumerate}
+    \item By composition $S(a\xi) = a*\xi$ this is literally anti-linearity. Does this mean
+        $S\xi = \xi$?
+    \item Let $\xi \in H$ be cyclic then: $S(A\xi) = A*\xi = A\xi = H$. The same has to work
+        for $S^{-1}$ if not then $\xi$ wouldn't exist. $S^{-1}(A*\xi) = S^{-1}(H) = H$.
+    \item Since $S$ is bijective then $\Delta ^{1/2}$ and $J$ need to be bijective.\\
+        Now let $\xi _1 , \xi _2 \in H$.\\
+        \begin{align*}
+            <J \xi _1 , J \xi _2 > &= < J^*J\xi_1 , \xi_2>^* =\\
+            &= <(\Delta ^{1/2})^* S^* S \Delta ^{1/2} \xi_1, \xi_2>^* = \\
+            &= <(SS^*)^{1/2}S^*S(SS^*) \xi_1, \xi_2>^* =\\
+            &= <(SS^*SS^*)^{1/2} \xi_1, \xi_2>^* = \\
+            &= <\xi _1, \xi_2>^* = <\xi_2 , \xi_1>.
+        \end{align*}
+    \end{enumerate}
+\end{MyExercise}
 \subsection{Morphisms Between Finite Real Spectral Triples}
 Extend unitary equivalence of finite spectral triples to real ones (with $J$
 and $\gamma$)
@@ -210,6 +279,38 @@ and linearity in $A$:
     \langle a \bar{e}_1, \bar{e}_2 \rangle = a \langle \bar{e}_1, \bar{e}_2
     \rangle \;\;\;\; \forall a \in A.
 \end{align}
+
+\begin{MyExercise}
+    \textbf{Show that $E^\circ$ is a Hilbert bimodule $(B^{\circ}, A^{\circ})$
+    }\newline
+
+
+    Straightforward show properties of the Hilbert bimodule and its $B^{\circ}$
+    valued inner product. Let $\bar{e}_1, \bar{e}_2 \in E^{\circ}$ and $a^\circ \in A,
+    b^\circ \in B$. \\
+    \begin{align*}
+        <\bar{e}_1, a^\circ \bar{e}_2> &= <\bar{e}_1, Ja^*J^{-1} \bar{e}_2>=\\
+        &= <\bar{e}_1 , J a^* e_2> = \\
+        &= <J^{-1} e_1, a^* e_2> =\\
+        & = <a^* e_1, e_2>= <J^{-1}(a^\circ)^* J e_1, e_2> = \\
+        & = <J^{-1} (a^\circ)^* \bar{e}_1, e_2> =\\
+        & = <(a^\circ)^* \bar{e}_1 , \bar{e}_2>.
+    \end{align*}
+
+    Next $<\bar{e}_1, \bar{e}_2 b^\circ> = <\bar{e}_1, \bar{e_2}> b^\circ$.
+    \begin{align*}
+        <\bar{e}_1, \bar{e}_2 b^\circ>  &= <\bar{e}_1, \bar{e}_2 Jb^*J^{-1}> =\\
+        &= <\bar{e}_1, \bar{e_2}> Jb^*J^{-1} = \\
+        &= <\bar{e}_1, \bar{e}_2> b^\circ.
+    \end{align*}
+    Then:
+    \begin{align*}
+        (<\bar{e}_1, \bar{e}_2)>_{E^\circ})^* &= (<e_2, e_1>_E)^* =\\
+        &= <e_1, e_2>_E^* = <\bar{e}_2, \bar{e}_2>_{E^\circ}
+    \end{align*}
+    And of course $<\bar{e}, \bar{e}> = <e, e> \geq 0$
+\end{MyExercise}
+
 \subsubsection{Construction of a Finite Real Spectral Triple from a Finite
 Real Spectral Triple}
 Given a Hilbert bimodule $E$ for $(B, A)$ we construct a spectral triple
@@ -236,6 +337,34 @@ $E^\circ$
 with $b^\circ = J' b^* (J')^{-1}$, $b^* \in B$ action on $H'$.
 \newline
 
+
+\newpage
+\begin{MyExercise}
+    \textbf{ Let $\nabla : E \Rightarrow E \otimes _A \Omega _d^1 (A)$ be a right connection on $E$
+    consider the following anti-linear map:
+    \begin{align}
+        \tau : E \otimes_A \Omega _D^1 (A) &\rightarrow \Omega _D^1 (A) \otimes_A E^\circ\\
+                e \otimes \omega &\mapsto -\omega ^* \otimes \bar{e}
+    \end{align}
+    Show that the map $\bar{\nabla} : E^\circ \righarrow \Omega _D^1(A) \otimes E^\circ$
+    with $\bar{\nabla}(\bar{e}) = \tau \circ \nabla(e)$ is a left connection, that means
+    show that it satisfied the left Leibniz rule:
+    \begin{equation}
+        \bar{\nabla}(a\bar{e}) = [D, a] \otimes \bar{e} + a \bar{\nabla}(\bar{e})
+    \end{equation}
+    }\newline
+
+
+    Hagime:
+    \begin{align*}
+        &\text{For one:}\\
+        &\tau \circ \nabla(ae) = \bar{\nabla}(a\bar{e}) = \bar{\nabla}(a^* \bar{e})\\
+        &\text{For two:}\\
+         &\tau \circ \nabla(ae) = \tau(\nabla(e)a) + \tau \circ(e \otimes d(a))=\\
+         &=a^*\bar{\nabla}(\bar{e}) - d(a)^* \otimes \bar{e}. \\
+         &= a^*\bar{\nabla}(\bar{e}) + d(a^*) \otimes \bar{e}.
+    \end{align*}
+\end{MyExercise}
 Then the connections
 \begin{align}
     &\nabla: E \rightarrow E\otimes _A \Omega _D ^1(A) \\

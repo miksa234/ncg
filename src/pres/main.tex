@@ -16,6 +16,15 @@
 \usepackage[backend=biber, sorting=none]{biblatex}
 \addbibresource{uni.bib}
 
+\setbeamertemplate{endpage}{%
+    \begin{frame}
+        \centering
+        \Large \emph{Thank You!}
+    \end{frame}
+}
+
+\AtEndDocument{\usebeamertemplate{endpage}}
+
 % vertical separator macro
 \newcommand{\vsep}{
   \column{0.0\textwidth}
@@ -201,11 +210,11 @@
             \item We need \\
                 \begin{itemize}
                     \item[\bullet] $C^\infty(M)$ - Algebra
-                    \item[\bullet] $H^2(S)$ - Hilbertspace
+                    \item[\bullet] $L^2(S)$ - Hilbertspace
                     \item[\bullet] $D$ - Dirac Operator
                 \end{itemize}
         \end{itemize}
-        \begin{block}{Metric with $(C^\infty(M),\;\; H^2(S),\;\; D)$ on a Manifod}
+        \begin{block}{Metric with $(C^\infty(M),\;\; L^2(S),\;\; D)$ on a Manifod}
             \centering
             $d(x, y) = \sup_{f \in C^\infty(M) }\{ |f(x) - f(y)| :
             ||[D, f]|| \leq 1\}$
@@ -247,8 +256,8 @@
                 \begin{itemize}
                     \item[\bullet] going to noncommutative Manifolds
                     \item[\bullet] obtain Standard Model gauge fields (scalar Higgs filed)
-                    \item[\bullet] construct the Full Lagrangian
                     \item[\bullet] minimal coupling to gravity
+                    \item[\bullet] construct the Full Lagrangian
                 \end{itemize}
         \end{itemize}
     \end{frame}
