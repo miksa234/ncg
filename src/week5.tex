@@ -327,10 +327,11 @@ Then there is a map $d:A\rightarrow \Omega _D ^1 (A)$, $d = [D, \cdot]$.
 
     Begin
     \begin{align*}
-        a(a_k[D, b_k])b &= a_k'(Db_k - b_k D) b = \\
-           &= a_k'(Db_k b - b_k D b) = a_k(Db_k b - b_k Db -Db_k +Db_kb)=\\
-           &= a_k'([D, b_kb] - b_k D b + D b_k  + \cdots - \cdots) = \\
-           &=\sum_k a_k' [D, b_k']
+        a(a_k[D, b_k])b &= aa_k(Db_k - b_k D) b = \\
+           &= aa_k(Db_k b - b_k D b) = aa_k(Db_k b - b_k Db - b_kbD +b_kbD)=\\
+           &= aa_k(Db_kb-b_kbD + b_k b D - b_k D b) = \\
+           &= aa_k [D, b_kb] + aa_k b [D, b]=\\
+           &= \sum _k a_k' [D, b_k']
     \end{align*}
 
 \end{MyExercise}
