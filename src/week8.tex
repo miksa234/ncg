@@ -1,0 +1,573 @@
+\documentclass[a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{mathptmx}
+
+\usepackage{subcaption}
+\usepackage[shortlabels]{enumitem}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{bbm}
+\usepackage{graphicx}
+\usepackage[colorlinks=true,naturalnames=true,plainpages=false,pdfpagelabels=true]{hyperref}
+\usepackage[parfill]{parskip}
+
+\usepackage{tikz}
+\usetikzlibrary{patterns,decorations.pathmorphing,positioning}
+
+\usepackage[framemethod=TikZ]{mdframed}
+
+\tikzstyle{titlered} =
+    [draw=black, thick, fill=white,%
+        text=black, rectangle,
+        right, minimum height=.7cm]
+
+\newcounter{exercise}
+
+\renewcommand*\theexercise{Exercise~\arabic{exercise}}
+
+\makeatletter
+\mdfdefinestyle{exercisestyle}{%
+    outerlinewidth=1em,%
+    outerlinecolor=white,%
+    leftmargin=-1em,%
+    rightmargin=-1em,%
+    middlelinewidth=1.2pt,%
+    roundcorner=5pt,%
+    linecolor=black,%
+    backgroundcolor=blue!5,
+    innertopmargin=1.2\baselineskip,
+    skipabove={\dimexpr0.5\baselineskip+\topskip\relax},
+    skipbelow={-1em},
+    needspace=3\baselineskip,
+    frametitlefont=\sffamily\bfseries,
+    settings={\global\stepcounter{exercise}},
+    singleextra={%
+        \node[titlered,xshift=1cm] at (P-|O) %
+            {~\mdf@frametitlefont{\theexercise}~};},%
+    firstextra={%
+            \node[titlered,xshift=1cm] at (P-|O) %
+                    {~\mdf@frametitlefont{\theexercise}~};},
+}
+\makeatother
+
+\newenvironment{MyExercise}%
+{\begin{mdframed}[style=exercisestyle]}{\end{mdframed}}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+\theoremstyle{definition}
+\newtheorem{question}{Question}
+
+\theoremstyle{definition}
+\newtheorem{example}{Example}
+
+\theoremstyle{theorem}
+\newtheorem{theorem}{Theorem}
+
+\theoremstyle{theorem}
+\newtheorem{lemma}{Lemma}
+
+
+\theoremstyle{theorem}
+\newtheorem{proposition}{Proposition}
+
+\newtheorem*{idea}{Proof Idea}
+
+
+\title{Notes on \\ Noncommutative Geometry and Particle Physics}
+\author{Popovic Milutin}
+\date{Week 6: 19.03 - 26.03}
+
+\begin{document}
+
+    \maketitle
+    \tableofcontents
+    \section{Excurse}
+    \textbf{Manifold:} A topological space that is locally Euclidean.
+    \newline
+    \textbf{Riemannian Manifold:}A Manifold equipped with a riemannian
+    Metric, a
+    symmetric bilinear form on Vector Fields $\Gamma(TM)$
+    \begin{align}
+        &g: \Gamma(TM) \times \Gamma(TM) \rightarrow C(M) \\
+        \text{with}& \nonumber\\
+        &g(X, Y) \in \mathbb{R} \;\;\; \text{if $X, Y \in \mathbb{R}$}\\
+        &\text{$g$ is $C(M)$-bilinear } \forall f\in C(M):\;\; g(fX, Y) =
+        g(X,
+        fY) = fg(X,Y)\\
+        &g(X,X) \begin{cases}\geq 0  \;\;\; \forall X \\ = 0 \;\;\; \forall X
+            =0
+        \end{cases}
+    \end{align}
+    $g$ on $M$ gives rise to a distance function on $M$
+    \begin{align}
+        d_g(x, y) = \inf_\gamma \left\{\int_0^1(\dot{\gamma}(t),
+        \dot{\gamma}(t))dt;\;\; \gamma(0) = x, \gamma(1) = y \right\}
+    \end{align}
+    Riemannian Manifold is called spin$^c$ if there exists a vector bundle $S
+    \rightarrow M$ with an algebra bundle isomorphism
+    \begin{align}
+        \mathbb{C}\text{I}(TM) &\simeq \text{End}(S)\;\;\; &\text{($dim(M)$
+        even)}\\
+        \mathbb{C}\text{I}(TM)^\circ &\simeq \text{End}(S)\;\;\;
+        &\text{($dim(M)$ odd)}\\
+    \end{align}
+    $(M,S)$ is called the \textbf{spin$^c$ structure on $M$}.
+    \newline
+    $S$ is called the \textbf{spinor Bundle}.
+    \newline
+    $\Gamma(S)$ are the \textbf{spinors}.
+
+    Riemannian spin$^c$ Manifold is called spin if there exists an
+    anti-unitary
+    operator $J_M:\Gamma(S) \rightarrow \Gamma(S)$ such that:
+    \begin{enumerate}
+        \item $J_M$ commutes with the action of real-valued  continuous
+            functions
+            on $\Gamma(S)$.
+        \item $J_M$ commutes with $\text{Cliff}^-(M)$ (even case)\\
+        $J_M$ commutes with $\text{Cliff}^-(M)^\circ$ (odd case)
+    \end{enumerate}
+    $(S, J_M)$ is called the \textbf{spin Structure on $M$}
+    \newline
+    $J_M$ is called the \textbf{charge conjugation}.
+    \section{Noncommutative Geomtery of Electrodynamics}
+    \subsection{The Two-Point Space}
+    Consider a two point space $X := \{x, y\}$. This space=an be described
+    with
+    the following spectral triple
+    \begin{align}
+        F_x := (C(X) = \mathbb{C}^2, H_F, D_F; J_F, \gamma _f).
+    \end{align}
+
+    Notes on the spectral triple:
+    \begin{itemize}
+        \item Action of $C(X)$ on $H_F$ is faithful ($\dim (H_F) \geq 2$)\\
+            we choose $H_F = \mathbb{C}^2$
+        \item $\gamma_F$ is the $\mathbb{Z}_2$ grading, which allows us to
+            decompose $H_F = H_F^+ \oplus H_F^- = \mathbb{C} \oplus \mathbb{C}$\\
+            where $H_F^{\pm} = \{ \psi \in H_F |\;\; \gamma _F \psi = \pm \psi\}$
+            are the two eigenspaces
+        \item $D_F$ interchanges between $H_F^\pm$, $D_F =
+            \begin{pmatrix}0 & t \\ \bar{t} & 0\end{pmatrix}$ where $t \in
+                \mathbb{C}$
+    \end{itemize}
+
+    \begin{proposition}
+        $F_x$ can only have a real structure if $D_F = 0$ in that case we
+        have
+        $KO-dim = 0, 2, 6$
+    \end{proposition}
+    \begin{proof}
+        There are two diagram representations of $F_x$ at
+        $\underbrace{\mathbb{C} \oplus \mathbb{C}}_{C(X)}$
+        on $\underbrace{\mathbb{C} \oplus\mathbb{C}}_{H_F}$
+
+        \begin{figure}[h!] \centering
+        \begin{tikzpicture}[
+            dot/.style = {draw, circle, inner sep=0.06cm},
+            no/.style = {},
+            ]
+            \node[no](a) at (0,0) [label=left:$\textbf{1}^\circ$] {};
+            \node[no](b) at (0, -1) [label=left:$\textbf{1}^\circ$] {};
+            \node[no](c) at (1, 0.5) [label=above:$\textbf{1}$] {};
+            \node[no](d) at (2, 0.5) [label=above:$\textbf{1}$] {};
+            \node[dot](d0) at (2,0) [] {};
+            \node[dot](d0) at (1,-1) [] {};
+
+            \node[no](a1) at (6,0) [label=left:$\textbf{1}^\circ$] {};
+            \node[no](b2) at (6, -1) [label=left:$\textbf{1}^\circ$] {};
+            \node[no](c2) at (7, 0.5) [label=above:$\textbf{1}$] {};
+            \node[no](d2) at (8, 0.5) [label=above:$\textbf{1}$] {};
+            \node[dot](d0) at (7,0) [] {};
+            \node[dot](d0) at (8,-1) [] {};
+            \end{tikzpicture}
+        \end{figure}
+    If $F_x$ a real spectral triple then $D_F$ can only go vertically or
+    horizontally $\Rightarrow D_F = 0$.  Furthermore the diagram on the
+    left has KO-dimension 2 and 6, diagram on the right has KO-dimension
+    0 and 4. Yet KO-dimension 4 is not allowed because
+    $dim(H_F^\pm) = 1$ (see Lemma 3.8 Book), so $J_F^2 = -1$ is not
+    allowed.
+    \end{proof}
+    \subsection{The product Space}
+    Let $M$ be a 4-dim Riemannian spin Manifold, then we have the almost
+    commutative manifold $M\times F_x$
+    \begin{align}
+        M\times F_x = (C^\infty(M, \mathbb{C}^2, L^2(S)\otimes \mathbb{C}^2,
+        D_M\otimes 1 ; J_M\otimes J_F, \gamma_M \otimes \gamma_F)
+    \end{align}
+    ($J_M$ is missing need to choose)\newline
+    $C^\infty(M, \mathbb{C}^2) \simeq C^\infty(M) \oplus  C^\infty(M)$
+    (decomposition) and from Gelfand duality we we have
+    \begin{align}
+        N:= M\otimes X \simeq M\sqcup X
+    \end{align}
+    $H = L^2(S) \oplus L^2(S)$ (decomposition), such that for
+    $\underbrace{a,b
+    \in C^\infty(M)}_{(a, b) \in C^\infty(N)}$
+    and $\underbrace{\psi, \phi \in L^2(S)}_{(\psi, \phi) \in H}$ we have
+    \begin{align}
+        (a, b)(\psi, \phi) = (a\psi, b\phi)
+    \end{align}
+    We can consider a distance formula on $M\times F_x$ by
+    \begin{align}
+        d_{D_F}(x,y) = \sup\left\{  |a(x) - a(y)|:a\in A_F, ||[D_F, a]|| \leq
+        1 \right\}
+    \end{align}
+    Now lets calculate the distance between two points on the two point space
+    $X=
+    \{x, y\}$, between $x$ and $y$. Let $a \in \mathbb{C}^2 = C(X)$, $a$ is
+    specified with two complex numbers $a(x)$ and $a(y)$
+    \begin{align}
+        &||[D_F , a]|| = ||(a(y) - a(x))\begin{pmatrix}0 &t\\\bar{t} &0
+        \end{pmatrix}|| \leq 1\\
+        &\Rightarrow |a(y) - a(x)|\leq \frac{1}{|t|}
+    \end{align}
+    Therefore the distance between two points $x$ and $y$ is
+    \begin{align}
+        d_{D_F} (x,y) = \frac{1}{|t|}
+    \end{align}
+    Note that if there exists $J_M$ (real structure) $\Rightarrow t=0$ then
+    $d_{D_F}(x,y) \rightarrow \infty$!
+    \newline
+
+    Now let $p \in M$, then take two points on $N=M\times X$, $(p, x)$ and
+    $(p,y)$ and $a \in C^\infty(N)$ is determined by $a_x(p):=a(p, x)$ and
+    $a_y(p):=a(p, y)$. The distance between these two points is then
+    \begin{align}
+        d_{D_F\otimes 1}(n_1, n_2) =  \sup \left\{ |a(n_1) - a(n_2)|: a\in
+        A, ||[D\otimes 1, a]||\right\}
+    \end{align}
+    \textbf{Remark}: If $n_1 = (p,x)$ and $n_2 = (q, x)$ for $p,q \in M$ then
+    \begin{align}
+        d_{D_M \otimes 1} (n_1, n_2) = |a_x(p) - a_x(q)| \;\;\; a_x\in
+        C^\infty(M) \;\; \text{with} \;\; ||[D\otimes 1, a_x]|| \leq 1
+    \end{align}
+    The distance turns to the geodestic distance formula
+    \begin{align}
+        d_{D_M\otimes1}(n_1, n_2) = d_g(p, q)
+    \end{align}
+
+    However if $n_1 = (p, x)$ and $n_2 = (q, y)$ then the two conditions are
+    $||[D_M, a_x]|| \leq 1$ and $||[D_M, a_y|| \leq 1$. They have no
+    restriction which results in the distance being infinite! And $N =
+    M\times X$ is given by two disjoint copies of M  which are separated by
+    infinite distance
+
+    \textbf{Note}: distance is only finite if $[D_F, a] \neq 1$. The
+    commutator
+    generates a scalar field say $\phi$ and the finiteness of the distance is
+    related to the existence of scalar fields.
+    \subsection{$U(1)$ Gauge Group}
+    Here we determine the Gauge theory corresponding to the almost
+    commutative
+    Manifold $M\times F_x$.
+
+    \textbf{Gauge Group of a Spectral Triple}:
+    \begin{align}
+        \mathfrak{B}(A, H; J) := \{ U = uJuJ^{-1} | u\in U(A)\}
+    \end{align}
+    \begin{definition}
+        A *-automorphism of a *-algebra $A$ is a linear invertible
+        map
+        \begin{align}
+            &\alpha:A \rightarrow A\;\;\; \text{with}\\
+            \nonumber\\
+            &\alpha(ab) = \alpha(a)\alpha(b)\\
+            &\alpha(a)^* = \alpha(a^*)
+        \end{align}
+        The \textbf{Group of automorphisms of the *-Algebra $A$} is
+        $(A)$.\newline
+        The automorphism $\alpha$ is called \textbf{inner} if
+        \begin{align}
+            \alpha(a) = u a u^* \;\;\; \text{for} \;\; U(A)
+        \end{align}
+        where $U(\mathfrak{A})$ is
+        \begin{align}
+            U(A) = \{ u\in A|\;\; uu^* = u^*u=1\} \;\;\;
+            \text{(unitary)}
+        \end{align}
+    \end{definition}
+    The Gauge group is given by the quotient $U(A)/U(A_J)$.
+    We want a nontrivial Gauge group so we need to choose $U(A_J) \neq
+    U(A)$ which is the same as $U((A_F)_{J_F}) \neq
+    U(A_F)$.
+    We consider $F_x$ to be
+    \begin{align}
+        F_x := \left(\mathbb{C}^2,\mathbb{C}^2, D_F =\begin{pmatrix}
+            0&0\\0&0\end{pmatrix}; J_f =\begin{pmatrix}
+        0&C\\C&0\end{pmatrix},
+                \gamma_F = \begin{pmatrix}1&0\\0&-1\end{pmatrix}\right).
+    \end{align}
+    Here $C$ is the complex conjugation, and $F_X$ is a real even finite
+        spectral triple (space) with $KO-dim=6$
+
+    \begin{proposition}
+        The Gauge group $\mathfrak{B}(F)$ of the two point space is given by
+        $U(1)$.
+    \end{proposition}
+    \begin{proof}
+        Note that $U(A_F) = U(1) \times U(1)$. We need to show that
+        $U(\mathcal{A}_F)
+        \cap U(A_F)_{J_F}) \simeq U(1)$, such that $\mathfrak{B}(F)
+        \simeq U(1)$.\newline
+
+        So for $a \in \mathbb{C}^2$ to be in $(A_F)_{J_F}$ it has
+        to satisfy $J_F a^* J_F = a$.
+        \begin{align}
+            J_F a^* J^{-1} =
+            \begin{pmatrix}0&C\\C&0\end{pmatrix}
+                \begin{pmatrix}\bar{a}_1&0\\0&\bar{a}_2\end{pmatrix}
+            \begin{pmatrix}0&C\\C&0\end{pmatrix}
+                =
+                \begin{pmatrix}a_2&0\\0&a_1\end{pmatrix}
+        \end{align}
+        Which is only the case if $a_1 = a_2$. So we have
+        $(A_F)_{J_F} \simeq \mathbb{C}$, whose unitary elements
+        from $U(1)$ are contained in the diagonal subgroup of
+        $U(\mathcal{A}_F)$.
+    \end{proof}
+
+    Now we need to find the exact from of the field $B_\mu$ to calculate the
+    spectral action of a spectral triple. Since $(A_F)_{J_F} \simeq
+    \mathbb{C}$ we find that $\mathfrak{h}(F) = \mathfrak{u}((A_F)_{J_F})
+    \simeq i\mathbb{R}$.\newline
+
+    An arbitrary hermitian field $A_\mu = -ia\partial _\mu b$  is given by
+    two
+    $U(1)$ Gauge fields $X_\mu^1, X_\mu^2 \in C^\infty(M, \mathbb{R})$.
+    However $A_\mu$ appears in combination $A_\mu - J_F A_\mu J_F^{-1}$:
+    \begin{align}
+        B_\mu = A_\mu - J_F A_\mu J_F^{-1} =
+        \begin{pmatrix}X_\mu^1&0\\0&X_\mu^2 \end{pmatrix}
+            -
+        \begin{pmatrix}X_\mu^2&0\\0&X_\mu^1 \end{pmatrix}
+            =:
+        \begin{pmatrix}Y_\mu&0\\0&-Y_\mu \end{pmatrix}=
+            Y_\mu \otimes \gamma _F
+    \end{align}
+    where $Y_\mu$ the $U(1)$ Gauge field is defined as
+    \begin{align}
+        Y_\mu := X_\mu^1 - X_\mu^2 \in C^\infty(M, \mathbb{R}) = C^\infty(M,
+        i\ u(1)).
+    \end{align}
+
+    \begin{proposition}
+        The inner fluctuations of the almost-commutative manifold $M\times
+        F_x$ described above are parametrized by a $U(1)$-gauge field $Y_\mu$
+        as
+        \begin{align}
+            D \mapsto D' = D + \gamma ^\mu Y_\mu \otimes \gamma_F
+        \end{align}
+        The action of the gauge group $\mathfrak{B}(M\times F_X) \simeq
+        C^\infty (M, U(1))$ on $D'$ is implemented by
+        \begin{align}
+            Y_\mu \mapsto Y_\mu - i\ u\partial_\mu u^*; \;\;\;\;\; (u\in
+            \mathfrak{B}(M\times F_X)).
+        \end{align}
+    \end{proposition}
+
+\section{Electrodynamics}
+Now we use the almost commutative Manifold and the abelian gauge group
+$U(1)$ to describe Electrodynamics. We arrive at a unified description of
+gravity and electrodynamics although in the classical level.
+\newline
+
+The almost commutative Manifold $M\times F_X$ describes a local gauge group
+$U(1)$. The inner fluctuations of the Dirac operator describe $Y_\mu$ the
+gauge field of $U(1)$. There arrise two Problems:
+\newline
+(1): With $F_X$, $D_F$ must vanish, however this implies that the electrons
+are massless (this we do not want)
+\newline
+
+(2): The Euclidean action for a free Dirac field is
+\begin{align}
+    S = - \int i \bar{\psi}(\gamma ^\mu\partial _\mu - m) \psi d^4x,
+\end{align}
+$\psi,\ \bar{\psi}$ must be considered as independent variables, which means
+$S_F$ need two independent Dirac Spinors. We write $\{e, \bar{e}\}$ for the
+ONB of $H_F$, where $\{e\}$ is the ONB of $H_F^+$ and $\{\bar{e}\}$ the ONB
+of $H_F^-$ with the real structure this gives us the following relations
+\begin{align}
+    J_F e &= \bar{e} \;\;\;\;\;\; J_F \bar{e} = e \\
+    \gamma_F e &= e  \;\;\;\;\;\;   \gamma_F \bar{e} = \bar{e}.
+\end{align}
+The total Hilbertspace is $H = L^2(S) \otimes H_F$, with $\gamma _F$ we can
+decompose $L^2(S) = L^2(S)^+ \oplus L^2(S)^-$, so with $\gamma = \gamma _M
+\otimes \gamma _F$ we can obtain the positive eigenspace $H^+$
+\begin{align}
+    H^+ = L^2(S)^+ \otimes H_F^+ \oplus L^(S)^- \otimes H_F^-.
+\end{align}
+For a $\xi \i H^+$ we can write
+\begin{align}
+    \xi = \psi _L \otimes e + \psi _R \otimes \bar{e}
+\end{align}
+where $\psi _L \in L^2(S)^+$ and $\psi _R \in L^2(S)^-$ are the two Wheyl
+spinors. We denote that $\xi$ is only determined by one Dirac spinor $\psi :=
+\psi_L + \psi _R$, \textbf{but we require two independent spinors}. This is
+too much restriction for $F_X$.
+\subsection{The Finite Space}
+Here we solve the two problems by enlarging(doubling) the Hilbertspace. This
+is done by introducing multiplicities in Krajewski Diagrams which will also
+allow us to choose a nonzero Dirac operator which will connect the two
+vertices (next chapter).
+\newline
+
+We start of with the same algebra $C^\infty(M, \mathbb{C}^2)$, corresponding
+to space $N= M\times X \simeq M\sqcup M$.
+\newline
+
+The Hilbertspace will describe four particles,
+\begin{itemize}
+    \item left handed electrons
+    \item right handed positrons
+\end{itemize}
+Thus we have $\{ \underbrace{e_R, e_L}_{\text{left-handed}},
+\underbrace{\bar{e}_R, \bar{e}_L}_{\text{right-handed}}\}$ the ONB for $H_F
+\mathbb{C}^4$.
+\newline
+Then with $J_F$ we interchange particles with antiparticles we have the
+following properties
+\begin{align}
+    &J_F e_R = \bar{e}_R \;\;\;\;\; &J_F e_L = \bar{e_L} \\
+    &\gamma _F e_R = -e_R \;\;\;\;\; &\gamma_F e_L = e_L \\
+    \text{and}& \nonumber \\
+    &J_F^2 = 1 \;\;\;\;\; & J_F \gamma_F  = - \gamma_F J_F
+\end{align}
+This corresponds to KO-dim$= 6$. Then $\gamma_F$ allows us to can decompose
+$H$
+\begin{align}
+    H_F = \underbrace{H_F^+}_{\text{ONB } \{e_L, \bar{e}_L\}}
+    \oplus \underbrace{H_F^-}_{\text{ONB } \{e_R, \bar{e}_R\}}.
+\end{align}
+Alternatively we can decompose $H$ into the eigenspace of particles and their
+antiparticles (electrons and positrons) which we will use going further.
+\begin{align}
+    H_F = \underbrace{H_{e}}_{\text{ONB } \{e_L, e_R\}} \oplus
+    \underbrace{H_{\bar{e}}}_{\text{ONB } \{\bar{e}_L, \bar{e}_R\}}
+\end{align}
+Now the action of $a \in A = \mathbb{C}^2$ on $H$ with respect to the ONB
+$\{e_L, e_R, \bar{e}_L, \bar{e}_R\}$ is represented by
+\begin{align}
+    a =
+    \begin{pmatrix}a_1 & a_2 \end{pmatrix} \mapsto
+        \begin{pmatrix}
+            a_1 &0 &0 &0\\
+             0&a_1 &0 &0\\
+            0 &0 &a_2 &0\\
+            0 &0 &0 &a_2\\
+        \end{pmatrix}
+\end{align}
+Do note that this action commutes wit the grading and that
+$[a, b^\circ] = 0$ with $b:= J_F b^*J_F$  because both the left and the right
+action is given by diagonal matrices.
+\begin{proposition}
+    The data
+    \begin{align}
+        \left( \mathbb{C}^2, \mathbb{C}^2, D_F=0; J_F =
+        \begin{pmatrix}
+            0 & C \\ C &0
+        \end{pmatrix},
+        \gamma _F =
+        \begin{pmatrix}
+            1 & 0 \\ 0 &-1
+        \end{pmatrix}
+        \right)
+    \end{align}
+    defines a real even spectral triple of KO-dimension 6.
+\end{proposition}
+This spectral triple can be represented in the following Krajewski diagram,
+with two nodes of multiplicity two
+    \begin{figure}[h!] \centering
+    \begin{tikzpicture}[
+        dot/.style = {draw, circle, inner sep=0.06cm},
+        bigdot/.style = {draw, circle, inner sep=0.09cm},
+        no/.style = {},
+        ]
+        \node[no](a) at (0,0) [label=left:$\textbf{1}^\circ$] {};
+        \node[no](b) at (0, -1) [label=left:$\textbf{1}^\circ$] {};
+        \node[no](c) at (0.5, 0.5) [label=above:$\textbf{1}$] {};
+        \node[no](d) at (1.5, 0.5) [label=above:$\textbf{1}$] {};
+        \node[dot](d0) at (1.5,0) [] {};
+        \node[dot](d0) at (0.5,-1) [] {};
+        \node[bigdot](d0) at (1.5,0) [] {};
+        \node[bigdot](d0) at (0.5,-1) [] {};
+        \end{tikzpicture}
+    \end{figure}
+\subsection{A noncommutative Finite Dirac Operator}
+Add a non-zero Dirac Operator to $F_{ED}$. From the Krajewski Diagram, we see
+that edges only exist between the multiple vertices. So we construct a Dirac
+operator mapping between the two vertices.
+\begin{align}
+    D_F =
+    \begin{pmatrix}
+    0 & d & 0 & 0 \\
+    \bar{d} & 0 & 0 & 0 \\
+    0 & 0 & 0 & \bar{d} \\
+    0 & 0 & d & 0
+    \end{pmatrix}
+\end{align}
+We can now consider the finite space $F_{ED}$.
+\begin{align}
+    F_{ED} := (\mathbb{C}^2, \mathbb{C}^4, D_F; J_F, \gamma_F)
+\end{align}
+where $J_F$ and $\gamma_F$ like before, $D_F$ like above.
+\subsection{The almost-commutative Manifold}
+The almost commutative manifold $M\times F_{ED}$ has KO-dim$=2$, it is the
+following spectral triple
+\begin{align}
+    M\times F_{ED} := \left(C^\infty(M,\mathbb{C}^2, L^2(S)\otimes
+    \mathbb{C}^4,
+    D_M\otimes 1 +\gamma _M \otimes D_F; J_M\otimes J_F, \gamma_M\otimes
+    \gamma _F\right)
+\end{align}
+
+The algebra decomposition is like before
+\begin{align}
+    C^\infty(M, \mathbb{C}^2) = C^\infty (M) \oplus C^\infty (M)
+\end{align}
+
+The Hilbertspace decomposition is
+\begin{align}
+    H = (L^2(S) \otimes H_e ) \oplus (L^2(S) \otimes H_{\bar{e}}).
+\end{align}
+Here we have the one component of the algebra acting on $L^2(S) \otimes H_e$,
+and the other one acting on $L^2(S) \otimes H_{\bar{e}}$
+\newline
+
+The derivation of the gauge theory is the same for $F_{ED}$ as for $F_X$, we
+have $\mathfrak{B}(F) \simeq U(1)$ and for $B_\mu = A_\mu - J_F A_\mu
+J_F^{-1}$
+\begin{align}
+    B_\mu =
+    \begin{pmatrix}
+        Y_\mu & 0 & 0 & 0 \\
+        0 & Y_\mu& 0 & 0 \\
+        0 & 0 & Y_\mu& 0 \\
+        0 & 0 & 0 & Y_\mu
+    \end{pmatrix} \;\;\;\;\;\ \text{for} \;\;\ Y_\mu (x) \in \mathbb{R}.
+\end{align}
+We have one single $U(1)$ gauge field $Y_\mu$, carrying the action of the
+gauge group
+\begin{align}
+   \text{$\mathfrak{B}$}(M\times F_{ED}) \simeq C^\infty(M, U(1))
+\end{align}
+
+Our space $N = M\times X \simeq M\sqcup M$ consists of two compies of $M$.
+If $D_F = 0$ we have infinite distance of the two copies. Now we have $D_F$
+nonzero but the $[D_F, a] = 0$ $\forall a \in A$ which still yields infinite
+distance.
+\begin{question}
+    What does this imply (physically, mathematically)? Why can we continue
+    even thought we have infinite distance between the same manifold? What do
+    we get if we fix this?
+\end{question}
+
+\end{document}
