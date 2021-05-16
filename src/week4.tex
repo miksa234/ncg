@@ -62,21 +62,21 @@ Advantages of the characters are:
     \item characters are different for inequivalent irreducible representation,
         say $D_a$ and $D_b$ then there is a orthogonality relation up to $N$
         (number of elements in the group):
-        \begin{align*}
+        \begin{align}
             \frac{1}{N} \sum _{g\in G} \chi _{D_a}(g)^*\chi_{D_b}(g) = \delta _{ab}
-        \end{align*}
+        \end{align}
 \end{itemize}
 Furthermore characters are a \textit{complete} basis for functions that are constant on the conjugacy
     class. Suppose $F(g_1)$ is such a function. We can expand this function in terms of matrix elements
     of irreducible representations.
-    \begin{align*}
+    \begin{align}
         F(g_1) &= \sum_{a,j,l}\frac{1}{n_a} c_{jk}^{a} (D_a(g_1))_{jk}  \\
                 &= \sum_{a,j,l}\frac{1}{n_a} c_{jk}^{a} (D_a(g^{-1}g_1g))_{jk}  \\
                 &= \sum_{a,j,k,g,l,m}\frac{1}{n_a} c_{jk}^{a} (D_a(g^{-1}))_{jl}(D_a(g_1))_{lm}(D_a(g))_{mk} \\
                 &= \sum_{a,j,l}\frac{1}{n_a} c_{jk}^{a} (D_a(g_1))_{lm} \delta _{jk} \delta _{lm} \\
                 &= \sum_{a,j,l}\frac{1}{n_a} c_{jj}^{a} (D_a(g_1))_{ll}  \\
                 &= \sum_{a,j,l}\frac{1}{n_a} c_{jj}^{a} \chi _a (g_1)
-    \end{align*}
+    \end{align}
 where $n_a$ denotes the dimension of the representation $D_a$.
 \newline
 
@@ -114,12 +114,12 @@ First we will see what we can find just by looking at the symmetries of the syst
 The 6 degrees of freedom means that the system can be described with a 6 dimensional space.
 This is a tensor product of a 2 dimensional space of $x$ and $y$ coordinates and a 3 dimensional
 space of the masses (blocks).
-\begin{align*}
+\begin{align}
     (x_1, y_1, x_2, y_2,x_3, y_3)
-\end{align*}
+\end{align}
 The 3 dimensional space has $S_3$ symmetry (Group of all permutations of a three-element set),
 it can be represented with $D_3$ the dihedral group.
-\begin{align*}
+\begin{align}
     D_3(e) =
     \begin{pmatrix}
         1 & 0 & 0 \\
@@ -154,9 +154,9 @@ it can be represented with $D_3$ the dihedral group.
         0 & 1 & 0 \\
         1 & 0 & 0 \\
     \end{pmatrix} \;\;\;\;
-\end{align*}
+\end{align}
 The 2 dimensional space also transforms under $S_3$, under a representation $D_2$
-\begin{align*}
+\begin{align}
     D_2(e) =
     \begin{pmatrix}
         1 & 0 \\
@@ -185,20 +185,20 @@ The 2 dimensional space also transforms under $S_3$, under a representation $D_2
         \frac{1}{2} & -\frac{\sqrt{3}}{2} \\
         -\frac{\sqrt{3}}{2} & -\frac{1}{2} \\
     \end{pmatrix} \;\;\;\;
-\end{align*}
+\end{align}
 Then $D_6$ is the tensor product of $D_3$ and $D_2$:
 \begin{equation}
     (D_6(g))_{i\mu k\nu}=(D_3(g))_{ij}(D_2(g)_{\mu \nu}
 \end{equation}
 For $a_2$ we would than have block matrices instead of $1$ in $D_3$:
-\begin{align*}
+\begin{align}
     D_6(a_2) =
     \begin{pmatrix}
         0 & D_2(a_2) & 0 \\
         0 & 0 & D_2(a_2) \\
         D_2(a_2) & 0 & 0 \\
     \end{pmatrix}
-\end{align*}
+\end{align}
 All other elements follow accordingly.
 
 Now $S_3$ has two 1 dimensional irreducible representations which are trivial because they map to the
@@ -285,7 +285,7 @@ And for $D_2$ we get:
 \end{align}
 And the nontrivial modes provided by $P_2$ can be calculated by including translation in $x$ and $y$
 direction $T_x$ and $T_y$:
-\begin{align*}
+\begin{align}
     T_x = \frac{1}{3}
 \begin{pmatrix}
     1 & 0 & 1 & 0 & 1 & 0 \\
@@ -305,7 +305,7 @@ direction $T_x$ and $T_y$:
     0 & 0 & 0 & 0 & 0 & 0 \\
     0 & 1 & 0 & 1 & 0 & 1 \\
 \end{pmatrix}
-\end{align*}
+\end{align}
 To see the modes we move mass $3$ in the $y$ direction which is the vector $\begin{pmatrix}0&0&0&0&0&1\end{pmatrix}$ and its mode can be get by appying it to $P_2 -T_x -T_y$:
 \begin{equation}
     \begin{pmatrix}
@@ -401,21 +401,21 @@ mode from Eq. \ref{eig: 3}.
 The physical approach would be to construct the lagrangian $\mathfrak{L} = T - V$. Were $T$ is
 simply the kinetic energy of the system in $\eta = (x_1, y_1, x_2, y_2, x_3, y_3)$ coordinates and
 for simplicity we set all masses to $m$.
-\begin{align*}
+\begin{align}
     T = \frac{m}{2} \dot{\eta} _i \dot{\eta} ^i \;\;\;\; \text{for\footnote{Einstein Summation Convention}}
     \;\; i = 1,\dots,6
-\end{align*}
+\end{align}
 For $V$ the potential energy we have three springs and \textit{small oscillations around equilibrium},
 two of them are the offset of the one to the angle
 of $\theta = \pm \frac{\pi}{3}$, which is $\begin{pmatrix} cos(\theta) \\ sin(\theta)\end{pmatrix} =
     \begin{pmatrix} \frac{1}{2} \\ \pm \frac{\sqrt{3}}{2}\end{pmatrix}$. Then $V$ is:
-\begin{align*}
+\begin{align}
     V &= \frac{k}{2} U^i_{\; j} \eta _i \eta ^j \\
      &= \frac{k}{2} \bigg((x_1 - x_2)^2 +(\frac{1}{2}(x_2-x_3 + \frac{\sqrt{3}}{2} (y_2 - y_3))^2
     +(\frac{1}{2}(x_1-x_3) + \frac{\sqrt{3}}{2}(y_1 - y_3))^2 \bigg)
-\end{align*}
+\end{align}
 Where $U$ is:
-\begin{align*}
+\begin{align}
     U = \frac{1}{4}
     \begin{pmatrix}
         5 & \sqrt{3} & -4 & 0 & -1 & -\sqrt{3} \\
@@ -425,7 +425,7 @@ Where $U$ is:
         -1 & -\sqrt{3} & -1 & \sqrt{3} & 2 & 0 \\
         -\sqrt{3} & -3 & \sqrt{3} & -3 & 0 & 6
     \end{pmatrix}
-\end{align*}
+\end{align}
 
 The Euler-Lagrange equations then give us :
 \begin{equation}

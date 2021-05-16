@@ -179,9 +179,9 @@ vector space with the opposite product
     is given by right matrix multiplication.
 }\newline
 
-    \begin{align*}
+    \begin{align}
         a^\circ \xi = J a^* J^{-1}\xi = Ja^* \xi^* = J\xi a=\xi^* a
-    \end{align*}
+    \end{align}
 \end{MyExercise}
 \begin{MyExercise}
     \textbf{
@@ -230,13 +230,13 @@ vector space with the opposite product
         for $S^{-1}$ if not then $\xi$ wouldn't exist. $S^{-1}(A*\xi) = S^{-1}(H) = H$.
     \item Since $S$ is bijective then $\Delta ^{1/2}$ and $J$ need to be bijective.\\
         Now let $\xi _1 , \xi _2 \in H$.\\
-        \begin{align*}
+        \begin{align}
             <J \xi _1 , J \xi _2 > &= < J^*J\xi_1 , \xi_2>^* =\\
             &= <(\Delta ^{1/2})^* S^* S \Delta ^{1/2} \xi_1, \xi_2>^* = \\
             &= <(SS^*)^{1/2}S^*S(SS^*) \xi_1, \xi_2>^* =\\
             &= <(SS^*SS^*)^{1/2} \xi_1, \xi_2>^* = \\
             &= <\xi _1, \xi_2>^* = <\xi_2 , \xi_1>.
-        \end{align*}
+        \end{align}
     \end{enumerate}
 \end{MyExercise}
 \subsection{Morphisms Between Finite Real Spectral Triples}
@@ -288,26 +288,26 @@ and linearity in $A$:
     Straightforward show properties of the Hilbert bimodule and its $B^{\circ}$
     valued inner product. Let $\bar{e}_1, \bar{e}_2 \in E^{\circ}$ and $a^\circ \in A,
     b^\circ \in B$. \\
-    \begin{align*}
+    \begin{align}
         <\bar{e}_1, a^\circ \bar{e}_2> &= <\bar{e}_1, Ja^*J^{-1} \bar{e}_2>=\\
         &= <\bar{e}_1 , J a^* e_2> = \\
         &= <J^{-1} e_1, a^* e_2> =\\
         & = <a^* e_1, e_2>= <J^{-1}(a^\circ)^* J e_1, e_2> = \\
         & = <J^{-1} (a^\circ)^* \bar{e}_1, e_2> =\\
         & = <(a^\circ)^* \bar{e}_1 , \bar{e}_2>.
-    \end{align*}
+    \end{align}
 
     Next $<\bar{e}_1, \bar{e}_2 b^\circ> = <\bar{e}_1, \bar{e_2}> b^\circ$.
-    \begin{align*}
+    \begin{align}
         <\bar{e}_1, \bar{e}_2 b^\circ>  &= <\bar{e}_1, \bar{e}_2 Jb^*J^{-1}> =\\
         &= <\bar{e}_1, \bar{e_2}> Jb^*J^{-1} = \\
         &= <\bar{e}_1, \bar{e}_2> b^\circ.
-    \end{align*}
+    \end{align}
     Then:
-    \begin{align*}
+    \begin{align}
         (<\bar{e}_1, \bar{e}_2)>_{E^\circ})^* &= (<e_2, e_1>_E)^* =\\
         &= <e_1, e_2>_E^* = <\bar{e}_2, \bar{e}_2>_{E^\circ}
-    \end{align*}
+    \end{align}
     And of course $<\bar{e}, \bar{e}> = <e, e> \geq 0$
 \end{MyExercise}
 
@@ -356,14 +356,14 @@ with $b^\circ = J' b^* (J')^{-1}$, $b^* \in B$ action on $H'$.
 
 
     Hagime:
-    \begin{align*}
+    \begin{align}
         &\text{For one:}\\
         &\tau \circ \nabla(ae) = \bar{\nabla}(a\bar{e}) = \bar{\nabla}(a^* \bar{e})\\
         &\text{For two:}\\
          &\tau \circ \nabla(ae) = \tau(\nabla(e)a) + \tau \circ(e \otimes d(a))=\\
          &=a^*\bar{\nabla}(\bar{e}) - d(a)^* \otimes \bar{e}. \\
          &= a^*\bar{\nabla}(\bar{e}) + d(a^*) \otimes \bar{e}.
-    \end{align*}
+    \end{align}
 \end{MyExercise}
 Then the connections
 \begin{align}
@@ -400,18 +400,18 @@ Finally for the grading
 \begin{proof}
     The only thing left is to check if the $KO$-dimension is preserved,
     for this we check if the $\epsilon$'s are the same.
-    \begin{align*}
+    \begin{align}
         &(J')^2 = 1 \otimes J^2 \otimes 1 = \epsilon\\
         &J' \gamma '= \epsilon ''\gamma'J'
-    \end{align*}
+    \end{align}
     and for $\epsilon '$
-    \begin{align*}
+    \begin{align}
         J'D'(e_1 \otimes \xi \otimes \bar{e}_2)&=J'((\nabla e_1) \xi \otimes
         \bar{e_2} + e_1 \otimes D\xi \otimes \bar{e}_2 + e_1 \otimes \xi (\tau
         \nabla e_2))\\
         &= \epsilon' D'(e_2 \otimes J\xi \otimes \bar{e}_2)\\
         &= \epsilon' D'J'(e_1 \otimes \xi \bar{e}_2)
-    \end{align*}
+    \end{align}
 \end{proof}
 
 \end{document}

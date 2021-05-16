@@ -89,10 +89,10 @@
 \begin{definition}
     Let $A$ be an algebra, $E$ be a \textit{right} $A$-module and $F$ be a \textit{left} $A$-module.
     The \textit{balanced tensor product} of $E$ and $F$ forms a $A$-bimodule.
-    \begin{align*}
+    \begin{align}
         E \otimes _A F := E \otimes F / \left\{\sum _i e_i a_i \otimes f_i - e_i \otimes a_i f_i : \;\;\;
                                          a_i \in A,\ e_i \in E,\ f_i \in F \right\}
-    \end{align*}
+    \end{align}
 \end{definition}
 Note $/$ denotes the quotient space. So $\otimes _A$ takes two left/right modules and makes a
 bimodule with the help the tensor product of the two modules and the quotient space that takes
@@ -105,12 +105,12 @@ are duplicates.
         \item an $B$-valued \textit{inner product} $\langle \cdot,\cdot\rangle_E: E\times E \rightarrow B$
     \end{itemize}
 $\langle \cdot,\cdot\rangle_E$ needs to satisfy the following for $e, e_1, e_2 \in E,\ a \in A$ and $b \in B$.
-\begin{align*}
+\begin{align}
     \langle e_1, a\cdot e_2\rangle_E &= \langle a^*\cdot e_1, e_2\rangle_E \;\;\;\; & \text{sesquilinear in $A$}\\
     \langle e_1, e_2 \cdot b\rangle_E &= \langle e_1, e_2\rangle_E b \;\;\;\; & \text{scalar in $B$} \\
     \langle e_1, e_2\rangle_E &= \langle e_2,e_1\rangle^*_E \;\;\;\; & \text{hermitian} \\
     \langle e, e\rangle_E &\ge 0 \;\;\;\; & \text{equality holds iff $e=0$}
-\end{align*}
+\end{align}
 
 \end{definition}
 
@@ -140,9 +140,9 @@ We denote $KK_f(A,B)$ the set of all \textit{Hilbert bimodules} of $(A,B)$.
     \textbf{
     Show that the $A-A$ bimodule given by $A$ is in $KK_f(A,A)$ by taking the following inner product
     $\langle \cdot,\cdot\rangle_A:A \times A \rightarrow A$:
-    \begin{align*}
+    \begin{align}
         \langle a, a\rangle_A = a^*a' \;\;\;\; a,a'\in A
-    \end{align*}
+    \end{align}
     \label{exercise: inner-product}
 }\newline
 
@@ -160,9 +160,9 @@ We denote $KK_f(A,B)$ the set of all \textit{Hilbert bimodules} of $(A,B)$.
     From it we can construct a Hilbert bimodule $E_{\phi} \in KK_f(A, B)$ in the following way.
     We let $E_{\phi}$ be $B$ in the vector space sense and an inner product from the above
     Exercise \ref{exercise: inner-product}, with $A$ acting on the left with $\phi$.
-    \begin{align*}
+    \begin{align}
         a\cdot b = \phi(a)b \;\;\;\; a\in A, b\in E_{\phi}
-    \end{align*}
+    \end{align}
 \end{example}
 
 
@@ -171,13 +171,13 @@ We denote $KK_f(A,B)$ the set of all \textit{Hilbert bimodules} of $(A,B)$.
 \begin{definition}
     Let $E \in KK_f(A, B)$ and $F \in KK_F(B, D)$ the \textit{Kasparov product} is defined as
     with the balanced tensor product
-    \begin{align*}
+    \begin{align}
         F \circ E := E \otimes _B F
-    \end{align*}
+    \end{align}
     Such that $F\circ E \in KK_f(A,D)$ with a $D$-valued inner product.
-    \begin{align*}
+    \begin{align}
         \langle e_1 \otimes f_1, e_2 \otimes f_2\rangle _{E\otimes _B F} = \langle f_1,\langle e_1, e_2\rangle _E f_2\rangle _F
-    \end{align*}
+    \end{align}
 \end{definition}
 
 \begin{question}
@@ -198,10 +198,10 @@ We denote $KK_f(A,B)$ the set of all \textit{Hilbert bimodules} of $(A,B)$.
         \item $E_{\text{id}_A} \simeq A \in KK_f(A,A)$
         \item for $*$-algebra homomorphism $\phi: A \rightarrow B$ and $\psi: B \rightarrow C$ we have
             an isomorphism
-            \begin{align*}
+            \begin{align}
                 E_{\psi} \circ E_{\phi}\ \equiv\ E_{\phi} \otimes _B E_{\psi}\ \simeq\
                 E_{\psi \circ \phi} \in KK_f(A,C)
-            \end{align*}
+            \end{align}
     \end{enumerate}
 }
     \begin{enumerate}
@@ -242,9 +242,9 @@ We denote $KK_f(A,B)$ the set of all \textit{Hilbert bimodules} of $(A,B)$.
 \begin{definition}
     Let $A$, $B$ be \textit{matrix algebras}. They are called \textit{Morita equivalent} if there
     exists an $E \in KK_f(A, B)$ and an $F \in KK_f(B, A)$ such that:
-    \begin{align*}
+    \begin{align}
         E \otimes _B F \simeq A \;\;\; \text{and} \;\;\; F \otimes _A E \simeq B
-    \end{align*}
+    \end{align}
     Where $\simeq$ denotes the isomorphism between Hilbert bimodules, note that $A$ or $B$ is a bimodule by
     itself.
 \end{definition}
@@ -270,9 +270,9 @@ We denote $KK_f(A,B)$ the set of all \textit{Hilbert bimodules} of $(A,B)$.
     standard $\mathbb{C}$ inner product.\\
     On the other hand let $F = \mathbb{C}^n$, which is a $(\mathbb{C}, M_n(\mathbb{C}))$ Hilbert
     bimodule by right matrix multiplication with $M_n(\mathbb{C})$ valued inner product:
-    \begin{align*}
+    \begin{align}
         \langle v_1, v_2\rangle =\bar{v_1}v_2^t \;\; \in M_n(\mathbb{C})
-    \end{align*}
+    \end{align}
     Now we take the Kasparov product of $E$ and $F$:
    \begin{itemize}
         \item $F\circ E\ =\  E\otimes _{\mathbb{C}}F\ \;\;\;\;\;\; \simeq \  M_n(\mathbb{C})$
@@ -287,13 +287,13 @@ We denote $KK_f(A,B)$ the set of all \textit{Hilbert bimodules} of $(A,B)$.
 \end{theorem}
 \begin{proof}
     Let $A$, $B$ be \textit{Morita equivalent}. So there exists $_A E_B$ and $_B F_A$ with
-    \begin{align*}
+    \begin{align}
         E \otimes _B F \simeq A \;\;\; \text{and} \;\;\; F \otimes _A E \simeq B
-    \end{align*}
+    \end{align}
     Consider $[(\pi _B, H)] \in \hat{B}$ than we construct a representation of $A$,
-    \begin{align*}
+    \begin{align}
         \pi _A \rightarrow L(E \otimes _B H)\;\;\; \text{with} \;\;\; \pi _A(a) (e \otimes v) = a e \otimes w
-    \end{align*}
+    \end{align}
     \begin{question}
         Is $E \simeq H$ and $F \simeq W$? \\
         Not in particular, there is a theorem that all infinite dimensional Hilbert spaces are isomorphic.
@@ -303,9 +303,9 @@ We denote $KK_f(A,B)$ the set of all \textit{Hilbert bimodules} of $(A,B)$.
         the same.
     \end{question}
     \textit{vice versa}, consider $[(\pi _A, W)] \in \hat{A}$ we can construct $\pi _B$
-    \begin{align*}
+    \begin{align}
         \pi _B: B \rightarrow L(F \otimes _A W) \;\;\; \text{and}\;\;\; \pi _B(b) (f\otimes w) = bf\otimes w
-    \end{align*}
+    \end{align}
     These maps are each others inverses, thus $\hat{A} \simeq \hat{B}$
 \end{proof}
 
@@ -337,10 +337,10 @@ We denote $KK_f(A,B)$ the set of all \textit{Hilbert bimodules} of $(A,B)$.
 \begin{proof}
     We know $\mathbb{C}^n$ is a irreducible representation of $A= M_n(\mathbb{C})$. Let $H$ be irreducible
     and of dimension $k$, then we define a map
-    \begin{align*}
+    \begin{align}
         \phi : A\oplus...\oplus A &\rightarrow H^* \\
         (a_1,...,a_k)             &\mapsto e^1\circ a_1^t+...+e^k\circ a_k^t
-    \end{align*}
+    \end{align}
     With $\{e^1,...,e^k\}$ being the basis of the dual space $H^*$ and $(\circ)$ being the pre-composition
     of elements in $H^*$ and $A$ acting on $H$. This forms a morphism of $M_n(\mathbb{C})$ modules,
     provided a matrix $a \in A$ acts on $H^*$ with $v\mapsto v\circ a^t$ ($v\in H^*$).
@@ -353,24 +353,24 @@ We denote $KK_f(A,B)$ the set of all \textit{Hilbert bimodules} of $(A,B)$.
 
 \begin{example}
     Consider two matrix algebras $A$, and $B$.
-    \begin{align*}
+    \begin{align}
         A = \bigoplus ^N_{i=1} M_{n_i}(\mathbb{C}) \;\;\; B = \bigoplus ^M_{j=1} M_{m_j}(\mathbb{C})
-    \end{align*}
+    \end{align}
     Let $\hat{A} \simeq \hat{B}$ that implies $N=M$ and define $E$ with $A$ acting by block-diagonal
     matrices on the first tensor and B acting in the same way on the second tensor. Define $F$ vice versa.
-    \begin{align*}
+    \begin{align}
         E:= \bigoplus _{i=1}^N \mathbb{C}^{n_i} \otimes \mathbb{C}^{m_i} \;\;\;
         F:= \bigoplus _{i=1}^N \mathbb{C}^{m_i} \otimes \mathbb{C}^{n_i}
-    \end{align*}
+    \end{align}
     Then we calculate the Kasparov product.
-    \begin{align*}
+    \begin{align}
         E \otimes _B F &\simeq \bigoplus _{i=1}^N (\mathbb{C}^{n_i}\otimes\mathbb{C}^{m_i})
             \otimes _{M_{m_i}(\mathbb{C})} (\mathbb{C}^{m_i}\otimes\mathbb{C}^{n_i}) \\
                        &\simeq \bigoplus _{i=1}^N \mathbb{C}^{n_i}\otimes
                        \left(\mathbb{C}^{m_i}\otimes _{M_{m_i}(\mathbb{C})}\mathbb{C}^{m_i}\right)
                         \oplus \mathbb{C}^{n_i} \\
                        &\simeq \bigoplus _{i=1}^N \mathbb{C}^{m_i}\otimes\mathbb{C}^{n_i} \simeq A
-    \end{align*}
+    \end{align}
     and from $F \otimes _A E \simeq B$.
 \end{example}
 

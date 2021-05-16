@@ -139,34 +139,34 @@
     \end{align}
     To further examine the exponent we rewrite the expression and Taylor expand $ln(1+K)$
     to the second of $K = e^{i\alpha_a X_a} e^{i\beta_b X_b} -1$
-    \begin{align*}
+    \begin{align}
         i\delta _a X_a =& ln(1 + K) = K - \frac{K^2}{2} + \cdots \\
         \text{and}\;\;\; K =&\ e^{i\alpha_a X_a} e^{i\beta_b X_b} -1 \\
           =&\ (1 + i\alpha _a X_a - \frac{1}{2}(\alpha _a X_a)^2 + \cdots) \\
           \cdot&\ (1 + i\beta _b X_b - \frac{1}{2}(\beta _b X_b)^2 + \cdots) -1 \\
           =&\ i\alpha _a X_a + i\beta _b X_b - \alpha_a X_a \beta _b X_b \\
           -&\ \frac{1}{2}(\alpha _a X_a)^2 - \frac{1}{2}(\beta _b X_b)^2 + \cdots
-    \end{align*}
+    \end{align}
     So:
-    \begin{align*}
+    \begin{align}
         i\delta _a X_a =&\ i\alpha _a X_a + i\beta _b X_b - \alpha_a X_a \beta _b X_b \\
           -&\ \frac{1}{2}(\alpha _a X_a)^2 - \frac{1}{2}(\beta _b X_b)^2 \\
-          +&\ \frac{1}{2}(\ai\alpha _a X_a + i\beta _b X_b - \alpha_a X_a \beta _b X_b)^2 \\
+          +&\ \frac{1}{2}(\alpha _a X_a + i\beta _b X_b - \alpha_a X_a \beta _b X_b)^2 \\
           =&\ i\alpha _a X_a + i\beta _b X_b - \alpha_a X_a \beta _b X_b \\
           -&\ \frac{1}{2}(\alpha _a X_a)^2 - \frac{1}{2}(\beta _b X_b)^2  \\
           +&\ \frac{1}{2}(\alpha _a X_a)^2 + \frac{1}{2}(\beta _b X_b)^2 \\
           +& \frac{1}{2}\alpha _a X_a \beta _b X_b + \frac{1}{2}\beta _b X_b \alpha _a X_a
-    \end{align*}
+    \end{align}
     Because $X$'s are linear operators $\alpha _a X_a \beta _b X_b \neq \beta _b X_b \alpha _a X_a$.
     These generators form an \textit{algebra under commutation} and we get
-    \begin{align*}
+    \begin{align}
         i\delta _a X_a =&\ i\alpha _a X_a + i\beta _b X_b - \alpha_a X_a \beta _b X_b \\
                     -&\ \frac{1}{2}[\alpha _a X_a, \beta _b X_b] + \cdots
-    \end{align*}
+    \end{align}
     Thus rewriting the equation gives us
-    \begin{align*}
+    \begin{align}
         [\alpha _a X_a, \beta _b X_b] = -2i(\delta _c -\alpha _c -\beta _c) X_c \cdots \equiv i\gamma _c X_c
-    \end{align*}
+    \end{align}
     Because this is true for all $\alpha$ and $\beta$, and considering the group closure, there exists some
     \textit{real} $f_{abc}$ called the \textit{structure constant} satisfying.
     \begin{equation}

@@ -176,14 +176,14 @@ The metric is then:
 	Compute the metric on the space of three points given by $d_{ij} =
 	\sup_{a\in A}\{|a(i) - a(j)|: ||[D, \pi(a)]|| \leq 1\}$ for the set of data
     $A = \mathbb{C}^3$ acting in the defining representation $H = \mathbb{C}^3$, and
-    \begin{align*}
+    \begin{align}
     D =
     \begin{pmatrix}
         0 & d^{-1} & 0 \\
         d^{-1} & 0 & 0 \\
         0 & 0 & 0
     \end{pmatrix}
-    \end{align*}
+    \end{align}
     for some $d \in \mathbb{R}$
 }\newline
 
@@ -223,11 +223,11 @@ The metric is then:
 }\newline
 
 For Equation \ref{metric 1} set $i=j$ in \ref{ext metric}.
-\begin{align*}
+\begin{align}
     d_{ii} &= \sup_{a \in A}\{|\text{Tr}(a(i)) - \text{Tr}((a(i))|: ||[D, a]|| \leq
     1\big\} \\
     &= \sup_{a \in A}\{0: ||[D, a]|| \leq 1\big\} = 0
-\end{align*}
+\end{align}
 For Equation \ref{metric 2} obviously we have the commuting property of
 addition.
 \newline
@@ -295,44 +295,44 @@ Then there is a map $d:A\rightarrow \Omega _D ^1 (A)$, $d = [D, \cdot]$.
 \begin{MyExercise}
     \textbf{
     Verify that 'd` is a derivation of the C* algebra
-    \begin{align*}
+    \begin{align}
         d(ab) = d(a)b + ad(b) \\
         d(a^*) = -d(a)^*
-    \end{align*}
+    \end{align}
 }\newline
 
     For the record $d(\cdot) = [D, \cdot]$, then we have
     \begin{enumerate}
         \item
-            \begin{align*}
+            \begin{align}
                 d(ab) &= [D, ab] = [D, a]b + a[D,b]\\
                 &= d(a)b + ad(b)
-            \end{align*}
+            \end{align}
         \item
-            \begin{align*}
+            \begin{align}
                 d(a^*) &= [D, a^*] = Da^* - a^*D \\
                 &=-(D^*a - aD^*) = -[D^*, a] \\
                 &= -d(a)^*
-            \end{align*}
+            \end{align}
     \end{enumerate}
 \end{MyExercise}
 \begin{MyExercise}
     \textbf{
     Verify that $\Omega _D^1 (A)$ is an $A$-bimodule by rewriting
     }
-    \begin{align*}
+    \begin{align}
         a(a_k[D, b_k])b = \sum_k a'_k[D, b'_k] \;\;\;\; a'_k, b'_k \in A
-    \end{align*}
+    \end{align}
     \newline
 
     Begin
-    \begin{align*}
+    \begin{align}
         a(a_k[D, b_k])b &= aa_k(Db_k - b_k D) b = \\
            &= aa_k(Db_k b - b_k D b) = aa_k(Db_k b - b_k Db - b_kbD +b_kbD)=\\
            &= aa_k(Db_kb-b_kbD + b_k b D - b_k D b) = \\
            &= aa_k [D, b_kb] + aa_k b [D, b]=\\
            &= \sum _k a_k' [D, b_k']
-    \end{align*}
+    \end{align}
 
 \end{MyExercise}
 
@@ -414,34 +414,34 @@ Some remarks
     \newline
 
     For symmetry we need
-    \begin{align*}
+    \begin{align}
         (A_1, H_1, D_1) \sim (A_2, H_2, D_2) \Leftrightarrow
         (A_2, H_2, D_2) \sim (A_1, H_1, D_1)
-    \end{align*}
+    \end{align}
     because $U$ is unitary:
-    \begin{align*}
+    \begin{align}
         &U\pi_1(a)U^* = \pi_2(a) \;\;\; | \cdot U^*\boxdot U \\
         &U^*U\pi_1(a)U^*U = \pi_1(a) = U^*\pi_2(a)U \\
-    \end{align*}
+    \end{align}
     The same with the symmetric operator $D$.
     \newline
 
     For transitivity we need
-    \begin{align*}
+    \begin{align}
         (A_1, H_1, D_1) &\sim (A_2, H_2, D_2) \;\;\; \text{and} \;\;\;
         (A_2, H_2, D_2) \sim (A_3, H_3, D_3) \\
         &\Rightarrow (A_1, H_1, D_1) \sim (A_3, H_3, D_3)
-    \end{align*}
+    \end{align}
     There are two unitary maps $U_{12}:H_1 \rightarrow H_2$ and
     $U_{23}: H_2 \rightarrow H_3$ then
-    \begin{align*}
+    \begin{align}
         U_{23}U_{12} \pi_1(a) U^*_{12}U^*_{23} &= U_{23}
         \pi_2(a) U_23^* \\
         &= \pi_3(a) \\
         U_{23}U_{12} D_1U^*_{12}U^*_{23} &= U_{23}
         D_2 U_23^* \\
         &= D_3
-    \end{align*}
+    \end{align}
 \end{MyExercise}
 
 Extending the this relation we look again at  the notion of equivalence from
@@ -478,13 +478,13 @@ associated with the  derivation $d=[D, \cdot]$ and satisfying the
     \nabla(ae) = \nabla(e)a + e \otimes [D, a] \;\;\;\;\;  e\in E,\; a\in A
 \end{equation}
 Then $D'$ is well defined on $E \otimes _A H$:
-\begin{align*}
+\begin{align}
     D'(ea \otimes \xi - e \otimes a \xi) &=  D'(ea \otimes \xi) - D'(e
     \otimes \xi) \\
     &= ea\otimes D\xi + \nabla(ae) \xi - e \otimes D(a\xi ) - \nabla (e)a
     \xi \\
     &= 0.
-\end{align*}
+\end{align}
 With the information thus far we can prove the following theorem
 \begin{theorem}
     If $(A, H, D)$ a finite spectral triple, $E \in KK_f(B, A)$.
@@ -500,7 +500,7 @@ With the information thus far we can prove the following theorem
     theorem). The only thing left is to show that $D'$ is a symmetric
     operator, this we can just compute. Let $e_1, e_2 \in E$ and $\xi _1,
     \xi _2 \in H$ then
-    \begin{align*}
+    \begin{align}
         \langle e_1 \otimes \xi _1, D'(e_2 \otimes \xi_2)\rangle _{E\otimes _A H} &=
         \langle \xi _1, \langle e_1, \nabla e_2\rangle _E  \xi _2\rangle  + \langle \xi _1 , \langle e_1, e_2\rangle _E D\xi
         _2\rangle _H \\
@@ -509,7 +509,7 @@ With the information thus far we can prove the following theorem
         &+ \langle D\xi _1,\langle e_1, e_2\rangle _E \xi _2\rangle _H - \langle \xi _1, [D, \langle e_1, e_2\rangle _E] \xi
         _2 \rangle _H \\
         &= \langle D'(e_1 \otimes \xi _1), e_2 \otimes \xi _2\rangle _{E \otimes _A H}
-    \end{align*}
+    \end{align}
 \end{proof}
 
 \begin{MyExercise}
@@ -522,14 +522,14 @@ With the information thus far we can prove the following theorem
     Both $\nabla$ and $\nabla'$ need to satisfy the Leiblitz rule, so
     let's see if $\nabla - \nabla'$ does.
 
-    \begin{align*}
+    \begin{align}
         \nabla(ea)-\nabla'(ea)&=\nabla(e) + e\otimes[D, a]\\
         &-(\nabla'(e)a + e\otimes[D',a])\\
         &=\bar{\nabla}a + e\otimes(Da-aD-D'a+aD')\\
         &=\bar{\nabla}a + e\otimes((D-D')a-a(D-D'))\\
         &=\bar{\nabla}a + e\otimes[D', a]\\
         &=\bar{\nabla}(ea)
-    \end{align*}
+    \end{align}
     Therefore $\nabla-\nabla'$ is a linear map.
 \end{MyExercise}
 
@@ -544,9 +544,9 @@ With the information thus far we can prove the following theorem
             when the connection is $d(\cdot)$.
         \item Use 1) and 2) to show that any connection $\nabla:
             A\rightarrow A\otimes_A \Omega_D^1(A)$ is given by
-            \begin{align*}
+            \begin{align}
                 \nabla = d + \omega
-            \end{align*}
+            \end{align}
             where $\omega \in \Omega_D^1(A)$
         \item Upon identifying $A\otimes_A H \simeq H$, what is the
             difference operator $D'$ with the connection on $A$ given by
@@ -634,10 +634,10 @@ With the information thus far we can prove the following theorem
 
 The operator $D_e$ between $\textbf{n}_i$ and $\textbf{n}_j$ add up to
 $D_{ij}$
-\begin{align*}
+\begin{align}
     D_{ij} = \sum\limits_{\substack{e = (\nu _1, \nu _2) \\ n(\nu _1) =
     \textbf{n}_i \\ n(\nu _2) = \textbf{n}_j}} D_e
-\end{align*}
+\end{align}
 
 \begin{theorem}
     There is a on to one correspondence between finite spectral triples

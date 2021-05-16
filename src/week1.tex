@@ -200,9 +200,9 @@ Under the pointwise product:
 \subsubsection{Matrix Algebras}
 \begin{definition}
     A \textit{(complex) matrix algebra} A is a direct sum, for $n_i, N \in \mathbb{N}$.
-    \begin{align*}
+    \begin{align}
         A = \bigoplus _{i=1}^{N} M_{n_i}(\mathbb{C})
-    \end{align*}
+    \end{align}
     The involution is the hermitian conjugate, a $*$ algebra with involution is referred to as
     a matrix algebra
 \end{definition}
@@ -227,18 +227,18 @@ finite dimensional inner product space $H$ (finite Hilbert-spaces), with inner p
 $(\cdot,\cdot)\rightarrow \mathbb{C}$. $L(H)$ is the $*$-algebra of operators on $H$
 with product given by composition and involution given by the adjoint, $T \mapsto T^*$.
 $L(H)$ is a \textit{normed vector space} with
-\begin{align*}
+\begin{align}
     &\|T\|^2 = \text{sup}_{h \in H}\{(Th,Th): (h,h) \leq 1\} \hspace{0.1\textwidth} T \in L(H) \\
     &\|T\| = \text{sup}\{\sqrt{\lambda}: \lambda \text{ eigenvalue of } T\}
-\end{align*}
+\end{align}
 
 
 \begin{definition}
     The \textit{representation} of a finite dimensional $*$-algebra A is a pair $(H, \pi)$.
     $H$ is a finite, dimensional inner product space and $\pi$ is a $*$-\textit{algebra map}
-    \begin{align*}
+    \begin{align}
         \pi:A\ \rightarrow \ L(H)
-    \end{align*}
+    \end{align}
 \end{definition}
 \begin{definition}
     $(H, \pi)$ is called \textit{irreducible} if:
@@ -260,9 +260,9 @@ Examples for reducible and irreducible representations
 \begin{definition}
     Let $(H_1, \pi _1)$ and $(H_2, \pi _2)$ be representations of a $*$-algebra $A$. They are called
     \textit{unitary equivalent} if there exists a map $U: H_1 \rightarrow H_2$ such that.
-    \begin{align*}
+    \begin{align}
         \pi _1(a) = U^* \pi _2(a) U
-    \end{align*}
+    \end{align}
 \end{definition}
 
 \begin{question}
@@ -285,9 +285,9 @@ More on that in later chapters.
     \textbf{
     Given $(H, \pi)$ of a $*$-algebra $A$, the \textbf{commutant} $\pi (A)'$ of $\pi (A)$ is defined as a set
     of operators in $L(H)$ that commute with all $\pi (a)$
-    \begin{align*}
+    \begin{align}
         \pi (A)' = \{T \in L(H):\pi (a)T = T\pi (a) \;\;\; \forall a\in A\}
-    \end{align*}
+    \end{align}
     \begin{enumerate}
         \item Show that $\pi (A)'$ is a $*$-algebra.
         \item Show that a representation $(H, \pi)$ of $A$ is irreducible iff the commutant $\pi (A)'$
@@ -354,26 +354,26 @@ of matrix algebras, to preserve general non-commutivity of matrices.
     \begin{enumerate}
         \item \textit{left} A-module is a vector space $E$, that carries a left representation of $A$,
             that is $\exists$ a bilinear map $\gamma: A \times E \rightarrow E$ with
-            \begin{align*}
+            \begin{align}
                 (a_1a_2)\cdot e = a_1 \cdot (a_2 \cdot e);\;\;\; a_1, a_2 \in A, e \in E
-            \end{align*}
+            \end{align}
         \item \textit{right} B-module is a vector space $F$, that carries a right representation of $A$,
             that is $\exists$ a bilinear map $\gamma: F \times B \rightarrow F$ with
-            \begin{align*}
+            \begin{align}
                 f \cdot (b_1b_2)= (f \cdot b_1) \cdot b_2;\;\;\; b_1, b_2 \in B, f \in F
-            \end{align*}
+            \end{align}
         \item \textit{left} A-module and \textit{right} B-module is a \textit{bimodule}, a vector space $E$
             satisfying
-            \begin{align*}
+            \begin{align}
                 a \cdot (e \cdot b)= (a \cdot e) \cdot b;\;\;\;  a \in A, b \in B, e \in E
-            \end{align*}
+            \end{align}
     \end{enumerate}
 \end{definition}
 Notion of A-\textbf{module homomorphism} as linear map $\phi: E\rightarrow F$ which respects the
 representation of A, e.g. for left module.
-\begin{align*}
+\begin{align}
     \phi (ae) = a \phi (e); \;\;\; a \in A, e \in E.
-\end{align*}
+\end{align}
 Remark on the notation
 \begin{itemize}
     \item ${}_A E$ left $A$-module $E$;
@@ -389,15 +389,15 @@ Remark on the notation
 
     Not quite sure but \\
     $a \in A$, $h_1, h_2 \in H$, we know $\pi (a) = T \in L(H)$ than
-    \begin{align*}
+    \begin{align}
         \langle \pi (a) h_1, \pi (a) h_2\rangle  = \langle T h_1, T h_2\rangle  = \langle T^*T h_1, h_2\rangle  = \langle h_1, h_2\rangle
-    \end{align*}
+    \end{align}
     Or maybe this \\
     If $_A H$ than $(a_1a_2) h = a_1 (a_2 h)$ for $a_1, a_2 \in A$ and $h \in H$.\\
     Then we take the representation of an $a \in A$, $\pi (a)$:
-    \begin{align*}
+    \begin{align}
         (\pi(a_1)\pi(a_2))h = \pi(a_1)(\pi(a_2) h) = (T_1T_2) h = T_1 (T_2 h)
-    \end{align*}
+    \end{align}
     For $T_1, T_2 \in L(H)$, which operate naturally from the left on $h$.
 \end{MyExercise}
 
