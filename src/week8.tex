@@ -79,18 +79,22 @@
 \newtheorem*{idea}{Proof Idea}
 
 
-\title{Notes on \\ Noncommutative Geometry and Particle Physics}
-\author{Popovic Milutin}
-\date{Week 6: 19.03 - 26.03}
+\title{University of Vienna\\ Faculty of Physics\\ \vspace{1.25cm}
+Notes on\\ Noncommutative Geometry and Particle Phyiscs}
+\author{Milutin Popovic \\ Supervisor: Dr. Lisa
+Glaser}
+\date{Week 8: 8.05 - 18.05}
 
 \begin{document}
 
     \maketitle
     \tableofcontents
+    \newpage
+
     \section{Excurse}
     \textbf{Manifold:} A topological space that is locally Euclidean.
     \newline
-    \textbf{Riemannian Manifold:}A Manifold equipped with a riemannian
+    \textbf{Riemannian Manifold:}A Manifold equipped with a Riemannian
     Metric, a
     symmetric bilinear form on Vector Fields $\Gamma(TM)$
     \begin{align}
@@ -136,7 +140,7 @@
     $(S, J_M)$ is called the \textbf{spin Structure on $M$}
     \newline
     $J_M$ is called the \textbf{charge conjugation}.
-    \section{Noncommutative Geomtery of Electrodynamics}
+    \section{Noncommutative Geometry of Electrodynamics}
     \subsection{The Two-Point Space}
     Consider a two point space $X := \{x, y\}$. This space=an be described
     with
@@ -288,7 +292,7 @@
         \begin{align}
             \alpha(a) = u a u^* \;\;\; \text{for} \;\; U(A)
         \end{align}
-        where $U(\mathfrak{A})$ is
+        where $U(A)$ is
         \begin{align}
             U(A) = \{ u\in A|\;\; uu^* = u^*u=1\} \;\;\;
             \text{(unitary)}
@@ -337,7 +341,9 @@
     Now we need to find the exact from of the field $B_\mu$ to calculate the
     spectral action of a spectral triple. Since $(A_F)_{J_F} \simeq
     \mathbb{C}$ we find that $\mathfrak{h}(F) = \mathfrak{u}((A_F)_{J_F})
-    \simeq i\mathbb{R}$.\newline
+    \simeq i\mathbb{R}$. Where $\mathfrak{h}(F)$ is the Lie Algebra on $F$
+    and $\mathfrak{u}((A_F)_{J_F})$ is the Lie algebra of the unitary group
+    $(A_F)_{J_F}$.\newline
 
     An arbitrary hermitian field $A_\mu = -ia\partial _\mu b$  is given by
     two
@@ -381,7 +387,7 @@ gravity and electrodynamics although in the classical level.
 
 The almost commutative Manifold $M\times F_X$ describes a local gauge group
 $U(1)$. The inner fluctuations of the Dirac operator describe $Y_\mu$ the
-gauge field of $U(1)$. There arrise two Problems:
+gauge field of $U(1)$. There arise two Problems:
 \newline
 (1): With $F_X$, $D_F$ must vanish, however this implies that the electrons
 are massless (this we do not want)
@@ -505,7 +511,7 @@ with two nodes of multiplicity two
 Add a non-zero Dirac Operator to $F_{ED}$. From the Krajewski Diagram, we see
 that edges only exist between the multiple vertices. So we construct a Dirac
 operator mapping between the two vertices.
-\begin{align}
+\begin{align}\label{dirac}
     D_F =
     \begin{pmatrix}
     0 & d & 0 & 0 \\
@@ -545,7 +551,7 @@ and the other one acting on $L^2(S) \otimes H_{\bar{e}}$
 The derivation of the gauge theory is the same for $F_{ED}$ as for $F_X$, we
 have $\mathfrak{B}(F) \simeq U(1)$ and for $B_\mu = A_\mu - J_F A_\mu
 J_F^{-1}$
-\begin{align}
+\begin{align} \label{field}
     B_\mu =
     \begin{pmatrix}
         Y_\mu & 0 & 0 & 0 \\
@@ -569,5 +575,139 @@ distance.
     even thought we have infinite distance between the same manifold? What do
     we get if we fix this?
 \end{question}
+\subsection{The Spectral Action}
+Here we calculate the Lagrangian of the almost commutative Manifold $M\times
+F_{ED}$, which corresponds to the Lagrangian of Electrodynamics on a curved
+background Manifold (+ gravitational Lagrangian). It consists of the spectral
+action $S_b$ (bosonic) and of the fermionic action $S_f$.
 
+The simples spectral action of a spectral triple $(A, H, D)$ is given by the
+trace of some function of $D$, we also allow inner fluctuations of the Dirac
+operator $D_\omega = D + \omega + \varepsilon' J\omega J^{-1}$ where $\omega =
+\omega ^* \in \Omega_D^1(A)$.
+\begin{definition}
+    Let $f:\mathbb{R} \rightarrow \mathbb{R}$ be a suitable function
+    \textbf{positive and even}. The spectral action is then
+    \begin{align}
+        S_b [\omega] := \text{Tr}f(\frac{D_\omega}{\Lambda})
+    \end{align}
+    where $\Lambda$ is a real cutoff parameter. The minimal condition on $f$
+    is that $f(\frac{D_\omega}{\Lambda})$ is  a traclass operator, which mean
+    that it should be compact operator with well defined finite trace
+    independent of the basis. The subscript $b$ of $S_b$ refers to bosonic,
+    because in physical applications $\omega$ will describe bosonic fields.
+
+    Furthermore there is a topological spectral action, defined with the
+    grading $\gamma$
+    \begin{align}
+        S_{\text{top}}[\omega] := \text{Tr}(\gamma\
+        f(\frac{D_\omega}{\Lambda})).
+    \end{align}
+\end{definition}
+\begin{definition}
+    The fermionic action is defined by
+    \begin{align}
+        S_f[\omega, \psi] = (J\tilde{\psi}, D_\omega \tilde{\psi})
+    \end{align}
+    with $\tilde{\psi} \in H_{cl}^+ := \{\tilde{\psi}: \psi \in H^+\}$.
+    $H_{cl}^+$ is the set of Grassmann variables in $H$ in the +1-eigenspace
+    of the grading $\gamma$.
+\end{definition}
+The grasmann variables are a set of Basis vectors of a vector space, they
+form a unital algebra over a vector field say $V$ where the generators are anti commuting, that is for
+$\theta _i, \theta _j$ some Grassmann variables we have
+\begin{align}
+    &\theta _i \theta _j = -\theta _j \theta _i \\
+    &\theta _i x = x\theta _j \;\;\;\; x\in V \\
+    &(\theta_i)^2 = 0 \;\;\; (\theta _i \theta _i = -\theta _i \theta _i)
+\end{align}
+\begin{proposition}
+    The spectral action of the almost commutative manifold $M$ with $\dim(M)
+    =4$ with a fluctuated Dirac operator is.
+    \begin{align}
+        \text{Tr}(f\frac{D_\omega}{\Lambda}) \sim \int_M \mathcal{L}(g_{\mu\nu},
+         B_\mu, \Phi) \sqrt{g}\ d^4x + O(\Lambda^{-1})
+    \end{align}
+    with
+    \begin{align}
+        \mathcal{L}(g_{\mu\nu}, B_\mu, \Phi) =
+        N\mathcal{L}_M(g_{\mu\nu})
+        \mathcal{L}_B(B_\mu)+
+        \mathcal{L}_\phi(g_{\mu\nu}, B_\mu, \Phi)
+    \end{align}
+    where $N=4$ and $\mathcal{L}_M$ is the Lagrangian of the spectral triple
+    $(C^\infty(M) , L^2(S), D_M)$
+    \begin{align}\label{lagr}
+        \mathcal{L}_M(g_{\mu\nu}) := \frac{f_4 \Lambda ^4}{2\pi^2} -
+        \frac{f_2 \Lambda^2}{24\pi ^2}s - \frac{f(0)}{320\pi^2} C_{\mu\nu
+        \varrho \sigma}C^{\mu\nu \varrho \sigma}.
+    \end{align}
+    Here $C^{\mu\nu \varrho \sigma}$ is defined in terms of the Riemannian
+    curvature tensor $R_{\mu\nu \varrho \sigma}$ and the Ricci tensor
+    $R_{\nu\sigma} = g^{\mu\varrho} R_{\mu\nu \varrho\sigma}$.
+
+
+    Furthermore $\mathcal{L}_B$ describes the kinetic term of the gauge field
+    \begin{align}
+        \mathcal{L}_B(B_\mu) := \frac{f(0)}{24\pi^2}
+        \text{Tr}(F_{\mu\nu}F^{\mu\nu}).
+    \end{align}
+    Last $\mathcal{L}_\phi$ is the scalar-field Lagrangian with a boundary
+    term.
+    \begin{align}
+        \mathcal{L}_\phi(g_{\mu\nu}, B_\mu, \Phi) :=
+        &-\frac{2f_2\Lambda^2}{4\pi^2}\text{Tr}(\Phi^2) + \frac{f(0)}{8\pi^2}
+        \text{Tr}(\Phi^4) + \frac{f(0)}{24\pi^2} \Delta(\text{Tr}(\Phi^2))\\
+        &+ \frac{f(0)}{48\pi^2}s\text{Tr}(\Phi^2)
+        \frac{f(0)}{8\pi^2}\text{Tr}((D_\mu \Phi)(D^\mu \Phi)).
+    \end{align}
+\end{proposition}
+\begin{proof}
+    Will maybe be filled in if I go through the last two chapters in the
+    book and understand the proof.
+\end{proof}
+
+Here on we go and calculate the spectral action of $M\times F_{ED}$
+\begin{proposition}
+    The Spectral action of $M\times F_{ED}$ is
+    \begin{align}
+        \text{Tr}(f\frac{D_\omega}{\Lambda}) \sim \int_M \mathcal{L}(g_{\mu\nu},
+         Y_\mu) \sqrt{g}\ d^4x + O(\Lambda^{-1})
+    \end{align}
+    where the Lagrangian is
+    \begin{align}
+        \mathcal{L}(g_{\mu\nu}, Y_\mu) =
+        4\mathcal{L}_M(g_{\mu\nu})+
+        \mathcal{L}_Y(Y_\mu)+
+        \mathcal{L}_\phi(g_{\mu\nu}, d)
+    \end{align}
+        here the $d$ in $\mathcal{L}_\phi$ is from $D_F$ in equation
+        \ref{dirac}. The Lagrangian $\mathcal{L}_M$ is like in equation
+        \ref{lagr}. The Lagrangian $\mathcal{L}_Y$ is the kinetic term of the
+        $U(1)$ gauge field $Y_\mu$
+    \begin{align}
+        \mathcal{L}_Y(Y_\mu):= \frac{f(0)}{6\pi^2}
+        Y_{\mu\nu}Y^{\mu\nu}\;\;\;\;\;\;\;\;\text{with}\;\;\;  Y_{\mu\nu} =
+        \partial_\mu Y_\nu -
+        \partial_\nu Y_\mu.
+    \end{align}
+    Then there is $\mathcal{L}_\phi$, which has two constant terms
+    (disregarding the boundary term) that add up to the Cosmological Constant
+    and a term that for the Einstein-Hilbert action
+    \begin{align}
+        \mathcal{L}_\phi(g_{\mu\nu}, d) := \frac{2f_2 \Lambda ^2}{\pi^2}
+        |d|^2 + \frac{f(0)}{2\pi^2} |d|^4 + \frac{f(0)}{12\pi ^2} s |d|^2.
+    \end{align}
+\end{proposition}
+\begin{proof}
+    The Trace of $\mathbb{C}^4$ (the Hilbertspace) gives $N=4$. With $B_\mu$
+    like in equation \ref{field} we have $\text{Tr}(F_{\mu\nu}
+    F^{\mu\nu})=4Y_{\mu\nu}Y^{\mu\nu}$. This provides $\mathcal{L}_Y$.
+    Furthermore we have $\Phi^2 = D_F^2 = |d|^2$ and $\mathcal{L}_\phi$ only
+    give numerical contributions to the cosmological constant and the
+    Einstein-Hilbert action.
+
+    The proof is relying itself on just plugging the terms into the previous
+    proposition, for which I didn't write the proof for.
+\end{proof}
 \end{document}
