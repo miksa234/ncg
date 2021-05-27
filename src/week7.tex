@@ -468,6 +468,73 @@ such that $(ab)^* = b^*a^*$ and $(a^*)^* \;\;\; \forall a,b\in A$
                 \simeq M_{2k}(\mathbb{C})$ as complex *algebras.
         \end{enumerate}
     }
+    1). Let us take some $a, b \in \mathbb{H}$ with
+    \begin{align}
+        a = \begin{pmatrix}
+            \alpha & \beta \\
+            -\bar{\beta} & \bar{\alpha}
+        \end{pmatrix} \;\;\;\;
+        b = \begin{pmatrix}
+            \gamma & \delta \\
+            -\bar{\delta} & \bar{\gamma}
+        \end{pmatrix}
+    \end{align}
+        where $\alpha, \beta, \gamma, \delta \in \mathbb{C}$. Since
+        $\mathbb{H}$ is represented in standard $2x2$ matrices, the involution
+        is just subsequent from there, the only thing left to show is the
+        closure $ab \in \mathbb{H}$.
+    \begin{align}
+        ab &=
+        \begin{pmatrix}
+            \alpha & \beta \\
+            -\bar{\beta} & \bar{\alpha}
+        \end{pmatrix}
+        \begin{pmatrix}
+            \gamma & \delta \\
+            -\bar{\delta} & \bar{\gamma}
+        \end{pmatrix} =\\
+        &=
+        \begin{pmatrix}
+            \alpha\beta - \beta\bar{\delta}& \alpha\delta + \beta \bar{\gamma}\\
+            -(\bar{\alpha}\bar{\delta} + \bar{\beta}\gamma) &
+            \bar{\alpha}\gamma-\bar{\beta}\delta
+        \end{pmatrix} =
+        \begin{pmatrix}
+            \xi& \psi\\
+            -\bar{\psi} & \bar{\xi}
+        \end{pmatrix} \in \mathbb{H}
+    \end{align}
+    where $\xi, \psi \in \mathbb{C}$ because of closure of complex numbers
+    in regards to multiplication and addition, which is $\mathbb{R}
+    \otimes_{\mathbb{R}}\mathbb{C} \simeq \mathbb{C}$, e.g. $\beta \cdot c
+    \in \mathbb{C}$ with $c \in \mathbb{C}$.
+    \newline
+    2)For $\mathbb{H}\otimes_\mathbb{R} \mathbb{C}$ we have for some $h \in
+    \mathbb{H}$ and $c \in mathbb{C}$
+    \begin{align}
+        h\otimes c &=
+        \begin{pmatrix}
+            \alpha & \beta \\
+            -\bar{\beta} & \bar{\alpha}
+        \end{pmatrix}\otimes c = \\
+        &=
+        \begin{pmatrix}
+            \alpha c & \beta c \\
+            -\bar{\beta} c & \bar{\alpha} c
+        \end{pmatrix} \simeq M_2(\mathbb{C})
+    \end{align}
+    because again of $\mathbb{R} \otimes_\mathbb{R} \mathbb{C} \simeq
+    \mathbb{C}$.
+    \newline
+    3)We know that $\mathbb{H}$ is a real subalgebra of $M_2(\mathbb{C})$,
+    so $M_k(\mathbb{H})$ is just an extension and an real subalgebra of
+    $M_{2k}(\mathbb{C})$.
+    \newline
+    4) Here we use what we have learned
+    \begin{align}
+        M_k(\mathbb{H})\otimes_\mathbb{R} \mathbb{C} \simeq
+        M_k(M_2(\mathbb{C})) = M_{2k}(\mathbb{C})
+    \end{align}
 \end{MyExercise}
 \begin{definition}
     A representation of a finite-dimensional real * algebra $A$ is a pair $(\pi
