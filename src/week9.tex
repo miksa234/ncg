@@ -1,0 +1,474 @@
+\documentclass[a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{mathptmx}
+
+\usepackage{subcaption}
+\usepackage[shortlabels]{enumitem}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{bbm}
+\usepackage{graphicx}
+\usepackage[colorlinks=true,naturalnames=true,plainpages=false,pdfpagelabels=true]{hyperref}
+\usepackage[parfill]{parskip}
+
+\usepackage{tikz}
+\usetikzlibrary{patterns,decorations.pathmorphing,positioning}
+
+\usepackage[framemethod=TikZ]{mdframed}
+
+\tikzstyle{titlered} =
+    [draw=black, thick, fill=white,%
+        text=black, rectangle,
+        right, minimum height=.7cm]
+
+\newcounter{exercise}
+
+\renewcommand*\theexercise{Exercise~\arabic{exercise}}
+
+\makeatletter
+\mdfdefinestyle{exercisestyle}{%
+    outerlinewidth=1em,%
+    outerlinecolor=white,%
+    leftmargin=-1em,%
+    rightmargin=-1em,%
+    middlelinewidth=1.2pt,%
+    roundcorner=5pt,%
+    linecolor=black,%
+    backgroundcolor=blue!5,
+    innertopmargin=1.2\baselineskip,
+    skipabove={\dimexpr0.5\baselineskip+\topskip\relax},
+    skipbelow={-1em},
+    needspace=3\baselineskip,
+    frametitlefont=\sffamily\bfseries,
+    settings={\global\stepcounter{exercise}},
+    singleextra={%
+        \node[titlered,xshift=1cm] at (P-|O) %
+            {~\mdf@frametitlefont{\theexercise}~};},%
+    firstextra={%
+            \node[titlered,xshift=1cm] at (P-|O) %
+                    {~\mdf@frametitlefont{\theexercise}~};},
+}
+\makeatother
+
+\newenvironment{MyExercise}%
+{\begin{mdframed}[style=exercisestyle]}{\end{mdframed}}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+\theoremstyle{definition}
+\newtheorem{question}{Question}
+
+\theoremstyle{definition}
+\newtheorem{example}{Example}
+
+\theoremstyle{theorem}
+\newtheorem{theorem}{Theorem}
+
+\theoremstyle{theorem}
+\newtheorem{lemma}{Lemma}
+
+
+\theoremstyle{theorem}
+\newtheorem{proposition}{Proposition}
+
+\newtheorem*{idea}{Proof Idea}
+
+
+\title{University of Vienna\\ Faculty of Physics\\ \vspace{1.25cm}
+Notes on\\ Noncommutative Geometry and Particle Phyiscs}
+\author{Milutin Popovic \\ Supervisor: Dr. Lisa
+Glaser}
+\date{Week 9: 28.05 - 4.06}
+
+\begin{document}
+
+    \maketitle
+    \tableofcontents
+    \newpage
+
+\section{Heat Kernel Expansion}
+\subsection{The Heat Kernel}
+The heat kernel $K(t; x, y; D)$ is the fundamental solution of the heat
+equation. It depends on the operator $D$ of Laplacian type.
+\begin{align}
+    (\partial _t + D_x)K(t;x, y;D) =0
+\end{align}
+For a flat manifold $M = \mathbb{R}^n$ and $D = D_0 := -\Delta_\mu\Delta^\mu +m^2$ the
+Laplacian with a mass term and the initial condition
+\begin{align}
+    K(0;x,y;D) = \delta(x,y)
+\end{align}
+we have the standard fundamental solution
+\begin{align}\label{eq:standard}
+    K(t;x,y;D_0) = (4\pi t)^{-n/2}\exp\left(-\frac{(x-y)^2}{4t}-tm^2\right)
+\end{align}
+Let us consider now a more general operator $D$ with a potential term or a
+guage field, the heat kernel reads then
+\begin{align}
+    K(t;x,y;D) = \langle x|e^{-tD}|y\rangle.
+\end{align}
+We can expand it it in terms of $D_0$ and we still have the
+singularity from the equation \ref{eq:standard} as $t\rightarrow 0$ thus the
+expansion gives
+\begin{align}
+    K(t;x,y;D) = K(t;x,y;D_0)\left(1 + tb_2(x,y) + t^2b_4(x,y) + \dots \right)
+\end{align}
+where $b_k(x,y)$ are regular in $y \rightarrow x$. They are called the heat
+kernel coefficients.
+
+\subsection{Example}
+Now let us consider a propagator $D^{-1}(x,y)$ defined through the heat kernel
+in an integral representation
+\begin{align}
+    D^{-1} (x,y) = \int_0^\infty dt K(t;x,y;D).
+\end{align}
+We can integrate the expression formally if we assume the heat kernel vanishes
+for $t\rightarrow \infty$ we get
+\begin{align}
+    D^{-1}(x,y) \simeq
+    2(4\pi)^{-n/2}\sum_{j=0}\left(\frac{|x-y|}{2m}\right)^{-\frac{n}{2}+j+1}
+    K_{-\frac{n}{2}+j+1}(|x-y|m)b_{2j}(x,y).
+\end{align}
+where $b_0 = 1$ and $K_\nu (z)$ is the Bessel function
+\begin{align}
+    K_\nu(z) = \frac{1}{\pi} \int_0^\pi cos(\nu\tau-z\sin(\tau))d\tau
+\end{align}
+it solves the differential equation
+\begin{align}
+    z^2 \frac{d^2K}{dz^2} + z \frac{dK}{dz} + (z^2 - \nu^2)=0.
+\end{align}
+By looking at integral approximation of the propagator we conclude
+that the singularities of $D^{-1}$ coincide with the singularities of the heat
+kernel coefficients.
+We consider now a generating functional in terns of $\det(D)$ which is called
+the one-loop effective action (quantum fields theory)
+\begin{align}
+    W = \frac{1}{2}\ln(\det D)
+\end{align}
+we can relate $W$ with the heat kernel. For each eigenvalue $\lambda >0$ of $D$
+we can write the identity.
+\begin{align}
+    \ln \lambda  = -\int_0^\infty \frac{e^{-t\lambda}}{t}dt
+\end{align}
+This expression is correct up to an infinite constant which does not depent on
+$\lambda$, because of this we can ignore it. Further more we use $\ln(\det D) =
+\text{Tr}(\ln D)$ and therefor we can write for $W$
+\begin{align}
+    W = -\frac{1}{2} \int_0^\infty dt \frac{K(t, D)}{t}
+\end{align}
+where
+\begin{align}
+    K(t, D) = \text{Tr}(e^{-tD}) = \int d^n x \sqrt{g}K(t;x,x;D).
+\end{align}
+The problem is now that the integral of $W$ is divergent at both limits. Yet
+the divergences at $t\rightarrow \infty$ are caused by $\lambda \leq 0$ of $D$
+(infrared divergences) and are just ignored. The divergences at $t\rightarrow 0$
+are cutoff at $t=\Lambda^{-2}$, thus we write
+\begin{align}
+    W_\Lambda = -\frac{1}{2} \int_{\Lambda^{-2}}^\infty dt \frac{K(t, D)}{t}.
+\end{align}
+We can calculate $W_\Lambda$ at up to an order of $\lambda ^0$
+\begin{align}
+    W_\Lambda &= -(4\pi)^{-n/2} \int d^n x\sqrt{g}\bigg(
+    \sum_{2(j+l)<n}\Lambda^{n-2j-2l}b_{2j}(x,x) \frac{(-m^2)^l l!}{n-2j-2l} +\\
+    &+ \sum_{2(j+l) =n }\ln(\Lambda) (-m^2)^l l! b_{2j}(x,x)
+    \mathcal{O}(\lambda^0) \bigg)
+\end{align}
+There is an divergence at $b_2(x,x)$ with $k\leq n$. Now we compute the limit
+$\Lambda \rightarrow \infty$
+\begin{align}
+    -\frac{1}{2}(4\pi)^{n/2}m^n\int d^n x\sqrt{g} \sum_{2j>n}
+    \frac{b_{2j}(x,x)}{m^{2j}}\Gamma(2j-n)
+\end{align}
+here $\Gamma$ is the gamma function.
+\subsection{Differential Geometry and Operators of Laplace Type}
+Let $M$ be a $n$ dimensional compact Riemannian manifold with $\partial M = 0$.
+Then consider a vector bundle $V$ over $M$ (i.e. there is a vector space to
+each point on $M$), so we can define smooth functions. We want to look at
+arbitrary differential operators $D$ of Laplace type on $V$, they have the general
+from
+\begin{align}
+    D = -(g^{\mu\nu} \partial_\mu\partial_\nu + a^\sigma\partial_\sigma +b)
+\end{align}
+where $a^\sigma, b$ are matrix valued functions on $M$ and $g^{\mu\nu}$ is the
+inverse metric on $M$. There is a unique connection on $V$ and a unique
+endomorphism (matrix valued function) $E$ on $V$, then we can rewrite $D$ in
+terms of $E$ and covariant derivatives
+\begin{align}
+    D = -(g^{\mu\nu} \nabla_\mu \nabla_\nu +E)
+\end{align}
+Where the covariant derivative consists of $\nabla = \nabla^{[R]} +\omega$ the
+standard Riemannian covariant derivative $\nabla^{[R]}$ and a "gauge" bundle
+$\omega$ (fluctuations). WE can write $E$ and $\omega$ in terms of geometrical
+identities
+\begin{align}
+    \omega_\delta &= \frac{1}{2}g_{\nu\delta}(a^\nu
+    +g^{\mu\sigma}\Gamma^\nu_{\mu\sigma}I_V)\\
+    E &= b - g^{\nu\mu}(\partial_\mu \omega_\nu + \omega_\nu \omega_\mu -
+    \omega_\sigma \Gamma^\sigma_{\nu\mu})
+\end{align}
+where $I_V$ is the identity in $V$ and the Christoffel symbol
+\begin{align}
+    \Gamma^\sigma_{\mu\nu} = g^{\sigma\varrho} \frac{1}{2} (\partial_\mu
+    g_{\nu\varrho} + \partial_\nu g_{\mu\varrho} - \partial_\varrho g_{\mu\nu})
+\end{align}
+Furthermore we remind ourselves of the Riemmanian curvature tensor, Ricci
+Tensor and the Scalar curavture.
+\begin{align}
+    R^\mu_{\nu\varrho\sigma} &= \partial_\sigma \Gamma^{\mu}_{\nu\varrho}
+    -\partial_\varrho \Gamma^\mu_{\nu\sigma}
+    \Gamma^{\lambda}_{\nu\varrho}\Gamma^{\mu}_{\lambda\sigma}
+    \Gamma^{\lambda}_{\nu\sigma}\Gamma^{\mu}_{\lambda\varrho}\\
+    R_{\mu\nu} &:= R^{\sigma}_{\mu\nu\sigma}\\
+    R &:= R^\mu_{\ \mu}
+\end{align}
+
+The we let $\{e_1, \dots, e_n\}$ be the local orthonormal frame of
+$TM$(tangent bundle $M$), which will be noted with flat indices $i,j,k,l
+\in\{1,\dots, n\}$, we use $e^k_\mu, e^\nu_j$ to transform between flat indices
+and curved indices $\mu, \nu, \varrho$.
+\begin{align}
+    e^\mu_j e^\nu_k g_{\mu\nu} &= \delta_{jk}\\
+    e^\mu_j e^\nu_k \delta^{jk} &= g^{\mu\nu} \\
+    e^j_\mu e^\mu_k  &= \delta^j_k
+\end{align}
+
+The Riemannian part of the covariant derivative contains the standard
+Levi-Civita connection, so that for a $v_\nu$ we write
+\begin{align}
+    \nabla_\mu^{[R]} v_\nu = \partial_\mu v_\nu -
+    \Gamma^{\varrho}_{\mu\nu}v_\varrho.
+\end{align}
+The extended covariant derivative reads then
+\begin{align}
+    \nabla_\mu v^j = \partial_\mu v^j + \sigma^{jk}_\mu v_k.
+\end{align}
+the condition $\nabla_\mu e^k_\nu = 0$ gives us the general connection
+\begin{align}
+    \sigma^{kl}_\mu = e^\nu_l\Gamma^{\varrho}_{\mu\nu}e^k_\varrho - e^\nu_l
+    \partial_\mu e^k_\nu
+\end{align}
+The we may define the field strength $\Omega_{\mu\nu}$ of the connection $\omega$
+\begin{align}
+    \Omega_{\mu\nu} = \partial_\mu \omega_\nu -\partial_\nu \omega_\mu
+    +\omega_\mu \omega_\nu -\omega_\nu\omega_\mu.
+\end{align}
+If we apply the covariant derivative on $\Omega$ we get
+\begin{align}
+    \nabla_\varrho\Omega_{\mu\nu} = \partial_\varrho \Omega_{\mu\nu} -
+    \Gamma^{\sigma}_{\varrho \mu} \Omega_{\sigma\mu} + [\omega_\varrho,
+    \Omega_{\mu\nu}]
+\end{align}
+
+\subsection{Spectral Functions}
+Manifolds without $M$ boundary condition for the operator $e^{-tD}$ for $t>0$ is a
+trace class operator on $L^2(V)$, this means that for any smooth function $f$
+on $M$ we can define
+\begin{align}
+    K(t,f,D) = \text{Tr}_{L^2}(fe^{-tD})
+\end{align}
+and we can rewrite
+\begin{align}
+    K(t, f, D) = \int_M d^n x \sqrt{g} \text{Tr}_V(K(t;x,x;D)f(x)).
+\end{align}
+in terms of the Heat kernel $K(t;x,y;D)$ in the regular limit $y\rightarrow y$.
+We can write the Heat Kernel in terms of the spectrum of $D$. Say
+$\{\phi_\lambda\}$ is a ONB of eigenfunctions of $D$ corresponding to the
+eigenvalue $\lambda$
+\begin{align}
+    K(t;x,y;D) = \sum_\lambda \phi^\dagger_\lambda(x)
+    \phi_\lambda(y)e^{-t\lambda}.
+\end{align}
+We have an asymtotic expansion at $t \rightarrow 0$  for the trace
+\begin{align}
+    Tr_{L^2}(fe^{-tD}) \simeq \sum_{k\geq 0}t^{(k-n)/2}a_k(f,D).
+\end{align}
+where
+\begin{align}
+    a_k(f,D) = (4\pi)^{-n/2} \int_M d^4x \sqrt{g} b_k(x,x) f(x)
+\end{align}
+\subsection{General Formulae}
+We consider a compact Riemmanian Manifold $M$ without boundary condition, a
+vector bundle $V$ over $M$ to define functions which carry discrete (spin or
+gauge) indices. An Laplace style operator $D$ over $V$ and smooth function $f$
+on $M$. There is an asymtotic expansion where the heat kernel coefficients
+\begin{enumerate}
+    \item with odd index $k=2j+1$ vanish
+        $a_{2j+1}(f,D) = 0$
+    \item with even index are locally computable in terms of geometric
+        invariants
+\end{enumerate}
+\begin{align}
+    a_k(f,D) &= \text{Tr}_V\left(\int_M d^n x\sqrt{g}(f(x)a_k(x;D)\right) =\\
+    &=\sum_I \text{Tr}_V\left(\int_M d^nx \sqrt{g}(fu^I \mathcal{A}^I_k(D))\right)
+\end{align}
+here $\mathcal{K}^I_k$ are all possible independent invariants of dimension
+$k$, constructed from $E, \Omega, R_{\mu\nu\varrho\sigma}$ and their
+derivatives, $u^I$ are some constants.
+
+If $E$ has dimension two, then the derivative has dimension one. So if $k=2$
+there are only two independent invariants, $E$ and $R$. This corresponds to the
+statement $a_{2j+1}=0$.
+
+If we consider $M = M_1 \times M_2$ with coordinates $x_1$ and $x_2$ and a
+decomposed Laplace style operator $D = D_1 \otimes 1 + 1 \otimes D_2$ we can
+separate everything, i.e.
+\begin{align}
+    e^{-tD} &= e^{-tD_1} \otimes e^{-tD_2}\\
+    f(x_1, x_2) &= f_1(x_1)f_2(x_2)\\
+    a_k(x;D) &= \sum_{p+q=k} a_p(x_1; D_1)a_q(x_2;D_2)
+\end{align}
+Say the spectrum of $D_1$ is known, $l^2, l\in \mathbb{Z}$. We obtain the heat
+kernel asymmetries with the Poisson Summation formula
+\begin{align}
+    K(t, D_1) &= \sum_{l\in\mathbb{Z}} e^{-tl^2} = \sqrt{\frac{\pi}{t}}
+    \sum_{l\in\mathbb{Z}} e^{-\frac{\pi^2l^2}{t}} = \\
+    &\simeq \sqrt{\frac{\pi}{t}} + \mathcal{O}(e^{-1/t}).
+\end{align}
+Note that the exponentially small terms have no effect on the heat kernel
+coefficients and that the only nonzero coefficient is $a_0(1, D_1) =
+\sqrt{\pi}$. Therefore we can write
+\begin{align}
+    a_k(f(x^2), D) = \sqrt{\pi}\int_{M_2}
+    d^{n-1}x\sqrt{g}\sum_I\text{Tr}_V\left(f(x^2)u^I_{(n-1)}
+    \mathcal{A}^I_n(D_2)\right).
+\end{align}
+
+On the other had all geometric invariants associated with $D$ are in the $D_2$
+part. Thus all invariants are independent of $x_1$, so we can choose for $M_1$.
+Say $M_1 = S^1$ with $x\in (0, 2\pi)$ and $D_1=-\partial_{x_1}^2$ we may
+rewrite the heat kernel coefficients in
+\begin{align}
+    a_k(f(x_2), D) &= \int_{S^1\times M_2}d^nx \sqrt{g} \sum_I
+    \text{Tr}_V(f(x_2) u_{(n)}^I \mathcal{A}^I_k(D_2))=\\
+    &= 2\pi \int_{M_2} d^nx\sqrt{g} \sum_I\text{Tr}_V(f(x_2) u_{(n)}^I
+    \mathcal{A}^I_k(D_2)).
+\end{align}
+Computing the two equations above we see that
+\begin{align}
+    u_{(n)}^I = \sqrt{4\pi} u^I_{(n+1)}
+\end{align}
+
+\subsection{Heat Kernel Coefficients}
+To calculate the heat kernel coefficients we need the following variational
+equations
+\begin{align}
+    &\frac{d}{d\varepsilon}|_{\varepsilon=0}a_k(1, e^{-2\varepsilon f}D) =
+    (n-k) a_k(f, D),\label{eq:var1}\\
+    &\frac{d}{d\varepsilon}|_{\varepsilon=0}a_k(1, D-\varepsilon F) =
+    a_{k-2}(F,D),\label{eq:var2}\\
+    &\frac{d}{d\varepsilon}|_{\varepsilon=0}a_k(e^{-2\varepsilon f}F,
+    e^{-2\varepsilon f}D) =
+    0\label{eq:var3}.
+\end{align}
+To prove the equation \ref{eq:var1} we differentiate
+\begin{align}
+    \frac{d}{d\varepsilon}|_{\varepsilon=0} \text{Tr}(\exp(-e^{-2\varepsilon
+    f}tD) = \text{Tr}(2ftDe^{-tD}) = -2t\frac{d}{dt}\text{Tr}(fe^{-tD}))
+\end{align}
+then we expand both sides in $t$ and get \ref{eq:var1}. Equation \ref{eq:var2}
+is derived similarly. For equation \ref{eq:var3} we consider the following
+operator
+\begin{align}
+    D(\varepsilon,\delta) = e^{-2\varepsilon f}(D-\delta F)
+\end{align}
+for $k=n$ we use equation \ref{eq:var1} and we get
+\begin{align}
+    \frac{d}{d\varepsilon}|_{\varepsilon=0}a_n(1,D(\varepsilon,\delta)) =0
+\end{align}
+then we take the variation in terms of $\delta$, evaluated at $\delta =0$ and
+swap the differentiation, allowed by theorem of Schwarz
+\begin{align}
+    0 &=
+    \frac{d}{d\delta}|_{\delta=0}\frac{d}{d\varepsilon}|_{\varepsilon=0}a_n(1,
+    D(\varepsilon,\delta)) =
+    \frac{d}{d\varepsilon}|_{\varepsilon=0}\frac{d}{d\delta}|_{\delta=0}a_n(1,
+    D(\varepsilon,\delta)) =\\
+    &=a_{n-2} ( e^{-2\varepsilon f}F, e^{-2\varepsilon f}D)
+\end{align}
+which proves equation \ref{eq:var3}. With this we calculate the constants $u^I$
+and we can write the first three heat kernel coefficients as
+\begin{align}
+    a_0(f, D) &= (4\pi)^{-n/2}\int_Md^n x\sqrt{g} \text{Tr}_V(a_0 f)\\
+    a_2(f, D) &= (4\pi)^{-n/2}\frac{1}{6}\int_Md^n
+    x\sqrt{g}\text{Tr}_V)(f\alpha _1 E+\alpha _2 R)\\
+    a_4(f, D) &= (4\pi)^{-n/2}\frac{1}{360}\int_Md^n
+    x\sqrt{g}\text{Tr}_V(f(\alpha_3 E_{,kk} + \alpha_4 RE + \alpha_5 E^2
+    \alpha_6 R_{,kk} + \\
+    &+\alpha_7 R^2 + \alpha_8 R_{ij}R_{ij} + \alpha_9
+    R_{ijkl}R_{ijkl} +\alpha_{10} \Omega_{ij}\Omega{ij})).
+\end{align}
+The constants $\alpha_I$ do not depend on the dimension $n$ of the Manifold and
+we can compute them with our variational identities.
+
+The first coefficient $\alpha_0$ can be seen from the heat kernel expanion of
+the Laplacian on $S^1$ (above), $\alpha_0 = 1$. For $\alpha_1$ we use
+\ref{eq:var2}, for $k = 2$
+\begin{align}
+    \frac{1}{6} \int_M d^n x\sqrt{g} \text{Tr}_V(\alpha_1F) = \int_M d^n
+    x\sqrt{g} \text{Tr}_V(F),
+\end{align}
+thus we conclude that $\alpha_1 = 6$. Now we take $k=4$
+\begin{align}
+    \frac{1}{360}\int_Md^n x \sqrt{g}\text{Tr}_V(\alpha_4 F R + 2\alpha_5 F E)
+    = \frac{1}{6} \int_Md^n x\sqrt{g}\text{Tr}_V(\alpha_1 FE + \alpha_2 FR),
+\end{align}
+thus $\alpha_4 = 60\alpha_2$ and $\alpha_5 = 180$.
+
+Furthermore we apply \ref{eq:var3} to $n=4$
+\begin{align}
+    \frac{d}{d\varepsilon}|_{\varepsilon=0} a_2(e^{-2\varepsilon f}F,
+    e^{-2\varepsilon f}D) = 0.
+\end{align}
+By collecting the terms with $\text{Tr}_V(\int_Md^nx\sqrt{g}(Ff_{,jj}))$ we
+obtain $\alpha_1 = 6\alpha_2$, that is $\alpha_2 = 1$, so $\alpha_4 = 60$.
+
+Now we let $M=M_1\times M_2$ and split $D = -\Delta_1 -\Delta_2$, where
+$\Delta_{1/2}$ are Laplacians for $M_1, M_2$, then we can decompose the heat
+kernel coefficients for $k=4$
+\begin{align}
+    a_4(1,-\Delta_1-\Delta_2) =& a_4(1, -\Delta_1) a_0(1, -\Delta_2)
+    +a_2(1,-\Delta_1) a_2(1,-\Delta_2) \\&+ a_0(1,-\Delta_1) a_4(1,-\Delta_2)
+\end{align}
+with $E=0$ and $\Omega =0$ and by calculating the terms with $R_1R_2$  (scalar
+curvature of $M_{1/2}$) we obtain $\frac{2}{360}\alpha_7 =
+(\frac{\alpha_2}{6})^2$, thus $\alpha_7 = 5$.
+
+For $n=6$ we get
+\begin{align}
+    0 &= \text{Tr}_V(\int_Md^nx\sqrt{g}
+    (F(-2\alpha_3-10\alpha_4+4\alpha_5)f_{,kk}E +\\
+    &+(2\alpha_3 + 10\alpha_6)f_{,iijj}+\\
+    &+(2\alpha_4 -2\alpha_6 - 20\alpha_7 -2\alpha_8)f_{,ii}R\\
+    &+(-8\alpha_8 -8\alpha_6)f_{,ij}R_{ij}))
+\end{align}
+we obtain $\alpha_3 = 60$, $\alpha_6=12$, $\alpha_8 = -2$ and $\alpha_9 = 2$
+
+For $\alpha_{10}$ we use the Gauss-Bonnet theorem to get $\alpha_{10}=30$,
+which is left out because it is a lengthy computation.
+
+Summarizing we get for the heat kernel coefficients
+\begin{align}
+    \alpha_0(f, D) &= (4\pi)^{-n/2}\int_M d^n x \sqrt{g} \text{Tr}_V(f)\\
+    \alpha_2(f, D) &= (4\pi)^{-n/2}\frac{1}{6}\int_M d^n x \sqrt{g}
+    \text{Tr}_V(f(6E+R))\\
+    \alpha_4(f, D) &= (4\pi)^{-n/2}\frac{1}{360}\int_M d^n x \sqrt{g}
+    \text{Tr}_V(f(60E_{,kk}+60RE+ 180E^2 +\\
+    &+12R_{,kk} + 5R^2 - 2 R_{ij}R_{ij}
+    2R_{ijkl}R_{ijkl} +30\Omega_{ij}\Omega_{ij}))\\
+\end{align}
+
+
+
+
+
+
+
+
+
+\end{document}
