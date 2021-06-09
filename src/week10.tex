@@ -168,12 +168,12 @@ Glaser}
          &\;\;\;\;\;\;\;+2\text{Tr}((D_\mu\Phi)(D^\mu\Phi))
          + s\text{Tr}(\Phi^2)\\
          \nonumber\\
-         &\frac{1}{360}\text{Tr}(-60\DeltaF)=
+         &\frac{1}{360}\text{Tr}(-60\Delta F)=
          \frac{1}{6}\Delta(Ns+4\text{Tr}(\Phi^2)).
      \end{align}
      Now for the cross terms of $\Omega_{\mu\nu}^E\Omega^{E\mu\nu}$  the trace
      vanishes because of the anti-symmetric properties of the Riemannian
-     Cruvature Tensor
+     curvature Tensor
      \begin{align}
          \Omega_{\mu\nu}^E\Omega^{E\mu\nu} = \Omega_{\mu\nu}^S\Omega^{S\mu\nu}
          \otimes 1 - 1\otimes F_{\mu\nu}F^{\mu\nu} + 2i\Omega_{\mu\nu}^S
@@ -205,6 +205,8 @@ Glaser}
 \end{proof}
 
 \section{Fermionic Action}
+A quick reminder with what we are dealing with, the fermionic action is defined
+in the following way.
 \begin{definition}
     The fermionic action is defined by
     \begin{align}
@@ -215,14 +217,101 @@ Glaser}
     of the grading $\gamma$.
 \end{definition}
 
+The almostcommutative Manifold we are dealing with is the following
 \begin{align}
-    M\times F_{ED} := \left(C^\infty(M,\mathbb{C}^2),\ L^2(S)\otimes
+    &M\times F_{ED} := \left(C^\infty(M,\mathbb{C}^2),\ L^2(S)\otimes
     \mathbb{C}^4,\
     D_M\otimes 1 +\gamma _M \otimes D_F;\; J_M\otimes J_F,\ \gamma_M\otimes
-    \gamma _F\right)
+    \gamma _F\right).\\
+    \nonumber\\
+    &\text{where:} \nonumber \\
+    &C^\infty(M,\mathbb{C}^2) = C^\infty(M) \otimes C^\infty(M)
+    &\mathcal{H} = \mathcal{H}^+ \otimes \mathcal{H}^-\\
+    &\mathcal{H} = L^2(S)^+ \otimes H_F^+ \oplus L^2(S)^- \otimes H_F^-.
 \end{align}
+Where $H_F$ is separated into the particle-anitparticle states with ONB $\{e_R,
+e_L, \bar{e}_R, \bar{e}_L\}$. The ONB of $H_F^+$ is $\{e_L, \bar{e}_R\}$ and
+for $H_F^-$ we have $\{e_R, \bar{e}_L\}$. Furthermore we can decompose a spinor
+$\psi \in L^2(S)$ for each of the eigenspaces $H_F^\pm$, $\psi = \psi_R
+\psi_L$. Thus we can write for an arbitrary $\psi \in \mathcal{H}^+$
+\begin{align}
+    \psi = \chi_R \otimes e_R + \chi_L \otimes e_L + \psi_L \otimes \bar{e}_R
+    \psi_R \otimes \bar{e}_L
+\end{align}
+for $\chi_L, \psi_L \in L^2(S)^+$ and $\chi_R, \psi_R \in L^2(S)^-$.
+\begin{proposition}
+    We can define the action of the fermionic art of $M\times F_{ED}$ in the
+    following way
+    \begin{align}
+        S_f = -i\big(J_M\tilde{\chi}, \gamma(\nabla^S_\mu - i\Gamma_\mu)
+        \tilde{\Psi}\big) + \big(S_M\tilde{\chi}_L, \bar{d}\tilde{\psi}_L\big) -
+        \big(J_M\tilde{\chi}_R, d \tilde{\psi}_R\big)
+    \end{align}
+\end{proposition}
+\begin{proof}
+    We take the fluctuated Dirac operator
+    \begin{align}
+        D_\omega = D_M \otimes i + \gamma^\mu \otimes B_\mu + \gamma_M \otimes
+        D_F
+    \end{align}
+\end{proof}
+The Fermionic Action is $S_F = (J\tilde{\xi}, D_\omega\tilde{\xi})$  for a $\xi
+\in \mathcal{H}^+$, we can begin to calculate (note that we add the constant
+$\frac{1}{2}$ to the action)
+\begin{align}
+    \frac{1}{2}(J\tilde{\xi}, D_\omega\tilde{\xi}) =&\\
+        &+\frac{1}{2}(J\tilde{\xi}, (D_M \otimes i)\tilde{\xi})\label{eq:1}\\
+        &+\frac{1}{2}(J\tilde{\xi}, (\gamma^\mu \otimes B_\mu)
+        \tilde{\xi})\label{eq:2}\\
+        &+\frac{1}{2}(J\tilde{\xi}, (\gamma_M\otimes
+        D_F)\tilde{\xi})\label{eq:3}.
+\end{align}
+For equation \ref{eq:1} we calculate
+\begin{align}
+    \frac{1}{2}(J\tilde{\xi}, (D_M\otimes 1)\tilde{\xi}) &=
+    \frac{1}{2}(J_M\tilde{\chi}_R,D_M\tilde{\psi}_L)+
+    \frac{1}{2}(J_M\tilde{\chi}_L,D_M\tilde{\psi}_R)+
+    \\&+\frac{1}{2}(J_M\tilde{\psi}_L,D_M\tilde{\psi}_R)+
+    \frac{1}{2}(J_M\tilde{\chi}_R,D_M\tilde{\chi}_L)\\
+    &= (J_M\tilde{\chi},D_M\tilde{\chi}).
+\end{align}
+For equation \ref{eq:2} we have
+\begin{align}
+    \frac{1}{2}(J\tilde{\xi}, (\gamma^\mu \otimes B_\mu)\tilde{\xi})&=
+    -\frac{1}{2}(J_M\tilde{\chi}_R, \gamma^\mu Y_\mu\tilde{\psi}_R)
+    -\frac{1}{2}(J_M\tilde{\chi}_L, \gamma^\mu Y_\mu\tilde{\psi}_R)+\\
+    &+\frac{1}{2}(J_M\tilde{\psi}_L, \gamma^\mu Y_\mu\tilde{\chi}_R)+
+    \frac{1}{2}(J_M\tilde{\psi}_R, \gamma^\mu Y_\mu\tilde{\chi}_L)=\\
+    &= -(J_M\tilde{\chi}, \gamma^\mu Y_\mu\tilde{\psi}).
+\end{align}
+For equation \ref{eq:3} we have
+\begin{align}
+    \frac{1}{2}(J\tilde{\xi}, (\gamma_M\otimes D_F)\tilde{\xi})&=
+    +\frac{1}{2}(J_M\tilde{\chi}_R, d\gamma_M\tilde{\chi}_R)
+    +\frac{1}{2}(J_M\tilde{\chi}_L, \bar{d}\gamma_M\tilde{\chi}_L)+\\
+    &+\frac{1}{2}(J_M\tilde{\chi}_L, \bar{d}\gamma_M\tilde{\chi}_L)
+    +\frac{1}{2}(J_M\tilde{\chi}_R, d\gamma_M\tilde{\chi}_R)=\\
+    &= i(J_M\tilde{\chi}, m\tilde{\psi})
+\end{align}
+Note that we obtain a complex mass parameter $d$, so we write $d:=im$ for $m\in \mathbb{R}$,
+which stands for the real mass and we obtain a nice result
 
+\begin{theorem}
+    The full Lagrangian of $M\times F_{ED}$ is the sum of purely gravitational
+    Lagrangian
+    \begin{align}
+        \mathcal{L}_{grav}(g_{\mu\nu})=4\mathcal{L}_M(g_{\mu\nu})
+        \mathcal{L}_\phi (g_{\mu\nu})
+    \end{align}
+    and the Lagrangian of electrodynamics
+    \begin{align}
+        \mathcal{L}_{ED} = -i\bigg\langle
+        J_M\tilde{\chi},\big(\gamma^\mu(\nabla^S_\mu - iY_\mu) -m\big)\tilde{\psi})
+        \bigg\rangle
+        +\frac{f(0)}{6\pi^2} Y_{\mu\nu}Y^{\mu\nu}.
+    \end{align}
 
+\end{theorem}
 
 
 \end{document}
