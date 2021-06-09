@@ -1,0 +1,164 @@
+\documentclass[a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{mathptmx}
+
+\usepackage{subcaption}
+\usepackage[shortlabels]{enumitem}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{bbm}
+\usepackage{graphicx}
+\usepackage[colorlinks=true,naturalnames=true,plainpages=false,pdfpagelabels=true]{hyperref}
+\usepackage[parfill]{parskip}
+
+\usepackage{tikz}
+\usetikzlibrary{patterns,decorations.pathmorphing,positioning}
+
+\usepackage[framemethod=TikZ]{mdframed}
+
+\tikzstyle{titlered} =
+    [draw=black, thick, fill=white,%
+        text=black, rectangle,
+        right, minimum height=.7cm]
+
+\newcounter{exercise}
+
+\renewcommand*\theexercise{Exercise~\arabic{exercise}}
+
+\makeatletter
+\mdfdefinestyle{exercisestyle}{%
+    outerlinewidth=1em,%
+    outerlinecolor=white,%
+    leftmargin=-1em,%
+    rightmargin=-1em,%
+    middlelinewidth=1.2pt,%
+    roundcorner=5pt,%
+    linecolor=black,%
+    backgroundcolor=blue!5,
+    innertopmargin=1.2\baselineskip,
+    skipabove={\dimexpr0.5\baselineskip+\topskip\relax},
+    skipbelow={-1em},
+    needspace=3\baselineskip,
+    frametitlefont=\sffamily\bfseries,
+    settings={\global\stepcounter{exercise}},
+    singleextra={%
+        \node[titlered,xshift=1cm] at (P-|O) %
+            {~\mdf@frametitlefont{\theexercise}~};},%
+    firstextra={%
+            \node[titlered,xshift=1cm] at (P-|O) %
+                    {~\mdf@frametitlefont{\theexercise}~};},
+}
+\makeatother
+
+\newenvironment{MyExercise}%
+{\begin{mdframed}[style=exercisestyle]}{\end{mdframed}}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+\theoremstyle{definition}
+\newtheorem{question}{Question}
+
+\theoremstyle{definition}
+\newtheorem{example}{Example}
+
+\theoremstyle{theorem}
+\newtheorem{theorem}{Theorem}
+
+\theoremstyle{theorem}
+\newtheorem{lemma}{Lemma}
+
+
+\theoremstyle{theorem}
+\newtheorem{proposition}{Proposition}
+
+\newtheorem*{idea}{Proof Idea}
+
+
+\title{University of Vienna\\ Faculty of Physics\\ \vspace{1.25cm}
+Notes on\\ Noncommutative Geometry and Particle Phyiscs}
+\author{Milutin Popovic \\ Supervisor: Dr. Lisa
+Glaser}
+\date{Week 8: 8.05 - 18.05}
+
+\begin{document}
+
+    \maketitle
+    \tableofcontents
+    \newpage
+
+
+\section{Spectral Action of the Fluctuated Dirac Operator}
+\begin{proposition}
+    The spectral action of the almost commutative manifold $M$ with $\dim(M)
+    =4$ with a fluctuated Dirac operator is.
+    \begin{align}
+        \text{Tr}(f\frac{D_\omega}{\Lambda}) \sim \int_M \mathcal{L}(g_{\mu\nu},
+         B_\mu, \Phi) \sqrt{g}\ d^4x + O(\Lambda^{-1})
+    \end{align}
+    with
+    \begin{align}
+        \mathcal{L}(g_{\mu\nu}, B_\mu, \Phi) =
+        N\mathcal{L}_M(g_{\mu\nu})
+        \mathcal{L}_B(B_\mu)+
+        \mathcal{L}_\phi(g_{\mu\nu}, B_\mu, \Phi)
+    \end{align}
+    where $N=4$ and $\mathcal{L}_M$ is the Lagrangian of the spectral triple
+    $(C^\infty(M) , L^2(S), D_M)$
+    \begin{align}\label{lagr}
+        \mathcal{L}_M(g_{\mu\nu}) := \frac{f_4 \Lambda ^4}{2\pi^2} -
+        \frac{f_2 \Lambda^2}{24\pi ^2}s - \frac{f(0)}{320\pi^2} C_{\mu\nu
+        \varrho \sigma}C^{\mu\nu \varrho \sigma}.
+    \end{align}
+    Here $C^{\mu\nu \varrho \sigma}$ is defined in terms of the Riemannian
+    curvature tensor $R_{\mu\nu \varrho \sigma}$ and the Ricci tensor
+    $R_{\nu\sigma} = g^{\mu\varrho} R_{\mu\nu \varrho\sigma}$.
+
+
+    Furthermore $\mathcal{L}_B$ describes the kinetic term of the gauge field
+    \begin{align}
+        \mathcal{L}_B(B_\mu) := \frac{f(0)}{24\pi^2}
+        \text{Tr}(F_{\mu\nu}F^{\mu\nu}).
+    \end{align}
+    Last $\mathcal{L}_\phi$ is the scalar-field Lagrangian with a boundary
+    term.
+    \begin{align}
+        \mathcal{L}_\phi(g_{\mu\nu}, B_\mu, \Phi) :=
+        &-\frac{2f_2\Lambda^2}{4\pi^2}\text{Tr}(\Phi^2) + \frac{f(0)}{8\pi^2}
+        \text{Tr}(\Phi^4) + \frac{f(0)}{24\pi^2} \Delta(\text{Tr}(\Phi^2))\\
+        &+ \frac{f(0)}{48\pi^2}s\text{Tr}(\Phi^2)
+        \frac{f(0)}{8\pi^2}\text{Tr}((D_\mu \Phi)(D^\mu \Phi)).
+    \end{align}
+\end{proposition}
+\begin{proof}
+    Will maybe be filled in if I go through the last two chapters in the
+    book and understand the proof.
+    \textbf{PROOF IN week10.pdf}
+\end{proof}
+
+\section{Fermionic Action}
+\begin{definition}
+    The fermionic action is defined by
+    \begin{align}
+        S_f[\omega, \psi] = (J\tilde{\psi}, D_\omega \tilde{\psi})
+    \end{align}
+    with $\tilde{\psi} \in H_{cl}^+ := \{\tilde{\psi}: \psi \in H^+\}$.
+    $H_{cl}^+$ is the set of Grassmann variables in $H$ in the +1-eigenspace
+    of the grading $\gamma$.
+\end{definition}
+
+\begin{align}
+    M\times F_{ED} := \left(C^\infty(M,\mathbb{C}^2),\ L^2(S)\otimes
+    \mathbb{C}^4,\
+    D_M\otimes 1 +\gamma _M \otimes D_F;\; J_M\otimes J_F,\ \gamma_M\otimes
+    \gamma _F\right)
+\end{align}
+
+
+
+
+\end{document}
