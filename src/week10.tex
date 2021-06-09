@@ -135,9 +135,73 @@ Glaser}
     \end{align}
 \end{proposition}
 \begin{proof}
-    Will maybe be filled in if I go through the last two chapters in the
-    book and understand the proof.
-    \textbf{PROOF IN week10.pdf}
+     The dimension of our manifold $M$ is $\dim(M) = \text{Tr}(id) =4 $. Let us
+     take a $x \in M$, we have an asymtotic expansion of
+     $\text{Tr}(f(\frac{D_\omega}{\Lambda}))$ as $\Lambda \rightarrow \infty$
+     \begin{align}
+         \text{Tr}(f(\frac{D_\omega}{\Lambda})) \simeq& \ 2f_4 \Lambda ^4
+         a_0(D_\omega ^2)+ 2f_2\Lambda^2 a_2(D_\omega^2) \\&+ f(0) a_4(D_\omega^4)
+         +O(\Lambda^{-1}).
+     \end{align}
+     Note that the heat kernel coefficients are zero for uneven $k$,
+     furthermore they are dependent on the fluctuated Dirac operator
+     $D_\omega$. We can rewrite the heat kernel coefficients in terms of $D_M$,
+     for the first two we note that $N:= \text{Tr}\mathbbm{1_{H_F}})$
+     \begin{align}
+         a_0(D_\omega^2) &= Na_0(D_M^2)\\
+         a_2(D_\omega^2 &= Na_2(D_M^2) - \frac{1}{4\pi^2}\int_M
+         \text{Tr}(\Phi^2)\sqrt{g}d^4x
+     \end{align}
+     For $a_4$ we need to extend in terms of coefficients of $F$, look week9.pdf
+     for the standard version,
+     \begin{align}
+         &\frac{1}{360}\text{Tr}(60sF)= -\frac{1}{6}S(Ns + 4
+         \text{Tr}(\Phi^2))\\
+        \nonumber\\
+         &F^2 = \frac{1}{16}s^2\otimes 1 + 1\otimes \Phi^4 - \frac{1}{4}
+         \gamma^\mu\gamma^\nu \gamma^\varrho\gamma^\sigma F_{\mu\nu}F^{\mu\nu}+\\
+         &\;\;\;\;\;\;\;+\gamma^\mu\gamma^\nu\otimes(D_\mu\Phi)(D_\nu
+         \Phi)+\frac{1}{2}s\otimes \Phi^2 + \ \text{traceless terms}\\
+         \nonumber\\
+         &\frac{1}{360}\text{Tr}(180F^2) = \frac{1}{8}s^2N + 2\text{Tr}(\Phi^4)
+         + \text{Tr}(F_{\mu\nu}F^{\mu\nu}) +\\
+         &\;\;\;\;\;\;\;+2\text{Tr}((D_\mu\Phi)(D^\mu\Phi))
+         + s\text{Tr}(\Phi^2)\\
+         \nonumber\\
+         &\frac{1}{360}\text{Tr}(-60\DeltaF)=
+         \frac{1}{6}\Delta(Ns+4\text{Tr}(\Phi^2)).
+     \end{align}
+     Now for the cross terms of $\Omega_{\mu\nu}^E\Omega^{E\mu\nu}$  the trace
+     vanishes because of the anti-symmetric properties of the Riemannian
+     Cruvature Tensor
+     \begin{align}
+         \Omega_{\mu\nu}^E\Omega^{E\mu\nu} = \Omega_{\mu\nu}^S\Omega^{S\mu\nu}
+         \otimes 1 - 1\otimes F_{\mu\nu}F^{\mu\nu} + 2i\Omega_{\mu\nu}^S
+         \otimes F^{\mu\nu}
+     \end{align}
+     the trace  of the cross term vanishes because
+     \begin{align}
+         \text{Tr}(\Omega^{S}_{\mu\nu} = \frac{1}{4}
+         R_{\mu\nu\varrho\sigma}\text{Tr}(\gamma^\mu\gamma^\nu) = \frac{1}{4}
+         R_{\mu\nu\varrho\sigma}g^{\mu\nu} =0
+     \end{align}
+     and the trace of the whole term is
+     \begin{align}
+         \frac{1}{360}\text{Tr}(30\Omega^E_{\mu\nu}\Omega^{E\mu\nu}) =
+         \frac{N}{24}R_{\mu\nu\varrho\sigma}R^{\mu\nu\varrho\sigma}
+         -\frac{1}{3}\text{Tr}(F_{\mu\nu}F^{\mu\nu}).
+     \end{align}
+     Plugging the results into $a_4$ and simplifying we can write
+     \begin{align}
+         a_4(x, D_\omega^4) &= Na_4(x, D_M^2) + \frac{1}{4\pi^2}\bigg(\frac{1}{12} s
+         \text{Tr}(\Phi^2) + \frac{1}{2}\text{Tr}(\Phi^4) \\
+         &+ \frac{1}{4}
+         \text{Tr}((D_\mu\Phi)(D^\mu \Phi)) + \frac{1}{6}
+         \Delta\text{Tr}(\Phi^2) + \frac{1}{6}
+         \text{Tr}(F_{\mu\nu}F^{\mu\nu})\bigg)
+     \end{align}
+     The only thing left is to plug in the heat kernel coefficients into the
+     heat kernel expansion above.
 \end{proof}
 
 \section{Fermionic Action}
