@@ -1,0 +1,754 @@
+\subsection{Noncommutative Geometry of Electrodynamics}
+\subsubsection{The Two-Point Space}
+One of the basics forms of a noncommutative space is the the two point space $X
+:= \{x, y\}$, it can be represented by the following spectral triple
+\begin{align}
+    F_x := (C(X) = \mathbb{C}^2, H_F, D_F; J_F, \gamma _f).
+\end{align}
+There are three properties of $F_x$ that stand out, first of all the action of
+$C(X)$ on $H_F$ is faithful for $dim(H_F) \geq 2$. Thus we can make a simple
+choice for the Hilbertspace, $H_F = \mathbb{C}^2$. Furthermore $\gamma_F$ is
+the $\mathbb{Z}_2$ grading, which allows us to decompose $H_F$ into
+\begin{align}
+   H_F = H_F^+ \otimes H_F^- = \mathbb{C} \otimes \mathbb{C},
+\end{align}
+where
+\begin{align}
+    H_F^\pm = \{\psi \in H_F |\; \gamma_F\psi = \pm \psi\},
+\end{align}
+are two eigenspaces. And lastly the Dirac operator $D_F$ lets us
+interchange between $H_F^\pm$,
+\begin{align}
+    D_F =
+        \begin{pmatrix}0 & t \\ \bar{t} & 0\end{pmatrix},  \;\;\;\;\;
+            \text{with} \;\; t\in\mathbb{C}.
+\end{align}
+
+    The Two-Point space $F_x$ can only have a real structure if the Dirac
+    operator vanishes, i.e. $D_F = 0$, in that case we have KO-dimension of 0,
+    2 or 6.
+
+    To elaborate on this, we know that there are two diagram representations of
+    $F_x$ at $\underbrace{\mathbb{C} \oplus \mathbb{C}}_{C(X)}$ on
+    $\underbrace{\mathbb{C} \oplus\mathbb{C}}_{H_F}$, which are:
+    \begin{figure}[h!] \centering
+    \begin{tikzpicture}[
+        dot/.style = {draw, circle, inner sep=0.06cm},
+        no/.style = {},
+        ]
+        \node[no](a) at (0,0) [label=left:$\textbf{1}^\circ$] {};
+        \node[no](b) at (0, -1) [label=left:$\textbf{1}^\circ$] {};
+        \node[no](c) at (1, 0.5) [label=above:$\textbf{1}$] {};
+        \node[no](d) at (2, 0.5) [label=above:$\textbf{1}$] {};
+        \node[dot](d0) at (2,0) [] {};
+        \node[dot](d0) at (1,-1) [] {};
+
+        \node[no](a1) at (6,0) [label=left:$\textbf{1}^\circ$] {};
+        \node[no](b2) at (6, -1) [label=left:$\textbf{1}^\circ$] {};
+        \node[no](c2) at (7, 0.5) [label=above:$\textbf{1}$] {};
+        \node[no](d2) at (8, 0.5) [label=above:$\textbf{1}$] {};
+        \node[dot](d0) at (7,0) [] {};
+        \node[dot](d0) at (8,-1) [] {};
+        \end{tikzpicture}
+    \end{figure}\newline
+If the Two-Point space $F_x$ would be a real spectral triple then $D_F$ can
+only go vertically or horizontally. This would mean that $D_F$ vanishes.
+
+The diagram on the left has KO-dimension 2 and 6, the diagram on the
+right has KO-dimension 0 and 4. Yet KO-dimension 4 is not ruled out because
+$dim(H_F^\pm) = 1$ (see Lemma 3.8 Book), which ultimately means $J_F^2 = -1$ is
+not allowed.
+\subsubsection{The product Space}
+By Extending the Two-Point space with a four dimensional Riemannian spin
+manifold, we get an almost commutative manifold $M\times F_x$, given by
+\begin{align}
+    M\times F_x = (C^\infty(M), \mathbb{C}^2), L^2(S)\otimes \mathbb{C}^2,
+    D_M\otimes 1 ; J_M\otimes J_F, \gamma_M \otimes \gamma_F),
+\end{align}
+where
+\begin{align}
+   C^\infty(M, \mathbb{C}^2) \simeq C^\infty(M) \oplus  C^\infty(M).
+\end{align}
+According to Gelfand duality the algebra $C^\infty(M, \mathbb{C}^2)$ of the
+spectral triple corresponds to the space
+\begin{align}
+    N:= M\otimes X \simeq M\sqcup X
+\end{align}
+Keep in mind that we still need to find an appropriate real structure on the
+Riemannian spin manifold, $J_M$.
+\newline
+The total Hilbertspace can be decomposed into $H = L^2(S) \oplus L^2(S)$, such
+that for
+\newline
+$\underbrace{a,b\in C^\infty(M)}_{(a, b) \in C^\infty(N)}$
+and $\underbrace{\psi, \phi \in L^2(S)}_{(\psi, \phi) \in H}$ we have
+\begin{align}
+    (a, b)(\psi, \phi) = (a\psi, b\phi)
+\end{align}
+Along with the decomposition of the total Hilbertspace we can consider a
+distance formula on $M\times F_x$ with
+\begin{align}\label{eq:commutator inequality}
+    d_{D_F}(x,y) = \sup\left\{  |a(x) - a(y)|:a\in A_F, ||[D_F, a]|| \leq
+    1 \right\}.
+\end{align}
+To calculate the distance between two points on the Two-Point space $X= \{x,
+y\}$, between $x$ and $y$, we consider an $a \in \mathbb{C}^2 = C(X)$, which is
+specified by two complex numbers $a(x)$ and $a(y)$. Then we simplify the
+commutator inequality in \ref{eq:commutator inequality}
+\begin{align}
+    &||[D_F , a]|| = ||(a(y) - a(x))\begin{pmatrix}0 &t\\\bar{t} &0
+    \end{pmatrix}|| \leq 1,\\
+    &\Rightarrow |a(y) - a(x)|\leq \frac{1}{|t|},
+\end{align}
+and the supremum gives us the distance
+\begin{align}
+    d_{D_F} (x,y) = \frac{1}{|t|}.
+\end{align}
+Note that if there exists $J_M$ (real structure) $\Rightarrow t=0$ then
+$d_{D_F}(x,y) \rightarrow \infty$!
+\newline
+
+Now let $p \in M$, then take two points on $N=M\times X$, $(p, x)$ and
+$(p,y)$ and $a \in C^\infty(N)$ is determined by $a_x(p):=a(p, x)$ and
+$a_y(p):=a(p, y)$. The distance between these two points is then
+\begin{align}
+    d_{D_F\otimes 1}(n_1, n_2) =  \sup \left\{ |a(n_1) - a(n_2)|: a\in
+    A, ||[D\otimes 1, a]||\right\}
+\end{align}
+\textbf{Remark}: If $n_1 = (p,x)$ and $n_2 = (q, x)$ for $p,q \in M$ then
+\begin{align}
+    d_{D_M \otimes 1} (n_1, n_2) = |a_x(p) - a_x(q)| \;\;\; a_x\in
+    C^\infty(M) \;\; \text{with} \;\; ||[D\otimes 1, a_x]|| \leq 1
+\end{align}
+The distance turns to the geodestic distance formula
+\begin{align}
+    d_{D_M\otimes1}(n_1, n_2) = d_g(p, q)
+\end{align}
+
+However if $n_1 = (p, x)$ and $n_2 = (q, y)$ then the two conditions are
+$||[D_M, a_x]|| \leq 1$ and $||[D_M, a_y|| \leq 1$. They have no
+restriction which results in the distance being infinite! And $N =
+M\times X$ is given by two disjoint copies of M  which are separated by
+infinite distance
+
+\textbf{Note}: distance is only finite if $[D_F, a] \neq 1$. The
+commutator
+generates a scalar field say $\phi$ and the finiteness of the distance is
+related to the existence of scalar fields.
+\subsubsection{$U(1)$ Gauge Group}
+Here we determine the Gauge theory corresponding to the almost
+commutative
+Manifold $M\times F_x$.
+
+\textbf{Gauge Group of a Spectral Triple}:
+\begin{align}
+    \mathfrak{B}(A, H; J) := \{ U = uJuJ^{-1} | u\in U(A)\}
+\end{align}
+\begin{definition}
+    A *-automorphism of a *-algebra $A$ is a linear invertible
+    map
+    \begin{align}
+        &\alpha:A \rightarrow A\;\;\; \text{with}\\
+        \nonumber\\
+        &\alpha(ab) = \alpha(a)\alpha(b)\\
+        &\alpha(a)^* = \alpha(a^*)
+    \end{align}
+    The \textbf{Group of automorphisms of the *-Algebra $A$} is
+    $(A)$.\newline
+    The automorphism $\alpha$ is called \textbf{inner} if
+    \begin{align}
+        \alpha(a) = u a u^* \;\;\; \text{for} \;\; U(A)
+    \end{align}
+    where $U(A)$ is
+    \begin{align}
+        U(A) = \{ u\in A|\;\; uu^* = u^*u=1\} \;\;\;
+        \text{(unitary)}
+    \end{align}
+\end{definition}
+The Gauge group is given by the quotient $U(A)/U(A_J)$.
+We want a nontrivial Gauge group so we need to choose $U(A_J) \neq
+U(A)$ which is the same as $U((A_F)_{J_F}) \neq
+U(A_F)$.
+We consider $F_x$ to be
+\begin{align}
+    F_x := \left(\mathbb{C}^2,\mathbb{C}^2, D_F =\begin{pmatrix}
+        0&0\\0&0\end{pmatrix}; J_f =\begin{pmatrix}
+    0&C\\C&0\end{pmatrix},
+            \gamma_F = \begin{pmatrix}1&0\\0&-1\end{pmatrix}\right).
+\end{align}
+Here $C$ is the complex conjugation, and $F_X$ is a real even finite
+    spectral triple (space) with $KO-dim=6$
+
+\begin{proposition}
+    The Gauge group $\mathfrak{B}(F)$ of the two point space is given by
+    $U(1)$.
+\end{proposition}
+\begin{proof}
+    Note that $U(A_F) = U(1) \times U(1)$. We need to show that
+    $U(\mathcal{A}_F)
+    \cap U(A_F)_{J_F}) \simeq U(1)$, such that $\mathfrak{B}(F)
+    \simeq U(1)$.\newline
+
+    So for $a \in \mathbb{C}^2$ to be in $(A_F)_{J_F}$ it has
+    to satisfy $J_F a^* J_F = a$.
+    \begin{align}
+        J_F a^* J^{-1} =
+        \begin{pmatrix}0&C\\C&0\end{pmatrix}
+            \begin{pmatrix}\bar{a}_1&0\\0&\bar{a}_2\end{pmatrix}
+        \begin{pmatrix}0&C\\C&0\end{pmatrix}
+            =
+            \begin{pmatrix}a_2&0\\0&a_1\end{pmatrix}
+    \end{align}
+    Which is only the case if $a_1 = a_2$. So we have
+    $(A_F)_{J_F} \simeq \mathbb{C}$, whose unitary elements
+    from $U(1)$ are contained in the diagonal subgroup of
+    $U(\mathcal{A}_F)$.
+\end{proof}
+
+Now we need to find the exact from of the field $B_\mu$ to calculate the
+spectral action of a spectral triple. Since $(A_F)_{J_F} \simeq
+\mathbb{C}$ we find that $\mathfrak{h}(F) = \mathfrak{u}((A_F)_{J_F})
+\simeq i\mathbb{R}$. Where $\mathfrak{h}(F)$ is the Lie Algebra on $F$
+and $\mathfrak{u}((A_F)_{J_F})$ is the Lie algebra of the unitary group
+$(A_F)_{J_F}$.\newline
+
+An arbitrary hermitian field $A_\mu = -ia\partial _\mu b$  is given by
+two
+$U(1)$ Gauge fields $X_\mu^1, X_\mu^2 \in C^\infty(M, \mathbb{R})$.
+However $A_\mu$ appears in combination $A_\mu - J_F A_\mu J_F^{-1}$:
+\begin{align}
+    B_\mu = A_\mu - J_F A_\mu J_F^{-1} =
+    \begin{pmatrix}X_\mu^1&0\\0&X_\mu^2 \end{pmatrix}
+        -
+    \begin{pmatrix}X_\mu^2&0\\0&X_\mu^1 \end{pmatrix}
+        =:
+    \begin{pmatrix}Y_\mu&0\\0&-Y_\mu \end{pmatrix}=
+        Y_\mu \otimes \gamma _F
+\end{align}
+where $Y_\mu$ the $U(1)$ Gauge field is defined as
+\begin{align}
+    Y_\mu := X_\mu^1 - X_\mu^2 \in C^\infty(M, \mathbb{R}) = C^\infty(M,
+    i\ u(1)).
+\end{align}
+
+\begin{proposition}
+    The inner fluctuations of the almost-commutative manifold $M\times
+    F_x$ described above are parametrized by a $U(1)$-gauge field $Y_\mu$
+    as
+    \begin{align}
+        D \mapsto D' = D + \gamma ^\mu Y_\mu \otimes \gamma_F
+    \end{align}
+    The action of the gauge group $\mathfrak{B}(M\times F_X) \simeq
+    C^\infty (M, U(1))$ on $D'$ is implemented by
+    \begin{align}
+        Y_\mu \mapsto Y_\mu - i\ u\partial_\mu u^*; \;\;\;\;\; (u\in
+        \mathfrak{B}(M\times F_X)).
+    \end{align}
+\end{proposition}
+
+\subsection{Electrodynamics}
+Now we use the almost commutative Manifold and the abelian gauge group
+$U(1)$ to describe Electrodynamics. We arrive at a unified description of
+gravity and electrodynamics although in the classical level.
+\newline
+
+The almost commutative Manifold $M\times F_X$ describes a local gauge group
+$U(1)$. The inner fluctuations of the Dirac operator describe $Y_\mu$ the
+gauge field of $U(1)$. There arise two Problems:
+\newline
+(1): With $F_X$, $D_F$ must vanish, however this implies that the electrons
+are massless (this we do not want)
+\newline
+
+(2): The Euclidean action for a free Dirac field is
+\begin{align}
+    S = - \int i \bar{\psi}(\gamma ^\mu\partial _\mu - m) \psi d^4x,
+\end{align}
+$\psi,\ \bar{\psi}$ must be considered as independent variables, which means
+$S_F$ need two independent Dirac Spinors. We write $\{e, \bar{e}\}$ for the
+ONB of $H_F$, where $\{e\}$ is the ONB of $H_F^+$ and $\{\bar{e}\}$ the ONB
+of $H_F^-$ with the real structure this gives us the following relations
+\begin{align}
+    J_F e &= \bar{e} \;\;\;\;\;\; J_F \bar{e} = e \\
+    \gamma_F e &= e  \;\;\;\;\;\;   \gamma_F \bar{e} = \bar{e}.
+\end{align}
+The total Hilbertspace is $H = L^2(S) \otimes H_F$, with $\gamma _F$ we can
+decompose $L^2(S) = L^2(S)^+ \oplus L^2(S)^-$, so with $\gamma = \gamma _M
+\otimes \gamma _F$ we can obtain the positive eigenspace $H^+$
+\begin{align}
+    H^+ = L^2(S)^+ \otimes H_F^+ \oplus L^(S)^- \otimes H_F^-.
+\end{align}
+For a $\xi \i H^+$ we can write
+\begin{align}
+    \xi = \psi _L \otimes e + \psi _R \otimes \bar{e}
+\end{align}
+where $\psi _L \in L^2(S)^+$ and $\psi _R \in L^2(S)^-$ are the two Wheyl
+spinors. We denote that $\xi$ is only determined by one Dirac spinor $\psi :=
+\psi_L + \psi _R$, \textbf{but we require two independent spinors}. This is
+too much restriction for $F_X$.
+\subsubsection{The Finite Space}
+Here we solve the two problems by enlarging(doubling) the Hilbertspace. This
+is done by introducing multiplicities in Krajewski Diagrams which will also
+allow us to choose a nonzero Dirac operator which will connect the two
+vertices (next chapter).
+\newline
+
+We start of with the same algebra $C^\infty(M, \mathbb{C}^2)$, corresponding
+to space $N= M\times X \simeq M\sqcup M$.
+\newline
+
+The Hilbertspace will describe four particles,
+\begin{itemize}
+    \item left handed electrons
+    \item right handed positrons
+\end{itemize}
+Thus we have $\{ \underbrace{e_R, e_L}_{\text{left-handed}},
+\underbrace{\bar{e}_R, \bar{e}_L}_{\text{right-handed}}\}$ the ONB for $H_F
+\mathbb{C}^4$.
+\newline
+Then with $J_F$ we interchange particles with antiparticles we have the
+following properties
+\begin{align}
+    &J_F e_R = \bar{e}_R \;\;\;\;\; &J_F e_L = \bar{e_L} \\
+    &\gamma _F e_R = -e_R \;\;\;\;\; &\gamma_F e_L = e_L \\
+    \text{and}& \nonumber \\
+    &J_F^2 = 1 \;\;\;\;\; & J_F \gamma_F  = - \gamma_F J_F
+\end{align}
+This corresponds to KO-dim$= 6$. Then $\gamma_F$ allows us to can decompose
+$H$
+\begin{align}
+    H_F = \underbrace{H_F^+}_{\text{ONB } \{e_L, \bar{e}_L\}}
+    \oplus \underbrace{H_F^-}_{\text{ONB } \{e_R, \bar{e}_R\}}.
+\end{align}
+Alternatively we can decompose $H$ into the eigenspace of particles and their
+antiparticles (electrons and positrons) which we will use going further.
+\begin{align}
+    H_F = \underbrace{H_{e}}_{\text{ONB } \{e_L, e_R\}} \oplus
+    \underbrace{H_{\bar{e}}}_{\text{ONB } \{\bar{e}_L, \bar{e}_R\}}
+\end{align}
+Now the action of $a \in A = \mathbb{C}^2$ on $H$ with respect to the ONB
+$\{e_L, e_R, \bar{e}_L, \bar{e}_R\}$ is represented by
+\begin{align}
+    a =
+    \begin{pmatrix}a_1 & a_2 \end{pmatrix} \mapsto
+        \begin{pmatrix}
+            a_1 &0 &0 &0\\
+             0&a_1 &0 &0\\
+            0 &0 &a_2 &0\\
+            0 &0 &0 &a_2\\
+        \end{pmatrix}
+\end{align}
+Do note that this action commutes wit the grading and that
+$[a, b^\circ] = 0$ with $b:= J_F b^*J_F$  because both the left and the right
+action is given by diagonal matrices.
+\begin{proposition}
+    The data
+    \begin{align}
+        \left( \mathbb{C}^2, \mathbb{C}^2, D_F=0; J_F =
+        \begin{pmatrix}
+            0 & C \\ C &0
+        \end{pmatrix},
+        \gamma _F =
+        \begin{pmatrix}
+            1 & 0 \\ 0 &-1
+        \end{pmatrix}
+        \right)
+    \end{align}
+    defines a real even spectral triple of KO-dimension 6.
+\end{proposition}
+This spectral triple can be represented in the following Krajewski diagram,
+with two nodes of multiplicity two
+    \begin{figure}[h!] \centering
+    \begin{tikzpicture}[
+        dot/.style = {draw, circle, inner sep=0.06cm},
+        bigdot/.style = {draw, circle, inner sep=0.09cm},
+        no/.style = {},
+        ]
+        \node[no](a) at (0,0) [label=left:$\textbf{1}^\circ$] {};
+        \node[no](b) at (0, -1) [label=left:$\textbf{1}^\circ$] {};
+        \node[no](c) at (0.5, 0.5) [label=above:$\textbf{1}$] {};
+        \node[no](d) at (1.5, 0.5) [label=above:$\textbf{1}$] {};
+        \node[dot](d0) at (1.5,0) [] {};
+        \node[dot](d0) at (0.5,-1) [] {};
+        \node[bigdot](d0) at (1.5,0) [] {};
+        \node[bigdot](d0) at (0.5,-1) [] {};
+        \end{tikzpicture}
+    \end{figure}
+\subsubsection{A noncommutative Finite Dirac Operator}
+Add a non-zero Dirac Operator to $F_{ED}$. From the Krajewski Diagram, we see
+that edges only exist between the multiple vertices. So we construct a Dirac
+operator mapping between the two vertices.
+\begin{align}\label{dirac}
+    D_F =
+    \begin{pmatrix}
+    0 & d & 0 & 0 \\
+    \bar{d} & 0 & 0 & 0 \\
+    0 & 0 & 0 & \bar{d} \\
+    0 & 0 & d & 0
+    \end{pmatrix}
+\end{align}
+We can now consider the finite space $F_{ED}$.
+\begin{align}
+    F_{ED} := (\mathbb{C}^2, \mathbb{C}^4, D_F; J_F, \gamma_F)
+\end{align}
+where $J_F$ and $\gamma_F$ like before, $D_F$ like above.
+\subsubsection{The almost-commutative Manifold}
+The almost commutative manifold $M\times F_{ED}$ has KO-dim$=2$, it is the
+following spectral triple
+\begin{align}
+    M\times F_{ED} := \left(C^\infty(M,\mathbb{C}^2),\ L^2(S)\otimes
+    \mathbb{C}^4,\
+    D_M\otimes 1 +\gamma _M \otimes D_F;\; J_M\otimes J_F,\ \gamma_M\otimes
+    \gamma _F\right)
+\end{align}
+
+The algebra decomposition is like before
+\begin{align}
+    C^\infty(M, \mathbb{C}^2) = C^\infty (M) \oplus C^\infty (M)
+\end{align}
+
+The Hilbertspace decomposition is
+\begin{align}
+    H = (L^2(S) \otimes H_e ) \oplus (L^2(S) \otimes H_{\bar{e}}).
+\end{align}
+Here we have the one component of the algebra acting on $L^2(S) \otimes H_e$,
+and the other one acting on $L^2(S) \otimes H_{\bar{e}}$
+\newline
+
+The derivation of the gauge theory is the same for $F_{ED}$ as for $F_X$, we
+have $\mathfrak{B}(F) \simeq U(1)$ and for $B_\mu = A_\mu - J_F A_\mu
+J_F^{-1}$
+\begin{align} \label{field}
+    B_\mu =
+    \begin{pmatrix}
+        Y_\mu & 0 & 0 & 0 \\
+        0 & Y_\mu& 0 & 0 \\
+        0 & 0 & Y_\mu& 0 \\
+        0 & 0 & 0 & Y_\mu
+    \end{pmatrix} \;\;\;\;\;\ \text{for} \;\;\ Y_\mu (x) \in \mathbb{R}.
+\end{align}
+We have one single $U(1)$ gauge field $Y_\mu$, carrying the action of the
+gauge group
+\begin{align}
+   \text{$\mathfrak{B}$}(M\times F_{ED}) \simeq C^\infty(M, U(1))
+\end{align}
+
+Our space $N = M\times X \simeq M\sqcup M$ consists of two compies of $M$.
+If $D_F = 0$ we have infinite distance between the two copies. Now we have $D_F$
+nonzero but $[D_F, a] = 0$ $\forall a \in A$ which still yields infinite
+distance.
+\begin{question}
+    What does this imply (physically, mathematically)? Why can we continue
+    even thought we have infinite distance between the same manifold? What do
+    we get if we fix this?
+\end{question}
+\subsubsection{The Spectral Action}
+Here we calculate the Lagrangian of the almost commutative Manifold $M\times
+F_{ED}$, which corresponds to the Lagrangian of Electrodynamics on a curved
+background Manifold (+ gravitational Lagrangian). It consists of the spectral
+action $S_b$ (bosonic) and of the fermionic action $S_f$.
+
+The simples spectral action of a spectral triple $(A, H, D)$ is given by the
+trace of some function of $D$, we also allow inner fluctuations of the Dirac
+operator $D_\omega = D + \omega + \varepsilon' J\omega J^{-1}$ where $\omega =
+\omega ^* \in \Omega_D^1(A)$.
+\begin{definition}
+    Let $f:\mathbb{R} \rightarrow \mathbb{R}$ be a suitable function
+    \textbf{positive and even}. The spectral action is then
+    \begin{align}
+        S_b [\omega] := \text{Tr}f(\frac{D_\omega}{\Lambda})
+    \end{align}
+    where $\Lambda$ is a real cutoff parameter. The minimal condition on $f$
+    is that $f(\frac{D_\omega}{\Lambda})$ is  a traclass operator, which mean
+    that it should be compact operator with well defined finite trace
+    independent of the basis. The subscript $b$ of $S_b$ refers to bosonic,
+    because in physical applications $\omega$ will describe bosonic fields.
+
+    Furthermore there is a topological spectral action, defined with the
+    grading $\gamma$
+    \begin{align}
+        S_{\text{top}}[\omega] := \text{Tr}(\gamma\
+        f(\frac{D_\omega}{\Lambda})).
+    \end{align}
+\end{definition}
+\begin{definition}
+    The fermionic action is defined by
+    \begin{align}
+        S_f[\omega, \psi] = (J\tilde{\psi}, D_\omega \tilde{\psi})
+    \end{align}
+    with $\tilde{\psi} \in H_{cl}^+ := \{\tilde{\psi}: \psi \in H^+\}$.
+    $H_{cl}^+$ is the set of Grassmann variables in $H$ in the +1-eigenspace
+    of the grading $\gamma$.
+\end{definition}
+The grasmann variables are a set of Basis vectors of a vector space, they
+form a unital algebra over a vector field say $V$ where the generators are anti commuting, that is for
+$\theta _i, \theta _j$ some Grassmann variables we have
+\begin{align}
+    &\theta _i \theta _j = -\theta _j \theta _i \\
+    &\theta _i x = x\theta _j \;\;\;\; x\in V \\
+    &(\theta_i)^2 = 0 \;\;\; (\theta _i \theta _i = -\theta _i \theta _i)
+\end{align}
+\begin{proposition}
+    The spectral action of the almost commutative manifold $M$ with $\dim(M)
+    =4$ with a fluctuated Dirac operator is.
+    \begin{align}
+        \text{Tr}(f\frac{D_\omega}{\Lambda}) \sim \int_M \mathcal{L}(g_{\mu\nu},
+         B_\mu, \Phi) \sqrt{g}\ d^4x + O(\Lambda^{-1})
+    \end{align}
+    with
+    \begin{align}
+        \mathcal{L}(g_{\mu\nu}, B_\mu, \Phi) =
+        N\mathcal{L}_M(g_{\mu\nu})
+        \mathcal{L}_B(B_\mu)+
+        \mathcal{L}_\phi(g_{\mu\nu}, B_\mu, \Phi)
+    \end{align}
+    where $N=4$ and $\mathcal{L}_M$ is the Lagrangian of the spectral triple
+    $(C^\infty(M) , L^2(S), D_M)$
+    \begin{align}\label{lagr}
+        \mathcal{L}_M(g_{\mu\nu}) := \frac{f_4 \Lambda ^4}{2\pi^2} -
+        \frac{f_2 \Lambda^2}{24\pi ^2}s - \frac{f(0)}{320\pi^2} C_{\mu\nu
+        \varrho \sigma}C^{\mu\nu \varrho \sigma}.
+    \end{align}
+    Here $C^{\mu\nu \varrho \sigma}$ is defined in terms of the Riemannian
+    curvature tensor $R_{\mu\nu \varrho \sigma}$ and the Ricci tensor
+    $R_{\nu\sigma} = g^{\mu\varrho} R_{\mu\nu \varrho\sigma}$.
+
+
+    Furthermore $\mathcal{L}_B$ describes the kinetic term of the gauge field
+    \begin{align}
+        \mathcal{L}_B(B_\mu) := \frac{f(0)}{24\pi^2}
+        \text{Tr}(F_{\mu\nu}F^{\mu\nu}).
+    \end{align}
+    Last $\mathcal{L}_\phi$ is the scalar-field Lagrangian with a boundary
+    term.
+    \begin{align}
+        \mathcal{L}_\phi(g_{\mu\nu}, B_\mu, \Phi) :=
+        &-\frac{2f_2\Lambda^2}{4\pi^2}\text{Tr}(\Phi^2) + \frac{f(0)}{8\pi^2}
+        \text{Tr}(\Phi^4) + \frac{f(0)}{24\pi^2} \Delta(\text{Tr}(\Phi^2))\\
+        &+ \frac{f(0)}{48\pi^2}s\text{Tr}(\Phi^2)
+        \frac{f(0)}{8\pi^2}\text{Tr}((D_\mu \Phi)(D^\mu \Phi)).
+    \end{align}
+\end{proposition}
+\begin{proof}
+     the dimension of our manifold $m$ is $\dim(m) = \text{tr}(id) =4 $. let us
+     take a $x \in m$, we have an asymtotic expansion of
+     $\text{tr}(f(\frac{d_\omega}{\lambda}))$ as $\lambda \rightarrow \infty$
+     \begin{align}
+         \text{tr}(f(\frac{d_\omega}{\lambda})) \simeq& \ 2f_4 \lambda ^4
+         a_0(d_\omega ^2)+ 2f_2\lambda^2 a_2(d_\omega^2) \\&+ f(0) a_4(d_\omega^4)
+         +o(\lambda^{-1}).
+     \end{align}
+     note that the heat kernel coefficients are zero for uneven $k$,
+     furthermore they are dependent on the fluctuated dirac operator
+     $d_\omega$. we can rewrite the heat kernel coefficients in terms of $d_m$,
+     for the first two we note that $n:= \text{tr}\mathbbm{1_{h_f}})$
+     \begin{align}
+         a_0(d_\omega^2) &= na_0(d_m^2)\\
+         a_2(d_\omega^2 &= na_2(d_m^2) - \frac{1}{4\pi^2}\int_m
+         \text{tr}(\phi^2)\sqrt{g}d^4x
+     \end{align}
+     for $a_4$ we need to extend in terms of coefficients of $f$, look week9.pdf
+     for the standard version,
+     \begin{align}
+         &\frac{1}{360}\text{tr}(60sf)= -\frac{1}{6}s(ns + 4
+         \text{tr}(\phi^2))\\
+        \nonumber\\
+         &f^2 = \frac{1}{16}s^2\otimes 1 + 1\otimes \phi^4 - \frac{1}{4}
+         \gamma^\mu\gamma^\nu \gamma^\varrho\gamma^\sigma f_{\mu\nu}f^{\mu\nu}+\\
+         &\;\;\;\;\;\;\;+\gamma^\mu\gamma^\nu\otimes(d_\mu\phi)(d_\nu
+         \phi)+\frac{1}{2}s\otimes \phi^2 + \ \text{traceless terms}\\
+         \nonumber\\
+         &\frac{1}{360}\text{tr}(180f^2) = \frac{1}{8}s^2n + 2\text{tr}(\phi^4)
+         + \text{tr}(f_{\mu\nu}f^{\mu\nu}) +\\
+         &\;\;\;\;\;\;\;+2\text{tr}((d_\mu\phi)(d^\mu\phi))
+         + s\text{tr}(\phi^2)\\
+         \nonumber\\
+         &\frac{1}{360}\text{tr}(-60\delta f)=
+         \frac{1}{6}\delta(ns+4\text{tr}(\phi^2)).
+     \end{align}
+     now for the cross terms of $\omega_{\mu\nu}^e\omega^{e\mu\nu}$  the trace
+     vanishes because of the anti-symmetric properties of the riemannian
+     curvature tensor
+     \begin{align}
+         \omega_{\mu\nu}^e\omega^{e\mu\nu} = \omega_{\mu\nu}^s\omega^{s\mu\nu}
+         \otimes 1 - 1\otimes f_{\mu\nu}f^{\mu\nu} + 2i\omega_{\mu\nu}^s
+         \otimes f^{\mu\nu}
+     \end{align}
+     the trace  of the cross term vanishes because
+     \begin{align}
+         \text{tr}(\omega^{s}_{\mu\nu} = \frac{1}{4}
+         r_{\mu\nu\varrho\sigma}\text{tr}(\gamma^\mu\gamma^\nu) = \frac{1}{4}
+         r_{\mu\nu\varrho\sigma}g^{\mu\nu} =0
+     \end{align}
+     and the trace of the whole term is
+     \begin{align}
+         \frac{1}{360}\text{tr}(30\omega^e_{\mu\nu}\omega^{e\mu\nu}) =
+         \frac{n}{24}r_{\mu\nu\varrho\sigma}r^{\mu\nu\varrho\sigma}
+         -\frac{1}{3}\text{tr}(f_{\mu\nu}f^{\mu\nu}).
+     \end{align}
+     plugging the results into $a_4$ and simplifying we can write
+     \begin{align}
+         a_4(x, d_\omega^4) &= na_4(x, d_m^2) + \frac{1}{4\pi^2}\bigg(\frac{1}{12} s
+         \text{tr}(\phi^2) + \frac{1}{2}\text{tr}(\phi^4) \\
+         &+ \frac{1}{4}
+         \text{tr}((d_\mu\phi)(d^\mu \phi)) + \frac{1}{6}
+         \delta\text{tr}(\phi^2) + \frac{1}{6}
+         \text{tr}(f_{\mu\nu}f^{\mu\nu})\bigg)
+     \end{align}
+     the only thing left is to plug in the heat kernel coefficients into the
+     heat kernel expansion above.
+\end{proof}
+
+Here on we go and calculate the spectral action of $M\times F_{ED}$
+\begin{proposition}
+    The Spectral action of $M\times F_{ED}$ is
+    \begin{align}
+        \text{Tr}(f\frac{D_\omega}{\Lambda}) \sim \int_M \mathcal{L}(g_{\mu\nu},
+         Y_\mu) \sqrt{g}\ d^4x + O(\Lambda^{-1})
+    \end{align}
+    where the Lagrangian is
+    \begin{align}
+        \mathcal{L}(g_{\mu\nu}, Y_\mu) =
+        4\mathcal{L}_M(g_{\mu\nu})+
+        \mathcal{L}_Y(Y_\mu)+
+        \mathcal{L}_\phi(g_{\mu\nu}, d)
+    \end{align}
+        here the $d$ in $\mathcal{L}_\phi$ is from $D_F$ in equation
+        \ref{dirac}. The Lagrangian $\mathcal{L}_M$ is like in equation
+        \ref{lagr}. The Lagrangian $\mathcal{L}_Y$ is the kinetic term of the
+        $U(1)$ gauge field $Y_\mu$
+    \begin{align}
+        \mathcal{L}_Y(Y_\mu):= \frac{f(0)}{6\pi^2}
+        Y_{\mu\nu}Y^{\mu\nu}\;\;\;\;\;\;\;\;\text{with}\;\;\;  Y_{\mu\nu} =
+        \partial_\mu Y_\nu -
+        \partial_\nu Y_\mu.
+    \end{align}
+    Then there is $\mathcal{L}_\phi$, which has two constant terms
+    (disregarding the boundary term) that add up to the Cosmological Constant
+    and a term that for the Einstein-Hilbert action
+    \begin{align}
+        \mathcal{L}_\phi(g_{\mu\nu}, d) := \frac{2f_2 \Lambda ^2}{\pi^2}
+        |d|^2 + \frac{f(0)}{2\pi^2} |d|^4 + \frac{f(0)}{12\pi ^2} s |d|^2.
+    \end{align}
+\end{proposition}
+\begin{proof}
+    The Trace of $\mathbb{C}^4$ (the Hilbertspace) gives $N=4$. With $B_\mu$
+    like in equation \ref{field} we have $\text{Tr}(F_{\mu\nu}
+    F^{\mu\nu})=4Y_{\mu\nu}Y^{\mu\nu}$. This provides $\mathcal{L}_Y$.
+    Furthermore we have $\Phi^2 = D_F^2 = |d|^2$ and $\mathcal{L}_\phi$ only
+    give numerical contributions to the cosmological constant and the
+    Einstein-Hilbert action.
+
+    The proof is relying itself on just plugging the terms into the previous
+    proposition, for which I didn't write the proof for.
+\end{proof}
+
+
+\subsection{fermionic action}
+a quick reminder with what we are dealing with, the fermionic action is defined
+in the following way.
+\begin{definition}
+    the fermionic action is defined by
+    \begin{align}
+        s_f[\omega, \psi] = (j\tilde{\psi}, d_\omega \tilde{\psi})
+    \end{align}
+    with $\tilde{\psi} \in h_{cl}^+ := \{\tilde{\psi}: \psi \in h^+\}$.
+    $h_{cl}^+$ is the set of grassmann variables in $h$ in the +1-eigenspace
+    of the grading $\gamma$.
+\end{definition}
+
+the almostcommutative manifold we are dealing with is the following
+\begin{align}
+    &m\times f_{ed} := \left(c^\infty(m,\mathbb{c}^2),\ l^2(s)\otimes
+    \mathbb{c}^4,\
+    d_m\otimes 1 +\gamma _m \otimes d_f;\; j_m\otimes j_f,\ \gamma_m\otimes
+    \gamma _f\right).\\
+    \nonumber\\
+    &\text{where:} \nonumber \\
+    &c^\infty(m,\mathbb{c}^2) = c^\infty(m) \otimes c^\infty(m)
+    &\mathcal{h} = \mathcal{h}^+ \otimes \mathcal{h}^-\\
+    &\mathcal{h} = l^2(s)^+ \otimes h_f^+ \oplus l^2(s)^- \otimes h_f^-.
+\end{align}
+where $h_f$ is separated into the particle-anitparticle states with onb $\{e_r,
+e_l, \bar{e}_r, \bar{e}_l\}$. the onb of $h_f^+$ is $\{e_l, \bar{e}_r\}$ and
+for $h_f^-$ we have $\{e_r, \bar{e}_l\}$. furthermore we can decompose a spinor
+$\psi \in l^2(s)$ for each of the eigenspaces $h_f^\pm$, $\psi = \psi_r
+\psi_l$. thus we can write for an arbitrary $\psi \in \mathcal{h}^+$
+\begin{align}
+    \psi = \chi_r \otimes e_r + \chi_l \otimes e_l + \psi_l \otimes \bar{e}_r
+    \psi_r \otimes \bar{e}_l
+\end{align}
+for $\chi_l, \psi_l \in l^2(s)^+$ and $\chi_r, \psi_r \in l^2(s)^-$.
+\begin{proposition}
+    we can define the action of the fermionic art of $m\times f_{ed}$ in the
+    following way
+    \begin{align}
+        s_f = -i\big(j_m\tilde{\chi}, \gamma(\nabla^s_\mu - i\gamma_\mu)
+        \tilde{\psi}\big) + \big(s_m\tilde{\chi}_l, \bar{d}\tilde{\psi}_l\big) -
+        \big(j_m\tilde{\chi}_r, d \tilde{\psi}_r\big)
+    \end{align}
+\end{proposition}
+\begin{proof}
+    we take the fluctuated dirac operator
+    \begin{align}
+        d_\omega = d_m \otimes i + \gamma^\mu \otimes b_\mu + \gamma_m \otimes
+        d_f
+    \end{align}
+\end{proof}
+the fermionic action is $s_f = (j\tilde{\xi}, d_\omega\tilde{\xi})$  for a $\xi
+\in \mathcal{h}^+$, we can begin to calculate (note that we add the constant
+$\frac{1}{2}$ to the action)
+\begin{align}
+    \frac{1}{2}(j\tilde{\xi}, d_\omega\tilde{\xi}) =&\\
+        &+\frac{1}{2}(j\tilde{\xi}, (d_m \otimes i)\tilde{\xi})\label{eq:1}\\
+        &+\frac{1}{2}(j\tilde{\xi}, (\gamma^\mu \otimes b_\mu)
+        \tilde{\xi})\label{eq:2}\\
+        &+\frac{1}{2}(j\tilde{\xi}, (\gamma_m\otimes
+        d_f)\tilde{\xi})\label{eq:3}.
+\end{align}
+for equation \ref{eq:1} we calculate
+\begin{align}
+    \frac{1}{2}(j\tilde{\xi}, (d_m\otimes 1)\tilde{\xi}) &=
+    \frac{1}{2}(j_m\tilde{\chi}_r,d_m\tilde{\psi}_l)+
+    \frac{1}{2}(j_m\tilde{\chi}_l,d_m\tilde{\psi}_r)+
+    \\&+\frac{1}{2}(j_m\tilde{\psi}_l,d_m\tilde{\psi}_r)+
+    \frac{1}{2}(j_m\tilde{\chi}_r,d_m\tilde{\chi}_l)\\
+    &= (j_m\tilde{\chi},d_m\tilde{\chi}).
+\end{align}
+for equation \ref{eq:2} we have
+\begin{align}
+    \frac{1}{2}(j\tilde{\xi}, (\gamma^\mu \otimes b_\mu)\tilde{\xi})&=
+    -\frac{1}{2}(j_m\tilde{\chi}_r, \gamma^\mu y_\mu\tilde{\psi}_r)
+    -\frac{1}{2}(j_m\tilde{\chi}_l, \gamma^\mu y_\mu\tilde{\psi}_r)+\\
+    &+\frac{1}{2}(j_m\tilde{\psi}_l, \gamma^\mu y_\mu\tilde{\chi}_r)+
+    \frac{1}{2}(j_m\tilde{\psi}_r, \gamma^\mu y_\mu\tilde{\chi}_l)=\\
+    &= -(j_m\tilde{\chi}, \gamma^\mu y_\mu\tilde{\psi}).
+\end{align}
+for equation \ref{eq:3} we have
+\begin{align}
+    \frac{1}{2}(j\tilde{\xi}, (\gamma_m\otimes d_f)\tilde{\xi})&=
+    +\frac{1}{2}(j_m\tilde{\chi}_r, d\gamma_m\tilde{\chi}_r)
+    +\frac{1}{2}(j_m\tilde{\chi}_l, \bar{d}\gamma_m\tilde{\chi}_l)+\\
+    &+\frac{1}{2}(j_m\tilde{\chi}_l, \bar{d}\gamma_m\tilde{\chi}_l)
+    +\frac{1}{2}(j_m\tilde{\chi}_r, d\gamma_m\tilde{\chi}_r)=\\
+    &= i(j_m\tilde{\chi}, m\tilde{\psi})
+\end{align}
+note that we obtain a complex mass parameter $d$, so we write $d:=im$ for $m\in \mathbb{r}$,
+which stands for the real mass and we obtain a nice result
+
+\begin{theorem}
+    the full lagrangian of $m\times f_{ed}$ is the sum of purely gravitational
+    lagrangian
+    \begin{align}
+        \mathcal{l}_{grav}(g_{\mu\nu})=4\mathcal{l}_m(g_{\mu\nu})
+        \mathcal{l}_\phi (g_{\mu\nu})
+    \end{align}
+    and the lagrangian of electrodynamics
+    \begin{align}
+        \mathcal{l}_{ed} = -i\bigg\langle
+        j_m\tilde{\chi},\big(\gamma^\mu(\nabla^s_\mu - iy_\mu) -m\big)\tilde{\psi})
+        \bigg\rangle
+        +\frac{f(0)}{6\pi^2} y_{\mu\nu}y^{\mu\nu}.
+    \end{align}
+
+\end{theorem}

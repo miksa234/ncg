@@ -1,0 +1,49 @@
+\subsection{Excurse}
+\textbf{Manifold:} A topological space that is locally Euclidean.
+\newline
+\textbf{Riemannian Manifold:}A Manifold equipped with a Riemannian
+Metric, a
+symmetric bilinear form on Vector Fields $\Gamma(TM)$
+\begin{align}
+    &g: \Gamma(TM) \times \Gamma(TM) \rightarrow C(M) \\
+    \text{with}& \nonumber\\
+    &g(X, Y) \in \mathbb{R} \;\;\; \text{if $X, Y \in \mathbb{R}$}\\
+    &\text{$g$ is $C(M)$-bilinear } \forall f\in C(M):\;\; g(fX, Y) =
+    g(X,
+    fY) = fg(X,Y)\\
+    &g(X,X) \begin{cases}\geq 0  \;\;\; \forall X \\ = 0 \;\;\; \forall X
+        =0
+    \end{cases}
+\end{align}
+$g$ on $M$ gives rise to a distance function on $M$
+\begin{align}
+    d_g(x, y) = \inf_\gamma \left\{\int_0^1(\dot{\gamma}(t),
+    \dot{\gamma}(t))dt;\;\; \gamma(0) = x, \gamma(1) = y \right\}
+\end{align}
+Riemannian Manifold is called spin$^c$ if there exists a vector bundle $S
+\rightarrow M$ with an algebra bundle isomorphism
+\begin{align}
+    \mathbb{C}\text{I}(TM) &\simeq \text{End}(S)\;\;\; &\text{($dim(M)$
+    even)}\\
+    \mathbb{C}\text{I}(TM)^\circ &\simeq \text{End}(S)\;\;\;
+    &\text{($dim(M)$ odd)}\\
+\end{align}
+$(M,S)$ is called the \textbf{spin$^c$ structure on $M$}.
+\newline
+$S$ is called the \textbf{spinor Bundle}.
+\newline
+$\Gamma(S)$ are the \textbf{spinors}.
+
+Riemannian spin$^c$ Manifold is called spin if there exists an
+anti-unitary
+operator $J_M:\Gamma(S) \rightarrow \Gamma(S)$ such that:
+\begin{enumerate}
+    \item $J_M$ commutes with the action of real-valued  continuous
+        functions
+        on $\Gamma(S)$.
+    \item $J_M$ commutes with $\text{Cliff}^-(M)$ (even case)\\
+    $J_M$ commutes with $\text{Cliff}^-(M)^\circ$ (odd case)
+\end{enumerate}
+$(S, J_M)$ is called the \textbf{spin Structure on $M$}
+\newline
+$J_M$ is called the \textbf{charge conjugation}.
