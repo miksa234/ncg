@@ -1,88 +1,23 @@
-\documentclass[12pt]{report}
-\usepackage[utf8]{inputenc}	% für direkte Eingabe von ß, ö, ä
-%\usepackage{ngerman}	% Sprachanpassung Deutsch
+\documentclass[12pt]{article}
 
-\usepackage{graphicx} % Graphikeinbindung
-\usepackage{geometry} % Seitenränder
-\geometry{a4paper,left=25mm,right=20mm, top=10mm, bottom=20mm}
-
-\usepackage{subcaption}
-\usepackage[shortlabels]{enumitem}
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{mathtools}
-\usepackage{braket}
-\usepackage{bbm}
-\usepackage{graphicx}
-\usepackage{float}
-\usepackage{yhmath}
-\usepackage{tikz}
-\usetikzlibrary{calc,decorations.markings}
-\usepackage[colorlinks=true,naturalnames=true,plainpages=false,pdfpagelabels=true]{hyperref}
-%\usepackage[parfill]{parskip}
-
-\usepackage[backend=biber, sorting=none]{biblatex}
-\addbibresource{uni.bib}
-
+\input{back/packages}
 
 \begin{document}
-\begin{titlepage}
 
-\begin{center}
-\begin{figure}
-\hspace{9.1cm}
-\includegraphics[width=8cm]{./uni_logo}
-\end{figure}
-\vspace*{2.1cm}
-
-\fontsize{22}{0} \selectfont \textbf{BACHELOR'S THESIS}\\
-\vspace*{2.5cm}
-
-\fontsize{12}{0} \selectfont Title of the Bachelor's Thesis\\
-\vspace*{0.4cm}
-
-\fontsize{18}{0} \selectfont \textbf{Noncommutative Geomtetry and Physics}\\
-
-\vspace*{2.8cm}
-    {\fontsize{12}{0} \selectfont submitted by}\\
-\vspace*{0.4cm}
-
-    { \fontsize{14}{0} \selectfont Popović Milutin}\\
-
-\vspace*{2.5cm}
-
-    { \fontsize{12}{0} \selectfont Vienna, July 2021}\\
-
-\vspace*{4.5cm}
-
-\begin{tabular}{p{9cm}p{11.25cm}}
-        \fontsize{12}{0} \selectfont degree programme code as it appears on / &
-        \fontsize{12}{0} \selectfont A 033 676 \\
-
-        \fontsize{12}{0} \selectfont the student record sheet:\vspace*{0.4cm} &
-        \fontsize{12}{0} \selectfont\\
-
-        \fontsize{12}{0} \selectfont degree
-        programme as it appears on / &  \fontsize{12}{0} \selectfont Physics \\
-
-        \fontsize{12}{0} \selectfont the student record sheet:\vspace*{0.4cm} &
-        \fontsize{12}{0} \selectfont \\
-
-        \fontsize{12}{0} \selectfont
-        Supervisor:\vspace*{0.4cm}& \fontsize{12}{0} \selectfont Lisa Glaser, PhD\\
-\end{tabular}
-\end{center}
-\end{titlepage}
+\input{back/title}
 
 \newpage
- Some text
 
-\nocite{electrodynamics}
-\nocite{ncgwalter}
-\nocite{liealgebra}
-\nocite{ncg4pages}
-\nocite{ncgshort}
-\nocite{heatkernel}
-\printbibliography
+\input{back/abstract}
+
+\input{front/intro}
+
+\input{front/main_sec}
+
+\input{front/conclusion}
+
+\input{front/acknowledgment}
+
+\input{back/refs}
 
 \end{document}
