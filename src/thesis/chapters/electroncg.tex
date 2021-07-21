@@ -397,7 +397,7 @@ from equation \ref{eq:feddirac}.
 \subsubsection{The almost-commutative Manifold}
 The almost commutative manifold $M\times F_{ED}$ has KO-dimension 2, and is
 represented by the following spectral triple
-\begin{align}
+\begin{align}\label{eq:almost commutative manifold}
     M\times F_{ED} := \big(C^\infty(M,\mathbb{C}^2),\ L^2(S)\otimes
     \mathbb{C}^4,\
     D_M\otimes 1 +\gamma _M \otimes D_F;\; J_M\otimes J_F,\ \gamma_M\otimes
@@ -434,7 +434,7 @@ gauge group
    \text{$\mathfrak{B}$}(M\times F_{ED}) \simeq C^\infty(M, U(1))
 \end{align}
 
-Our space $N = M\times X \simeq M\sqcup M$ consists of two copies of $M$.
+The space $N = M\times X$ consists of two copies of $M$.
 If $D_F = 0$ we have infinite distance between the two copies. Now have
 hacked the spectral triple to have nonzero Dirac operator $D_F$. The new
 Dirac operator still has a commuting relation with the algebra $[D_F, a] = 0$
@@ -442,313 +442,256 @@ $\forall a \in A$, and we should note that the distance between the two
 copies of $M$ is still infinite. This is purely an mathematically abstract
 observation and doesn't affect physical results.
 
-%\subsubsection{The Spectral Action}
-%Here we calculate the Lagrangian of the almost commutative Manifold $M\times
-%F_{ED}$, which corresponds to the Lagrangian of Electrodynamics on a curved
-%background Manifold (+ gravitational Lagrangian). It consists of the spectral
-%action $S_b$ (bosonic) and of the fermionic action $S_f$.
-%
-%The simples spectral action of a spectral triple $(A, H, D)$ is given by the
-%trace of some function of $D$, we also allow inner fluctuations of the Dirac
-%operator $D_\omega = D + \omega + \varepsilon' J\omega J^{-1}$ where $\omega =
-%\omega ^* \in \Omega_D^1(A)$.
-%\begin{definition}
-%    Let $f:\mathbb{R} \rightarrow \mathbb{R}$ be a suitable function
-%    \textbf{positive and even}. The spectral action is then
-%    \begin{align}
-%        S_b [\omega] := \text{Tr}f(\frac{D_\omega}{\Lambda})
-%    \end{align}
-%    where $\Lambda$ is a real cutoff parameter. The minimal condition on $f$
-%    is that $f(\frac{D_\omega}{\Lambda})$ is  a traclass operator, which mean
-%    that it should be compact operator with well defined finite trace
-%    independent of the basis. The subscript $b$ of $S_b$ refers to bosonic,
-%    because in physical applications $\omega$ will describe bosonic fields.
-%
-%    Furthermore there is a topological spectral action, defined with the
-%    grading $\gamma$
-%    \begin{align}
-%        S_{\text{top}}[\omega] := \text{Tr}(\gamma\
-%        f(\frac{D_\omega}{\Lambda})).
-%    \end{align}
-%\end{definition}
-%\begin{definition}
-%    The fermionic action is defined by
-%    \begin{align}
-%        S_f[\omega, \psi] = (J\tilde{\psi}, D_\omega \tilde{\psi})
-%    \end{align}
-%    with $\tilde{\psi} \in H_{cl}^+ := \{\tilde{\psi}: \psi \in H^+\}$.
-%    $H_{cl}^+$ is the set of Grassmann variables in $H$ in the +1-eigenspace
-%    of the grading $\gamma$.
-%\end{definition}
-%The grasmann variables are a set of Basis vectors of a vector space, they
-%form a unital algebra over a vector field say $V$ where the generators are anti commuting, that is for
-%$\theta _i, \theta _j$ some Grassmann variables we have
-%\begin{align}
-%    &\theta _i \theta _j = -\theta _j \theta _i \\
-%    &\theta _i x = x\theta _j \;\;\;\; x\in V \\
-%    &(\theta_i)^2 = 0 \;\;\; (\theta _i \theta _i = -\theta _i \theta _i)
-%\end{align}
-%\begin{proposition}
-%    The spectral action of the almost commutative manifold $M$ with $\dim(M)
-%    =4$ with a fluctuated Dirac operator is.
-%    \begin{align}
-%        \text{Tr}(f\frac{D_\omega}{\Lambda}) \sim \int_M \mathcal{L}(g_{\mu\nu},
-%         B_\mu, \Phi) \sqrt{g}\ d^4x + O(\Lambda^{-1})
-%    \end{align}
-%    with
-%    \begin{align}
-%        \mathcal{L}(g_{\mu\nu}, B_\mu, \Phi) =
-%        N\mathcal{L}_M(g_{\mu\nu})
-%        \mathcal{L}_B(B_\mu)+
-%        \mathcal{L}_\phi(g_{\mu\nu}, B_\mu, \Phi)
-%    \end{align}
-%    where $N=4$ and $\mathcal{L}_M$ is the Lagrangian of the spectral triple
-%    $(C^\infty(M) , L^2(S), D_M)$
-%    \begin{align}\label{lagr}
-%        \mathcal{L}_M(g_{\mu\nu}) := \frac{f_4 \Lambda ^4}{2\pi^2} -
-%        \frac{f_2 \Lambda^2}{24\pi ^2}s - \frac{f(0)}{320\pi^2} C_{\mu\nu
-%        \varrho \sigma}C^{\mu\nu \varrho \sigma}.
-%    \end{align}
-%    Here $C^{\mu\nu \varrho \sigma}$ is defined in terms of the Riemannian
-%    curvature tensor $R_{\mu\nu \varrho \sigma}$ and the Ricci tensor
-%    $R_{\nu\sigma} = g^{\mu\varrho} R_{\mu\nu \varrho\sigma}$.
-%
-%
-%    Furthermore $\mathcal{L}_B$ describes the kinetic term of the gauge field
-%    \begin{align}
-%        \mathcal{L}_B(B_\mu) := \frac{f(0)}{24\pi^2}
-%        \text{Tr}(F_{\mu\nu}F^{\mu\nu}).
-%    \end{align}
-%    Last $\mathcal{L}_\phi$ is the scalar-field Lagrangian with a boundary
-%    term.
-%    \begin{align}
-%        \mathcal{L}_\phi(g_{\mu\nu}, B_\mu, \Phi) :=
-%        &-\frac{2f_2\Lambda^2}{4\pi^2}\text{Tr}(\Phi^2) + \frac{f(0)}{8\pi^2}
-%        \text{Tr}(\Phi^4) + \frac{f(0)}{24\pi^2} \Delta(\text{Tr}(\Phi^2))\\
-%        &+ \frac{f(0)}{48\pi^2}s\text{Tr}(\Phi^2)
-%        \frac{f(0)}{8\pi^2}\text{Tr}((D_\mu \Phi)(D^\mu \Phi)).
-%    \end{align}
-%\end{proposition}
-%\begin{proof}
-%     the dimension of our manifold $m$ is $\dim(m) = \text{tr}(id) =4 $. let us
-%     take a $x \in m$, we have an asymtotic expansion of
-%     $\text{tr}(f(\frac{d_\omega}{\lambda}))$ as $\lambda \rightarrow \infty$
-%     \begin{align}
-%         \text{tr}(f(\frac{d_\omega}{\lambda})) \simeq& \ 2f_4 \lambda ^4
-%         a_0(d_\omega ^2)+ 2f_2\lambda^2 a_2(d_\omega^2) \\&+ f(0) a_4(d_\omega^4)
-%         +o(\lambda^{-1}).
-%     \end{align}
-%     note that the heat kernel coefficients are zero for uneven $k$,
-%     furthermore they are dependent on the fluctuated dirac operator
-%     $d_\omega$. we can rewrite the heat kernel coefficients in terms of $d_m$,
-%     for the first two we note that $n:= \text{tr}\mathbbm{1_{h_f}})$
-%     \begin{align}
-%         a_0(d_\omega^2) &= na_0(d_m^2)\\
-%         a_2(d_\omega^2 &= na_2(d_m^2) - \frac{1}{4\pi^2}\int_m
-%         \text{tr}(\phi^2)\sqrt{g}d^4x
-%     \end{align}
-%     for $a_4$ we need to extend in terms of coefficients of $f$, look week9.pdf
-%     for the standard version,
-%     \begin{align}
-%         &\frac{1}{360}\text{tr}(60sf)= -\frac{1}{6}s(ns + 4
-%         \text{tr}(\phi^2))\\
-%        \nonumber\\
-%         &f^2 = \frac{1}{16}s^2\otimes 1 + 1\otimes \phi^4 - \frac{1}{4}
-%         \gamma^\mu\gamma^\nu \gamma^\varrho\gamma^\sigma f_{\mu\nu}f^{\mu\nu}+\\
-%         &\;\;\;\;\;\;\;+\gamma^\mu\gamma^\nu\otimes(d_\mu\phi)(d_\nu
-%         \phi)+\frac{1}{2}s\otimes \phi^2 + \ \text{traceless terms}\\
-%         \nonumber\\
-%         &\frac{1}{360}\text{tr}(180f^2) = \frac{1}{8}s^2n + 2\text{tr}(\phi^4)
-%         + \text{tr}(f_{\mu\nu}f^{\mu\nu}) +\\
-%         &\;\;\;\;\;\;\;+2\text{tr}((d_\mu\phi)(d^\mu\phi))
-%         + s\text{tr}(\phi^2)\\
-%         \nonumber\\
-%         &\frac{1}{360}\text{tr}(-60\delta f)=
-%         \frac{1}{6}\delta(ns+4\text{tr}(\phi^2)).
-%     \end{align}
-%     now for the cross terms of $\omega_{\mu\nu}^e\omega^{e\mu\nu}$  the trace
-%     vanishes because of the anti-symmetric properties of the Riemannian
-%     curvature tensor
-%     \begin{align}
-%         \omega_{\mu\nu}^e\omega^{e\mu\nu} = \omega_{\mu\nu}^s\omega^{s\mu\nu}
-%         \otimes 1 - 1\otimes f_{\mu\nu}f^{\mu\nu} + 2i\omega_{\mu\nu}^s
-%         \otimes f^{\mu\nu}
-%     \end{align}
-%     the trace  of the cross term vanishes because
-%     \begin{align}
-%         \text{tr}(\omega^{s}_{\mu\nu} = \frac{1}{4}
-%         r_{\mu\nu\varrho\sigma}\text{tr}(\gamma^\mu\gamma^\nu) = \frac{1}{4}
-%         r_{\mu\nu\varrho\sigma}g^{\mu\nu} =0
-%     \end{align}
-%     and the trace of the whole term is
-%     \begin{align}
-%         \frac{1}{360}\text{tr}(30\omega^e_{\mu\nu}\omega^{e\mu\nu}) =
-%         \frac{n}{24}r_{\mu\nu\varrho\sigma}r^{\mu\nu\varrho\sigma}
-%         -\frac{1}{3}\text{tr}(f_{\mu\nu}f^{\mu\nu}).
-%     \end{align}
-%     plugging the results into $a_4$ and simplifying we can write
-%     \begin{align}
-%         a_4(x, d_\omega^4) &= na_4(x, d_m^2) + \frac{1}{4\pi^2}\bigg(\frac{1}{12} s
-%         \text{tr}(\phi^2) + \frac{1}{2}\text{tr}(\phi^4) \\
-%         &+ \frac{1}{4}
-%         \text{tr}((d_\mu\phi)(d^\mu \phi)) + \frac{1}{6}
-%         \delta\text{tr}(\phi^2) + \frac{1}{6}
-%         \text{tr}(f_{\mu\nu}f^{\mu\nu})\bigg)
-%     \end{align}
-%     the only thing left is to plug in the heat kernel coefficients into the
-%     heat kernel expansion above.
-%\end{proof}
-%
-%Here on we go and calculate the spectral action of $M\times F_{ED}$
-%\begin{proposition}
-%    The Spectral action of $M\times F_{ED}$ is
-%    \begin{align}
-%        \text{Tr}(f\frac{D_\omega}{\Lambda}) \sim \int_M \mathcal{L}(g_{\mu\nu},
-%         Y_\mu) \sqrt{g}\ d^4x + O(\Lambda^{-1})
-%    \end{align}
-%    where the Lagrangian is
-%    \begin{align}
-%        \mathcal{L}(g_{\mu\nu}, Y_\mu) =
-%        4\mathcal{L}_M(g_{\mu\nu})+
-%        \mathcal{L}_Y(Y_\mu)+
-%        \mathcal{L}_\phi(g_{\mu\nu}, d)
-%    \end{align}
-%        here the $d$ in $\mathcal{L}_\phi$ is from $D_F$ in equation
-%        \ref{dirac}. The Lagrangian $\mathcal{L}_M$ is like in equation
-%        \ref{lagr}. The Lagrangian $\mathcal{L}_Y$ is the kinetic term of the
-%        $U(1)$ gauge field $Y_\mu$
-%    \begin{align}
-%        \mathcal{L}_Y(Y_\mu):= \frac{f(0)}{6\pi^2}
-%        Y_{\mu\nu}Y^{\mu\nu}\;\;\;\;\;\;\;\;\text{with}\;\;\;  Y_{\mu\nu} =
-%        \partial_\mu Y_\nu -
-%        \partial_\nu Y_\mu.
-%    \end{align}
-%    Then there is $\mathcal{L}_\phi$, which has two constant terms
-%    (disregarding the boundary term) that add up to the Cosmological Constant
-%    and a term that for the Einstein-Hilbert action
-%    \begin{align}
-%        \mathcal{L}_\phi(g_{\mu\nu}, d) := \frac{2f_2 \Lambda ^2}{\pi^2}
-%        |d|^2 + \frac{f(0)}{2\pi^2} |d|^4 + \frac{f(0)}{12\pi ^2} s |d|^2.
-%    \end{align}
-%\end{proposition}
-%\begin{proof}
-%    The Trace of $\mathbb{C}^4$ (the Hilbertspace) gives $N=4$. With $B_\mu$
-%    like in equation \ref{field} we have $\text{Tr}(F_{\mu\nu}
-%    F^{\mu\nu})=4Y_{\mu\nu}Y^{\mu\nu}$. This provides $\mathcal{L}_Y$.
-%    Furthermore we have $\Phi^2 = D_F^2 = |d|^2$ and $\mathcal{L}_\phi$ only
-%    give numerical contributions to the cosmological constant and the
-%    Einstein-Hilbert action.
-%
-%    The proof is relying itself on just plugging the terms into the previous
-%    proposition, for which I didn't write the proof for.
-%\end{proof}
-%
-%
-%\subsection{fermionic action}
-%a quick reminder with what we are dealing with, the fermionic action is defined
-%in the following way.
-%\begin{definition}
-%    the fermionic action is defined by
-%    \begin{align}
-%        s_f[\omega, \psi] = (j\tilde{\psi}, d_\omega \tilde{\psi})
-%    \end{align}
-%    with $\tilde{\psi} \in h_{cl}^+ := \{\tilde{\psi}: \psi \in h^+\}$.
-%    $h_{cl}^+$ is the set of grassmann variables in $h$ in the +1-eigenspace
-%    of the grading $\gamma$.
-%\end{definition}
-%
-%the almostcommutative manifold we are dealing with is the following
-%\begin{align}
-%    &m\times f_{ed} := \left(c^\infty(m,\mathbb{c}^2),\ l^2(s)\otimes
-%    \mathbb{c}^4,\
-%    d_m\otimes 1 +\gamma _m \otimes d_f;\; j_m\otimes j_f,\ \gamma_m\otimes
-%    \gamma _f\right).\\
-%    \nonumber\\
-%    &\text{where:} \nonumber \\
-%    &c^\infty(m,\mathbb{c}^2) = c^\infty(m) \otimes c^\infty(m)
-%    &\mathcal{h} = \mathcal{h}^+ \otimes \mathcal{h}^-\\
-%    &\mathcal{h} = l^2(s)^+ \otimes h_f^+ \oplus l^2(s)^- \otimes h_f^-.
-%\end{align}
-%where $h_f$ is separated into the particle-anitparticle states with onb $\{e_r,
-%e_l, \bar{e}_r, \bar{e}_l\}$. the onb of $h_f^+$ is $\{e_l, \bar{e}_r\}$ and
-%for $h_f^-$ we have $\{e_r, \bar{e}_l\}$. furthermore we can decompose a spinor
-%$\psi \in l^2(s)$ for each of the eigenspaces $h_f^\pm$, $\psi = \psi_r
-%\psi_l$. thus we can write for an arbitrary $\psi \in \mathcal{h}^+$
-%\begin{align}
-%    \psi = \chi_r \otimes e_r + \chi_l \otimes e_l + \psi_l \otimes \bar{e}_r
-%    \psi_r \otimes \bar{e}_l
-%\end{align}
-%for $\chi_l, \psi_l \in l^2(s)^+$ and $\chi_r, \psi_r \in l^2(s)^-$.
-%\begin{proposition}
-%    we can define the action of the fermionic art of $m\times f_{ed}$ in the
-%    following way
-%    \begin{align}
-%        s_f = -i\big(j_m\tilde{\chi}, \gamma(\nabla^s_\mu - i\gamma_\mu)
-%        \tilde{\psi}\big) + \big(s_m\tilde{\chi}_l, \bar{d}\tilde{\psi}_l\big) -
-%        \big(j_m\tilde{\chi}_r, d \tilde{\psi}_r\big)
-%    \end{align}
-%\end{proposition}
-%\begin{proof}
-%    we take the fluctuated Dirac operator
-%    \begin{align}
-%        d_\omega = d_m \otimes i + \gamma^\mu \otimes b_\mu + \gamma_m \otimes
-%        d_f
-%    \end{align}
-%\end{proof}
-%the fermionic action is $s_f = (j\tilde{\xi}, d_\omega\tilde{\xi})$  for a $\xi
-%\in \mathcal{h}^+$, we can begin to calculate (note that we add the constant
-%$\frac{1}{2}$ to the action)
-%\begin{align}
-%    \frac{1}{2}(j\tilde{\xi}, d_\omega\tilde{\xi}) =&\\
-%        &+\frac{1}{2}(j\tilde{\xi}, (d_m \otimes i)\tilde{\xi})\label{eq:1}\\
-%        &+\frac{1}{2}(j\tilde{\xi}, (\gamma^\mu \otimes b_\mu)
-%        \tilde{\xi})\label{eq:2}\\
-%        &+\frac{1}{2}(j\tilde{\xi}, (\gamma_m\otimes
-%        d_f)\tilde{\xi})\label{eq:3}.
-%\end{align}
-%for equation \ref{eq:1} we calculate
-%\begin{align}
-%    \frac{1}{2}(j\tilde{\xi}, (d_m\otimes 1)\tilde{\xi}) &=
-%    \frac{1}{2}(j_m\tilde{\chi}_r,d_m\tilde{\psi}_l)+
-%    \frac{1}{2}(j_m\tilde{\chi}_l,d_m\tilde{\psi}_r)+
-%    \\&+\frac{1}{2}(j_m\tilde{\psi}_l,d_m\tilde{\psi}_r)+
-%    \frac{1}{2}(j_m\tilde{\chi}_r,d_m\tilde{\chi}_l)\\
-%    &= (j_m\tilde{\chi},d_m\tilde{\chi}).
-%\end{align}
-%for equation \ref{eq:2} we have
-%\begin{align}
-%    \frac{1}{2}(j\tilde{\xi}, (\gamma^\mu \otimes b_\mu)\tilde{\xi})&=
-%    -\frac{1}{2}(j_m\tilde{\chi}_r, \gamma^\mu y_\mu\tilde{\psi}_r)
-%    -\frac{1}{2}(j_m\tilde{\chi}_l, \gamma^\mu y_\mu\tilde{\psi}_r)+\\
-%    &+\frac{1}{2}(j_m\tilde{\psi}_l, \gamma^\mu y_\mu\tilde{\chi}_r)+
-%    \frac{1}{2}(j_m\tilde{\psi}_r, \gamma^\mu y_\mu\tilde{\chi}_l)=\\
-%    &= -(j_m\tilde{\chi}, \gamma^\mu y_\mu\tilde{\psi}).
-%\end{align}
-%for equation \ref{eq:3} we have
-%\begin{align}
-%    \frac{1}{2}(j\tilde{\xi}, (\gamma_m\otimes d_f)\tilde{\xi})&=
-%    +\frac{1}{2}(j_m\tilde{\chi}_r, d\gamma_m\tilde{\chi}_r)
-%    +\frac{1}{2}(j_m\tilde{\chi}_l, \bar{d}\gamma_m\tilde{\chi}_l)+\\
-%    &+\frac{1}{2}(j_m\tilde{\chi}_l, \bar{d}\gamma_m\tilde{\chi}_l)
-%    +\frac{1}{2}(j_m\tilde{\chi}_r, d\gamma_m\tilde{\chi}_r)=\\
-%    &= i(j_m\tilde{\chi}, m\tilde{\psi})
-%\end{align}
-%note that we obtain a complex mass parameter $d$, so we write $d:=im$ for $m\in \mathbb{r}$,
-%which stands for the real mass and we obtain a nice result
-%
-%\begin{theorem}
-%    the full lagrangian of $m\times f_{ed}$ is the sum of purely gravitational
-%    lagrangian
-%    \begin{align}
-%        \mathcal{l}_{grav}(g_{\mu\nu})=4\mathcal{l}_m(g_{\mu\nu})
-%        \mathcal{l}_\phi (g_{\mu\nu})
-%    \end{align}
-%    and the lagrangian of electrodynamics
-%    \begin{align}
-%        \mathcal{l}_{ed} = -i\bigg\langle
-%        j_m\tilde{\chi},\big(\gamma^\mu(\nabla^s_\mu - iy_\mu) -m\big)\tilde{\psi})
-%        \bigg\rangle
-%        +\frac{f(0)}{6\pi^2} y_{\mu\nu}y^{\mu\nu}.
-%    \end{align}
-%
-%\end{theorem}
+\subsubsection{The Spectral Action}
+In this chapter we bring all our results together to establish an
+Action functional to describe a physical system. It turns out that
+the Lagrangian of the almost commutative manifold $M\times F_{ED}$
+corresponds to the Lagrangian of Electrodynamics on a curved
+background manifold (+ gravitational Lagrangian), consisting of the spectral
+action $S_b$ (bosonic) and of the fermionic action $S_f$.
+
+The simplest spectral action of a spectral triple $(A, H, D)$ is given by the
+trace of a function of $D$. We also consider inner fluctuations of the Dirac
+operator $D_\omega = D + \omega + \varepsilon' J\omega J^{-1}$ where $\omega =
+\omega ^* \in \Omega_D^1(A)$.
+\begin{definition}
+    Let $f:\mathbb{R} \rightarrow \mathbb{R}$ be a suitable function
+    \textbf{positive and even}. The spectral action is then
+    \begin{align}
+        S_b [\omega] := \text{Tr}\big(f(\frac{D_\omega}{\Lambda})\big)
+    \end{align}
+    where $\Lambda$ is a real cutoff parameter. The minimal condition on $f$
+    is that $f(\frac{D_\omega}{\Lambda})$ is  a trace class operator. A trace
+    class operator is a compact operator with a well defined finite trace
+    independent of the basis. The subscript $b$ in $S_b$ stands for bosonic,
+    because in physical applications $\omega$ will describe bosonic fields.
+
+    In addition to the bosonic action $S_b$ we can define a topological spectral
+    action $S_{top}$. Leaning on the grading $\gamma$ the topological spectral action is
+    \begin{align}
+        S_{\text{top}}[\omega] := \text{Tr}(\gamma\
+        f(\frac{D_\omega}{\Lambda})).
+    \end{align}
+\end{definition}
+\begin{definition}\label{def:fermionic action}
+    The fermionic action is defined by
+    \begin{align}
+        S_f[\omega, \psi] = (J\tilde{\psi}, D_\omega \tilde{\psi})
+    \end{align}
+    with $\tilde{\psi} \in H_{cl}^+ := \{\tilde{\psi}: \psi \in H^+\}$, where
+    $H_{cl}^+$ is a set of Grassmann variables in $H$ in the +1-eigenspace
+    of the grading $\gamma$.
+\end{definition}
+
+%---------------------- APPENDIX ?????????????--------------------
+\textbf{APPENDIX??}
+Grassmann variables are a set of Basis vectors of a vector space, they
+form a unital algebra over a vector field $V$, where the generators are
+anti commuting, that is for Grassmann variables $\theta _i, \theta _j$  we have
+\begin{align}
+    &\theta _i \theta _j = -\theta _j \theta _i \\
+    &\theta _i x = x\theta _j \;\;\;\; x\in V \\
+    &(\theta_i)^2 = 0 \;\;\; (\theta _i \theta _i = -\theta _i \theta _i)
+\end{align}
+%---------------------- APPENDIX ?????????????--------------------
+\begin{proposition}
+    The spectral action of the almost commutative manifold $M$ with $\dim(M)
+    =4$ with a fluctuated Dirac operator is
+    \begin{align}
+        \text{Tr}(f\frac{D_\omega}{\Lambda}) \sim \int_M \mathcal{L}(g_{\mu\nu},
+         B_\mu, \Phi) \sqrt{g}\ d^4x + O(\Lambda^{-1}),
+    \end{align}
+    where
+    \begin{align}
+        \mathcal{L}(g_{\mu\nu}, B_\mu, \Phi) =
+        N\mathcal{L}_M(g_{\mu\nu})
+        \mathcal{L}_B(B_\mu)+
+        \mathcal{L}_\phi(g_{\mu\nu}, B_\mu, \Phi).
+    \end{align}
+    The Lagrangian $\mathcal{L}_M$ is of the spectral triple, represented by
+    the following term
+    $(C^\infty(M) , L^2(S), D_M)$
+    \begin{align}\label{lagr}
+        \mathcal{L}_M(g_{\mu\nu}) := \frac{f_4 \Lambda ^4}{2\pi^2} -
+        \frac{f_2 \Lambda^2}{24\pi ^2}s - \frac{f(0)}{320\pi^2} C_{\mu\nu
+        \varrho \sigma}C^{\mu\nu \varrho \sigma},
+    \end{align}
+    here $C^{\mu\nu \varrho \sigma}$ is defined in terms of the Riemannian
+    curvature tensor $R_{\mu\nu \varrho \sigma}$ and the Ricci tensor
+    $R_{\nu\sigma} = g^{\mu\varrho} R_{\mu\nu \varrho\sigma}$.
+    The kinetic term of the gauge field is described by the Lagrangian
+    $\mathcal{L}_B$, which takes the following shape
+    \begin{align}
+        \mathcal{L}_B(B_\mu) := \frac{f(0)}{24\pi^2}
+        \text{Tr}(F_{\mu\nu}F^{\mu\nu}).
+    \end{align}
+    Lastly $\mathcal{L}_\phi$ is the scalar-field Lagrangian with a boundary
+    term, given by
+    \begin{align}
+        \mathcal{L}_\phi(g_{\mu\nu}, B_\mu, \Phi) :=
+        &-\frac{2f_2\Lambda^2}{4\pi^2}\text{Tr}(\Phi^2) + \frac{f(0)}{8\pi^2}
+        \text{Tr}(\Phi^4) + \frac{f(0)}{24\pi^2} \Delta(\text{Tr}(\Phi^2))\\
+        &+ \frac{f(0)}{48\pi^2}s\text{Tr}(\Phi^2)
+        \frac{f(0)}{8\pi^2}\text{Tr}((D_\mu \Phi)(D^\mu \Phi)).
+    \end{align}
+\end{proposition}
+\begin{proof}
+     The dimension of the manifold $M$ is $\dim(M) = \text{Tr}(id) =4$. For
+     an $x \in M$, we have an asymptotic expansion of the term
+     $\text{Tr}(f(\frac{D_\omega}{\Lambda}))$ as $\Lambda$ goes to infinity,
+     which can be written as
+     \begin{align}\label{eq:trheatkernel}
+         \text{Tr}(f(\frac{D_\omega}{\Lambda})) \simeq& \ 2f_4 \Lambda ^4
+         a_0(D_\omega ^2)+ 2f_2\Lambda^2 a_2(D_\omega^2) \\&+ f(0) a_4(D_\omega^4)
+         +O(\Lambda^{-1}).
+     \end{align}
+     We have to note here that the heat kernel coefficients are zero for uneven $k$,
+     and they are dependent on the fluctuated Dirac operator
+     $D_\omega$. We can rewrite the heat kernel coefficients in terms of $D_M$,
+     for the first two terms $a_0$ and $a_2$ we use $N:=
+     \text{Tr}\mathbbm{1_{H_F}})$ and write
+     \begin{align}
+         a_0(D_\omega^2) &= Na_0(D_M^2),\\
+         a_2(D_\omega^2 &= Na_2(D_M^2) - \frac{1}{4\pi^2}\int_M.
+         \text{Tr}(\Phi^2)\sqrt{g}d^4x
+     \end{align}
+     For $a_4$ we extend in terms of coefficients of $F$, \textbf{REWRITE: look week9.pdf
+     for the standard version}
+     \begin{align}
+         &\frac{1}{360}\text{Tr}(60sF)= -\frac{1}{6}S(Ns + 4
+         \text{Tr}(\Phi^2))\\
+        \nonumber\\
+         &F^2 = \frac{1}{16}s^2\otimes 1 + 1\otimes \Phi^4 - \frac{1}{4}
+         \gamma^\mu\gamma^\nu \gamma^\varrho\gamma^\sigma F_{\mu\nu}F^{\mu\nu}+\\
+         &\;\;\;\;\;\;\;+\gamma^\mu\gamma^\nu\otimes(D_\mu\Phi)(D_\nu
+         \Phi)+\frac{1}{2}s\otimes \Phi^2 + \ \text{traceless terms}\\
+         \nonumber\\
+         &\frac{1}{360}\text{Tr}(180F^2) = \frac{1}{8}s^2N + 2\text{Tr}(\Phi^4)
+         + \text{Tr}(F_{\mu\nu}F^{\mu\nu}) +\\
+         &\;\;\;\;\;\;\;+2\text{Tr}((D_\mu\Phi)(D^\mu\Phi))
+         + s\text{Tr}(\Phi^2)\\
+         \nonumber\\
+         &\frac{1}{360}\text{Tr}(-60\Delta F)=
+         \frac{1}{6}\Delta(Ns+4\text{Tr}(\Phi^2)).
+     \end{align}
+     The cross terms of the trace in $\Omega_{\mu\nu}^E\Omega^{E\mu\nu}$
+     vanishes because of the antisymmetric property of the Riemannian
+     curvature tensor, thus we can write
+     \begin{align}
+         \Omega_{\mu\nu}^E\Omega^{E\mu\nu} = \Omega_{\mu\nu}^S\Omega^{S\mu\nu}
+         \otimes 1 - 1\otimes F_{\mu\nu}F^{\mu\nu} + 2i\Omega_{\mu\nu}^S
+         \otimes F^{\mu\nu}.
+     \end{align}
+     The trace  of the cross term $\Omega^{S}_{\mu\nu}$ vanishes because
+     \begin{align}
+         \text{Tr}(\Omega^{S}_{\mu\nu}) = \frac{1}{4}
+         R_{\mu\nu\varrho\sigma}\text{Tr}(\gamma^\mu\gamma^\nu) = \frac{1}{4}
+         R_{\mu\nu\varrho\sigma}g^{\mu\nu} =0,
+     \end{align}
+     then the trace of the whole term is given by
+     \begin{align}
+         \frac{1}{360}\text{Tr}(30\Omega^E_{\mu\nu}\Omega^{E\mu\nu}) =
+         \frac{N}{24}R_{\mu\nu\varrho\sigma}R^{\mu\nu\varrho\sigma}
+         -\frac{1}{3}\text{Tr}(F_{\mu\nu}F^{\mu\nu}).
+     \end{align}
+     Finally plugging the results into the coefficient $a_4$ and simplifying we get
+     \begin{align}
+         a_4(x, D_\omega^4) &= Na_4(x, D_M^2) + \frac{1}{4\pi^2}\bigg(\frac{1}{12} s
+         \text{Tr}(\Phi^2) + \frac{1}{2}\text{Tr}(\Phi^4) \\
+         &+ \frac{1}{4}
+         \text{Tr}((D_\mu\Phi)(D^\mu \Phi)) + \frac{1}{6}
+         \Delta\text{Tr}(\Phi^2) + \frac{1}{6}
+         \text{Tr}(F_{\mu\nu}F^{\mu\nu})\bigg).
+     \end{align}
+     The only thing left is to substitute the heat kernel coefficients into the
+     heat kernel expansion in equation \ref{eq:trheatkernel}.
+\end{proof}
+
+\subsubsection{Fermionic Action}
+We remind ourselves the definition of the fermionic action in
+\ref{def:fermionic action} and the manifold we are dealing with in equation
+\ref{eq:almost commutative manifold}. The Hilbertspace $H_F$ is separated
+into the particle-antiparticle states with ONB $\{e_R, e_L, \bar{e}_R,
+\bar{e}_L\}$. The orthonormal basis of $H_F^+$ is $\{e_L, \bar{e}_R\}$ and
+consequently for $H_F^-$, $\{e_R, \bar{e}_L\}$. We can decompose a spinor
+$\psi \in L^2(S)$ in each of the eigenspaces $H_F^\pm$, $\psi = \psi_R+
+\psi_L$. That means for an arbitrary $\psi \in H^+$ we can write
+\begin{align}
+    \psi = \chi_R \otimes e_R + \chi_L \otimes e_L + \psi_L \otimes
+    \bar{e}_R+
+    \psi_R \otimes \bar{e}_L,
+\end{align}
+where $\chi_L, \psi_L \in L^2(S)^+$ and $\chi_R, \psi_R \in L^2(S)^-$.
+
+Since the fermionic action yields too much restriction on $F_{ED}$ (modified
+Two-Point space $F_X$) we redefine it by taking account the fluctuated Dirac
+operator
+\begin{align}
+    D_\omega = D_M \otimes i + \gamma^\mu \otimes B_\mu + \gamma_M \otimes
+    D_F.
+\end{align}
+The Fermionic Action is
+\begin{align}
+S_F = (J\tilde{\xi}, D_\omega\tilde{\xi})
+\end{align}
+for a $\xi \in H^+$. Then the straight forward calculation gives \begin{align}
+    \frac{1}{2}(J\tilde{\xi}, D_\omega\tilde{\xi})
+        &=\frac{1}{2}(J\tilde{\xi}, (D_M \otimes
+        i)\tilde{\xi})\label{eq:fermionic1}\\
+        &+\frac{1}{2}(J\tilde{\xi}, (\gamma^\mu \otimes B_\mu)
+        \tilde{\xi})\label{eq:fermionic2}\\
+        &+\frac{1}{2}(J\tilde{\xi}, (\gamma_M\otimes
+        D_F)\tilde{\xi})\label{eq:fermionic3},
+\end{align}
+(note that we add the constant $\frac{1}{2}$ to the action).
+For the term in \ref{fermionic:1} we calculate
+\begin{align}
+    \frac{1}{2}(J\tilde{\xi}, (D_M\otimes 1)\tilde{\xi}) &=
+    \frac{1}{2}(J_M\tilde{\chi}_R,D_M\tilde{\psi}_L)+
+    \frac{1}{2}(J_M\tilde{\chi}_L,D_M\tilde{\psi}_R)+
+    \\&+\frac{1}{2}(J_M\tilde{\psi}_L,D_M\tilde{\psi}_R)+
+    \frac{1}{2}(J_M\tilde{\chi}_R,D_M\tilde{\chi}_L)\\
+    &= (J_M\tilde{\chi},D_M\tilde{\chi}).
+\end{align}
+For the term in \ref{eq:fermionic2} we have
+\begin{align}
+    \frac{1}{2}(J\tilde{\xi}, (\gamma^\mu \otimes B_\mu)\tilde{\xi})&=
+    -\frac{1}{2}(J_M\tilde{\chi}_R, \gamma^\mu Y_\mu\tilde{\psi}_R)
+    -\frac{1}{2}(J_M\tilde{\chi}_L, \gamma^\mu Y_\mu\tilde{\psi}_R)+\\
+    &+\frac{1}{2}(J_M\tilde{\psi}_L, \gamma^\mu Y_\mu\tilde{\chi}_R)+
+    \frac{1}{2}(J_M\tilde{\psi}_R, \gamma^\mu Y_\mu\tilde{\chi}_L)=\\
+    &= -(J_M\tilde{\chi}, \gamma^\mu Y_\mu\tilde{\psi}).
+\end{align}
+And for \ref{eq:fermionic3} we can write
+\begin{align}
+    \frac{1}{2}(J\tilde{\xi}, (\gamma_M\otimes D_F)\tilde{\xi})&=
+    +\frac{1}{2}(J_M\tilde{\chi}_R, d\gamma_M\tilde{\chi}_R)
+    +\frac{1}{2}(J_M\tilde{\chi}_L, \bar{d}\gamma_M\tilde{\chi}_L)+\\
+    &+\frac{1}{2}(J_M\tilde{\chi}_L, \bar{d}\gamma_M\tilde{\chi}_L)
+    +\frac{1}{2}(J_M\tilde{\chi}_R, d\gamma_M\tilde{\chi}_R)=\\
+    &= i(J_M\tilde{\chi}, m\tilde{\psi}).
+\end{align}
+A small problem arises, we obtain a complex mass parameter $d$, but we can
+write $d:=im$ for $m\in \mathbb{R}$, which stands for the real mass.
+
+Finally the fermionic action of $M\times F_{ED}$ takes the form
+    \begin{align}
+        S_f = -i\big(J_M\tilde{\chi}, \gamma(\nabla^S_\mu - i\Gamma_\mu)
+        \tilde{\Psi}\big) + \big(S_M\tilde{\chi}_L, \bar{d}\tilde{\psi}_L\big) -
+        \big(J_M\tilde{\chi}_R, d \tilde{\psi}_R\big).
+    \end{align}
+Ultimately we arrive at the full Lagrangian of $M\times F_{ED}$, which is the
+sum of purely gravitational Lagrangian
+    \begin{align}
+        \mathcal{L}_{grav}(g_{\mu\nu})=4\mathcal{L}_M(g_{\mu\nu})+
+        \mathcal{L}_\phi (g_{\mu\nu}),
+    \end{align}
+and the Lagrangian of electrodynamics
+    \begin{align}
+        \mathcal{L}_{ED} = -i\bigg\langle
+        J_M\tilde{\chi},\big(\gamma^\mu(\nabla^S_\mu - iY_\mu) -m\big)\tilde{\psi})
+        \bigg\rangle
+        +\frac{f(0)}{6\pi^2} Y_{\mu\nu}Y^{\mu\nu}.
+    \end{align}
+
+
