@@ -1,16 +1,18 @@
 \subsection{Heat Kernel Expansion}
 \subsubsection{The Heat Kernel}
 The heat kernel $K(t; x, y; D)$ is the fundamental solution of the heat
-equation. It depends on the operator $D$ of Laplacian type.
+equation
 \begin{align}
-    (\partial _t + D_x)K(t;x, y;D) =0
+    (\partial _t + D_x)K(t;x, y;D) =0,
 \end{align}
+which depends on the operator $D$ of Laplacian type.
+
 For a flat manifold $M = \mathbb{R}^n$ and $D = D_0 := -\Delta_\mu\Delta^\mu +m^2$ the
 Laplacian with a mass term and the initial condition
 \begin{align}
     K(0;x,y;D) = \delta(x,y),
 \end{align}
-takes to form of the standard fundamental solution
+takes the form of the standard fundamental solution
 \begin{align}\label{eq:standard}
     K(t;x,y;D_0) = (4\pi t)^{-n/2}\exp\left(-\frac{(x-y)^2}{4t}-tm^2\right).
 \end{align}
