@@ -127,61 +127,60 @@ where
     a_k(f,D) = (4\pi)^{-n/2} \int_M d^4x \sqrt{g} b_k(x,x) f(x).
 \end{align}
 \subsubsection{General Formulae}
-Summarizing, in the last chapter we considered a compact Riemannian manifold
-$M$ without boundary condition, a vector bundle $V$ over $M$ to define
-functions which carry discrete (spin or gauge) indices, an Laplace style
-operator $D$ over $V$ and smooth function $f$ on $M$. Now there is an asymptotic
-expansion where the heat kernel coefficients are
-%------------------------------- HERE
-\newline
-\textbf{---------------------HERE}
-\newline
-%------------------------------- HERE
-\begin{enumerate}
-    \item with odd index $k=2j+1$ vanish $a_{2j+1}(f,D) = 0$
-    \item with even index are locally computable in terms of geometric
-        invariants
-\end{enumerate}
+Let us summarize what we have obtained in the last chapter, we considered a
+compact Riemannian manifold $M$ without boundary condition, a vector bundle
+$V$ over $M$ to define functions which carry discrete (spin or gauge)
+indices, an operator $D$ of Laplace type over $V$ and smooth function $f$ on
+$M$.
+
+There is an asymptotic expansion where the heat kernel coefficients with an
+odd index $k=2j+1$ vanish $a_{2j+1}(f,D) = 0$. On the other hand coefficients
+with an even index are locally computable in terms of geometric invariants
 \begin{align}
     a_k(f,D) &= \text{Tr}_V\left(\int_M d^n x\sqrt{g}(f(x)a_k(x;D)\right) =\\
-    &=\sum_I \text{Tr}_V\left(\int_M d^nx \sqrt{g}(fu^I \mathcal{A}^I_k(D))\right)
+    &=\sum_I \text{Tr}_V\left(\int_M d^nx \sqrt{g}(fu^I
+    \mathcal{A}^I_k(D))\right).
 \end{align}
-here $\mathcal{K}^I_k$ are all possible independent invariants of dimension
-$k$, constructed from $E, \Omega, R_{\mu\nu\varrho\sigma}$ and their
-derivatives, $u^I$ are some constants.
-
-If $E$ has dimension two, then the derivative has dimension one. So if $k=2$
-there are only two independent invariants, $E$ and $R$. This corresponds to the
+We denote $\mathcal{A}^I_k$ as all possible independent invariants of
+dimension $k$, and $u^I$ are constants. The invariants are constructed from
+$E, \Omega, R_{\mu\nu\varrho\sigma}$ and their derivatives If $E$ has
+dimension two, then the derivative has dimension one. So if $k=2$ there are
+only two independent invariants, $E$ and $R$. This corresponds to the
 statement $a_{2j+1}=0$.
 
 If we consider $M = M_1 \times M_2$ with coordinates $x_1$ and $x_2$ and a
 decomposed Laplace style operator $D = D_1 \otimes 1 + 1 \otimes D_2$ we can
-separate everything, i.e.
+separate functions acting on operators and on coordinates linearly by the
+following
 \begin{align}
-    e^{-tD} &= e^{-tD_1} \otimes e^{-tD_2}\\
-    f(x_1, x_2) &= f_1(x_1)f_2(x_2)\\
+    e^{-tD} &= e^{-tD_1} \otimes e^{-tD_2},\\
+    f(x_1, x_2) &= f_1(x_1)f_2(x_2),\\
+\end{align}
+thus the heat kernel coefficients are separated by
+\begin{align}
     a_k(x;D) &= \sum_{p+q=k} a_p(x_1; D_1)a_q(x_2;D_2)
 \end{align}
-Say the spectrum of $D_1$ is known, $l^2, l\in \mathbb{Z}$. We obtain the heat
-kernel asymmetries with the Poisson Summation formula
+If we know the eigenvalues of $D_1$ are known,  $l^2, l\in \mathbb{Z}$, we
+can obtain the heat kernel asymmetries with the Poisson summation formula
+giving us an approximation in the order of $e^{-1/t}$
 \begin{align}
     K(t, D_1) &= \sum_{l\in\mathbb{Z}} e^{-tl^2} = \sqrt{\frac{\pi}{t}}
     \sum_{l\in\mathbb{Z}} e^{-\frac{\pi^2l^2}{t}} = \\
     &\simeq \sqrt{\frac{\pi}{t}} + \mathcal{O}(e^{-1/t}).
 \end{align}
-Note that the exponentially small terms have no effect on the heat kernel
+The exponentially small terms have no effect on the heat kernel
 coefficients and that the only nonzero coefficient is $a_0(1, D_1) =
-\sqrt{\pi}$. Therefore we can write
+\sqrt{\pi}$, therefore the heat coefficients can be written as
 \begin{align}
     a_k(f(x^2), D) = \sqrt{\pi}\int_{M_2}
     d^{n-1}x\sqrt{g}\sum_I\text{Tr}_V\left(f(x^2)u^I_{(n-1)}
     \mathcal{A}^I_n(D_2)\right).
 \end{align}
 
-On the other had all geometric invariants  associated with $D$ are in the $D_2$
-part. Thus all invariants are independent of $x_1$, so we can choose for $M_1$.
-Say $M_1 = S^1$ with $x\in (0, 2\pi)$ and $D_1=-\partial_{x_1}^2$ we may
-rewrite the heat kernel coefficients in
+Because all of the geometric invariants  associated with $D$ are in the $D_2$
+part, they are independent of $x_1$. Ultimately meaning we are free to choose
+$M_1$. For $M_1 = S^1$ with $x\in (0, 2\pi)$ and $D_1=-\partial_{x_1}^2$
+we can rewrite the heat kernel coefficients into
 \begin{align}
     a_k(f(x_2), D) &= \int_{S^1\times M_2}d^nx \sqrt{g} \sum_I
     \text{Tr}_V(f(x_2) u_{(n)}^I \mathcal{A}^I_k(D_2))=\\
@@ -197,82 +196,87 @@ Computing the two equations above we see that
 To calculate the heat kernel coefficients we need the following variational
 equations
 \begin{align}
-    &\frac{d}{d\varepsilon}|_{\varepsilon=0}a_k(1, e^{-2\varepsilon f}D) =
+    &\frac{d}{d\varepsilon}\bigg|_{\varepsilon=0}a_k(1, e^{-2\varepsilon f}D) =
     (n-k) a_k(f, D),\label{eq:var1}\\
-    &\frac{d}{d\varepsilon}|_{\varepsilon=0}a_k(1, D-\varepsilon F) =
+    &\frac{d}{d\varepsilon}\bigg|_{\varepsilon=0}a_k(1, D-\varepsilon F) =
     a_{k-2}(F,D),\label{eq:var2}\\
-    &\frac{d}{d\varepsilon}|_{\varepsilon=0}a_k(e^{-2\varepsilon f}F,
+    &\frac{d}{d\varepsilon}\bigg|_{\varepsilon=0}a_k(e^{-2\varepsilon f}F,
     e^{-2\varepsilon f}D) =
     0\label{eq:var3}.
 \end{align}
-To prove the equation \ref{eq:var1} we differentiate
-\begin{align}
-    \frac{d}{d\varepsilon}|_{\varepsilon=0} \text{Tr}(\exp(-e^{-2\varepsilon
+Let us explain the equations above. To get the first equation \ref{eq:var1}
+we differentiate \begin{align}
+    \frac{d}{d\varepsilon}\bigg|_{\varepsilon=0} \text{Tr}(\exp(-e^{-2\varepsilon
     f}tD) = \text{Tr}(2ftDe^{-tD}) = -2t\frac{d}{dt}\text{Tr}(fe^{-tD}))
 \end{align}
-then we expand both sides in $t$ and get \ref{eq:var1}. Equation \ref{eq:var2}
-is derived similarly. For equation \ref{eq:var3} we consider the following
-operator
+then we expand both sides in $t$ and get \ref{eq:var1}. Equation \ref{eq:var2} is derived similarly.
+
+For equation \ref{eq:var3} we consider the following operator
 \begin{align}
     D(\varepsilon,\delta) = e^{-2\varepsilon f}(D-\delta F)
 \end{align}
 for $k=n$ we use equation \ref{eq:var1} and we get
 \begin{align}
-    \frac{d}{d\varepsilon}|_{\varepsilon=0}a_n(1,D(\varepsilon,\delta)) =0
+    \frac{d}{d\varepsilon}\bigg|_{\varepsilon=0}a_n(1,D(\varepsilon,\delta))
+    =0,
 \end{align}
 then we take the variation in terms of $\delta$, evaluated at $\delta =0$ and
 swap the differentiation, allowed by theorem of Schwarz
 \begin{align}
     0 &=
-    \frac{d}{d\delta}|_{\delta=0}\frac{d}{d\varepsilon}|_{\varepsilon=0}a_n(1,
-    D(\varepsilon,\delta)) =
-    \frac{d}{d\varepsilon}|_{\varepsilon=0}\frac{d}{d\delta}|_{\delta=0}a_n(1,
+    \frac{d}{d\delta}\bigg|_{\delta=0}\frac{d}{d\varepsilon}\bigg|_{\varepsilon=0}a_n(1,
     D(\varepsilon,\delta)) =\\
-    &=a_{n-2} ( e^{-2\varepsilon f}F, e^{-2\varepsilon f}D)
+      &=\frac{d}{d\varepsilon}\bigg|_{\varepsilon=0}\frac{d}{d\delta}\bigg|_{\delta=0}a_n(1,
+    D(\varepsilon,\delta)) =\\
+      &=a_{n-2} ( e^{-2\varepsilon f}F, e^{-2\varepsilon f}D),
 \end{align}
-which proves equation \ref{eq:var3}. With this we calculate the constants $u^I$
-and we can write the first three heat kernel coefficients as
+which gives us equation \ref{eq:var3}.
+
+Now that we have established the ground basis, we can calculate the constants
+$u^I$, and by that the first three heat kernel coefficients read
 \begin{align}
-    a_0(f, D) &= (4\pi)^{-n/2}\int_Md^n x\sqrt{g} \text{Tr}_V(a_0 f)\\
+    a_0(f, D) &= (4\pi)^{-n/2}\int_Md^n x\sqrt{g} \text{Tr}_V(a_0 f),\\
     a_2(f, D) &= (4\pi)^{-n/2}\frac{1}{6}\int_Md^n
-    x\sqrt{g}\text{Tr}_V)(f\alpha _1 E+\alpha _2 R)\\
+    x\sqrt{g}\text{Tr}_V)(f\alpha _1 E+\alpha _2 R),\\
     a_4(f, D) &= (4\pi)^{-n/2}\frac{1}{360}\int_Md^n
-    x\sqrt{g}\text{Tr}_V(f(\alpha_3 E_{,kk} + \alpha_4 RE + \alpha_5 E^2
+    x\sqrt{g}\text{Tr}_V(f(\alpha_3 E_{,kk} + \alpha_4\ R\ E + \alpha_5 E^2
     \alpha_6 R_{,kk} + \\
     &+\alpha_7 R^2 + \alpha_8 R_{ij}R_{ij} + \alpha_9
-    R_{ijkl}R_{ijkl} +\alpha_{10} \Omega_{ij}\Omega{ij})).
+    R_{ijkl}R_{ijkl} +\alpha_{10} \Omega_{ij}\Omega{ij})),
 \end{align}
-The constants $\alpha_I$ do not depend on the dimension $n$ of the Manifold and
-we can compute them with our variational identities.
+where the comma subscript $,$ denotes the derivative and constants $\alpha_I$
+do not depend on the dimension of the Manifold and we can compute them with
+our variational identities.
 
-The first coefficient $\alpha_0$ can be seen from the heat kernel expanion of
+The first coefficient $\alpha_0$ can be read from the heat kernel expansion of
 the Laplacian on $S^1$ (above), $\alpha_0 = 1$. For $\alpha_1$ we use
-\ref{eq:var2}, for $k = 2$
+\ref{eq:var2}, the coefficient $k = 2$ is
 \begin{align}
     \frac{1}{6} \int_M d^n x\sqrt{g} \text{Tr}_V(\alpha_1F) = \int_M d^n
     x\sqrt{g} \text{Tr}_V(F),
 \end{align}
-thus we conclude that $\alpha_1 = 6$. Now we take $k=4$
+which means $\alpha_1 = 6$. Looking at the coefficient $k=4$ we have
 \begin{align}
-    \frac{1}{360}\int_Md^n x \sqrt{g}\text{Tr}_V(\alpha_4 F R + 2\alpha_5 F E)
-    = \frac{1}{6} \int_Md^n x\sqrt{g}\text{Tr}_V(\alpha_1 FE + \alpha_2 FR),
+    \frac{1}{360}\int_Md^n x \sqrt{g}\text{Tr}_V(\alpha_4\ F\ R + 2\alpha_5\ F\ E)
+    = \frac{1}{6} \int_Md^n x\sqrt{g}\text{Tr}_V(\alpha_1\ F\ E + \alpha_2\ F\ R),
 \end{align}
 thus $\alpha_4 = 60\alpha_2$ and $\alpha_5 = 180$.
 
-Furthermore we apply \ref{eq:var3} to $n=4$
+By applying  \ref{eq:var3} to $n=4$ we get
 \begin{align}
     \frac{d}{d\varepsilon}|_{\varepsilon=0} a_2(e^{-2\varepsilon f}F,
     e^{-2\varepsilon f}D) = 0.
 \end{align}
-By collecting the terms with $\text{Tr}_V(\int_Md^nx\sqrt{g}(Ff_{,jj}))$ we
+Collecting the terms with $\text{Tr}_V(\int_Md^nx\sqrt{g}(Ff_{,jj}))$ we
 obtain $\alpha_1 = 6\alpha_2$, that is $\alpha_2 = 1$, so $\alpha_4 = 60$.
 
 Now we let $M=M_1\times M_2$ and split $D = -\Delta_1 -\Delta_2$, where
-$\Delta_{1/2}$ are Laplacians for $M_1, M_2$, then we can decompose the heat
-kernel coefficients for $k=4$
+$\Delta_{1/2}$ are Laplacians for $M_1, M_2$. This allows us to decompose the heat
+kernel coefficient for $k=4$ into
 \begin{align}
     a_4(1,-\Delta_1-\Delta_2) =& a_4(1, -\Delta_1) a_0(1, -\Delta_2)
-    +a_2(1,-\Delta_1) a_2(1,-\Delta_2) \\&+ a_0(1,-\Delta_1) a_4(1,-\Delta_2)
+    +a_2(1,-\Delta_1) a_2(1,-\Delta_2) \\&+ a_0(1,-\Delta_1)
+    a_4(1,-\Delta_2),
 \end{align}
 with $E=0$ and $\Omega =0$ and by calculating the terms with $R_1R_2$  (scalar
 curvature of $M_{1/2}$) we obtain $\frac{2}{360}\alpha_7 =
@@ -288,17 +292,19 @@ For $n=6$ we get
 \end{align}
 we obtain $\alpha_3 = 60$, $\alpha_6=12$, $\alpha_8 = -2$ and $\alpha_9 = 2$
 
-For $\alpha_{10}$ we use the Gauss-Bonnet theorem to get $\alpha_{10}=30$,
-which is left out because it is a lengthy computation.
+To get $\alpha_{10}$ we use the Gauss-Bonnet theorem, ultimately giving us
+$\alpha_{10}=30$. We leave out this lengthy calculation and refer to
+\cite{heatkernel} for further reading.
 
-Summarizing we get for the heat kernel coefficients
+Let us summarize our calculations which ultimately give us the following heat kernel
+coefficients
 \begin{align}
-    \alpha_0(f, D) &= (4\pi)^{-n/2}\int_M d^n x \sqrt{g} \text{Tr}_V(f)\\
+    \alpha_0(f, D) &= (4\pi)^{-n/2}\int_M d^n x \sqrt{g} \text{Tr}_V(f),\\
     \alpha_2(f, D) &= (4\pi)^{-n/2}\frac{1}{6}\int_M d^n x \sqrt{g}
-    \text{Tr}_V(f(6E+R))\\
+    \text{Tr}_V(f(6E+R)),\\
     \alpha_4(f, D) &= (4\pi)^{-n/2}\frac{1}{360}\int_M d^n x \sqrt{g}
     \text{Tr}_V(f(60E_{,kk}+60RE+ 180E^2 +\\
     &+12R_{,kk} + 5R^2 - 2 R_{ij}R_{ij}
-    2R_{ijkl}R_{ijkl} +30\Omega_{ij}\Omega_{ij}))\\
+    2R_{ijkl}R_{ijkl} +30\Omega_{ij}\Omega_{ij})).\\
 \end{align}
 
