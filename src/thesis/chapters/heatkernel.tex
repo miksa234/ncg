@@ -1,4 +1,3 @@
-
 \subsection{Heat Kernel Expansion}
 \subsubsection{The Heat Kernel}
 The heat kernel $K(t; x, y; D)$ is the fundamental solution of the heat
@@ -9,205 +8,137 @@ equation. It depends on the operator $D$ of Laplacian type.
 For a flat manifold $M = \mathbb{R}^n$ and $D = D_0 := -\Delta_\mu\Delta^\mu +m^2$ the
 Laplacian with a mass term and the initial condition
 \begin{align}
-    K(0;x,y;D) = \delta(x,y)
+    K(0;x,y;D) = \delta(x,y),
 \end{align}
-we have the standard fundamental solution
+takes to form of the standard fundamental solution
 \begin{align}\label{eq:standard}
-    K(t;x,y;D_0) = (4\pi t)^{-n/2}\exp\left(-\frac{(x-y)^2}{4t}-tm^2\right)
+    K(t;x,y;D_0) = (4\pi t)^{-n/2}\exp\left(-\frac{(x-y)^2}{4t}-tm^2\right).
 \end{align}
 Let us consider now a more general operator $D$ with a potential term or a
-guage field, the heat kernel reads then
+gauge field, the heat kernel reads then
 \begin{align}
     K(t;x,y;D) = \langle x|e^{-tD}|y\rangle.
 \end{align}
-We can expand it it in terms of $D_0$ and we still have the
-singularity from the equation \ref{eq:standard} as $t\rightarrow 0$ thus the
-expansion gives
+We can expand the heat kernel in $t$, still having a
+singularity from the equation \ref{eq:standard} as $t \rightarrow 0$ thus the
+expansion reads
 \begin{align}
-    K(t;x,y;D) = K(t;x,y;D_0)\left(1 + tb_2(x,y) + t^2b_4(x,y) + \dots \right)
+    K(t;x,y;D) = K(t;x,y;D_0)\left(1 + tb_2(x,y) + t^2b_4(x,y) + \dots
+    \right),
 \end{align}
-where $b_k(x,y)$ are regular in $y \rightarrow x$. They are called the heat
+where $b_k(x,y)$ become regular as $y \rightarrow x$. These coefficients are called the heat
 kernel coefficients.
-
-\subsubsection{Example}
-Now let us consider a propagator $D^{-1}(x,y)$ defined through the heat kernel
-in an integral representation
+%----------------------- KANN WEGGELASSEN WERDEN
+\newline
+\textbf{KANN WEGELASSEN WERDEN BIS ZUM NÄCHSTEN KAPITEL}
+Let's turn our attention to a propagator $D^{-1}(x,y)$ defined through the
+heat kernel, with an integral representation
 \begin{align}
     D^{-1} (x,y) = \int_0^\infty dt K(t;x,y;D).
 \end{align}
-We can integrate the expression formally if we assume the heat kernel vanishes
-for $t\rightarrow \infty$ we get
+If we assume the heat kernel vanishes for $t\rightarrow \infty$, we can
+integrate formally to get
 \begin{align}
     D^{-1}(x,y) \simeq
     2(4\pi)^{-n/2}\sum_{j=0}\left(\frac{|x-y|}{2m}\right)^{-\frac{n}{2}+j+1}
-    K_{-\frac{n}{2}+j+1}(|x-y|m)b_{2j}(x,y).
+    K_{-\frac{n}{2}+j+1}(|x-y|m)b_{2j}(x,y),
 \end{align}
 where $b_0 = 1$ and $K_\nu (z)$ is the Bessel function
 \begin{align}
-    K_\nu(z) = \frac{1}{\pi} \int_0^\pi cos(\nu\tau-z\sin(\tau))d\tau
+    K_\nu(z) = \frac{1}{\pi} \int_0^\pi \cos(\nu\tau-z\sin(\tau))d\tau.
 \end{align}
-it solves the differential equation
+The Bessel function solves the following differential equation
 \begin{align}
     z^2 \frac{d^2K}{dz^2} + z \frac{dK}{dz} + (z^2 - \nu^2)=0.
 \end{align}
-By looking at integral approximation of the propagator we conclude
-that the singularities of $D^{-1}$ coincide with the singularities of the heat
-kernel coefficients.
-We consider now a generating functional in terns of $\det(D)$ which is called
-the one-loop effective action (quantum fields theory)
+By looking at an integral approximation for the propagator we conclude that
+the singularities of $D^{-1}$ coincide with the singularities of the heat
+kernel coefficients. Thus we can say, that a generating functional in terms of
+$\det(D)$ is called the one-loop effective action (quantum field theory)
 \begin{align}
-    W = \frac{1}{2}\ln(\det D)
+    W = \frac{1}{2}\ln(\det D).
 \end{align}
-we can relate $W$ with the heat kernel. For each eigenvalue $\lambda >0$ of $D$
+We have a direct relation with one-loop effective action $W$ and the
+heat kernel. Furthermore notice that for each eigenvalue $\lambda >0$ of $D$
 we can write the identity.
 \begin{align}
     \ln \lambda  = -\int_0^\infty \frac{e^{-t\lambda}}{t}dt
 \end{align}
-This expression is correct up to an infinite constant which does not depent on
-$\lambda$, because of this we can ignore it. Further more we use $\ln(\det D) =
-\text{Tr}(\ln D)$ and therefor we can write for $W$
+This expression is correct up to an infinite constant which does not depend
+on the eigenvalue $\lambda$, thus we can ignore it. By substituting
+$\ln(\det D) = \text{Tr}(\ln D)$ we can rewrite the one-loop effective action
+$W$ into
 \begin{align}
-    W = -\frac{1}{2} \int_0^\infty dt \frac{K(t, D)}{t}
+    W = -\frac{1}{2} \int_0^\infty dt \frac{K(t, D)}{t},
 \end{align}
 where
 \begin{align}
     K(t, D) = \text{Tr}(e^{-tD}) = \int d^n x \sqrt{g}K(t;x,x;D).
 \end{align}
-The problem is now that the integral of $W$ is divergent at both limits. Yet
+The problem now is that the integral of $W$ is divergent at both limits. Yet
 the divergences at $t\rightarrow \infty$ are caused by $\lambda \leq 0$ of $D$
-(infrared divergences) and are just ignored. The divergences at $t\rightarrow 0$
-are cutoff at $t=\Lambda^{-2}$, thus we write
+(infrared divergences) and can be ignored. The divergences at $t\rightarrow 0$
+are cutoff at $t=\Lambda^{-2}$, simply written as
 \begin{align}
     W_\Lambda = -\frac{1}{2} \int_{\Lambda^{-2}}^\infty dt \frac{K(t, D)}{t}.
 \end{align}
-We can calculate $W_\Lambda$ at up to an order of $\lambda ^0$
+We can calculate $W_\Lambda$ up to an order of $\lambda ^0$
 \begin{align}
     W_\Lambda &= -(4\pi)^{-n/2} \int d^n x\sqrt{g}\bigg(
     \sum_{2(j+l)<n}\Lambda^{n-2j-2l}b_{2j}(x,x) \frac{(-m^2)^l l!}{n-2j-2l} +\\
     &+ \sum_{2(j+l) =n }\ln(\Lambda) (-m^2)^l l! b_{2j}(x,x)
     \mathcal{O}(\lambda^0) \bigg)
 \end{align}
-There is an divergence at $b_2(x,x)$ with $k\leq n$. Now we compute the limit
-$\Lambda \rightarrow \infty$
+There is an divergence at $b_2(x,x)$ for $k\leq n$. Computing the limit
+$\Lambda \rightarrow \infty$ we get
 \begin{align}
     -\frac{1}{2}(4\pi)^{n/2}m^n\int d^n x\sqrt{g} \sum_{2j>n}
-    \frac{b_{2j}(x,x)}{m^{2j}}\Gamma(2j-n)
+    \frac{b_{2j}(x,x)}{m^{2j}}\Gamma(2j-n),
 \end{align}
-here $\Gamma$ is the gamma function.
-\subsubsection{Differential Geometry and Operators of Laplace Type}
-Let $M$ be a $n$ dimensional compact Riemannian manifold with $\partial M = 0$.
-Then consider a vector bundle $V$ over $M$ (i.e. there is a vector space to
-each point on $M$), so we can define smooth functions. We want to look at
-arbitrary differential operators $D$ of Laplace type on $V$, they have the general
-from
-\begin{align}
-    D = -(g^{\mu\nu} \partial_\mu\partial_\nu + a^\sigma\partial_\sigma +b)
-\end{align}
-where $a^\sigma, b$ are matrix valued functions on $M$ and $g^{\mu\nu}$ is the
-inverse metric on $M$. There is a unique connection on $V$ and a unique
-endomorphism (matrix valued function) $E$ on $V$, then we can rewrite $D$ in
-terms of $E$ and covariant derivatives
-\begin{align}
-    D = -(g^{\mu\nu} \nabla_\mu \nabla_\nu +E)
-\end{align}
-Where the covariant derivative consists of $\nabla = \nabla^{[R]} +\omega$ the
-standard Riemannian covariant derivative $\nabla^{[R]}$ and a "gauge" bundle
-$\omega$ (fluctuations). WE can write $E$ and $\omega$ in terms of geometrical
-identities
-\begin{align}
-    \omega_\delta &= \frac{1}{2}g_{\nu\delta}(a^\nu
-    +g^{\mu\sigma}\Gamma^\nu_{\mu\sigma}I_V)\\
-    E &= b - g^{\nu\mu}(\partial_\mu \omega_\nu + \omega_\nu \omega_\mu -
-    \omega_\sigma \Gamma^\sigma_{\nu\mu})
-\end{align}
-where $I_V$ is the identity in $V$ and the Christoffel symbol
-\begin{align}
-    \Gamma^\sigma_{\mu\nu} = g^{\sigma\varrho} \frac{1}{2} (\partial_\mu
-    g_{\nu\varrho} + \partial_\nu g_{\mu\varrho} - \partial_\varrho g_{\mu\nu})
-\end{align}
-Furthermore we remind ourselves of the Riemmanian curvature tensor, Ricci
-Tensor and the Scalar curavture.
-\begin{align}
-    R^\mu_{\nu\varrho\sigma} &= \partial_\sigma \Gamma^{\mu}_{\nu\varrho}
-    -\partial_\varrho \Gamma^\mu_{\nu\sigma}
-    \Gamma^{\lambda}_{\nu\varrho}\Gamma^{\mu}_{\lambda\sigma}
-    \Gamma^{\lambda}_{\nu\sigma}\Gamma^{\mu}_{\lambda\varrho}\\
-    R_{\mu\nu} &:= R^{\sigma}_{\mu\nu\sigma}\\
-    R &:= R^\mu_{\ \mu}
-\end{align}
+where $\Gamma$ stands for the gamma function.
+%----------------------- KANN WEGGELASSEN WERDEN
 
-The we let $\{e_1, \dots, e_n\}$ be the local orthonormal frame of
-$TM$(tangent bundle $M$), which will be noted with flat indices $i,j,k,l
-\in\{1,\dots, n\}$, we use $e^k_\mu, e^\nu_j$ to transform between flat indices
-and curved indices $\mu, \nu, \varrho$.
-\begin{align}
-    e^\mu_j e^\nu_k g_{\mu\nu} &= \delta_{jk}\\
-    e^\mu_j e^\nu_k \delta^{jk} &= g^{\mu\nu} \\
-    e^j_\mu e^\mu_k  &= \delta^j_k
-\end{align}
-
-The Riemannian part of the covariant derivative contains the standard
-Levi-Civita connection, so that for a $v_\nu$ we write
-\begin{align}
-    \nabla_\mu^{[R]} v_\nu = \partial_\mu v_\nu -
-    \Gamma^{\varrho}_{\mu\nu}v_\varrho.
-\end{align}
-The extended covariant derivative reads then
-\begin{align}
-    \nabla_\mu v^j = \partial_\mu v^j + \sigma^{jk}_\mu v_k.
-\end{align}
-the condition $\nabla_\mu e^k_\nu = 0$ gives us the general connection
-\begin{align}
-    \sigma^{kl}_\mu = e^\nu_l\Gamma^{\varrho}_{\mu\nu}e^k_\varrho - e^\nu_l
-    \partial_\mu e^k_\nu
-\end{align}
-The we may define the field strength $\Omega_{\mu\nu}$ of the connection $\omega$
-\begin{align}
-    \Omega_{\mu\nu} = \partial_\mu \omega_\nu -\partial_\nu \omega_\mu
-    +\omega_\mu \omega_\nu -\omega_\nu\omega_\mu.
-\end{align}
-If we apply the covariant derivative on $\Omega$ we get
-\begin{align}
-    \nabla_\varrho\Omega_{\mu\nu} = \partial_\varrho \Omega_{\mu\nu} -
-    \Gamma^{\sigma}_{\varrho \mu} \Omega_{\sigma\mu} + [\omega_\varrho,
-    \Omega_{\mu\nu}]
-\end{align}
 
 \subsubsection{Spectral Functions}
-Manifolds without $M$ boundary condition for the operator $e^{-tD}$ for $t>0$ is a
-trace class operator on $L^2(V)$, this means that for any smooth function $f$
-on $M$ we can define
+Manifolds $M$ with a disappearing boundary condition for the operator $e^{-tD}$ for $t>0$ is a
+trace class operator on $L^2(V)$. Meaning for any smooth function $f$ on $M$
+we can define
 \begin{align}
-    K(t,f,D) = \text{Tr}_{L^2}(fe^{-tD})
+    K(t,f,D) := \text{Tr}_{L^2}(fe^{-tD}),
 \end{align}
-and we can rewrite
+or alternately write an integral representation
 \begin{align}
-    K(t, f, D) = \int_M d^n x \sqrt{g} \text{Tr}_V(K(t;x,x;D)f(x)).
+    K(t, f, D) = \int_M d^n x \sqrt{g} \text{Tr}_V(K(t;x,x;D)f(x)),
 \end{align}
-in terms of the Heat kernel $K(t;x,y;D)$ in the regular limit $y\rightarrow y$.
-We can write the Heat Kernel in terms of the spectrum of $D$. Say
-$\{\phi_\lambda\}$ is a ONB of eigenfunctions of $D$ corresponding to the
-eigenvalue $\lambda$
+in the regular limit $y\rightarrow y$. We can write the Heat Kernel in terms
+of the spectrum of $D$. So for an orthonormal basis $\{\phi_\lambda\}$ of
+eigenfunctions for $D$, which corresponds to the eigenvalue $\lambda$, we
+can rewrite the heat kernel into
 \begin{align}
     K(t;x,y;D) = \sum_\lambda \phi^\dagger_\lambda(x)
     \phi_\lambda(y)e^{-t\lambda}.
 \end{align}
-We have an asymtotic expansion at $t \rightarrow 0$  for the trace
+An asymptotic expansion as $t \rightarrow 0$ for the trace is then
 \begin{align}
-    Tr_{L^2}(fe^{-tD}) \simeq \sum_{k\geq 0}t^{(k-n)/2}a_k(f,D).
+    \text{Tr}_{L^2}(fe^{-tD}) \simeq \sum_{k\geq 0}t^{(k-n)/2}a_k(f,D),
 \end{align}
 where
 \begin{align}
-    a_k(f,D) = (4\pi)^{-n/2} \int_M d^4x \sqrt{g} b_k(x,x) f(x)
+    a_k(f,D) = (4\pi)^{-n/2} \int_M d^4x \sqrt{g} b_k(x,x) f(x).
 \end{align}
 \subsubsection{General Formulae}
-We consider a compact Riemmanian Manifold $M$ without boundary condition, a
-vector bundle $V$ over $M$ to define functions which carry discrete (spin or
-gauge) indices. An Laplace style operator $D$ over $V$ and smooth function $f$
-on $M$. There is an asymtotic expansion where the heat kernel coefficients
+Summarizing, in the last chapter we considered a compact Riemannian manifold
+$M$ without boundary condition, a vector bundle $V$ over $M$ to define
+functions which carry discrete (spin or gauge) indices, an Laplace style
+operator $D$ over $V$ and smooth function $f$ on $M$. Now there is an asymptotic
+expansion where the heat kernel coefficients are
+%------------------------------- HERE
+\newline
+\textbf{---------------------HERE}
+\newline
+%------------------------------- HERE
 \begin{enumerate}
-    \item with odd index $k=2j+1$ vanish
-        $a_{2j+1}(f,D) = 0$
+    \item with odd index $k=2j+1$ vanish $a_{2j+1}(f,D) = 0$
     \item with even index are locally computable in terms of geometric
         invariants
 \end{enumerate}
@@ -247,7 +178,7 @@ coefficients and that the only nonzero coefficient is $a_0(1, D_1) =
     \mathcal{A}^I_n(D_2)\right).
 \end{align}
 
-On the other had all geometric invariants associated with $D$ are in the $D_2$
+On the other had all geometric invariants  associated with $D$ are in the $D_2$
 part. Thus all invariants are independent of $x_1$, so we can choose for $M_1$.
 Say $M_1 = S^1$ with $x\in (0, 2\pi)$ and $D_1=-\partial_{x_1}^2$ we may
 rewrite the heat kernel coefficients in
