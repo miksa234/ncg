@@ -1,267 +1,210 @@
-
 \subsection{Noncommutative Geometric Spaces}
-\subsubsection{Matrix Algebras and Finite Spaces}
 \subsubsection{$*$-Algebra}
+To grasp the idea of encoding geometrical data into a spectral triple we
+introduce the first ingredient of a spectral triple, an unital $C^*$ algebra.
 \begin{definition}
     A \textit{vector space} $A$ over $\mathbb{C}$ is called a \textit{complex, unital Algebra} if, \\
     $\forall a,b \in A$ :
     \begin{enumerate}
         \item
-            $A \times A \rightarrow A$       \hspace{0.1\textwidth} \textit{bilinear} \\
-            $(a, b)\ \mapsto \ a\cdot b$
-        \item
-            $1a = a1 =a$                     \hspace{0.08\textwidth}  \textit{unital} \\
+            $A \times A \rightarrow A$,
+            $(a, b)\ \mapsto \ a\cdot b$,
+        \item with an identity element
+            $1a = a1 =a$.
     \end{enumerate}
-\end{definition}
-
-\begin{definition}
-    A $*$-algebra is an algebra $A$ with a \textit{conjugate linear map (involution)} $*:A\ \rightarrow  A$,
+    Extending the definition, a $*$-algebra is an algebra $A$ with a \textit{conjugate linear map (involution)} $*:A\ \rightarrow  A$,
     $\forall a, b \in A$ satisfying:
     \begin{enumerate}
         \item
-            $(ab)^* = b^*a^*$         \hspace{0.05\textwidth} \textit{antidistributive}
+            $(ab)^* = b^*a^*$,
         \item
-            $(a^*)^* = a$                   \hspace{0.1\textwidth} \textit{closure}
+            $(a^*)^* = a$.
     \end{enumerate}
 \end{definition}
 In the following all unital algebras are referred to as algebras.
 
-\subsubsection{Functions on Discrete Spaces}
-Let $X$ be a \textit{discretized topological} space with $N$ points.
-Consider functions of a continuous $*$-algebra $C(X)$ assigning values to $\mathbb{C}$, for $f, g \in C(X)$,
-$\lambda \in \mathbb{C}$ and $x \in X$ they provide the following structures:
-
+\subsubsection{Finite Discrete Space}
+Let us consider an example of an $*$-algebra of continuous functions $C(X)$
+on a discrete topological space $X$ with $N$ points. Functions of a
+continuous $*$-algebra $C(X)$ assign values to $\mathbb{C}$, thus $f, g \in
+C(X)$, $\lambda \in \mathbb{C}$ and $x \in X$ they provide the following structure:
 \begin{itemize}
     \item \textit{pointwise linear} \\
-      $(f + g)(x) = f(x) + g(x)$\\
-      $(\lambda f)(x) = \lambda (f(x))$
+      $(f + g)(x) = f(x) + g(x)$,\\
+      $(\lambda f)(x) = \lambda (f(x)),$
     \item \textit{pointwise multiplication} \\
-        $fg(x) = f(x)g(x)$ \hspace{0.1\textwidth} same as $(fg)(x) = f(x)g(x))$?
+        $fg(x) = f(x)g(x)$,
     \item \textit{pointwise involution} \\
-        $f^*(x) = \overline{f(x)}$
+        $f^*(x) = \overline{f(x)}.$
 \end{itemize}
+The $*$-algebra $C(X)$ is \textit{isomorphic} to a $*$-algebra $\mathbb{C}^N$
+with involution ($N$ number of points in $X$), we write $C(X) \simeq
+\mathbb{C}^N$.  Isomorphisms are bijective maps that preserve structure and
+don't lose physical information.  A function $f:X\ \rightarrow\ \mathbb{C}$
+can be represented with $N \times N$ diagonal matrices, where each diagonal
+value represents the function value at the corresponding $i$-th point for $i
+= 1,...,N$. Because of matrix multiplication and hermitian conjugate of
+matrices we have a preserving structure.
 
-\begin{question}
-    Mathematical difference between Topological Discreet Spaces and just Discreet Spaces?
-\end{question}
-
-The author indicates that $\mathbb{C}$-valued functions on $X$ are automatically continuous.
-\begin{idea}
-    CAN WE USE THE METRIC? NO!
-    We know that $X$ is a \textit{finite discrete space}, meaning in an $\epsilon$-$\delta$ approach
-    for each $x \in X$ the only $y \in X$, that is small enough is $x$ by itself, which implies
-    $\epsilon$ is always bigger than zero, thus every function $f:X\ \rightarrow\ \mathbb{C}$ is continuous.
-\end{idea}
-
-\subsubsection{Isomorphism Property}
-Furthermore $C(X)$ $*$-algebra is \textit{isomorphic} to a $*$-algebra $\mathbb{C}^N$ with involution
-($N$ number of points in $X$), written as $C(X) \simeq \mathbb{C}^N$.
-A function $f:X\ \rightarrow\ \mathbb{C}$ can be represented with $N \times N$ diagonal matrices,
-where the value $(ii)$ is the value of the function at the corresponding
-$i$-th point ($i = 1,...,N$). The structure is preserved because of the definitions of
-matrix multiplication and the hermitian conjugate of matrices.
-
-\begin{question}
-    Can isomorphisms between $C(X)$ and $\mathbb{C}^N$ be shown with matrix factorization?
-\end{question}
-    Isomorphisms are bijective preserve structure and don't lose physical information/
-
-\subsubsection{Mapping Finite Discrete Spaces}
-
-\begin{definition}
-    A \textit{map} between finite discrete spaces $X_1$ and $X_2$ is a function $\phi:\ X_1 \rightarrow\ X_2$
-\end{definition}
-
-For every map between finite discrete spaces there exists a corresponding map \\
-$\phi ^*:C(X_2)\ \rightarrow C(X_1)$, which `pulls back' values even if $\phi$ is not bijective.
+Moreover we can \textit{map} between finite discrete spaces $X_1$ and $X_2$ with a
+function
+\begin{align}
+    \phi:\ X_1 \rightarrow\ X_2.
+\end{align}
+For every such map there exists a corresponding map
+\begin{align}
+    \phi ^*:C(X_2)\ \rightarrow C(X_1),
+\end{align}
+which `pulls back' values even if $\phi$ is not bijective.
 Note that the pullback doesn't map points back, but maps functions on an $*$-algebra $C(X)$.
-
-
-This map is called a pullback (or a $*$-homomorphism or a $*$-algebra map under pointwise product).
-Under the pointwise product:
+The pullback, in literature often called a $*$-homomorphism or a $*$-algebra map under
+pointwise product has the following properties
 \begin{itemize}
-    \item $\phi ^*(fg) = \phi ^*(f) \phi ^*(g)$
-    \item $\phi ^*(\overline{f}) = \overline{\phi ^*(f)}$
-    \item $\phi ^*(\lambda f + g) = \lambda \phi ^*(f) + \phi ^*(g)$
+    \item $\phi ^*(fg) = \phi ^*(f) \phi ^*(g)$,
+    \item $\phi ^*(\overline{f}) = \overline{\phi ^*(f)}$,
+    \item $\phi ^*(\lambda f + g) = \lambda \phi ^*(f) + \phi ^*(g)$.
 \end{itemize}
-
-\begin{question}
-    $\phi$ is in most cases not bijective, so how can we prove that there exists such a
-    pullback for every map between discrete spaces which preserves information? For bijective
-    it is given by its inverse, which by definition exists because $\phi$ is a map.
-    Or I didn't understand this correctly?
-\end{question}
-
-\begin{MyExercise}
-    \textbf{
-    Show that $\phi :X_1\ \rightarrow \ X_2$ is injective (surjective) map of finite spaces iff
-    $\phi ^* :C(X_2)\ \rightarrow \ C(X_1)$ is surjective (injective).
-}\newline
-
-    Consider $X_1$ with $n$ points and $X_2$ with $m$ points. Then there are three cases:
-    \begin{enumerate}
-        \item $n=m$ \\
-            Obviously $\phi$ is bijective and $\phi ^*$ too.
-        \item $n \rangle  m$ \\
-            $\phi$ assigns $n$ points to $m$ points when $n \rangle  m$,
-            which is by definition surjective. \\
-            $\phi ^*$ assigns $m$ points to $n$ points when $n \rangle  m$,
-            which is by definition injective. \\
-        \item $n \langle  m $ \\
-            analogous
-    \end{enumerate}
-\end{MyExercise}
+%------------ Exercise
+    The map $\phi :X_1\ \rightarrow \ X_2$ is an injective (surjective) map,
+    if only if the corresponding pullback $\phi ^* :C(X_2)\ \rightarrow \
+    C(X_1)$ is surjective (injective). Let us say, that $X_1$ has $n$ points and
+    $X_2$ with $m$ points. Then there are three different cases, first $n=m$ and
+    obviously $\phi$ is bijective and $\phi ^*$ too. Then $n >  m$, in this case
+    $\phi$ assigns $n$ points to $m$ points when $n >  m$, which is by definition
+    surjective. On the other hand $\phi ^*$ assigns $m$ points to $n$ points when
+    $n >  m$, which is by definition injective. Lastly $n < m $, which is
+    completely analogous to the case $n > m$.
+%------------ Exercise
 
 \subsubsection{Matrix Algebras}
 \begin{definition}
-    A \textit{(complex) matrix algebra} A is a direct sum, for $n_i, N \in \mathbb{N}$.
+    A \textit{(complex) matrix algebra} A is a direct sum, for $n_i, N \in
+    \mathbb{N}$
     \begin{align}
-        A = \bigoplus _{i=1}^{N} M_{n_i}(\mathbb{C})
+        A = \bigoplus _{i=1}^{N} M_{n_i}(\mathbb{C}).
     \end{align}
     The involution is the hermitian conjugate, a $*$ algebra with involution is referred to as
     a matrix algebra
 \end{definition}
+From a topological discrete space $X$, we can construct a $*$-algebra
+$C(X)$ which is isomorphic to a matrix algebra $A$. Then the question instantly
+arises, if we can construct $X$ given $A$? For a matrix algebra $A$,
+which in most cases is not commutative, the answer is generally no.
 
-So from a topological discrete space $X$, we can construct a $*$-algebra $C(X)$ which is isomorphic
-to a matrix algebra $A$. The question is can we construct $X$ given $A$? $A$ is a matrix algebra,
-which are in most cases is not commutative, so the answer is generally no.
-
-There are two options. We can restrict ourselves to commutative matrix algebras,
+Thus there are two options. We can restrict ourselves to commutative matrix algebras,
 which are the vast minority and not physically interesting.
-Or we can allow more morphisms(isomorphisms) between matrix algebras.
-
-\begin{question}
-    Why are non-commutative algebras not physically interesting?
-    Maybe too far fetched,but because physical observables (QM-Operators) are not commutative?
-\end{question}
-Exactly.
+Or we can allow more morphisms (isomorphisms) between matrix algebras.
 
 \subsubsection{Finite Inner Product Spaces and Representations}
-Until now we looked at a finite topological discrete space, moreover we can consider a
+Until now we looked at finite topological discrete spaces, moreover we can consider a
 finite dimensional inner product space $H$ (finite Hilbert-spaces), with inner product
-$(\cdot,\cdot)\rightarrow \mathbb{C}$. $L(H)$ is the $*$-algebra of operators on $H$
-with product given by composition and involution given by the adjoint, $T \mapsto T^*$.
-$L(H)$ is a \textit{normed vector space} with
+$(\cdot,\cdot)\rightarrow \mathbb{C}$. We denote $L(H)$ as  the $*$-algebra of operators on $H$
+equipped with a product given by composition and involution of the adjoint, $T \mapsto T^*$.
+Then $L(H)$ is a \textit{normed vector space} with
 \begin{align}
     &\|T\|^2 = \text{sup}_{h \in H}\{(Th,Th): (h,h) \leq 1\} \hspace{0.1\textwidth} T \in L(H) \\
     &\|T\| = \text{sup}\{\sqrt{\lambda}: \lambda \text{ eigenvalue of } T\}
 \end{align}
-
-
+This allows us to define representations of $*$-algebras.
 \begin{definition}
-    The \textit{representation} of a finite dimensional $*$-algebra A is a pair $(H, \pi)$.
-    $H$ is a finite, dimensional inner product space and $\pi$ is a $*$-\textit{algebra map}
+    The \textit{representation} of a finite dimensional $*$-algebra $A$ is a
+    pair $(H, \pi)$, where $H$ is a finite dimensional inner product space
+    and $\pi$ is a $*$-\textit{algebra map}
     \begin{align}
-        \pi:A\ \rightarrow \ L(H)
+        \pi:A\ \rightarrow \ L(H).
     \end{align}
-\end{definition}
-\begin{definition}
-    $(H, \pi)$ is called \textit{irreducible} if:
+    We call the representation $(H, \pi)$ \textit{irreducible} if
     \begin{itemize}
-        \item $H \neq \emptyset$
-        \item only $\emptyset$ or $H$ is invariant under the action of $A$ on $H$
+        \item $H \neq \emptyset$,
+        \item only $\emptyset$ or $H$ is invariant under the action of $A$ on
+            $H$.
     \end{itemize}
 \end{definition}
-
-Examples for reducible and irreducible representations
+Here are some examples of reducible and irreducible representations
 \begin{itemize}
-    \item $A = M_n(\mathbb{C})$, representation $H=\mathbb{C}^n$, $A$ acts as matrix multiplication\\
+    \item For $A = M_n(\mathbb{C})$ the representation $H=\mathbb{C}^n$, $A$ acts as matrix multiplication\\
             $H$ is irreducible.
-    \item $A = M_n(\mathbb{C})$, representation $H=\mathbb{C}^n\oplus \mathbb{C}^n$, with $a \in A$ acting
+    \item For $A = M_n(\mathbb{C})$ the representation $H=\mathbb{C}^n\oplus \mathbb{C}^n$, with $a \in A$ acting
         in block form \\ $\pi: a \mapsto \big(\begin{smallmatrix} a & 0\\ 0 & a \end{smallmatrix}\big)$ is
             reducible.
 \end{itemize}
-
+Naturally there are also certain equivalences between different
+representations.
 \begin{definition}
-    Let $(H_1, \pi _1)$ and $(H_2, \pi _2)$ be representations of a $*$-algebra $A$. They are called
-    \textit{unitary equivalent} if there exists a map $U: H_1 \rightarrow H_2$ such that.
+Two representations of a $*$-algebra $A$, $(H_1, \pi _1)$ and
+$(H_2, \pi _2)$  are called \textit{unitary equivalent} if there exists a map
+$U: H_1 \rightarrow H_2$ such that.
     \begin{align}
         \pi _1(a) = U^* \pi _2(a) U
     \end{align}
 \end{definition}
 
-\begin{question}
-    In matrix representation this is diagonalization condition? (unitary diagonalization)
-\end{question}
-Yes
-
+Furthermore we define a mathematical structure called the structure space,
+which will later become important, when speaking of the duality between a spectral
+triple and a space.
 \begin{definition}
-    $A$ a $*$-algebra then, $\hat{A}$ is called the structure space of all \textit{unitary equivalence classes
+    Let $A$ a $*$-algebra then, $\hat{A}$ is called the structure space of all \textit{unitary equivalence classes
     of irreducible representations of A}
 \end{definition}
-
-\begin{question}
-    Gelfand duality and the spectrum of $\hat{A}$, examples Fourier-Transform and Laplace-Transform
-    for simple spaces.
-\end{question}
-More on that in later chapters.
-
-\begin{MyExercise}
-    \textbf{
-    Given $(H, \pi)$ of a $*$-algebra $A$, the \textbf{commutant} $\pi (A)'$ of $\pi (A)$ is defined as a set
+%------------- EXERCISE
+    Given a representation $(H, \pi)$ of a $*$-algebra $A$, the \textbf{commutant} $\pi (A)'$ of $\pi (A)$ is defined as a set
     of operators in $L(H)$ that commute with all $\pi (a)$
     \begin{align}
         \pi (A)' = \{T \in L(H):\pi (a)T = T\pi (a) \;\;\; \forall a\in A\}
     \end{align}
-    \begin{enumerate}
-        \item Show that $\pi (A)'$ is a $*$-algebra.
-        \item Show that a representation $(H, \pi)$ of $A$ is irreducible iff the commutant $\pi (A)'$
-                consists of multiples of the identity
-    \end{enumerate}
-}
+    The commutant $\pi (A)'$ is also a $*$-algebra, because it has unital,
+    associative and involutive properties.
+    We note that $\pi (a) \in L(H)\ \forall a \in A$, unitary property is given
+    by the unital operator of the $*$-algebra of operators $L(H)$, which exists
+    by definition because H is a inner product space. Associativity is given by
+    the $*$-algebra of $L(H)$, where $L(H) \times L(H) \mapsto L(H)$, which is
+    associative by definition. The involutive property is also given by the $*$-algebra $L(H)$
+    with a map $*: L(H) \mapsto L(H)$ only for a $T$ that commutes with $\pi (a)$.
+%------------- EXERCISE
 
-    1. To show that $\pi (A)'$ is a $*$-algebra we have to show that it is unital, associative and involute.
-    And note that $\pi (a) \in L(H)\ \forall a \in A$.
-    Unitarity is given by the unital operator of the $*$-algebra of operators $L(H)$, which exists by definition
-    because H is a inner product space. Associativity is given by $*$-algebra of $L(H)$, $L(H) \times L(H) \mapsto L(H)$,
-    which is associative by definition. Involutnes is also given by the $*$-algebra $L(H)$
-    with a map $*: L(H) \mapsto L(H)$ only for $T$ that commute with $\pi (a)$.
-    \\
-    2.?
-\end{MyExercise}
+%------------- EXERCISE
+    For a unital algebra $*$-algebra $A$, the matrices $M_n(A)$ with entries
+    in $A$ form a unital $*$-algebra, because unitary operation in $M_n(A)$ is given by the identity Matrix, which
+    has to exists in every entry in $M_n(A)$, and behaves like in $A$. Associativity is given by
+    matrix multiplication. Lastly involution is given by the conjugate transpose.
 
-\begin{MyExercise}
-    \textbf{
-    \begin{enumerate}
-        \item If $A$ is a unital $*$-algebra, show that the $n \times n$ matrices $M_n(A)$ with entries
-            in $A$ form a unital $*$-algebra.
-        \item Let $\pi :A\ \rightarrow \ L(H)$ be a representation of a $*$-algebra $A$ and set
-            $H^n = H \oplus ... \oplus H$, $n$ times. Show that $\tilde{\pi}:M_n(A) \rightarrow L(H^n)$
-            of $M_n(A)$ with\\
-            $\tilde{\pi}((a_{ij})) = (\tilde{\pi}(a_{ij})) \in M_n(A)$.
-        \item Let $\tilde{\pi}:M_n(A) \rightarrow L(H^n)$ be a $*$ algebra representation of $M_n(A)$.
-            Show that $\pi: A \rightarrow L(H^n)$ is a representation of $A$.
-    \end{enumerate}
-}
-    1. We know $A$ is a $*$ algebra. Unitary operaton in $M_n(A)$ is given by the identity Matrix, which
-    has to exists because every entry in $M_n(A)$ has to behave like in $A$. Associativity is given by
-    matrix multiplication. Involutnes is given by the conjugate transpose.\\
-    2. $A \simeq M_n(A)$ and $H \simeq H^n$ meaning $\tilde{\pi}$ is a valid reducible representation.\\
-    3. $\tilde{\pi}$ and $\pi$ are unitary equivalent, there is a map $U: H^n \rightarrow H^n$ given by
-    $U=\mathbbm{1}_n$:\\
-    $\pi (a) = \mathbbm{1}_n^*\ \tilde{\pi}((a_{ij}))\ \mathbbm{1}_n = \tilde{\pi}((a_{ij})) = \pi (a_{ij})
-    \Rightarrow a_{ij} = a\mathbbm{1}_n$.
-\end{MyExercise}
+    A representation $\pi :A\ \rightarrow \ L(H)$ of a $*$-algebra $A$, for
+    $H^n = H \oplus ... \oplus H$, $n$ times.  Then we have the following
+    representation $\tilde{\pi}:M_n(A) \rightarrow L(H^n)$ for the Matrix
+    Algebra with $\tilde{\pi}((a_{ij})) = (\tilde{\pi}(a_{ij})) \in M_n(A)$.
+    We have direct isomorphisms of $A \simeq M_n(A)$ and $H \simeq H^n$
+    meaning $\tilde{\pi}$ is a valid reducible representation.
 
-\subsubsection{Commutative Matrix Algebras}
-\begin{itemize}
-    \item Commutative matrix algebras can be used to reconstruct a discrete space given
-        a matrix \textit{commutative} matrix algebra.
-    \item The structure space $\hat{A}$ is used for this. Because $A \simeq \mathbb{C}^N$ we all any
-        irreducible representation are of the form
-        $\pi _i:(\lambda_1,...,\lambda_N)\in \mathbb{C}^N \mapsto \lambda_i \in \mathbb{C}$ \\
-        for $i = 1,...,N \Rightarrow \hat{A} \simeq \{1,...,N\}.$
-    \item Conclusion is that there is a duality between discrete spaces and commutative matrix algebra
-        this duality is called the \textit{finite dimensional Gelfand duality}
-\end{itemize}
+    Let $\tilde{\pi}:M_n(A) \rightarrow L(H^n)$ be a $*$ algebra
+    representation of $M_n(A)$, then $\pi: A \rightarrow L(H^n)$ is a representation of $A$.
+    The fact that $\tilde{\pi}$ and $\pi$ are unitary equivalent, there is
+    a map $U: H^n \rightarrow H^n$ given by $U=\mathbbm{1}_n$, thus
+    \begin{align}
+        \pi (a) &= \mathbbm{1}_n^*\ \tilde{\pi}((a_{ij})), \\
+        \mathbbm{1}_n &= \tilde{\pi}((a_{ij})) = \pi (a_{ij})
+    \Rightarrow a_{ij} = a\mathbbm{1}_n.
+    \end{align}
+%------------- EXERCISE
 
-\subsubsection{Noncommutative Matrix Algebras}
-Aim is to construct duality between finite dimensional spaces and \textit{equivalence classes}
-of matrix algebras, to preserve general non-commutivity of matrices.
-\begin{itemize}
-    \item Equivalence classes are described by a generalized notion of ispomorphisms between matrix
-        algebras (\textit{Morita Equivalence})
-\end{itemize}
+
+A commutative matrix algebra can be used to reconstruct a discrete space.
+The structure space $\hat{A}$ is used for this. Because $A \simeq
+\mathbb{C}^N$ all
+irreducible representation are of the form
+\begin{align}
+   \pi _i:(\lambda_1,...,\lambda_N)\in \mathbb{C}^N \mapsto \lambda_i \in
+   \mathbb{C}
+\end{align}
+for $i = 1,...,N$ and thus $\hat{A} \simeq \{1,...,N\}$.
+The conclusion is that, there is a duality between discrete spaces and
+commutative matrix algebra this duality is called the \textit{finite
+dimensional Gelfand duality}
+
+Our aim is to construct a duality between finite dimensional spaces and
+\textit{equivalence classes} of matrix algebras, to preserve general
+non-commutativity of matrices.  Equivalence classes are described by a
+generalized notion of isomorphisms between matrix algebras (\textit{Morita
+Equivalence})
 
 \subsubsection{Algebraic Modules}
 \begin{definition}
@@ -323,3 +266,1314 @@ Remark on the notation
 
     $\gamma: A\times A\times A \rightarrow A$ which is given by the inner product of the $*$-algebra.
 \end{MyExercise}
+
+%\subsubsection{Balanced Tensor Product and Hilbert Bimodules}
+%
+%\begin{definition}
+%    Let $A$ be an algebra, $E$ be a \textit{right} $A$-module and $F$ be a \textit{left} $A$-module.
+%    The \textit{balanced tensor product} of $E$ and $F$ forms a $A$-bimodule.
+%    \begin{align}
+%        E \otimes _A F := E \otimes F / \left\{\sum _i e_i a_i \otimes f_i - e_i \otimes a_i f_i : \;\;\;
+%                                         a_i \in A,\ e_i \in E,\ f_i \in F \right\}
+%    \end{align}
+%\end{definition}
+%Note $/$ denotes the quotient space. So $\otimes _A$ takes two left/right modules and makes a
+%bimodule with the help the tensor product of the two modules and the quotient space that takes
+%out all the elements from the tensor product that dont preserver the left/right representation and that
+%are duplicates.
+%\begin{definition}
+%    Let $A$, $B$ be \textit{matrix algebras}. The \textit{Hilbert bimodule} for $(A, B)$ is given by
+%    \begin{itemize}
+%        \item $E$, an $A$-$B$-bimodue $E$ and by
+%        \item an $B$-valued \textit{inner product} $\langle \cdot,\cdot\rangle_E: E\times E \rightarrow B$
+%    \end{itemize}
+%$\langle \cdot,\cdot\rangle_E$ needs to satisfy the following for $e, e_1, e_2 \in E,\ a \in A$ and $b \in B$.
+%\begin{align}
+%    \langle e_1, a\cdot e_2\rangle_E &= \langle a^*\cdot e_1, e_2\rangle_E \;\;\;\; & \text{sesquilinear in $A$}\\
+%    \langle e_1, e_2 \cdot b\rangle_E &= \langle e_1, e_2\rangle_E b \;\;\;\; & \text{scalar in $B$} \\
+%    \langle e_1, e_2\rangle_E &= \langle e_2,e_1\rangle^*_E \;\;\;\; & \text{hermitian} \\
+%    \langle e, e\rangle_E &\ge 0 \;\;\;\; & \text{equality holds iff $e=0$}
+%\end{align}
+%
+%\end{definition}
+%
+%We denote $KK_f(A,B)$ the set of all \textit{Hilbert bimodules} of $(A,B)$.
+%
+%%\begin{MyExercise}
+%%    \textbf{
+%%    Check that a representation $\pi:\ A \ \rightarrow L(H)$ of a matrix algebra $A$ turns $H$ into
+%%    a Hilbert bimodule for $(A, \mathbb{C})$.
+%%    \label{ex: bimodule}
+%%}\newline
+%%
+%%
+%%    We check if the representation of $a \in A$, $\pi(a)=T \in L(H)$ fulfills
+%%    the conditions on the $\mathbb{C}$-valued inner product for $h_1, h_2 \in H$:
+%%    \begin{itemize}
+%%        \item $\langle h_1, \pi(a) h)2\rangle _\mathbb{C} = \langle h_1, T h_2\rangle _\mathbb{C} =
+%%            \langle T^* h_1, h_2\rangle _\mathbb{C}$, $T^*$ given by the adjoint
+%%        \item $\langle h_1, h_2 \pi(a)\rangle _\mathbb{C} = \langle h_1, h_2 T\rangle _\mathbb{C} = \langle h_1, h_2\rangle _\mathbb{C}$, $T$ acts from the left
+%%        \item $\langle h_1, h_2\rangle _\mathbb{C}^* = \langle h_2,h_1\rangle _\mathbb{C}$, hermitian because of the
+%%            $\mathbb{C}$-valued inner product
+%%        \item $\langle h_1, h_2\rangle  \ge 0$, $\mathbb{C}$-valued inner product.
+%%    \end{itemize}
+%%\end{MyExercise}
+%
+%%\begin{MyExercise}
+%%    \textbf{
+%%    Show that the $A-A$ bimodule given by $A$ is in $KK_f(A,A)$ by taking the following inner product
+%%    $\langle \cdot,\cdot\rangle_A:A \times A \rightarrow A$:
+%%    \begin{align}
+%%        \langle a, a\rangle_A = a^*a' \;\;\;\; a,a'\in A
+%%    \end{align}
+%%    \label{exercise: inner-product}
+%%}\newline
+%%
+%%
+%%    We check again the conditions on $\langle \cdot, \cdot\rangle _A$, let $a, a_1, a_2 \in A$:
+%%    \begin{itemize}
+%%        \item $\langle a_1, a\cdot a_2\rangle _A = a^*\ a\cdot a_2 = (a^*a_1)^* a_2 = \langle  a^*a_1, a_2\rangle  $
+%%        \item $\langle a_1, a_2 \cdot a\rangle _A = a^*_1 (a_2\cdot a) = (a^*a_2)\cdot a = \langle a_1, a_2\rangle _A a$
+%%        \item $\langle a_1, a_2\rangle _A^* = (a_1^* a_2)^* = a_2^*(a_1^*)^* = a_2^* a_1 = \langle a_2, a_1\rangle $
+%%    \end{itemize}
+%%\end{MyExercise}
+%
+%\begin{example}
+%    Consider a $*$ homomorphism between two matrix algebras $\phi:A\rightarrow B$.
+%    From it we can construct a Hilbert bimodule $E_{\phi} \in KK_f(A, B)$ in the following way.
+%    We let $E_{\phi}$ be $B$ in the vector space sense and an inner product from the above
+%    Exercise \ref{exercise: inner-product}, with $A$ acting on the left with $\phi$.
+%    \begin{align}
+%        a\cdot b = \phi(a)b \;\;\;\; a\in A, b\in E_{\phi}
+%    \end{align}
+%\end{example}
+%
+%
+%\subsubsection{Kasparov Product and Morita Equivalence}
+%\begin{definition}
+%    Let $E \in KK_f(A, B)$ and $F \in KK_F(B, D)$ the \textit{Kasparov product} is defined as
+%    with the balanced tensor product
+%    \begin{align}
+%        F \circ E := E \otimes _B F
+%    \end{align}
+%    Such that $F\circ E \in KK_f(A,D)$ with a $D$-valued inner product.
+%    \begin{align}
+%        \langle e_1 \otimes f_1, e_2 \otimes f_2\rangle _{E\otimes _B F} = \langle f_1,\langle e_1, e_2\rangle _E f_2\rangle _F
+%    \end{align}
+%\end{definition}
+%
+%\begin{question}
+% How do we go from $\langle e_1 \otimes f_1, e_2 \otimes f_2\rangle _{E\otimes _B F}$ to $
+%    \langle f_1,\langle e_1, e_2\rangle _E f_2\rangle _F$ \label{q: tensorproduct}\\
+%    This statement is still in the definition.
+%\end{question}
+%
+%%\begin{question}
+%%What is the meaning of `associative up to isomorphism'? Isomorphism of $F \circ E$ or of $A, B$ or $D$?
+%%\end{question}
+%
+%%    \begin{MyExercise}
+%%        \textbf{
+%%    Show that the association $\phi \leadsto E_\phi$ (from the previous Example) is natural
+%%    in the sense
+%%    \begin{enumerate}
+%%        \item $E_{\text{id}_A} \simeq A \in KK_f(A,A)$
+%%        \item for $*$-algebra homomorphism $\phi: A \rightarrow B$ and $\psi: B \rightarrow C$ we have
+%%            an isomorphism
+%%            \begin{align}
+%%                E_{\psi} \circ E_{\phi}\ \equiv\ E_{\phi} \otimes _B E_{\psi}\ \simeq\
+%%                E_{\psi \circ \phi} \in KK_f(A,C)
+%%            \end{align}
+%%    \end{enumerate}
+%%}
+%%    \begin{enumerate}
+%%        \item $\text{id}_A: A \rightarrow A$.\\
+%%            To construct $E_{\phi}\in KK_f(A,A)$, we let $E_{\phi}$ be $A$ with a natural right
+%%            representation, so $\Rightarrow E_{\phi}\simeq A$.\\
+%%            With an inner product, acting on $A$ from the left with $\phi$, $a', a\in A$\\
+%%            $a'a = (\phi(a') a) \in A $, which is satisfied by $\text{id}_A$, so $\phi = \text{id}_A$.
+%%        \item $a \cdot b \cdot c = \psi(\phi (a) \cdot b) \cdot c$ for $a \in A$, $b\in B$, and $c\in C$
+%%                which is $\psi \circ \phi$
+%%    \end{enumerate}
+%%\end{MyExercise}
+%
+%%\begin{MyExercise}
+%%    \textbf{
+%%    In the definition of Morita equivalence:
+%%    \begin{enumerate}
+%%        \item Check that $E \otimes _B F$ is a $A-D$ bimodule
+%%        \item Check that $\langle \cdot,\cdot\rangle _{E\oplus _B F}$ defines a $D$ valued inner product
+%%        \item Check that $\langle a^*(e_1 \otimes f_1), e_2 \otimes f_2\rangle _{E \otimes _B F} = \langle e_1 \otimes f_1, a(e_2 \otimes f_2)\rangle _{E \otimes _B F}$.
+%%    \end{enumerate}
+%%}
+%%    \begin{enumerate}
+%%        \item $E \otimes _B F = E \otimes F / \{\sum_i e_i b_i \otimes f_i - e_i \otimes b_i f_i;
+%%            e_i \in E_i, b_i \in B, f_i \in F\}$ the last part takes out all tensor product elements of
+%%            $E$ and $F$ that don't preserver the left/right representation and that are duplicates.
+%%        \item $\langle e_1, e_2\rangle _E \in B$ and $\langle f_1, f_2\rangle _F \in C$ by definition. So let $\langle e_1, e_2\rangle _E =b$. \\
+%%            Then $\langle e_1 \otimes f_1, e_2 \otimes f_2\rangle _{E\otimes _B F} = \langle f_1, \langle e_1, e_2\rangle _E f_2\rangle _F =
+%%            \langle f_1, b f_2\rangle _F \in C$
+%%        \item Check Question \ref{q: tensorproduct}.\\
+%%            But let $G := E\otimes _B F \in KK_f(A,C)$ then $\forall g_1, g_2 \in G$ and $a \in A$ we need
+%%            by definition $\langle g_1, ag_2\rangle _G = \langle a^*g_1, g_2\rangle _G$ and we set $g_1 = e_1 \otimes f_1$ and
+%%            $g_2 = e_2 \otimes f_2$ for some $e_1, e_2 \in E$ and $f_1, f_2 \in F$, or else
+%%            $G \notin KK_f(A,C)$ which would violate the Kasparov product
+%%    \end{enumerate}
+%%    \end{MyExercise}
+%
+%\begin{definition}
+%    Let $A$, $B$ be \textit{matrix algebras}. They are called \textit{Morita equivalent} if there
+%    exists an $E \in KK_f(A, B)$ and an $F \in KK_f(B, A)$ such that:
+%    \begin{align}
+%        E \otimes _B F \simeq A \;\;\; \text{and} \;\;\; F \otimes _A E \simeq B
+%    \end{align}
+%    Where $\simeq$ denotes the isomorphism between Hilbert bimodules, note that $A$ or $B$ is a bimodule by
+%    itself.
+%\end{definition}
+%
+%\begin{question}
+%    Why are $E$ and $F$ each others inverse in the Kasparov Product? \\
+%    They are each others inverse with respect to the Kasparov Product because we land in the same space as we started.
+%    In the definition we have $E \in KK_f(A, B)$ we start from $A$ and $E \otimes _B F$ lands in $A$.\\
+%    On the other hand we have $F \in KK_f(B, D)$ we start from $B$ and $F \otimes _A E$ lands in $B$.
+%\end{question}
+%
+%\begin{example}
+%    \
+%    \begin{itemize}
+%        \item Hilber bimodule of $(A,A)$ is $A$
+%        \item Let $E \in KK_f(A,B)$, we take $E \circ A = A\oplus _A E \simeq E$
+%        \item we conclude, that $_A A_A$ is the identity in the Kasparov product (up to isomorphism)
+%    \end{itemize}
+%\end{example}
+%
+%\begin{example}
+%    Let $E = \mathbb{C}^n$, which is a $(M_n(\mathbb{C}), \mathbb{C})$ Hilbert bimodule with the
+%    standard $\mathbb{C}$ inner product.\\
+%    On the other hand let $F = \mathbb{C}^n$, which is a $(\mathbb{C}, M_n(\mathbb{C}))$ Hilbert
+%    bimodule by right matrix multiplication with $M_n(\mathbb{C})$ valued inner product:
+%    \begin{align}
+%        \langle v_1, v_2\rangle =\bar{v_1}v_2^t \;\; \in M_n(\mathbb{C})
+%    \end{align}
+%    Now we take the Kasparov product of $E$ and $F$:
+%   \begin{itemize}
+%        \item $F\circ E\ =\  E\otimes _{\mathbb{C}}F\ \;\;\;\;\;\; \simeq \  M_n(\mathbb{C})$
+%        \item $E\circ F\ =\ F\otimes _{M_n(\mathbb{C})}E\ \simeq\ \mathbb{C}$
+%    \end{itemize}
+%    $M_n(\mathbb{C})$ and $\mathbb{C}$ are Morita equivalent
+%\end{example}
+%
+%\begin{theorem}
+%    Two matrix algebras are Morita Equivalent iff their their Structure spaces
+%    are isomorphic as discreet spaces (have the same cardinality / same number of elements)
+%\end{theorem}
+%\begin{proof}
+%    Let $A$, $B$ be \textit{Morita equivalent}. So there exists $_A E_B$ and $_B F_A$ with
+%    \begin{align}
+%        E \otimes _B F \simeq A \;\;\; \text{and} \;\;\; F \otimes _A E \simeq B
+%    \end{align}
+%    Consider $[(\pi _B, H)] \in \hat{B}$ than we construct a representation of $A$,
+%    \begin{align}
+%        \pi _A \rightarrow L(E \otimes _B H)\;\;\; \text{with} \;\;\; \pi _A(a) (e \otimes v) = a e \otimes w
+%    \end{align}
+%    \begin{question}
+%        Is $E \simeq H$ and $F \simeq W$? \\
+%        Not in particular, there is a theorem that all infinite dimensional Hilbert spaces are isomorphic.
+%        Here we are looking at finite dimensional Hilbert spaces.\\
+%        Another thing to is that $[\pi _B, H] \in \hat{B}$ and looking at Exercise \ref{ex: bimodule}
+%        we know that $H$ is a bimodule of $B$, hence $E \otimes _B H\simeq A$, and for $[\pi _A, W]$
+%        the same.
+%    \end{question}
+%    \textit{vice versa}, consider $[(\pi _A, W)] \in \hat{A}$ we can construct $\pi _B$
+%    \begin{align}
+%        \pi _B: B \rightarrow L(F \otimes _A W) \;\;\; \text{and}\;\;\; \pi _B(b) (f\otimes w) = bf\otimes w
+%    \end{align}
+%    These maps are each others inverses, thus $\hat{A} \simeq \hat{B}$
+%\end{proof}
+%
+%%\begin{MyExercise}
+%%    \textbf{
+%%    Fill in the gaps in the above proof:
+%%    \begin{enumerate}
+%%        \item show that the representation of $\pi _A$ defined is irreducible iff $\pi _B$ is.
+%%        \item Show that the association of the class $[\pi _A]$ to $[\pi _B]$ is independent
+%%            of the choice of representatives $\pi _A$ and $\pi _B$
+%%    \end{enumerate}
+%%}
+%%
+%%    \begin{enumerate}
+%%        \item $(\pi _B, H)$ is irreducible means $H \neq \emptyset$ and only $\emptyset$ or $H$
+%%            is invariant under the Action of $B$ on $H$.
+%%            Than $E\otimes _B H$ cannot be empty, because also $E$ preserves left representation of $A$
+%%            and also $E\otimes _B H \simeq A$.
+%%        \item The important thing is that $[\pi _A] \in \hat{A}$ respectively $[\pi _B] \in \hat{B}$,
+%%            hence any choice of representation is irreducible, because the structure space denotes all unitary
+%%            equivalence classes of irreducible representations.
+%%    \end{enumerate}
+%%\end{MyExercise}
+%
+%    \begin{lemma}
+%    The matrix algebra $M_n(\mathbb{C})$ has a unique irreducible representation (up to isomorphism)
+%    given by the defining representation on $\mathbb{C}^n$.
+%\end{lemma}
+%\begin{proof}
+%    We know $\mathbb{C}^n$ is a irreducible representation of $A= M_n(\mathbb{C})$. Let $H$ be irreducible
+%    and of dimension $k$, then we define a map
+%    \begin{align}
+%        \phi : A\oplus...\oplus A &\rightarrow H^* \\
+%        (a_1,...,a_k)             &\mapsto e^1\circ a_1^t+...+e^k\circ a_k^t
+%    \end{align}
+%    With $\{e^1,...,e^k\}$ being the basis of the dual space $H^*$ and $(\circ)$ being the pre-composition
+%    of elements in $H^*$ and $A$ acting on $H$. This forms a morphism of $M_n(\mathbb{C})$ modules,
+%    provided a matrix $a \in A$ acts on $H^*$ with $v\mapsto v\circ a^t$ ($v\in H^*$).
+%    Furthermore this morphism is surjective, thus making the pullback $\phi ^*:H\mapsto (A^k)^*$ injective.
+%    Now identify $(A^k)^*$ with $A^k$ as a $A$-module and note that
+%    $A=M_n(\mathbb{C}) \simeq \oplus ^n \mathbb{C}^n$ as a n A module.
+%    It follows that $H$ is a submodule of $A^k \simeq \oplus ^{nk}\mathbb{C}$. By irreducibility
+%    $H \simeq \mathbb{C}$.
+%\end{proof}
+%
+%\begin{example}
+%    Consider two matrix algebras $A$, and $B$.
+%    \begin{align}
+%        A = \bigoplus ^N_{i=1} M_{n_i}(\mathbb{C}) \;\;\; B = \bigoplus ^M_{j=1} M_{m_j}(\mathbb{C})
+%    \end{align}
+%    Let $\hat{A} \simeq \hat{B}$ that implies $N=M$ and define $E$ with $A$ acting by block-diagonal
+%    matrices on the first tensor and B acting in the same way on the second tensor. Define $F$ vice versa.
+%    \begin{align}
+%        E:= \bigoplus _{i=1}^N \mathbb{C}^{n_i} \otimes \mathbb{C}^{m_i} \;\;\;
+%        F:= \bigoplus _{i=1}^N \mathbb{C}^{m_i} \otimes \mathbb{C}^{n_i}
+%    \end{align}
+%    Then we calculate the Kasparov product.
+%    \begin{align}
+%        E \otimes _B F &\simeq \bigoplus _{i=1}^N (\mathbb{C}^{n_i}\otimes\mathbb{C}^{m_i})
+%            \otimes _{M_{m_i}(\mathbb{C})} (\mathbb{C}^{m_i}\otimes\mathbb{C}^{n_i}) \\
+%                       &\simeq \bigoplus _{i=1}^N \mathbb{C}^{n_i}\otimes
+%                       \left(\mathbb{C}^{m_i}\otimes _{M_{m_i}(\mathbb{C})}\mathbb{C}^{m_i}\right)
+%                        \oplus \mathbb{C}^{n_i} \\
+%                       &\simeq \bigoplus _{i=1}^N \mathbb{C}^{m_i}\otimes\mathbb{C}^{n_i} \simeq A
+%    \end{align}
+%    and from $F \otimes _A E \simeq B$.
+%\end{example}
+%
+%We conclude that.
+%\begin{itemize}
+%    \item There is a duality between finite spaces and Morita equivalence classes of matrix algebras.
+%    \item By replacing $*$-homomorphism $A\rightarrow B$ with Hilbert bimodules $(A,B)$ we introduce
+%        a richer structure of morphism between matrix algebras.
+%\end{itemize}
+%
+%\subsection{Noncommutative Geometric Spaces }
+%\subsubsection{Exercises}
+%
+%%\begin{MyExercise}
+%%\textbf{
+%%    Make the proof of the last theorem (see week4.pdf) explicit for $N=3$.
+%%}\newline
+%%
+%%    For the C* algebra we have $A=\mathbb{C}^3$
+%%    For $H$ we have $H = (\mathbb{C}^2)^{\oplus 3} = H_2 \oplus H_2^1 \oplus H_2^2$.
+%%    The symmetric operator $D$ acting on $H$ and the representation $\pi (a)$:
+%%    \begin{align}
+%%        \pi((a(1), a(2), a(3)) &=
+%%        \begin{pmatrix}
+%%            a(1) & 0 \\ 0 & a(2)
+%%        \end{pmatrix} \oplus
+%%        \begin{pmatrix}
+%%            a(1) & 0 \\ 0 & a(3)
+%%        \end{pmatrix} \oplus
+%%        \begin{pmatrix}
+%%            a(2) & 0 \\ 0 & a(2)
+%%        \end{pmatrix} \nonumber  \\
+%%        & =
+%%        \begin{pmatrix}
+%%            a(1) & 0 & 0 & 0 & 0 & 0 \\
+%%            0    & a(2) & 0 & 0 & 0 & 0 \\
+%%            0    & 0 & a(1) & 0 & 0 & 0 \\
+%%            0    & 0 & 0 & a(3) & 0 & 0 \\
+%%            0    & 0 & 0 & 0 & a(2) & 0 \\
+%%            0    & 0 & 0 & 0 & 0 & a(3)
+%%        \end{pmatrix} \\
+%%        D &=
+%%        \begin{pmatrix}
+%%            0 & x_1 \\ x_1 & 0
+%%        \end{pmatrix} \oplus
+%%        \begin{pmatrix}
+%%            0 & x_2 \\ x_2 & 0
+%%        \end{pmatrix} \oplus
+%%        \begin{pmatrix}
+%%            0 & x_3 \\ x_3 & 0
+%%        \end{pmatrix} \nonumber \\
+%%        &=
+%%        \begin{pmatrix}
+%%            0   & x_1 & 0 & 0 & 0 & 0 \\
+%%            x_1 & 0   & 0 & 0 & 0 & 0 \\
+%%            0   & 0   & 0 & x_2 & 0 & 0 \\
+%%            0   & 0   & x_2 & 0 & 0 & 0 \\
+%%            0   & 0   & 0 & 0 & 0 & x_3 \\
+%%            0   & 0   & 0 & 0 & x_3 & 0 \\
+%%        \end{pmatrix} \\
+%%    \end{align}
+%%    Then the norm of the commutator would be the largest eigenvalue
+%%    \begin{align}
+%%        &||[D, \pi(a)]|| = ||D\pi(a) - \pi(a)D||\nonumber\\
+%%        &=
+%%        \left|\left|
+%%    \setlength{\arraycolsep}{0.1cm}
+%%      \renewcommand{\arraystretch}{0.1}
+%%        \begin{pmatrix}
+%%            0   & x_1(a(2)-a(1)) & 0 & 0 & 0 & 0 \\
+%%            -x_1(a(2)-a(1)) & 0   & 0 & 0 & 0 & 0 \\
+%%            0   & 0   & 0 & x_2(a(3)-a(1)) & 0 & 0 \\
+%%            0   & 0   & -x_2(a(3)-a(1)) & 0 & 0 & 0 \\
+%%            0   & 0   & 0 & 0 & 0 & x_3(a(3)-a(2)) \\
+%%            0   & 0   & 0 & 0 & -x_3(a(2)-a(3)) & 0 \\
+%%        \end{pmatrix}\right|\right| \label{skew matrix}
+%%    \end{align}
+%%The matrix in Equation \ref{shew matrix} is a skew symmetric matrix its eigenvalues
+%%are $i\lambda_1, i\lambda_2, i\lambda_3, i\lambda_4$, where the $\lambda$'s are on the
+%%upper and lower diagonal check \url{https://en.wikipedia.org/wiki/Skew-symmetric_
+%%matrix#Skew-symmetrizable_matrix}. The matrix norm of would be the maximum of the norm of
+%%the larges eigenvalues:
+%%\begin{align}
+%%    ||[D, \pi(a)]|| = \max_{a\in A}\{&x_1|a(2)-a(1)|,\\
+%%    &x_2|(a(3)-a(1))|,\nonumber\\
+%%    &x_3|(a(3)-a(2))|,\}\nonumber
+%%\end{align}
+%%The metric is then:
+%%\begin{align}
+%%    d =
+%%    \begin{pmatrix}
+%%        0 & a(1)-a(2) & a(1)-a(3)\\
+%%        a(2)-a(1) & 0 & a(2)-a(3)\\
+%%        a(3)-a(1) & a(3)-a(2) & 0
+%%    \end{pmatrix}
+%%\end{align}
+%%\end{MyExercise}
+%
+%%\begin{MyExercise}
+%%    \textbf{
+%%	Compute the metric on the space of three points given by $d_{ij} =
+%%	\sup_{a\in A}\{|a(i) - a(j)|: ||[D, \pi(a)]|| \leq 1\}$ for the set of data
+%%    $A = \mathbb{C}^3$ acting in the defining representation $H = \mathbb{C}^3$, and
+%%    \begin{align}
+%%    D =
+%%    \begin{pmatrix}
+%%        0 & d^{-1} & 0 \\
+%%        d^{-1} & 0 & 0 \\
+%%        0 & 0 & 0
+%%    \end{pmatrix}
+%%    \end{align}
+%%    for some $d \in \mathbb{R}$
+%%}\newline
+%%
+%%    We have $A=\mathbb{C}^3$, $H=\mathbb{C}^3$ and $D$ from above, then
+%%
+%%    \begin{align}
+%%        ||[D, \pi(a)]|| &= d^{-1}\left|\left|
+%%    \begin{pmatrix}
+%%        0 & a(2)-a(1) & 0 \\
+%%        -(a(2)-a(1)) & 0 & 0 \\
+%%        0 & 0 & 0
+%%    \end{pmatrix} \right|\right|
+%%    \end{align}
+%%    The metric is then
+%%    \begin{align}
+%%    d =
+%%        \begin{pmatrix}
+%%            0 & a(1)-a(2) & a(1)  \\
+%%            a(2)-a(1) & 0 & a(2) \\
+%%            -a(1) & -a(2) & 0
+%%        \end{pmatrix}
+%%    \end{align}
+%%\end{MyExercise}
+%
+%%\begin{MyExercise}
+%%    \textbf{
+%%    Show that $d_{ij}$ from Equation \ref{ext metric} is a metric on $\hat{A}$ by
+%%    establishing that:
+%%    \begin{align}
+%%        d_{ij} &= 0\;\;\; \Leftrightarrow \;\;\; i=j \label{metric 1} \\
+%%        d_{ij} &= d_{ji} \label{metric 2}\\
+%%        d_{ij} &\leq d_{ik} + d_{kj} \label{metric 3}
+%%    \end{align}
+%%    \begin{equation} \label{ext metric}
+%%        d_{ij} = \sup_{a\in A}\big\{|\text{Tr}(a(i)) - \text{Tr}((a(j))|: ||[D, a]|| \leq 1\big\}
+%%    \end{equation}
+%%}\newline
+%%
+%%For Equation \ref{metric 1} set $i=j$ in \ref{ext metric}.
+%%\begin{align}
+%%    d_{ii} &= \sup_{a \in A}\{|\text{Tr}(a(i)) - \text{Tr}((a(i))|: ||[D, a]|| \leq
+%%    1\big\} \\
+%%    &= \sup_{a \in A}\{0: ||[D, a]|| \leq 1\big\} = 0
+%%\end{align}
+%%For Equation \ref{metric 2} obviously we have the commuting property of
+%%addition.
+%%\newline
+%%For Equation \ref{metric 3}, for $k=j$ then $d_{kj} = 0$ and the equality
+%%holds. For $i = k$ then $d_{ik} = 0$ and equality holds. Else set $d_{ik} =
+%%1$ and $d_{kj} = 1$ then $d_{ij} = 1 \leq d_{ik} + d_{kj} = 2$
+%%\end{MyExercise}
+%
+%\subsubsection{Properties of Matrix Algebras}
+%\begin{lemma}
+%    If $A$ is a unital C* algebra that acts faithfully on a finite
+%    dimensional Hilbert space, then $A$ is a matrix algebra of the Form:
+%    \begin{equation}
+%        A \simeq \bigoplus _{i=1}^N M_{n_i}(\mathbb{C})
+%    \end{equation}
+%\end{lemma}
+%\begin{proof}
+%    Since $A$ acts faithfully on a Hilbert space, then $A$ is a C*
+%    subalgebra of a matrix algebra $L(H) = M_{\dim (H)}(\mathbb{C}
+%    \Rightarrow A \simeq \text{Matrix algebra}$.
+%\end{proof}
+%
+%\begin{question}
+%    What does the author mean when he sais 'acts faithfully on a
+%    Hilbertspace`? Then the representation is fully reducible, or that the
+%    presentation is irreducible?
+%    \newline
+%
+%    For a *-representation 'faithful` if it is injective. For a
+%    *-homomorphism 'faithful` means one-to-one correspondance
+%\end{question}
+%
+%\begin{example}
+%    $A = M_n(\mathbb{C})$ and $H=\mathbb{C}^n$, $A$ acts on $H$ with matrix
+%    multiplication and standard inner product. $D$ on $H$ is a hermitian
+%    matrix $n\times n$ matrix.
+%\end{example}
+%
+%$D$ is referred to as a finite Dirac operator as in as its $\infty$
+%dimensional on Riemannian Spin manifolds coming in Chapter 4.
+%\newline
+%
+%Now can introduce a 'differential 'geometric structure` on the finite space X
+%with the \textbf{devided difference}
+%\begin{equation}
+%    \frac{a(i)-a(j)}{d_{ij}}
+%\end{equation}
+%for each pair $i$, $j$ $\in X$ the finite dimensional discrete space $X$.
+%This appears in the entries in the commutator $[D, a]$ in the above
+%exercises.
+%
+%\begin{definition}
+%    Given an finite spectral triple $(A, H, D)$, the $A$-bimodule of
+%    Connes' differential one-forms is:
+%    \begin{equation}
+%        \Omega _D ^1 (A) := \left\{ \sum _k a_k[D, b_k]: a_k, b_k \in A \right\}
+%    \end{equation}
+%\end{definition}
+%
+%\begin{question}
+%    Is the Conne's differential one form  the set of all '1st order
+%    differential operators` given $A$, that act on $H$?
+%\end{question}
+%Then there is a map $d:A\rightarrow \Omega _D ^1 (A)$, $d = [D, \cdot]$.
+%%\begin{MyExercise}
+%%    \textbf{
+%%    Verify that 'd` is a derivation of the C* algebra
+%%    \begin{align}
+%%        d(ab) = d(a)b + ad(b) \\
+%%        d(a^*) = -d(a)^*
+%%    \end{align}
+%%}\newline
+%%
+%%    For the record $d(\cdot) = [D, \cdot]$, then we have
+%%    \begin{enumerate}
+%%        \item
+%%            \begin{align}
+%%                d(ab) &= [D, ab] = [D, a]b + a[D,b]\\
+%%                &= d(a)b + ad(b)
+%%            \end{align}
+%%        \item
+%%            \begin{align}
+%%                d(a^*) &= [D, a^*] = Da^* - a^*D \\
+%%                &=-(D^*a - aD^*) = -[D^*, a] \\
+%%                &= -d(a)^*
+%%            \end{align}
+%%    \end{enumerate}
+%%\end{MyExercise}
+%%\begin{MyExercise}
+%%    \textbf{
+%%    Verify that $\Omega _D^1 (A)$ is an $A$-bimodule by rewriting
+%%    }
+%%    \begin{align}
+%%        a(a_k[D, b_k])b = \sum_k a'_k[D, b'_k] \;\;\;\; a'_k, b'_k \in A
+%%    \end{align}
+%%    \newline
+%%
+%%    Begin
+%%    \begin{align}
+%%        a(a_k[D, b_k])b &= aa_k(Db_k - b_k D) b = \\
+%%           &= aa_k(Db_k b - b_k D b) = aa_k(Db_k b - b_k Db - b_kbD +b_kbD)=\\
+%%           &= aa_k(Db_kb-b_kbD + b_k b D - b_k D b) = \\
+%%           &= aa_k [D, b_kb] + aa_k b [D, b]=\\
+%%           &= \sum _k a_k' [D, b_k']
+%%    \end{align}
+%%
+%%\end{MyExercise}
+%
+%\begin{lemma}
+%    Let $(A, H, D) = (M_n(\mathbb{C}, \mathbb{C}^n, D)$, with $D$ a hermitian
+%    $n\times n$ matrix. If $D$ is not a multiple of the identity then:
+%    \begin{equation}
+%        \Omega _D ^1 (A)  \simeq  M_n(\mathbb{C}) = A
+%    \end{equation}
+%\end{lemma}
+%
+%\begin{proof}
+%    Assume $D = \sum _i \lambda _i e_{ii}$ (diagonal), $\lambda _i \in \mathbb{R}$ and
+%    $\{e_{ij}\}$ the basis of $M_n(\mathbb{C}$. For fixed $i$, $j$ choose $k$
+%    such that $\lambda _k \neq \lambda _j$ then
+%    \begin{align} \label{basis}
+%        \left(\frac{1}{\lambda _k - \lambda _j} e_{ik}\right) [D, e_{kj}] =
+%        e_{ij}
+%    \end{align}
+%    $e_{ij}\in \Omega _D ^1 (A)$ by the above definition. And $\Omega _D ^1
+%    (A) \subset L(\mathbb{C}^n) = H \simeq M_n(\mathbb{C}) = A$
+%\end{proof}
+%
+%%\begin{MyExercise}
+%%    \textbf{
+%%     Consider $(A=\mathbb{C}^2, H=\mathbb{C}^2,
+%%     D = \begin{pmatrix} 0 & \lambda \\ \bar{\lambda} & 0
+%%     \end{pmatrix})$ with $\lambda \neq 0$. Show that $\Omega _D^1(A)
+%%     \simeq M_2(\mathbb{C})$
+%% }
+%%\newline
+%%
+%%    Because of the Hilbert Basis $D$ can be extended in terms of
+%%    the basis of $M_2(\mathbb{C})$, plugging this into Equation
+%%    \ref{basis} will get us the same cyclic result, thus
+%%    $\Omega _D^1(A) \simeq M_2(\mathbb{C})$
+%%\
+%%\end{MyExercise}
+%
+%\subsubsection{Morphisms Between Finite Spectral Triples}
+%\begin{definition}
+%    two finite spectral tripes $(A_1, H_1, D_1)$ and $(A_2, H_2, D_2)$ are
+%    called unitarily equivalent if
+%    \begin{itemize}
+%        \item $A_1 = A_2$
+%        \item $\exists \;\; U: H_1 \rightarrow H_2$, unitary with
+%            \begin{enumerate}
+%                \item  $U\pi_1(a)U^* = \pi_2(a)$ with $a \in A_1$
+%                \item  $UD_1 U^* = D_2$
+%            \end{enumerate}
+%    \end{itemize}
+%\end{definition}
+%
+%Some remarks
+%\begin{itemize}
+%    \item the above is an equivalence relation
+%    \item spectral unitary equivalence is given by the unitaries of the
+%        matrix algebra itself
+%    \item for any such $U$ then $(A, H, D) \sim (A, H, UDU^*)$
+%    \item $UDU^* = D + U[D, U^*]$ of the form of elements in
+%        $\Omega _D^1 (A)$.
+%\end{itemize}
+%
+%%\begin{MyExercise}
+%%    \textbf{
+%%    Show that the unitary equivalence between finite spectral
+%%    triples is a equivalence relation
+%%}\newline
+%%
+%%    An equivalence relation needs to satisfy reflexivity, symmetry
+%%    transitivity.
+%%    Let $(A_1, H_1, D_1)$, $(A_2, H_2, D_2)$ and $(A_3, H_3, D_3)$
+%%    be three finite spectral triples.
+%%    \newline
+%%
+%%    For reflexivity $(A_1, H_1, D_1) \sim (A_1, H_1, D_1)$. So there
+%%    exists a $U: H_1 \rightarrow H_1$ unitary, which is the identity
+%%    and always exists.
+%%    \newline
+%%
+%%    For symmetry we need
+%%    \begin{align}
+%%        (A_1, H_1, D_1) \sim (A_2, H_2, D_2) \Leftrightarrow
+%%        (A_2, H_2, D_2) \sim (A_1, H_1, D_1)
+%%    \end{align}
+%%    because $U$ is unitary:
+%%    \begin{align}
+%%        &U\pi_1(a)U^* = \pi_2(a) \;\;\; | \cdot U^*\boxdot U \\
+%%        &U^*U\pi_1(a)U^*U = \pi_1(a) = U^*\pi_2(a)U \\
+%%    \end{align}
+%%    The same with the symmetric operator $D$.
+%%    \newline
+%%
+%%    For transitivity we need
+%%    \begin{align}
+%%        (A_1, H_1, D_1) &\sim (A_2, H_2, D_2) \;\;\; \text{and} \;\;\;
+%%        (A_2, H_2, D_2) \sim (A_3, H_3, D_3) \\
+%%        &\Rightarrow (A_1, H_1, D_1) \sim (A_3, H_3, D_3)
+%%    \end{align}
+%%    There are two unitary maps $U_{12}:H_1 \rightarrow H_2$ and
+%%    $U_{23}: H_2 \rightarrow H_3$ then
+%%    \begin{align}
+%%        U_{23}U_{12} \pi_1(a) U^*_{12}U^*_{23} &= U_{23}
+%%        \pi_2(a) U_23^* \\
+%%        &= \pi_3(a) \\
+%%        U_{23}U_{12} D_1U^*_{12}U^*_{23} &= U_{23}
+%%        D_2 U_23^* \\
+%%        &= D_3
+%%    \end{align}
+%%\end{MyExercise}
+%
+%Extending the this relation we look again at  the notion of equivalence from
+%Morita equivalence of Matrix Algebras.
+%\newline
+%
+%\begin{definition}
+%    Let $A$ be an algebra. We say that $I \subset A$, as a vector space, is a
+%    right(left) ideal if $ab \in I$ for $a \in A$ and $b\in I$ (or $ba \in
+%    I$, $b\in I$, $a\in A$). We call a left-right ideal simply an ideal.
+%\end{definition}
+%
+%Given a Hilbert bimodule $E \in KK_f(B, A)$ and $(A, H, D)$ we construct
+%a finite spectral triple on $B$, $(B, H', D')$
+%\begin{equation}
+%    H' = E \otimes _A H
+%\end{equation}
+%We might define $D'$ with $D'(e \otimes \xi) = e\otimes D\xi$, thought this
+%would not satisfy the ideal defining the balanced tensor product over $A$,
+%which is generated by elements of the form
+%\begin{align}
+%    e a \otimes \xi - e\otimes a \xi ;\;\;\;\; e\in E, a\in A, \xi \in H
+%\end{align}
+%This inherits the left action on $B$ from $E$ and has a $\mathbb{C}$
+%valued inner product space. $B$ also satisfies the ideal.
+%\begin{equation}
+%    D'(e\otimes \xi) = e \otimes D \xi + \nabla (e) \xi \;\;\;\; e\in
+%    E, a\in A
+%\end{equation}
+%Where $\nabla$ is called the \textit{connection on the right A-module E}
+%associated with the  derivation $d=[D, \cdot]$ and satisfying the
+%\textit{Leibnitz Rule} which is
+%\begin{equation}
+%    \nabla(ae) = \nabla(e)a + e \otimes [D, a] \;\;\;\;\;  e\in E,\; a\in A
+%\end{equation}
+%Then $D'$ is well defined on $E \otimes _A H$:
+%\begin{align}
+%    D'(ea \otimes \xi - e \otimes a \xi) &=  D'(ea \otimes \xi) - D'(e
+%    \otimes \xi) \\
+%    &= ea\otimes D\xi + \nabla(ae) \xi - e \otimes D(a\xi ) - \nabla (e)a
+%    \xi \\
+%    &= 0.
+%\end{align}
+%With the information thus far we can prove the following theorem
+%\begin{theorem}
+%    If $(A, H, D)$ a finite spectral triple, $E \in KK_f(B, A)$.
+%    Then $(V, E\otimes _A H, D')$ is a finite spectral triple, provided that
+%    $\nabla$ satisfies the compatibility condition
+%    \begin{equation}
+%        \langle e_1, \nabla e_2 \rangle _E - \langle \nabla e_1, e_2
+%        \rangle _E = d\langle e_1, e_2 \rangle _E \;\;\;\; e_1, e_2 \in E
+%    \end{equation}
+%\end{theorem}
+%\begin{proof}
+%    $E\otimes _A H$ was shown in the previous subsection (text before the
+%    theorem). The only thing left is to show that $D'$ is a symmetric
+%    operator, this we can just compute. Let $e_1, e_2 \in E$ and $\xi _1,
+%    \xi _2 \in H$ then
+%    \begin{align}
+%        \langle e_1 \otimes \xi _1, D'(e_2 \otimes \xi_2)\rangle _{E\otimes _A H} &=
+%        \langle \xi _1, \langle e_1, \nabla e_2\rangle _E  \xi _2\rangle  + \langle \xi _1 , \langle e_1, e_2\rangle _E D\xi
+%        _2\rangle _H \\
+%        &= \langle \xi _1, \langle \nabla e_1, e_2\rangle _E \xi _2\rangle _H + \langle \xi _1, d\langle e_1, e_2\rangle  _E
+%        \xi _2\rangle _H \\
+%        &+ \langle D\xi _1,\langle e_1, e_2\rangle _E \xi _2\rangle _H - \langle \xi _1, [D, \langle e_1, e_2\rangle _E] \xi
+%        _2 \rangle _H \\
+%        &= \langle D'(e_1 \otimes \xi _1), e_2 \otimes \xi _2\rangle _{E \otimes _A H}
+%    \end{align}
+%\end{proof}
+%
+%%\begin{MyExercise}
+%%    \textbf{
+%%    Let $\nabla$ and $\nabla'$ be two connections on a right $A$-module
+%%    $E$. Show that $\nabla - \nabla'$ is a right $A$-linear map
+%%    $E \rightarrow E\otimes _A \Omega _D^1(A)$
+%%}\newline
+%%
+%%    Both $\nabla$ and $\nabla'$ need to satisfy the Leiblitz rule, so
+%%    let's see if $\nabla - \nabla'$ does.
+%%
+%%    \begin{align}
+%%        \nabla(ea)-\nabla'(ea)&=\nabla(e) + e\otimes[D, a]\\
+%%        &-(\nabla'(e)a + e\otimes[D',a])\\
+%%        &=\bar{\nabla}a + e\otimes(Da-aD-D'a+aD')\\
+%%        &=\bar{\nabla}a + e\otimes((D-D')a-a(D-D'))\\
+%%        &=\bar{\nabla}a + e\otimes[D', a]\\
+%%        &=\bar{\nabla}(ea)
+%%    \end{align}
+%%    Therefore $\nabla-\nabla'$ is a linear map.
+%%\end{MyExercise}
+%
+%%\begin{MyExercise}
+%%    \textbf{
+%%    Construct a finite spectral triple $(A, H', D')$ from $(A, H, D)$
+%%    \begin{enumerate}
+%%        \item show that the derivation $d(\cdot):A \rightarrow A\otimes _A
+%%            \Omega_D^1(A)=\Omega_D^1(A)$ is a connection on $A$
+%%            considered a right $A$-module
+%%        \item Upon identifying $A\otimes_A H\simeq H$, what is $D'$
+%%            when the connection is $d(\cdot)$.
+%%        \item Use 1) and 2) to show that any connection $\nabla:
+%%            A\rightarrow A\otimes_A \Omega_D^1(A)$ is given by
+%%            \begin{align}
+%%                \nabla = d + \omega
+%%            \end{align}
+%%            where $\omega \in \Omega_D^1(A)$
+%%        \item Upon identifying $A\otimes_A H \simeq H$, what is the
+%%            difference operator $D'$ with the connection on $A$ given by
+%%            $\nabla = d + \omega$
+%%    \end{enumerate}
+%%}
+%%    \begin{enumerate}
+%%        \item $\nabla(e \cdot a) =  d(a)$
+%%        \item
+%%            $D'(a\xi) = a(D\xi) + (\nabla a) \xi = D(a\xi)$
+%%        \item Use the identity element $e \in A$\\
+%%                $\nabla (e\cdot a) = \nabla(e) a + 1 \otimes d(a)=d(a)
+%%                \nabla(e) a$
+%%            \item $D'(a\otimes \xi) = D'(a \xi) = a(D\xi) + (\nabla a)\xi =
+%%                a(D\xi) + \nabla(e \cdot a) \xi \\
+%%                = D(a\xi) + \nabla(e) (a\xi)$
+%%    \end{enumerate}
+%%\end{MyExercise}
+%
+%\subsubsection{Graphing Finite Spectral Triples}
+%\begin{definition}
+%    A \textit{graph} is a ordered pair $(\Gamma ^{(0)}, \Gamma ^{(1)})$.
+%    Where $\Gamma ^{(0)}$ is the set of vertices (nodes) and $\Gamma ^{(1)}$
+%    a set of pairs of vertices (edges)
+%\end{definition}
+%\begin{figure}[h!]
+%    \centering
+%\begin{tikzpicture}[
+%        mass/.style = {draw,circle, minimum size=0.2cm, inner sep=0pt, thick},
+%        spring/.style = {decorate,decoration={zigzag, pre length=1cm,post length=1cm,segment length=5pt}},]
+%        \node[mass] (m1) at (1,1.5) {};
+%        \node[mass] (m2) at (-1,1.5) {};
+%        \node[mass] (m3) at (0,0) {};
+%
+%        \draw (m1) -- (m2);
+%        \draw (m1) -- (m3);
+%        \draw (m2) -- (m3);
+%    \end{tikzpicture}
+%    \caption{A simple graph with three vertices and three edges}
+%\end{figure}
+%%\begin{MyExercise}
+%%    \textbf{
+%%    Show that any finite-dimensional faithful representation $H$ of a matrix
+%%    algebra $A$ is completely reducible. To do that show that the complement
+%%    $W^{\perp}$ of an $A$-submodule $W\subset H$ is also an $A$-submodule
+%%    of $H$.
+%%}\newline
+%%
+%%    $A\simeq \bigoplus_{i=1}^N M_{n_i}(\mathbb{C})$ is the matrix algebra
+%%    then $H$ is a Hilbert $A$-bimodule and $W$ a submodule of $A$.
+%%    Because we have $H = W \cup W^{\perp}$, then $W^{\perp}$ is naturally a
+%%    $A$-submodule, because elements in $W^{\perp}$ need to satisfy the
+%%    bimodularity.
+%%\end{MyExercise}
+%\begin{definition}
+%    A $\Lambda$-decorated graph is given by an ordered pair $(\Gamma,
+%    \Lambda)$ of a finite graph $\Gamma$ and a set of positive integers
+%    $\Lambda$ with the labeling
+%    \begin{itemize}
+%        \item of the vetices $v\in \Gamma ^{(0)}$ given by $n(\nu) \in
+%            \Lambda$
+%        \item of the edges $e = (\nu _1, \nu _2) \in \Gamma ^{(1)}$ by
+%            operators
+%            \begin{itemize}
+%                \item $D_e: \mathbb{C}^{n(\nu _1)} \rightarrow
+%                    \mathbb{C}^{n(\nu _2)}$
+%                \item and $D_e^*: \mathbb{C}^{n(\nu _2)} \rightarrow
+%                    \mathbb{C}^{n(\nu _1)}$ its conjugate traspose
+%                    (pullback?)
+%            \end{itemize}
+%    \end{itemize}
+%    such that
+%    \begin{equation}
+%        n(\Gamma ^{(0)}) = \Lambda
+%    \end{equation}
+%\end{definition}
+%\begin{question}
+%    Would then $D_e$ be the pullback?
+%\end{question}
+%\begin{question}
+%    These graphs are important in the next chapter I should look
+%    into it more, I don't understand much here, specific
+%    how to construct them with the abstraction of a spectral triple...
+%\end{question}
+%
+%The operator $D_e$ between $\textbf{n}_i$ and $\textbf{n}_j$ add up to
+%$D_{ij}$
+%\begin{align}
+%    D_{ij} = \sum\limits_{\substack{e = (\nu _1, \nu _2) \\ n(\nu _1) =
+%    \textbf{n}_i \\ n(\nu _2) = \textbf{n}_j}} D_e
+%\end{align}
+%
+%\begin{theorem}
+%    There is a on to one correspondence between finite spectral triples
+%    modulo unitary equivalence and $\Lambda$-decorated graphs, given by
+%    associating a finite spectral triples $(A, H, D)$ to  a $\Lambda$ decorated
+%    graph $(\Gamma, \Lambda)$ in the following way:
+%    \begin{equation}
+%        A = \bigoplus _{n\in \Lambda} M_n(\mathbb{C}); \;\;\;
+%        H = \bigoplus _{\nu \in \Gamma ^{(0)}} \mathbb{C}^{n(\nu)}; \;\;\;
+%        D = \sum _{e \in \Gamma ^{(1)}} D_e + D_e^*
+%    \end{equation}
+%\end{theorem}
+%    \begin{figure}[h!]
+%    \centering
+%    \begin{tikzpicture}[
+%        mass/.style = {draw,circle, minimum size=0.3cm, inner sep=0pt, thick},
+%    ]
+%
+%    \node[mass, label={\textbf{n}}] (m1) at (1,0) {};
+%    \draw (m1) to [out=330, in=210, looseness=25] node[above] {$D_e$} (m1);
+%    \end{tikzpicture}
+%    \caption{A $\Lambda$-decorated Graph of $(M_n(\mathbb{C}), \mathbb{C}^n,
+%    D = D_e + D_e^*)$}
+%\end{figure}
+%
+%%\begin{MyExercise}
+%%    \textbf{
+%%    Draw a $\Lambda$ decorated graph corresponding to the spectral triple
+%%    $(A=\mathbb{C}^3, H=\mathbb{C}^3, D=\begin{pmatrix}0 & \lambda & 0\\
+%%    \bar{\lambda} &0 &0 \\ 0&0&0\end{pmatrix})$
+%%}\newline
+%%
+%%\centering
+%%\begin{tikzpicture}[
+%%        mass/.style = {draw,circle, minimum size=0.4cm, inner sep=0pt, thick},
+%%        spring/.style = {decorate,decoration={zigzag, pre length=1cm,post length=1cm,segment length=5pt}},]
+%%        \node[mass] (m1) at (-1,1.5) {\textbf{1}};
+%%        \node[mass] (m2) at (1,1.5) {\textbf{2}};
+%%        \node[mass] (m3) at (3,1.5) {\textbf{3}};
+%%
+%%        \draw[style=thick, -] (1.1,1.7) -- (-1.1,1.7);
+%%        \draw[style=thick, -] (1.1,1.3) -- (-1.1,1.3);
+%%    \end{tikzpicture}
+%%    %    \captionof{figure}{Solution}
+%%\end{MyExercise}
+%%\begin{MyExercise}
+%%    \textbf{
+%%    Use $\Lambda$-decorated graphs to classify all finite spectral triples
+%%    (modulo unitary equivalence) on the matrix algebra
+%%    $A=\mathbb{C}\oplus M_2(\mathbb{C})$
+%%}\newline
+%%
+%%    \centering
+%%\begin{tikzpicture}[
+%%        mass/.style = {draw,circle, minimum size=0.4cm, inner sep=0pt, thick},
+%%        spring/.style = {decorate,decoration={zigzag, pre length=1cm,post length=1cm,segment length=5pt}},]
+%%        \node[mass] (m1) at (-1,1) {\textbf{1}};
+%%        \node[mass] (m2) at (1,1) {\textbf{2}};
+%%        \node[mass] (m3) at (3,1) {\textbf{3}};
+%%
+%%        \node[mass] (m4) at (-1,0) {\textbf{1}};
+%%        \node[mass] (m5) at (1,0) {\textbf{2}};
+%%        \node[mass] (m6) at (3,0) {\textbf{3}};
+%%
+%%        \node[mass] (m7) at (-1,-1) {\textbf{1}};
+%%        \node[mass] (m8) at (1,-1) {\textbf{2}};
+%%        \node[mass] (m9) at (3,-1) {\textbf{3}};
+%%
+%%        \node[mass] (m10) at (-1,-2) {\textbf{1}};
+%%        \node[mass] (m11) at (1,-2) {\textbf{2}};
+%%        \node[mass] (m12) at (3,-2) {\textbf{3}};
+%%
+%%        \draw[style=thick, -] (1.1,0.2) -- (-1.1,0.2);
+%%        \draw[style=thick, -] (1.1,-0.2) -- (-1.1,-0.2);
+%%        \draw[style=thick, -] (m7) to [out=330, in=210, looseness=10] node[above] {} (m7);
+%%        \draw[style=thick, -] (m10) -- (m11) ;
+%%
+%%\end{tikzpicture}
+%%%    \captionof{figure}{Solution $A=M_3(\mathbb{C})$}
+%%\end{MyExercise}
+%\subsubsection{Graph Construction of Finite Spectral Triples}
+%\textbf{Algebra:}We know if a acts on a finite dimensional Hilbert space then
+%this C* algebra is isomorphic to a matrix algebra so $A \simeq
+%\bigoplus_{i=1}^{N}M_{n_i}(\mathbb{C})$. Where $i\in
+%\hat{A}$ represents an equivalence class and runs from $1$ to $N$,
+%thus $\hat{A}\simeq\{1,\dots, N\}$. We label equivalence classes by
+%$\textbf{n}_i$, then $\hat{A}\simeq\{\textbf{n}_1,\dots,\textbf{n}_N\}$.
+%\newline
+%
+%\textbf{Hilbert Space:} Since every Hilbert space that acts faithfully on a
+%C* algebra is completely reducible, it is isomorphic to the composition
+%of irreducible representations. $H \simeq \bigoplus_{i=1}^N\mathbb{C}^{n_i}
+%\otimes V_i$. Where all $V_i$'s are Vector spaces, their dimension is the
+%multiplicity of the representation landed by $\textbf{n}_i$ to $V_i$ itself
+%by the multiplicity space.
+%\newline
+%
+%\textbf{Finite Dirac Operator:} $D_{ij}$ is connecting nodes $\textbf{n}_i$
+%and $\textbf{n}_j$, with a symmetric map $D_{ij}:\mathbb{C}^{n_i}\otimes V_i
+%\rightarrow \mathbb{C}^{n_j}\otimes V_j$
+%\newline
+%
+%To draw a graph, draw nodes in position $\textbf{n}_i\in \hat{A}$.
+%Multiple nodes at the same position represent multiplicities in $H$.
+%Draw lines between nodes to represent $D_{ij}$.
+%
+%\begin{figure}[h!]
+%    \centering
+%\begin{tikzpicture}
+%    \node[draw, label=above:{$\textbf{n}_1$},circle, thick] at (-3,0) {};
+%    \node[label=above:{$\dots$}] at (-2,0) {};
+%    \node[draw, label=above:{$\textbf{n}_i$},circle, thick] at (-1,0) {};
+%    \node[label=above:{$\dots$}] at (0,0) {};
+%    \node[draw, label=above:{$\textbf{n}_j$},circle, thick] at (1,0) {};
+%    \node[draw, label=above:{},circle, thick, inner sep=0cm, minimum
+%    size=0.2cm]  at (1,0) {};
+%    \node[label=above:{$\dots$}] at (2,0) {};
+%    \node[draw, label=above:{$\textbf{n}_N$},circle, thick] at (3,0) {};
+%
+%        \draw[style=thick, -] (-1,-0.2) -- (1,-0.2);
+%        \draw[style=thick, -] (-1,0.2) -- (1,0.2);
+%        \path[style=thick, -] (-1,-0.2) edge[bend right=15]
+%        node[pos=0.5,below] {} (3,-0.2);
+%    \end{tikzpicture}
+%    \caption{Example}
+%\end{figure}
+%
+%\subsection{Finite Real Noncommutative Spaces}
+%\subsubsection{Finite Real Spectral Triples}
+%Add on to finite real spectral triples a \textit{real structure}. The
+%requirement is that $H$ is a $A$-$A$-bimodule (before only a $A$-left
+%module).
+%\newline
+%
+%For this we introduce a $\mathbb{Z}_2$-grading $\gamma$ with
+%\begin{align}
+%    &\gamma ^* = \gamma \\
+%    &\gamma ^2 = 1 \\
+%    &\gamma D = - D \gamma\\
+%    &\gamma a = a \gamma \;\;\;\; a\in A
+%\end{align}
+%
+%\begin{definition}
+%    A \textit{finite real spectral triple} is given by a finite spectral
+%    triple $(A, H, D)$ and a anti-unitary operator $J:H\rightarrow H$ called
+%    the \textit{real structure}, such that
+%    \begin{align}
+%        a^\circ := J a^* J^{-1}
+%    \end{align}
+%    is a right representation of $A$ on $H$, that is $(ab)^\circ = b^\circ
+%    a^\circ$. With two requirements
+%    \begin{align}
+%        &[a, b^\circ] = 0\\
+%        &[[D, a],b^\circ] = 0.
+%    \end{align}
+%    They are called the \textit{commutant property}, and mean that the left
+%    action of an element in $A$ and $\Omega _D^1(A)$ commutes with the right
+%    action on $A$.
+%\end{definition}
+%\begin{definition}
+%    The $KO$-dimension of a real spectral triple is determined by the sings
+%    $\epsilon, \epsilon ' ,\epsilon '' \in \{-1, 1\}$ appearing in
+%    \begin{align}
+%        &J^2 = \epsilon \\
+%        &JD = \epsilon \ DJ\\
+%        &J\gamma = \epsilon '' \gamma J.
+%    \end{align}
+%\end{definition}
+%\begin{table}[h!]
+%    \centering
+%    \caption{$KO$-dimension $k$ modulo $8$ of a real spectral triple}
+%    \begin{tabular}{ c | c c c c c c c c}
+%        \hline
+%        $k$        & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\
+%        \hline
+%     $\epsilon$    & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 \\
+%     $\epsilon '$  & 1 & -1 & 1 & 1 & 1 & -1 & 1 & 1 \\
+%     $\epsilon ''$ & 1 &  & -1 &  & 1 &  & -1 &  \\
+%     \hline
+%    \end{tabular}
+%\end{table}
+%
+%
+%\begin{definition}
+%An opposite-algebra $A^\circ$ of a $A$ is defined to be equal to $A$ as a
+%vector space with the opposite product
+%\begin{align}
+%    &a\circ b := ba\\
+%    &\Rightarrow a^\circ = Ja^* J^{-1} \;\;\; \text{defines the left
+%    representation of $A^\circ$ on $H$}
+%\end{align}
+%\end{definition}
+%
+%
+%\begin{example}
+%    Matrix algebra $M_N(\mathbb{C})$ acting on $H=M_N(\mathbb{C})$ by left
+%    matrix multiplication with the Hilbert Schmidt inner product.
+%    \begin{align}
+%        \langle a , b \rangle = \text{Tr}(a^* b)
+%    \end{align}
+%    Then we define $\gamma (a) = a$ and $J(a) = a^*$ with $a\in H$.
+%    Since $D$ mus be odd with respect to $\gamma$ it vanishes identically.
+%\end{example}
+%
+%\begin{definition}
+%    We call $\xi \in H$ \textbf{cyclic vector} in $A$ if:
+%    \begin{align}
+%        A\xi := { a\xi:\;\; a\in A} = H
+%    \end{align}
+%
+%    We call $\xi \in H$ \textbf{separating vector} in $A$ if:
+%    \begin{align}
+%        a\xi = 0\;\; \Rightarrow \;\; a=0;\;\;\; a\in A
+%    \end{align}
+%\end{definition}
+%
+%%\begin{MyExercise}
+%%    \textbf{
+%%        In the previous example, show that the right action on $M_N(\mathbb{C})$
+%%    on $H = M_N(\mathbb{C})$ as defined by $a \mapsto a^\circ$
+%%    is given by right matrix multiplication.
+%%}\newline
+%%
+%%    \begin{align}
+%%        a^\circ \xi = J a^* J^{-1}\xi = Ja^* \xi^* = J\xi a=\xi^* a
+%%    \end{align}
+%%\end{MyExercise}
+%%\begin{MyExercise}
+%%    \textbf{
+%%        Let $A= \bigoplus _i M_{n_i}(\mathbb{C})$, represented on $H = \bigoplus_i \mathbb{C}^{n_i}
+%%        \otimes \mathbb{C}^{m_i}$, meaning that the irreducible representation $\textbf{n}_i$ has
+%%        multiplicity $m_i$.
+%%        \begin{enumerate}
+%%            \item Show that the commutant $A'$ of $A$ is $A'\simeq \bigoplus_i M_{m_i} (\mathbb{C})$. As a consequence show $A'' \simeq A$.
+%%            \item Show that if $\xi$ is a separating vector for $A$ than it is cyclic for $A'$.
+%%        \end{enumerate}
+%%    }
+%%
+%%
+%%    \begin{enumerate}
+%%        \item We know the multiplicity space is $V_i = \mathbb{C}^{m_i}$. We know that
+%%            for $T\in H$ and
+%%            $a\in A'$ to work we need $aT=Ta$ by laws of matrix multiplication we need
+%%            $A' \simeq \oplus _i M_{m_i}(\mathbb{C})$ for this to work since $H = \bigoplus_i
+%%            \mathbb{C}^{n_i}
+%%        \otimes \mathbb{C}^{m_i}$
+%%
+%%        \item Suppose $\xi$ is cyclic for $A$ then $A'\xi = \{0\}$. Under the action of $A$ we
+%%            then have $A'A\xi = AA' \xi = 0 \Rightarrow A' = 0$.\\
+%%            Suppose now $\xi$ is separating for $A'$, we have $A'\xi = \{0\}$. We can define a
+%%            projection in $A'$, $A\xi = P'$. With this projection we have $(1-P')\xi = 0
+%%            \Rightarrow 1-P' = 0 \Rightarrow A\xi = H$.
+%%    \end{enumerate}
+%%\end{MyExercise}
+%%\begin{MyExercise}
+%%    \textbf{ Suppose $(A, H, D = 0)$ is a finite spectral triple such that $H$ possesses a
+%%        cyclic and separating vector for $A$.
+%%        \begin{enumerate}
+%%            \item Show that the formula $S(a \xi) = a* \xi$ defines a anti-linear operator\\
+%%                $S: H \rightarrow H$.
+%%            \item Show that $S$ is invertible
+%%            \item Let $J: H \rightarrow H$ be the operator in $S = J \Delta ^{1/2}$ with
+%%                $\Delta = S^*S$. Show that $J$ is anti-unitary
+%%        \end{enumerate}
+%%    }
+%%
+%%
+%%    \begin{enumerate}
+%%    \item By composition $S(a\xi) = a*\xi$ this is literally anti-linearity. Does this mean
+%%        $S\xi = \xi$?
+%%    \item Let $\xi \in H$ be cyclic then: $S(A\xi) = A^*\xi = A\xi = H$. The same has to work
+%%        for $S^{-1}$ if not then $\xi$ wouldn't exist. $S^{-1}(A^*\xi) = S^{-1}(H) = H$.
+%%    \item Since $S$ is bijective then $\Delta ^{1/2}$ and $J$ need to be bijective.
+%%        We also have $J = S \Delta^{-1/2}$ and $\Delta^* = \Delta$\\
+%%        Now let $\xi _1 , \xi _2 \in H$        \begin{align}
+%%            <J \xi _1 , J \xi _2 > &= < J^*J\xi_1 , \xi_2>^* =\\
+%%            &= <(\Delta ^{-1/2})^* S^* S \Delta ^{-1/2} \xi_1, \xi_2>^* = \\
+%%            &= <(\Delta^{-1/2})^* \Delta \Delta^{-1/2} \xi_1, \xi_2>^* =\\
+%%            &= <\Delta^{-1/2} \Delta^{1/2}\Delta^{1/2} \Delta^{-1/2} \xi_1, \xi_2>^* =\\
+%%            &= <\xi _1, \xi_2>^* = <\xi_2 , \xi_1>.
+%%        \end{align}
+%%    \end{enumerate}
+%%\end{MyExercise}
+%\subsubsection{Morphisms Between Finite Real Spectral Triples}
+%Extend unitary equivalence of finite spectral triples to real ones (with $J$
+%and $\gamma$)
+%
+%\begin{definition}
+%    We call two finite real spectral triples $(A_1, H_1 ,D_1 ; J_1 , \gamma
+%    _1)$ and $(A_2, H_2, D_2; J_2, \gamma _2)$ unitarily equivalent if $A_1 =
+%    A_2$ and if there exists a unitary operator $U: H_1 \rightarrow H_2$ such
+%    that
+%    \begin{align}
+%        &U\pi_1(a) U^* = \pi _2(a)\\
+%        &UD_1U^*=D_2\\
+%        &U\gamma _1 U^* = \gamma _2\\
+%        &UJ_1 U^* = J_2
+%    \end{align}
+%\end{definition}
+%\begin{definition}
+%    Let $E$ be a $B$-$A$ bimodule. The \textit{conjugate Module} $E^\circ$ is
+%    given by the $A$-$B$-bimodule.
+%    \begin{align}
+%        E^\circ = \{\bar{e} : e\in E\}
+%    \end{align}
+%    with
+%    \begin{align}
+%    a \cdot \bar{e} \cdot b = b^* \bar{e} a^* \;\;\;\; \forall a\in A, b \in
+%        B
+%    \end{align}
+%\end{definition}
+%$E^\circ$ is not a Hilbert bimodule for $(A, B)$ because it doesn't have a
+%natural $B$-valued inner product. But there is a $A$-valued inner product on
+%the left $A$-module $E^\circ$ with
+%\begin{align}
+%    \langle \bar{e}_1, \bar{e}_2 \rangle = \langle e_2 , e_1 \rangle
+%    \;\;\;\; e_1, e_2 \in E
+%\end{align}
+%and linearity in $A$:
+%\begin{align}
+%    \langle a \bar{e}_1, \bar{e}_2 \rangle = a \langle \bar{e}_1, \bar{e}_2
+%    \rangle \;\;\;\; \forall a \in A.
+%\end{align}
+%
+%%\begin{MyExercise}
+%%    \textbf{Show that $E^\circ$ is a Hilbert bimodule $(B^{\circ}, A^{\circ})$
+%%    }\newline
+%%
+%%
+%%    Straightforward show properties of the Hilbert bimodule and its $B^{\circ}$
+%%    valued inner product. Let $\bar{e}_1, \bar{e}_2 \in E^{\circ}$ and $a^\circ \in A,
+%%    b^\circ \in B$. \\
+%%    \begin{align}
+%%        <\bar{e}_1, a^\circ \bar{e}_2> &= <\bar{e}_1, Ja^*J^{-1} \bar{e}_2>=\\
+%%        &= <\bar{e}_1 , J a^* e_2> = \\
+%%        &= <J^{-1} e_1, a^* e_2> =\\
+%%        & = <a^* e_1, e_2>= <J^{-1}(a^\circ)^* J e_1, e_2> = \\
+%%        & = <J^{-1} (a^\circ)^* \bar{e}_1, e_2> =\\
+%%        & = <(a^\circ)^* \bar{e}_1 , \bar{e}_2>.
+%%    \end{align}
+%%
+%%    Next $<\bar{e}_1, \bar{e}_2 b^\circ> = <\bar{e}_1, \bar{e_2}> b^\circ$.
+%%    \begin{align}
+%%        <\bar{e}_1, \bar{e}_2 b^\circ>  &= <\bar{e}_1, \bar{e}_2 Jb^*J^{-1}> =\\
+%%        &= <\bar{e}_1, \bar{e_2}> Jb^*J^{-1} = \\
+%%        &= <\bar{e}_1, \bar{e}_2> b^\circ.
+%%    \end{align}
+%%    Then:
+%%    \begin{align}
+%%        (<\bar{e}_1, \bar{e}_2)>_{E^\circ})^* &= (<e_2, e_1>_E)^* =\\
+%%        &= <e_1, e_2>_E^* = <\bar{e}_2, \bar{e}_2>_{E^\circ}
+%%    \end{align}
+%%    And of course $<\bar{e}, \bar{e}> = <e, e> \geq 0$
+%%\end{MyExercise}
+%
+%\subsubsection{Construction of a Finite Real Spectral Triple from a Finite
+%Real Spectral Triple}
+%Given a Hilbert bimodule $E$ for $(B, A)$ we construct a spectral triple
+%$(B, H', D'; J', \gamma ')$ from $(A, H, D; J, \gamma)$
+%
+%For the $H'$ we make a $\mathbb{C}$-valued inner product on $H'$ by combining
+%the $A$ valued inner product on $E$ and $E^\circ$ with the
+%$\mathbb{C}$-valued inner product on $H$.
+%\begin{align}
+%    H' := E\otimes _A H \otimes _A E^\circ
+%\end{align}
+%
+%Then the action of $B$ on $H'$ is:
+%\begin{align}
+%    b(e_2 \otimes \xi \otimes \bar{e}_2 ) = (be_1) \otimes \xi \otimes
+%    \bar{e}_2
+%\end{align}
+%The right action of $B$ on $H'$ defined by action on the right component
+%$E^\circ$
+%\begin{align}
+%    J'(e_1 \otimes \xi \otimes \bar{e}_2) = e_2 \otimes J \xi \otimes
+%    \bar{e}_1
+%\end{align}
+%with $b^\circ = J' b^* (J')^{-1}$, $b^* \in B$ action on $H'$.
+%\newline
+%
+%
+%\newpage
+%%\begin{MyExercise}
+%%    \textbf{ Let $\nabla : E \Rightarrow E \otimes _A \Omega _d^1 (A)$ be a right connection on $E$
+%%    consider the following anti-linear map:
+%%    \begin{align}
+%%        \tau : E \otimes_A \Omega _D^1 (A) &\rightarrow \Omega _D^1 (A) \otimes_A E^\circ\\
+%%                e \otimes \omega &\mapsto -\omega ^* \otimes \bar{e}
+%%    \end{align}
+%%    Show that the map $\bar{\nabla} : E^\circ \rightarrow \Omega _D^1(A) \otimes E^\circ$
+%%    with $\bar{\nabla}(\bar{e}) = \tau \circ \nabla(e)$ is a left connection, that means
+%%    show that it satisfied the left Leibniz rule:
+%%    \begin{equation}
+%%        \bar{\nabla}(a\bar{e}) = [D, a] \otimes \bar{e} + a \bar{\nabla}(\bar{e})
+%%    \end{equation}
+%%    }
+%%
+%%    Hagime:
+%%    \begin{align}
+%%        &\text{For one:}\\
+%%        &\tau \circ \nabla(ae) = \bar{\nabla}(a\bar{e}) = \bar{\nabla}(a^* \bar{e})\\
+%%        &\text{For two:}\\
+%%         &\tau \circ \nabla(ae) = \tau(\nabla(e)a) + \tau \circ(e \otimes d(a))=\\
+%%         &=a^*\bar{\nabla}(\bar{e}) - d(a)^* \otimes \bar{e}. \\
+%%         &= a^*\bar{\nabla}(\bar{e}) + d(a^*) \otimes \bar{e}.
+%%    \end{align}
+%%\end{MyExercise}
+%Then the connections
+%\begin{align}
+%    &\nabla: E \rightarrow E\otimes _A \Omega _D ^1(A) \\
+%    &\bar{\nabla}:E^\circ \rightarrow \Omega _D^1(A) \otimes _A E^\circ
+%\end{align}
+%give us the Dirac operator on $H' = E \otimes _A H \otimes _A E^\circ$
+%\begin{align}
+%    D'(e_1 \otimes \xi \otimes \bar{e}_2) = (\nabla e_1) \xi \otimes
+%    \bar{e_2}+ e_1 \otimes D\xi \otimes \bar{e}_2 + e_1 \otimes
+%    \xi(\bar{\nabla}\bar{e}_2)
+%\end{align}
+%
+%And the right action of $\omega \in \Omega _D ^1(A)$ on $\xi \in H$ is
+%defined by
+%\begin{align}
+%    \xi \mapsto \epsilon' J \omega ^* J^{-1}\xi
+%\end{align}
+%
+%Finally for the grading
+%\begin{align}
+%    \gamma ' = 1 \otimes \gamma \otimes 1
+%\end{align}
+%
+%\begin{theorem}
+%    Suppose $(A, H, D; J, \gamma)$ is a finite spectral triple of
+%    $KO$-dimension $k$, let $\nabla$ be like above satisfying the
+%    compatibility condition (like with finite spectral triples).
+%
+%    Then $(B, H',D'; J', \gamma')$ is a finite spectral triple of
+%    $KO$-Dimension $k$. ($H', D', J', \gamma'$ like above)
+%\end{theorem}
+%
+%\begin{proof}
+%    The only thing left is to check if the $KO$-dimension is preserved,
+%    for this we check if the $\epsilon$'s are the same.
+%    \begin{align}
+%        &(J')^2 = 1 \otimes J^2 \otimes 1 = \epsilon\\
+%        &J' \gamma '= \epsilon ''\gamma'J'
+%    \end{align}
+%    and for $\epsilon '$
+%    \begin{align}
+%        J'D'(e_1 \otimes \xi \otimes \bar{e}_2)&=J'((\nabla e_1) \xi \otimes
+%        \bar{e_2} + e_1 \otimes D\xi \otimes \bar{e}_2 + e_1 \otimes \xi (\tau
+%        \nabla e_2))\\
+%        &= \epsilon' D'(e_2 \otimes J\xi \otimes \bar{e}_2)\\
+%        &= \epsilon' D'J'(e_1 \otimes \xi \bar{e}_2)
+%    \end{align}
+%\end{proof}
+%
+%
+%\end{document}
