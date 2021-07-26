@@ -63,9 +63,9 @@ interchange particles with antiparticles by the following equations
     &J_F e_L = \bar{e_L}, \\
     \nonumber \\
     &\gamma _F e_R = -e_R,\\
-    &\gamma_F e_L = e_L \\
+    &\gamma_F e_L = e_L,
 \end{align}
-where $J_F$ and $gamma_F$ have to following properties
+where $J_F$ and $\gamma_F$ have to following properties
 \begin{align}
     &J_F^2 = 1,\\
     & J_F \gamma_F  = - \gamma_F J_F.
@@ -99,7 +99,7 @@ $\{e_L, e_R, \bar{e}_L, \bar{e}_R\}$ is represented by
 \end{align}
 Do note that this action commutes wit the grading and that
 $[a, b^\circ] = 0$ with $b:= J_F b^*J_F$ because both the left and the right
-action is given by diagonal matrices by equation \ref{eq:leftrightrepr}. Note
+action is given by diagonal matrices by equation \eqref{eq:leftrightrepr}. Note
 that we are still left with $D_F = 0$ and the following spectral
 triple
 \begin{align}\label{eq:fedfail}
@@ -149,8 +149,8 @@ We can now define the finite space $F_{ED}$.
 \begin{align}
     F_{ED} := (\mathbb{C}^2, \mathbb{C}^4, D_F; J_F, \gamma_F)
 \end{align}
-where $J_F$ and $\gamma_F$ are like in equation \ref{eq:fedfail} and $D_F$
-from equation \ref{eq:feddirac}.
+where $J_F$ and $\gamma_F$ are like in equation \eqref{eq:fedfail} and $D_F$
+from equation \eqref{eq:feddirac}.
 
 \subsubsection{Almost commutative Manifold of Electrodynamics}
 The almost commutative manifold $M\times F_{ED}$ has KO-dimension 2, and is
@@ -288,7 +288,8 @@ anti commuting, that is for Grassmann variables $\theta _i, \theta _j$  we have
     \begin{align}
         \mathcal{L}_\phi(g_{\mu\nu}, B_\mu, \Phi) :=
         &-\frac{2f_2\Lambda^2}{4\pi^2}\text{Tr}(\Phi^2) + \frac{f(0)}{8\pi^2}
-        \text{Tr}(\Phi^4) + \frac{f(0)}{24\pi^2} \Delta(\text{Tr}(\Phi^2))\\
+        \text{Tr}(\Phi^4) + \frac{f(0)}{24\pi^2}
+        \Delta(\text{Tr}(\Phi^2))\nonumber\\
         &+ \frac{f(0)}{48\pi^2}s\text{Tr}(\Phi^2)
         \frac{f(0)}{8\pi^2}\text{Tr}((D_\mu \Phi)(D^\mu \Phi)).
     \end{align}
@@ -298,10 +299,10 @@ anti commuting, that is for Grassmann variables $\theta _i, \theta _j$  we have
      an $x \in M$, we have an asymptotic expansion of the term
      $\text{Tr}(f(\frac{D_\omega}{\Lambda}))$ as $\Lambda$ goes to infinity,
      which can be written as
-     \begin{align}\label{eq:trheatkernel}
+     \begin{align}
          \text{Tr}(f(\frac{D_\omega}{\Lambda})) \simeq& \ 2f_4 \Lambda ^4
-         a_0(D_\omega ^2)+ 2f_2\Lambda^2 a_2(D_\omega^2) \\&+ f(0) a_4(D_\omega^4)
-         +O(\Lambda^{-1}).
+         a_0(D_\omega ^2)+ 2f_2\Lambda^2 a_2(D_\omega^2)\nonumber \\&+ f(0) a_4(D_\omega^4)
+         +O(\Lambda^{-1}).\label{eq:trheatkernel}
      \end{align}
      We have to note here that the heat kernel coefficients are zero for uneven $k$,
      and they are dependent on the fluctuated Dirac operator
@@ -310,8 +311,8 @@ anti commuting, that is for Grassmann variables $\theta _i, \theta _j$  we have
      \text{Tr}\mathbbm{1_{H_F}})$ and write
      \begin{align}
          a_0(D_\omega^2) &= Na_0(D_M^2),\\
-         a_2(D_\omega^2 &= Na_2(D_M^2) - \frac{1}{4\pi^2}\int_M.
-         \text{Tr}(\Phi^2)\sqrt{g}d^4x
+         a_2(D_\omega^2 &= Na_2(D_M^2) - \frac{1}{4\pi^2}\int_M
+         \text{Tr}(\Phi^2)\sqrt{g}d^4x.
      \end{align}
      For $a_4$ we extend in terms of coefficients of $F$, \textbf{REWRITE: look week9.pdf
      for the standard version}
@@ -355,20 +356,20 @@ anti commuting, that is for Grassmann variables $\theta _i, \theta _j$  we have
      Finally plugging the results into the coefficient $a_4$ and simplifying we get
      \begin{align}
          a_4(x, D_\omega^4) &= Na_4(x, D_M^2) + \frac{1}{4\pi^2}\bigg(\frac{1}{12} s
-         \text{Tr}(\Phi^2) + \frac{1}{2}\text{Tr}(\Phi^4) \\
+         \text{Tr}(\Phi^2) + \frac{1}{2}\text{Tr}(\Phi^4) \nonumber \\
          &+ \frac{1}{4}
          \text{Tr}((D_\mu\Phi)(D^\mu \Phi)) + \frac{1}{6}
          \Delta\text{Tr}(\Phi^2) + \frac{1}{6}
          \text{Tr}(F_{\mu\nu}F^{\mu\nu})\bigg).
      \end{align}
      The only thing left is to substitute the heat kernel coefficients into the
-     heat kernel expansion in equation \ref{eq:trheatkernel}.
+     heat kernel expansion in equation \eqref{eq:trheatkernel}.
 \end{proof}
 
 \subsubsection{Fermionic Action}
-We remind ourselves the definition of the fermionic action in
+We remind ourselves the definition of the fermionic action in definition
 \ref{def:fermionic action} and the manifold we are dealing with in equation
-\ref{eq:almost commutative manifold}. The Hilbertspace $H_F$ is separated
+\eqref{eq:almost commutative manifold}. The Hilbertspace $H_F$ is separated
 into the particle-antiparticle states with ONB $\{e_R, e_L, \bar{e}_R,
 \bar{e}_L\}$. The orthonormal basis of $H_F^+$ is $\{e_L, \bar{e}_R\}$ and
 consequently for $H_F^-$, $\{e_R, \bar{e}_L\}$. We can decompose a spinor
@@ -402,31 +403,31 @@ for a $\xi \in H^+$. Then the straight forward calculation gives \begin{align}
         D_F)\tilde{\xi})\label{eq:fermionic3},
 \end{align}
 (note that we add the constant $\frac{1}{2}$ to the action).
-For the term in \ref{eq:fermionic1} we calculate
+For the term in \eqref{eq:fermionic1} we calculate
 \begin{align}
     \frac{1}{2}(J\tilde{\xi}, (D_M\otimes 1)\tilde{\xi}) &=
-    \frac{1}{2}(J_M\tilde{\chi}_R,D_M\tilde{\psi}_L)+
+    \frac{1}{2}(J_M\tilde{\chi}_R,D_M\tilde{\psi}_L)+\nonumber
     \frac{1}{2}(J_M\tilde{\chi}_L,D_M\tilde{\psi}_R)+
-    \\&+\frac{1}{2}(J_M\tilde{\psi}_L,D_M\tilde{\psi}_R)+
+    \\&+\frac{1}{2}(J_M\tilde{\psi}_L,D_M\tilde{\psi}_R)+\nonumber
     \frac{1}{2}(J_M\tilde{\chi}_R,D_M\tilde{\chi}_L)\\
     &= (J_M\tilde{\chi},D_M\tilde{\chi}).
 \end{align}
-For the term in \ref{eq:fermionic2} we have
+For the term in \eqref{eq:fermionic2} we have
 \begin{align}
     \frac{1}{2}(J\tilde{\xi}, (\gamma^\mu \otimes B_\mu)\tilde{\xi})&=
     -\frac{1}{2}(J_M\tilde{\chi}_R, \gamma^\mu Y_\mu\tilde{\psi}_R)
-    -\frac{1}{2}(J_M\tilde{\chi}_L, \gamma^\mu Y_\mu\tilde{\psi}_R)+\\
+    -\frac{1}{2}(J_M\tilde{\chi}_L, \gamma^\mu Y_\mu\tilde{\psi}_R)+\nonumber\\
     &+\frac{1}{2}(J_M\tilde{\psi}_L, \gamma^\mu Y_\mu\tilde{\chi}_R)+
-    \frac{1}{2}(J_M\tilde{\psi}_R, \gamma^\mu Y_\mu\tilde{\chi}_L)=\\
+    \frac{1}{2}(J_M\tilde{\psi}_R, \gamma^\mu Y_\mu\tilde{\chi}_L)=\nonumber\\
     &= -(J_M\tilde{\chi}, \gamma^\mu Y_\mu\tilde{\psi}).
 \end{align}
-And for \ref{eq:fermionic3} we can write
+And for \eqref{eq:fermionic3} we can write
 \begin{align}
     \frac{1}{2}(J\tilde{\xi}, (\gamma_M\otimes D_F)\tilde{\xi})&=
     +\frac{1}{2}(J_M\tilde{\chi}_R, d\gamma_M\tilde{\chi}_R)
-    +\frac{1}{2}(J_M\tilde{\chi}_L, \bar{d}\gamma_M\tilde{\chi}_L)+\\
+    +\frac{1}{2}(J_M\tilde{\chi}_L, \bar{d}\gamma_M\tilde{\chi}_L)+\nonumber\\
     &+\frac{1}{2}(J_M\tilde{\chi}_L, \bar{d}\gamma_M\tilde{\chi}_L)
-    +\frac{1}{2}(J_M\tilde{\chi}_R, d\gamma_M\tilde{\chi}_R)=\\
+    +\frac{1}{2}(J_M\tilde{\chi}_R, d\gamma_M\tilde{\chi}_R)=\nonumber\\
     &= i(J_M\tilde{\chi}, m\tilde{\psi}).
 \end{align}
 A small problem arises, we obtain a complex mass parameter $d$, but we can
