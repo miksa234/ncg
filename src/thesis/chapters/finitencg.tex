@@ -1,4 +1,4 @@
-
+\subsection{Finite Spectral Triples}
 \subsubsection{Metric on Finite Discrete Spaces}
 Let us come back to our finite discrete space $X$, we can describe it by a
 structure space $\hat{A}$ of a matrix algebra $A$. To describe distance between
@@ -45,13 +45,13 @@ metric on $X$ in terms of algebraic data.
             (d_{21})^{-1} & 0
         \end{pmatrix}
     \end{align}
-    Then we commpute the commutator
+    Then we compute the commutator
     \begin{align}
         \big|\big|[D, \pi(a)]\big|\big| = (d_{12})^{-1} \big| a(1) - a(2)\big|
     \end{align}
 
     For the case $A=\mathbb{C}^3$, we have $H = (\mathbb{C}^2)^{\oplus 3} = H_2
-    \oplus H_2^1 \oplus H_2^2$. The the representation $\pi (a)$ reads
+    \oplus H_2^1 \oplus H_2^2$. The representation $\pi (a)$ reads
     \begin{align}
         \pi((a(1), a(2), a(3)) &=
         \begin{pmatrix}
@@ -214,13 +214,13 @@ mathematical structure which encodes finite discrete geometry into algebraic dat
 \begin{proof}
     The wording 'acting faithfully on a Hilbertspace' means that the
     $*$-representation is injective, or for a $*$-homomorphism that means
-    one-to-one correspondance. And since $A$ acts faithfully on a Hilbert
+    one-to-one correspondence. And since $A$ acts faithfully on a Hilbert
     space, this means that $A$ is a $*$ subalgebra of a matrix algebra $L(H) = M_{\dim
     (H)}(\mathbb{C}$. Hence it follows, that $A$ is isomorphic to a matrix
     algebra.
 \end{proof}
 
-A simple ilustration would be for an algebra $A = M_n(\mathbb{C})$ and
+A simple illustration would be for an algebra $A = M_n(\mathbb{C})$ and
 $H=\mathbb{C}^n$. Since $A$ acts on $H$ with matrix multiplication and standard
 inner product and $D$ on $H$ is a hermitian matrix $n\times n$ matrix.
 
@@ -233,15 +233,15 @@ inner product and $D$ on $H$ is a hermitian matrix $n\times n$ matrix.
     \end{align}
 \end{definition}
 Then there is a map $d:A\rightarrow \Omega _D ^1 (A)$, $d = [D, \cdot]$. Where
-$d$ is a derivation of the $*$-algebra in the sence that
+$d$ is a derivation of the $*$-algebra in the sense that
 \begin{align}
-    d(ab) = d(a)b + ad(b), \\
+    d(a\ b) = d(a)b + ad(b), \\
     d(a^*) = -d(a)^*.
 \end{align}
 Since we have $d(\cdot) = [D, \cdot]$, we can easily check the above equations
 \begin{align}
     d(a\ b) &= [D, a\ b] = [D, a]b + a[D,b]\nonumber\\
-    &= d(a)\ b + a\ d(b)
+    &= d(a)\ b + a\ d(b).
 \end{align}
 And
 \begin{align}
@@ -250,7 +250,7 @@ And
     &= -d(a)^*.
 \end{align}
 Furthermore $\Omega _D^1 (A)$ is an $A$-bimodule, which can be seen by
-rewriting the definition \eqref{eq:connesoneforms} into
+rewriting the defining equation \eqref{eq:connesoneforms} into
 \begin{align}
     a\ (a_k[D, b_k])\ b &= a\ a_k(D\ b_k - b_k\ D)\ b = \nonumber\\
        &= a\ a_k(D\ b_k\ b - b_k\ D\ b)=\nonumber\\
@@ -300,116 +300,94 @@ rewriting the definition \eqref{eq:connesoneforms} into
 \
 
 \subsubsection{Morphisms Between Finite Spectral Triples}
+Next we will define an equivalence relation between finite spectral triples, called
+spectral unitary equivalence, which is given by the unitarity of the
+two matrix algebras themselves, and an additional map $U$ which allows us to associate a
+one operator to another second operator.
 \begin{definition}
     Two finite spectral tripes $(A_1, H_1, D_1)$ and $(A_2, H_2, D_2)$ are
-    called unitarily equivalent if
-    \begin{itemize}
-        \item $A_1 = A_2$
-        \item $\exists \;\; U: H_1 \rightarrow H_2$, unitary with
-            \begin{enumerate}
-                \item  $U\pi_1(a)U^* = \pi_2(a)$ with $a \in A_1$
-                \item  $UD_1 U^* = D_2$
-            \end{enumerate}
-    \end{itemize}
+    called unitary equivalent if $A_1 = A_2$ and there exists a map $U:\ H_1
+    \rightarrow H_2$ that satisfies
+    \begin{align}
+        U\ \pi_1(a)\ U^* &= \pi_2(a)\;\;\;\; \text{with} \;\;\; a \in A_1,\\
+        U\ D_1\ U^* &= D_2.
+    \end{align}
 \end{definition}
+Notice that for any such $U$ we have the relation $(A, H, D) \sim (A, H, UDU^*)$.
+And hence $U\ D\ U^* = D + U[D, U^*]$ are of the form of elements in $\Omega _D^1 (A)$.
 
-Some remarks
-\begin{itemize}
-    \item the above is an equivalence relation
-    \item spectral unitary equivalence is given by the unitaries of the
-        matrix algebra itself
-    \item for any such $U$ then $(A, H, D) \sim (A, H, UDU^*)$
-    \item $UDU^* = D + U[D, U^*]$ of the form of elements in
-        $\Omega _D^1 (A)$.
-\end{itemize}
+%-------------- EXERCISE
+To make it clear that the above definition is an equivalence relation between
+finite spectral triples, we need to see if the relation satisfies
+reflexivity, symmetry and transitivity. Let us look then at three spectral
+triples $(A_1, H_1, D_1)$, $(A_2, H_2, D_2)$ and $(A_3, H_3, D_3)$.
+For reflexivity $(A_1, H_1, D_1) \sim (A_1, H_1, D_1)$. So there
+exists the unitary map $U: H_1 \rightarrow H_1$, which is the identity
+and always exists. On the other hand the symmetry condition requires
+\begin{align}
+    (A_1, H_1, D_1) \sim (A_2, H_2, D_2) \Leftrightarrow
+    (A_2, H_2, D_2) \sim (A_1, H_1, D_1).
+\end{align}
+Because $U$ is unitary we can rewrite for the representation for $A_1$
+\begin{align}
+    &U\pi_1(a)U^* = \pi_2(a) \;\;\; | \cdot U^*\boxdot U\nonumber \\
+    &U^*U\pi_1(a)U^*U = \pi_1(a) = U^*\pi_2(a)U.
+\end{align}
+The same relation applies for the symmetric operator $D$.
+Lastly for transitivity the condition is
+\begin{align}
+    (A_1, H_1, D_1) &\sim (A_2, H_2, D_2) \;\;\; \text{and} \;\;\;
+    (A_2, H_2, D_2) \sim (A_3, H_3, D_3) \nonumber\\
+    &\Rightarrow (A_1, H_1, D_1) \sim (A_3, H_3, D_3).
+\end{align}
+Therefore the two unitary maps $U_{12}:H_1 \rightarrow H_2$ and
+$U_{23}: H_2 \rightarrow H_3$ are
+\begin{align}
+    U_{23}\ U_{12}\ \pi_1(a)\ U^*_{12}\ U^*_{23} &= U_{23}\
+    \pi_2(a)\ U_{23}^*\nonumber \\
+    &= \pi_3(a), \\
+    U_{23}\ U_{12}\ D_1\ U^*_{12}\ U^*_{23} &= U_{23}\
+    D_2 U_{23}^* \nonumber\\
+    &= D_3.
+\end{align}
+%-------------- EXERCISE
 
-%\begin{MyExercise}
-%    \textbf{
-%    Show that the unitary equivalence between finite spectral
-%    triples is a equivalence relation
-%}\newline
-%
-%    An equivalence relation needs to satisfy reflexivity, symmetry
-%    transitivity.
-%    Let $(A_1, H_1, D_1)$, $(A_2, H_2, D_2)$ and $(A_3, H_3, D_3)$
-%    be three finite spectral triples.
-%    \newline
-%
-%    For reflexivity $(A_1, H_1, D_1) \sim (A_1, H_1, D_1)$. So there
-%    exists a $U: H_1 \rightarrow H_1$ unitary, which is the identity
-%    and always exists.
-%    \newline
-%
-%    For symmetry we need
-%    \begin{align}
-%        (A_1, H_1, D_1) \sim (A_2, H_2, D_2) \Leftrightarrow
-%        (A_2, H_2, D_2) \sim (A_1, H_1, D_1)
-%    \end{align}
-%    because $U$ is unitary:
-%    \begin{align}
-%        &U\pi_1(a)U^* = \pi_2(a) \;\;\; | \cdot U^*\boxdot U \\
-%        &U^*U\pi_1(a)U^*U = \pi_1(a) = U^*\pi_2(a)U \\
-%    \end{align}
-%    The same with the symmetric operator $D$.
-%    \newline
-%
-%    For transitivity we need
-%    \begin{align}
-%        (A_1, H_1, D_1) &\sim (A_2, H_2, D_2) \;\;\; \text{and} \;\;\;
-%        (A_2, H_2, D_2) \sim (A_3, H_3, D_3) \\
-%        &\Rightarrow (A_1, H_1, D_1) \sim (A_3, H_3, D_3)
-%    \end{align}
-%    There are two unitary maps $U_{12}:H_1 \rightarrow H_2$ and
-%    $U_{23}: H_2 \rightarrow H_3$ then
-%    \begin{align}
-%        U_{23}U_{12} \pi_1(a) U^*_{12}U^*_{23} &= U_{23}
-%        \pi_2(a) U_23^* \\
-%        &= \pi_3(a) \\
-%        U_{23}U_{12} D_1U^*_{12}U^*_{23} &= U_{23}
-%        D_2 U_23^* \\
-%        &= D_3
-%    \end{align}
-%\end{MyExercise}
-
-Extending the this relation we look again at  the notion of equivalence from
-Morita equivalence of Matrix Algebras.
-\newline
-
+In order to extend this relation we take a look at Morita equivalence of Matrix Algebras.
 \begin{definition}
     Let $A$ be an algebra. We say that $I \subset A$, as a vector space, is a
-    right(left) ideal if $ab \in I$ for $a \in A$ and $b\in I$ (or $ba \in
+    right(left) ideal if $a\ b \in I$ for $a \in A$ and $b\in I$ (or $b\ a \in
     I$, $b\in I$, $a\in A$). We call a left-right ideal simply an ideal.
 \end{definition}
 
 Given a Hilbert bimodule $E \in KK_f(B, A)$ and $(A, H, D)$ we construct
 a finite spectral triple on $B$, $(B, H', D')$
 \begin{equation}
-    H' = E \otimes _A H
+    H' = E \otimes _A H.
 \end{equation}
 We might define $D'$ with $D'(e \otimes \xi) = e\otimes D\xi$, thought this
 would not satisfy the ideal defining the balanced tensor product over $A$,
 which is generated by elements of the form
 \begin{align}
-    e a \otimes \xi - e\otimes a \xi ;\;\;\;\; e\in E, a\in A, \xi \in H
+    e\ a \otimes \xi - e\otimes a\ \xi, \;\;\;\;\; e\in E, a\in A, \xi \in H.
 \end{align}
 This inherits the left action on $B$ from $E$ and has a $\mathbb{C}$
-valued inner product space. $B$ also satisfies the ideal.
+valued inner product space. $B$ also satisfies the ideal
 \begin{equation}
-    D'(e\otimes \xi) = e \otimes D \xi + \nabla (e) \xi \;\;\;\; e\in
-    E, a\in A
+    D'(e\otimes \xi) = e \otimes D\ \xi + \nabla (e)\ \xi, \;\;\;\; e\in
+    E, a\in A,
 \end{equation}
-Where $\nabla$ is called the \textit{connection on the right A-module E}
-associated with the  derivation $d=[D, \cdot]$ and satisfying the
-\textit{Leibnitz Rule} which is
+where $\nabla$ is called the \textit{connection on the right A-module E}
+associated with the  derivation $d=[D, \cdot]$. The connection needs to
+satisfy the \textit{Leibnitz Rule}
 \begin{equation}
-    \nabla(ae) = \nabla(e)a + e \otimes [D, a] \;\;\;\;\;  e\in E,\; a\in A
+    \nabla(ae) = \nabla(e)a + e \otimes [D, a], \;\;\;\;\;  e\in E,\; a\in A.
 \end{equation}
-Then $D'$ is well defined on $E \otimes _A H$:
+Hence $D'$ is well defined on $E \otimes _A H$
 \begin{align}
-    D'(ea \otimes \xi - e \otimes a \xi) &=  D'(ea \otimes \xi) - D'(e
-    \otimes \xi) \\
-    &= ea\otimes D\xi + \nabla(ae) \xi - e \otimes D(a\xi ) - \nabla (e)a
-    \xi \\
+    D'(e\ a \otimes \xi - e \otimes a\ \xi) &=  D'(e\ a \otimes \xi) - D'(e
+    \otimes \xi) \nonumber\\
+    &= e\ a\otimes D\ \xi + \nabla(a\ e)\ \xi - e \otimes D(a\ \xi) - \nabla
+    (e)\ a\ \xi \nonumber\\
     &= 0.
 \end{align}
 With the information thus far we can prove the following theorem
@@ -423,75 +401,68 @@ With the information thus far we can prove the following theorem
     \end{equation}
 \end{theorem}
 \begin{proof}
-    $E\otimes _A H$ was shown in the previous subsection (text before the
-    theorem). The only thing left is to show that $D'$ is a symmetric
+    $E\otimes _A H$ was previously. The only thing left is to show that $D'$ is a symmetric
     operator, this we can just compute. Let $e_1, e_2 \in E$ and $\xi _1,
     \xi _2 \in H$ then
     \begin{align}
         \langle e_1 \otimes \xi _1, D'(e_2 \otimes \xi_2)\rangle _{E\otimes _A H} &=
-        \langle \xi _1, \langle e_1, \nabla e_2\rangle _E  \xi _2\rangle  + \langle \xi _1 , \langle e_1, e_2\rangle _E D\xi
-        _2\rangle _H \\
-        &= \langle \xi _1, \langle \nabla e_1, e_2\rangle _E \xi _2\rangle _H + \langle \xi _1, d\langle e_1, e_2\rangle  _E
-        \xi _2\rangle _H \\
-        &+ \langle D\xi _1,\langle e_1, e_2\rangle _E \xi _2\rangle _H - \langle \xi _1, [D, \langle e_1, e_2\rangle _E] \xi
-        _2 \rangle _H \\
+        \langle \xi _1, \langle e_1, \nabla e_2\rangle _E\ \xi _2\rangle
+        \langle \xi _1 , \langle e_1, e_2\rangle _E\ D\ \xi_2\rangle_H  \nonumber\\
+        &= \langle \xi _1, \langle \nabla e_1, e_2\rangle _E\ \xi _2\rangle _H + \langle \xi _1, d\langle e_1, e_2\rangle  _E
+        \ \xi _2\rangle _H \nonumber\\
+        &+ \langle D\ \xi _1,\langle e_1, e_2\rangle _E\ \xi _2\rangle _H -
+        \langle \xi _1, [D, \langle e_1, e_2\rangle _E]\ \xi
+        _2 \rangle _H \nonumber\\
         &= \langle D'(e_1 \otimes \xi _1), e_2 \otimes \xi _2\rangle _{E \otimes _A H}
     \end{align}
 \end{proof}
 
-%\begin{MyExercise}
-%    \textbf{
-%    Let $\nabla$ and $\nabla'$ be two connections on a right $A$-module
-%    $E$. Show that $\nabla - \nabla'$ is a right $A$-linear map
-%    $E \rightarrow E\otimes _A \Omega _D^1(A)$
-%}\newline
-%
-%    Both $\nabla$ and $\nabla'$ need to satisfy the Leiblitz rule, so
-%    let's see if $\nabla - \nabla'$ does.
-%
-%    \begin{align}
-%        \nabla(ea)-\nabla'(ea)&=\nabla(e) + e\otimes[D, a]\\
-%        &-(\nabla'(e)a + e\otimes[D',a])\\
-%        &=\bar{\nabla}a + e\otimes(Da-aD-D'a+aD')\\
-%        &=\bar{\nabla}a + e\otimes((D-D')a-a(D-D'))\\
-%        &=\bar{\nabla}a + e\otimes[D', a]\\
-%        &=\bar{\nabla}(ea)
-%    \end{align}
-%    Therefore $\nabla-\nabla'$ is a linear map.
-%\end{MyExercise}
+Let us examin what happens if we look at difference of connectoins $\nabla$ and
+$\nabla'$ on a right $A$-module $E$. Since both connections need to satisfy
+the Leiblitz rule, the difference should also
+    \begin{align}
+        \nabla(ea)-\nabla'(ea)&=\nabla(e) + e\otimes[D, a]\nonumber\\
+        &-(\nabla'(e)a + e\otimes[D',a])\nonumber\\
+        &=\bar{\nabla}a + e\otimes(Da-aD-D'a+aD')\nonumber\\
+        &=\bar{\nabla}a + e\otimes((D-D')a-a(D-D'))\nonumber\\
+        &=\bar{\nabla}a + e\otimes[D', a]\nonumber\\
+        &=\bar{\nabla}(ea).
+    \end{align}
+Therefore $\nabla-\nabla'$ is a right $A$-linear map
+$E \rightarrow E\otimes _A \Omega _D^1(A)$.
 
-%\begin{MyExercise}
-%    \textbf{
-%    Construct a finite spectral triple $(A, H', D')$ from $(A, H, D)$
-%    \begin{enumerate}
-%        \item show that the derivation $d(\cdot):A \rightarrow A\otimes _A
-%            \Omega_D^1(A)=\Omega_D^1(A)$ is a connection on $A$
-%            considered a right $A$-module
-%        \item Upon identifying $A\otimes_A H\simeq H$, what is $D'$
-%            when the connection is $d(\cdot)$.
-%        \item Use 1) and 2) to show that any connection $\nabla:
-%            A\rightarrow A\otimes_A \Omega_D^1(A)$ is given by
-%            \begin{align}
-%                \nabla = d + \omega
-%            \end{align}
-%            where $\omega \in \Omega_D^1(A)$
-%        \item Upon identifying $A\otimes_A H \simeq H$, what is the
-%            difference operator $D'$ with the connection on $A$ given by
-%            $\nabla = d + \omega$
-%    \end{enumerate}
-%}
-%    \begin{enumerate}
-%        \item $\nabla(e \cdot a) =  d(a)$
-%        \item
-%            $D'(a\xi) = a(D\xi) + (\nabla a) \xi = D(a\xi)$
-%        \item Use the identity element $e \in A$\\
-%                $\nabla (e\cdot a) = \nabla(e) a + 1 \otimes d(a)=d(a)
-%                \nabla(e) a$
-%            \item $D'(a\otimes \xi) = D'(a \xi) = a(D\xi) + (\nabla a)\xi =
-%                a(D\xi) + \nabla(e \cdot a) \xi \\
-%                = D(a\xi) + \nabla(e) (a\xi)$
-%    \end{enumerate}
-%\end{MyExercise}
+To get a better grasp of the results let us construct a finite spectral
+triple $(A, H', D')$ from $(A, H, D)$. The derivation $d(\cdot):A \rightarrow
+A\otimes _A \Omega_D^1(A)=\Omega_D^1(A)$ is a connection on $A$ considered a
+right $A$-module
+\begin{align}
+        \nabla(e \cdot a) =  d(a),
+\end{align}
+hence $A\otimes_A H\simeq H$. Next we can construct the operator $D'$
+for the connection $d(\cdot)$,
+\begin{align}
+    D'(a\xi) = a(D\xi) + (\nabla a) \xi = D(a\xi).
+\end{align}
+By using the identity element in the connection relation
+\begin{align}
+   \nabla (e\cdot a) = \nabla(e) a + 1 \otimes d(a)=d(a) \nabla(e) a,
+\end{align}
+we see that any connection $\nabla: A\rightarrow A\otimes_A \Omega_D^1(A)$ is
+given by
+\begin{align}
+    \nabla = d + \omega,
+\end{align}
+where $\omega \in \Omega_D^1(A)$. Ultimately the the
+difference operator $D'$ with the connection on $A$ is given by
+\begin{align}
+    D'(a\otimes \xi) &= D'(a \xi) = a(D\xi) + (\nabla a)\xi \nonumber \\
+                     &=a(D\xi) + \nabla(e \cdot a) \xi \nonumber\\
+                     &= D(a\xi) + \nabla(e) (a\xi).
+\end{align}
+So any such connection is of the form
+\begin{align}
+    \nabla = d + \omega.
+\end{align}
 
 %\subsubsection{Graphing Finite Spectral Triples}
 %\begin{definition}
