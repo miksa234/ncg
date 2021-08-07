@@ -12,7 +12,7 @@ j \in X}$ of \textit{real non-negative} entries in $X$ such that
 
 In the commutative case, the algebra $A$ is commutative and can describe the
 metric on $X$ in terms of algebraic data.
-\begin{mytheorem}
+\begin{theorem}
     Let $d_{ij}$ be a metric on $X$ a finite discrete space with $N$ points, $A = \mathbb{C}^N$
     with elements $a = (a(i))_{i=1}^N$ such that $\hat{A} \simeq X$. Then there exists a
     representation $\pi$ of $A$ on a finite-dimensional inner product space $H$ and a symmetric
@@ -21,7 +21,7 @@ metric on $X$ in terms of algebraic data.
         d_{ij} = \sup_{a\in A}\bigg\{\big|a(i)-a(j)\big| : |\big|\big[D,
             \pi(a)]\big|\big| \leq 1\bigg\}
     \end{equation}
-\end{mytheorem}
+\end{theorem}
 
 \begin{proof}
     We claim that this would follow from the equality:
@@ -197,20 +197,20 @@ formula on a structure space of $A$.
 
 Finally we have all three ingredients to define a finite spectral triple, an
 mathematical structure which encodes finite discrete geometry into algebraic data.
-\begin{mydefinition}
+\begin{definition}
     A \textit{finite spectral triple} is a tripe $(A, H, D)$, where $A$ is a unital $*$-algebra,
     faithfully represented on a finite-dimensional Hilbert space $H$, with a symmetric operator
     $D: H \rightarrow H$. (Note that $A$ is automatically a matrix algebra.)
-\end{mydefinition}
+\end{definition}
 
 \subsubsection{Properties of Matrix Algebras}
-\begin{mylemma}
+\begin{lemma}
     If $A$ is a unital C* algebra acting faithfully on a finite
     dimensional Hilbert space, then $A$ is a matrix algebra of the Form:
     \begin{align}
         A \simeq \bigoplus _{i=1}^N M_{n_i}(\mathbb{C})
     \end{align}
-\end{mylemma}
+\end{lemma}
 \begin{proof}
     The wording 'acting faithfully on a Hilbertspace' means that the
     $*$-representation is injective, or for a $*$-homomorphism that means
@@ -224,14 +224,14 @@ A simple illustration would be for an algebra $A = M_n(\mathbb{C})$ and
 $H=\mathbb{C}^n$. Since $A$ acts on $H$ with matrix multiplication and standard
 inner product and $D$ on $H$ is a hermitian matrix $n\times n$ matrix.
 
-\begin{mydefinition}
+\begin{definition}
     Given an finite spectral triple $(A, H, D)$, the $A$-bimodule of
     Connes' differential one-forms is
     \begin{align}\label{eq:connesoneforms}
         \Omega _D ^1 (A) := \left\{ \sum _k a_k[D, b_k]: a_k, b_k \in A
         \right\}.
     \end{align}
-\end{mydefinition}
+\end{definition}
 Then there is a map $d:A\rightarrow \Omega _D ^1 (A)$, $d = [D, \cdot]$. Where
 $d$ is a derivation of the $*$-algebra in the sense that
 \begin{align}
@@ -262,14 +262,14 @@ rewriting the defining equation \eqref{eq:connesoneforms} into
        &= \sum _k\ a_k'\ [D, b_k']
 \end{align}
 
-\begin{mylemma}
+\begin{lemma}
     Let $\big(A, H, D\big) = \big(M_n(\mathbb{C}), \mathbb{C}^n, D\big)$, where
     $D$ is a hermitian $n\times n$ matrix. If $D$ is not a multiple of the
     identity then
     \begin{align}
         \Omega _D ^1 (A)  \simeq  M_n(\mathbb{C}) = A
     \end{align}
-\end{mylemma}
+\end{lemma}
 \begin{proof}
     Assume $D = \sum _i \lambda _i e_{ii}$ is diagonal, $\lambda _i \in \mathbb{R}$ and
     $\{e_{ij}\}$ is the basis of $M_n(\mathbb{C})$. Then for fixed $i$, $j$ choose $k$
@@ -304,7 +304,7 @@ Next we will define an equivalence relation between finite spectral triples, cal
 spectral unitary equivalence, which is given by the unitarity of the
 two matrix algebras themselves, and an additional map $U$ which allows us to associate a
 one operator to another second operator.
-\begin{mydefinition}
+\begin{definition}
     Two finite spectral tripes $(A_1, H_1, D_1)$ and $(A_2, H_2, D_2)$ are
     called unitary equivalent if $A_1 = A_2$ and there exists a map $U:\ H_1
     \rightarrow H_2$ that satisfies
@@ -312,7 +312,7 @@ one operator to another second operator.
         U\ \pi_1(a)\ U^* &= \pi_2(a)\;\;\;\; \text{with} \;\;\; a \in A_1,\\
         U\ D_1\ U^* &= D_2.
     \end{align}
-\end{mydefinition}
+\end{definition}
 Notice that for any such $U$ we have the relation $(A, H, D) \sim (A, H, UDU^*)$.
 And hence $U\ D\ U^* = D + U[D, U^*]$ are of the form of elements in $\Omega _D^1 (A)$.
 
@@ -353,11 +353,11 @@ $U_{23}: H_2 \rightarrow H_3$ are
 %-------------- EXERCISE
 
 In order to extend this relation we take a look at Morita equivalence of Matrix Algebras.
-\begin{mydefinition}
+\begin{definition}
     Let $A$ be an algebra. We say that $I \subset A$, as a vector space, is a
     right(left) ideal if $a\ b \in I$ for $a \in A$ and $b\in I$ (or $b\ a \in
     I$, $b\in I$, $a\in A$). We call a left-right ideal simply an ideal.
-\end{mydefinition}
+\end{definition}
 
 Given a Hilbert bimodule $E \in KK_f(B, A)$ and $(A, H, D)$ we construct
 a finite spectral triple on $B$, $(B, H', D')$
@@ -391,7 +391,7 @@ Hence $D'$ is well defined on $E \otimes _A H$
     &= 0.
 \end{align}
 With the information thus far we can prove the following theorem
-\begin{mytheorem}
+\begin{theorem}
     If $(A, H, D)$ a finite spectral triple, $E \in KK_f(B, A)$.
     Then $(V, E\otimes _A H, D')$ is a finite spectral triple, provided that
     $\nabla$ satisfies the compatibility condition
@@ -399,7 +399,7 @@ With the information thus far we can prove the following theorem
         \langle e_1, \nabla e_2 \rangle _E - \langle \nabla e_1, e_2
         \rangle _E = d\langle e_1, e_2 \rangle _E \;\;\;\; e_1, e_2 \in E
     \end{equation}
-\end{mytheorem}
+\end{theorem}
 \begin{proof}
     $E\otimes _A H$ was previously. The only thing left is to show that $D'$ is a symmetric
     operator, this we can just compute. Let $e_1, e_2 \in E$ and $\xi _1,
@@ -465,11 +465,11 @@ So any such connection is of the form
 \end{align}
 
 %\subsubsection{Graphing Finite Spectral Triples}
-%\begin{mydefinition}
+%\begin{definition}
 %    A \textit{graph} is a ordered pair $(\Gamma ^{(0)}, \Gamma ^{(1)})$.
 %    Where $\Gamma ^{(0)}$ is the set of vertices (nodes) and $\Gamma ^{(1)}$
 %    a set of pairs of vertices (edges)
-%\end{mydefinition}
+%\end{definition}
 %\begin{figure}[h!]
 %    \centering
 %\begin{tikzpicture}[
@@ -499,7 +499,7 @@ So any such connection is of the form
 %%    $A$-submodule, because elements in $W^{\perp}$ need to satisfy the
 %%    bimodularity.
 %%\end{MyExercise}
-%\begin{mydefinition}
+%\begin{definition}
 %    A $\Lambda$-decorated graph is given by an ordered pair $(\Gamma,
 %    \Lambda)$ of a finite graph $\Gamma$ and a set of positive integers
 %    $\Lambda$ with the labeling
@@ -520,7 +520,7 @@ So any such connection is of the form
 %    \begin{equation}
 %        n(\Gamma ^{(0)}) = \Lambda
 %    \end{equation}
-%\end{mydefinition}
+%\end{definition}
 %\begin{question}
 %    Would then $D_e$ be the pullback?
 %\end{question}
@@ -537,7 +537,7 @@ So any such connection is of the form
 %    \textbf{n}_i \\ n(\nu _2) = \textbf{n}_j}} D_e
 %\end{align}
 %
-%\begin{mytheorem}
+%\begin{theorem}
 %    There is a on to one correspondence between finite spectral triples
 %    modulo unitary equivalence and $\Lambda$-decorated graphs, given by
 %    associating a finite spectral triples $(A, H, D)$ to  a $\Lambda$ decorated
@@ -547,7 +547,7 @@ So any such connection is of the form
 %        H = \bigoplus _{\nu \in \Gamma ^{(0)}} \mathbb{C}^{n(\nu)}; \;\;\;
 %        D = \sum _{e \in \Gamma ^{(1)}} D_e + D_e^*
 %    \end{equation}
-%\end{mytheorem}
+%\end{theorem}
 %    \begin{figure}[h!]
 %    \centering
 %    \begin{tikzpicture}[

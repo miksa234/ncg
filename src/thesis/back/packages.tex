@@ -22,74 +22,166 @@
 \usetikzlibrary{calc,decorations.markings}
 \usepackage[colorlinks=true,naturalnames=true,plainpages=false,pdfpagelabels=true]{hyperref}
 %\usepackage[parfill]{parskip}
+\usepackage{lipsum}
+
+\newcounter{definition}
+\newcounter{theorem}
+\newcounter{lemma}
+\newcounter{proposition}
+\numberwithin{equation}{section}
 
 \usepackage[backend=biber, sorting=none]{biblatex}
 \addbibresource{thesis.bib}
 
-\numberwithin{equation}{section}
+\usepackage{tikz}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
 
-\usepackage{lipsum}
-
-
-% new commands just untill done rewriting stuff
-\usetikzlibrary{patterns,decorations.pathmorphing,positioning}
-
-\usepackage[framemethod=TikZ]{mdframed}
-
-\tikzstyle{titlered} =
-    [draw=black, thick, fill=white,%
-        text=black, rectangle,
-        right, minimum height=.7cm]
-
-\newcounter{exercise}
-
-\renewcommand*\theexercise{Exercise~\arabic{exercise}}
-
-\makeatletter
-\mdfdefinestyle{exercisestyle}{%
-    outerlinewidth=1em,%
-    outerlinecolor=white,%
-    leftmargin=-1em,%
-    rightmargin=-1em,%
-    middlelinewidth=1.2pt,%
-    roundcorner=5pt,%
-    linecolor=black,%
-    backgroundcolor=blue!5,
-    innertopmargin=1.2\baselineskip,
-    skipabove={\dimexpr0.5\baselineskip+\topskip\relax},
-    skipbelow={-1em},
-    needspace=3\baselineskip,
-    frametitlefont=\sffamily\bfseries,
-    settings={\global\stepcounter{exercise}},
-    singleextra={%
-        \node[titlered,xshift=1cm] at (P-|O) %
-            {~\mdf@frametitlefont{\theexercise}~};},%
-    firstextra={%
-            \node[titlered,xshift=1cm] at (P-|O) %
-                    {~\mdf@frametitlefont{\theexercise}~};},
+\colorlet{colexam}{black}
+\newtcolorbox[use counter=definition]{mydefinition}{
+    empty,
+    title={Definition~\thetcbcounter},
+    attach boxed title to top left,
+    fontupper=\sl,
+    boxed title style={
+        empty,
+        size=minimal,
+        bottomrule=1pt,
+        top=1pt,
+        left skip=0cm,
+        overlay=
+            {\draw[colexam,line width=1pt]([yshift=-0.4cm]frame.north
+        west)--([yshift=-0.4cm]frame.north east);}},
+            coltitle=colexam,
+            fonttitle=\bfseries,
+            before=\par\medskip\noindent,
+            parbox=false,
+            boxsep=-1pt,
+            left=0.75cm,
+            right=3mm,
+            top=4pt,
+            breakable,
+            pad at break*=0mm,
+            vfill before first,
+            overlay unbroken={
+                \draw[colexam,line width=1pt]
+                ([xshift=0.6cm, yshift=-0.5pt]frame.south
+                west)--([xshift=0.6cm,yshift=-1pt]frame.north west)
+                --([xshift=0.6cm]frame.south west)--([xshift=-13cm]frame.south east); },
+            overlay last={
+                \draw[colexam,line width=1pt]
+                ([xshift=0.6cm, yshift=-0.5pt]frame.south
+                west)--([xshift=0.6cm,yshift=-1pt]frame.north west)
+                --([xshift=0.6cm]frame.south west)--([xshift=-13cm]frame.south east); }
 }
-\makeatother
 
-\newenvironment{MyExercise}%
-{\begin{mdframed}[style=exercisestyle]}{\end{mdframed}}
+\newtcolorbox[use counter=theorem]{mytheorem}{
+    empty,
+    title={Theorem~\thetcbcounter},
+    attach boxed title to top left,
+    fontupper=\sl,
+    boxed title style={
+        empty,
+        size=minimal,
+        bottomrule=1pt,
+        top=1pt,
+        left skip=0cm,
+        overlay=
+            {\draw[colexam,line width=1pt]([yshift=-0.4cm]frame.north
+        west)--([yshift=-0.4cm]frame.north east);}},
+            coltitle=colexam,
+            fonttitle=\bfseries,
+            before=\par\medskip\noindent,
+            parbox=false,
+            boxsep=0pt,
+            left=0.75cm,
+            right=3mm,
+            top=4pt,
+            breakable,
+            pad at break*=0mm,
+            vfill before first,
+            overlay unbroken={
+                \draw[colexam,line width=1pt]
+                ([xshift=0.6cm, yshift=-0.5pt]frame.south
+                west)--([xshift=0.6cm,yshift=-1pt]frame.north west)
+                --([xshift=0.6cm]frame.south west)--([xshift=-13cm]frame.south east); },
+            overlay last={
+                \draw[colexam,line width=1pt]
+                ([xshift=0.6cm, yshift=-0.5pt]frame.south
+                west)--([xshift=0.6cm,yshift=-1pt]frame.north west)
+                --([xshift=0.6cm]frame.south west)--([xshift=-13cm]frame.south east); },
+}
 
-\theoremstyle{definition}
-\newtheorem{definition}{Definition}
+\newtcolorbox[use counter=lemma]{mylemma}{
+    empty,
+    title={Lemma~\thetcbcounter},
+    attach boxed title to top left,
+    fontupper=\sl,
+    boxed title style={
+        empty,
+        size=minimal,
+        bottomrule=1pt,
+        top=1pt,
+        left skip=0cm,
+        overlay=
+            {\draw[colexam,line width=1pt]([yshift=-0.4cm]frame.north
+        west)--([yshift=-0.4cm]frame.north east);}},
+            coltitle=colexam,
+            fonttitle=\bfseries,
+            before=\par\medskip\noindent,
+            parbox=false,
+            boxsep=0pt,
+            left=0.75cm,
+            right=3mm,
+            top=4pt,
+            breakable,
+            pad at break*=0mm,
+            vfill before first,
+            overlay unbroken={
+                \draw[colexam,line width=1pt]
+                ([xshift=0.6cm, yshift=-0.5pt]frame.south
+                west)--([xshift=0.6cm,yshift=-1pt]frame.north west)
+                --([xshift=0.6cm]frame.south west)--([xshift=-13cm]frame.south east); },
+            overlay last={
+                \draw[colexam,line width=1pt]
+                ([xshift=0.6cm, yshift=-0.5pt]frame.south
+                west)--([xshift=0.6cm,yshift=-1pt]frame.north west)
+                --([xshift=0.6cm]frame.south west)--([xshift=-13cm]frame.south east); },
+}
 
-\theoremstyle{definition}
-\newtheorem{question}{Question}
-
-\theoremstyle{definition}
-\newtheorem{example}{Example}
-
-\theoremstyle{theorem}
-\newtheorem{theorem}{Theorem}
-
-\theoremstyle{theorem}
-\newtheorem{lemma}{Lemma}
-
-
-\theoremstyle{theorem}
-\newtheorem{proposition}{Proposition}
-
-\newtheorem*{idea}{Proof Idea}
+\newtcolorbox[use counter=proposition]{myproposition}{
+    empty,
+    title={Proposition~\thetcbcounter},
+    attach boxed title to top left,
+    fontupper=\sl,
+    boxed title style={
+        empty,
+        size=minimal,
+        bottomrule=-1pt,
+        top=1pt,
+        left skip=0cm,
+        overlay=
+            {\draw[colexam,line width=1pt]([yshift=-0.4cm]frame.north
+        west)--([yshift=-0.4cm]frame.north east);}},
+            coltitle=colexam,
+            fonttitle=\bfseries,
+            before=\par\medskip\noindent,
+            parbox=false,
+            boxsep=0pt,
+            left=0.75cm,
+            right=3mm,
+            top=4pt,
+            breakable,
+            pad at break*=0mm,
+            vfill before first,
+            overlay unbroken={
+                \draw[colexam,line width=1pt]
+                ([xshift=0.6cm, yshift=-0.5pt]frame.south
+                west)--([xshift=0.6cm,yshift=-1pt]frame.north west)
+                --([xshift=0.6cm]frame.south west)--([xshift=-13cm]frame.south east); },
+            overlay last={
+                \draw[colexam,line width=1pt]
+                ([xshift=0.6cm, yshift=-0.5pt]frame.south
+                west)--([xshift=0.6cm,yshift=-1pt]frame.north west)
+                --([xshift=0.6cm]frame.south west)--([xshift=-13cm]frame.south east); },
+}

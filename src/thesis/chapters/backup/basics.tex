@@ -16,31 +16,25 @@ introduce the first ingredient of a spectral triple, an unital $*$ algebra.
     Extending the definition, a $*$-algebra is an algebra $A$ with a \textit{conjugate linear map (involution)} $*:A\ \rightarrow  A$,
     $\forall a, b \in A$ satisfying
     \begin{align}
-        (a\ b)^* &= b^*a^*,\\
+        (a\ b)^* &= b^*a^*,
         (a^*)^* &= a.
     \end{align}
 \end{mydefinition}
 In the following all unital algebras are referred to as algebras.
 
 \subsubsection{Finite Discrete Space}
-Let us consider an example, a $*$-algebra of continuous functions $C(X)$
+Let us consider an example of an $*$-algebra of continuous functions $C(X)$
 on a discrete topological space $X$ with $N$ points. Functions of a
-continuous $*$-algebra $C(X)$ assign values to $\mathbb{C}$ and for $f,\ g \in
+continuous $*$-algebra $C(X)$ assign values to $\mathbb{C}$, thus $f,\ g \in
 C(X)$, $\lambda \in \mathbb{C}$ and $x \in X$ they provide the following structure:
 \begin{itemize}
-    \item \textit{pointwise linear}
-        \begin{align}
-            (f + g)(x) &= f(x) + g(x),\\
-            (\lambda\ f)(x) &= \lambda (f(x)),
-        \end{align}
-    \item \textit{pointwise multiplication}
-        \begin{align}
-        f\ g\ (x) = f(x)g(x),
-        \end{align}
-    \item \textit{pointwise involution}
-        \begin{align}
-        $f^*(x) = \overline{f(x)}.
-        \end{align}
+    \item \textit{pointwise linear} \\
+      $(f + g)(x) = f(x) + g(x)$,\\
+      $(\lambda\ f)(x) = \lambda (f(x)),$
+    \item \textit{pointwise multiplication} \\
+        $f\ g\ (x) = f(x)g(x)$,
+    \item \textit{pointwise involution} \\
+        $f^*(x) = \overline{f(x)}.$
 \end{itemize}
 The $*$-algebra $C(X)$ is \textit{isomorphic} to a $*$-algebra $\mathbb{C}^N$
 with involution ($N$ number of points in $X$), we write $C(X) \simeq
@@ -48,7 +42,7 @@ with involution ($N$ number of points in $X$), we write $C(X) \simeq
 don't lose physical information.  A function $f:X\ \rightarrow\ \mathbb{C}$
 can be represented with $N \times N$ diagonal matrices, where each diagonal
 value represents the function value at the corresponding $i$-th point for $i
-= 1,...,N$. Matrix multiplication and hermitian conjugation of
+= 1,...,N$. Because of matrix multiplication and hermitian conjugate of
 matrices we have a preserving structure.
 
 Moreover we can \textit{map} between finite discrete spaces $X_1$ and $X_2$ with a
@@ -61,7 +55,7 @@ For every such map there exists a corresponding map
     \phi ^*:C(X_2)\ \rightarrow C(X_1),
 \end{align}
 which `pulls back' values even if $\phi$ is not bijective.
-Note that the pullback does not map points back, but maps functions on an $*$-algebra $C(X)$.
+Note that the pullback doesn't map points back, but maps functions on an $*$-algebra $C(X)$.
 The pullback, in literature often called a $*$-homomorphism or a $*$-algebra map under
 pointwise product has the following properties
 \begin{itemize}
@@ -71,8 +65,8 @@ pointwise product has the following properties
 \end{itemize}
 %------------ Exercise
     The map $\phi :X_1\ \rightarrow \ X_2$ is an injective (surjective) map,
-    if only and if the corresponding pullback $\phi ^* :C(X_2)\ \rightarrow \
-    C(X_1)$ is surjective (injective). To clarify let us say that $X_1$ has $n$ points and
+    if only if the corresponding pullback $\phi ^* :C(X_2)\ \rightarrow \
+    C(X_1)$ is surjective (injective). Let us say, that $X_1$ has $n$ points and
     $X_2$ with $m$ points. Then there are three different cases, first $n=m$ and
     obviously $\phi$ is bijective and $\phi ^*$ too. Then $n >  m$, in this case
     $\phi$ assigns $n$ points to $m$ points when $n >  m$, which is by definition
@@ -81,28 +75,29 @@ pointwise product has the following properties
     completely analogous to the case $n > m$.
 %------------ Exercise
 
+\subsubsection{Matrix Algebras}
 \begin{mydefinition}
     A \textit{(complex) matrix algebra} A is a direct sum, for $n_i, N \in
     \mathbb{N}$
     \begin{align}
         A = \bigoplus _{i=1}^{N} M_{n_i}(\mathbb{C}).
     \end{align}
-    The involution is the hermitian conjugate. A $*$ algebra with involution is referred to as
+    The involution is the hermitian conjugate, a $*$ algebra with involution is referred to as
     a matrix algebra
 \end{mydefinition}
+From a topological discrete space $X$, we can construct a $*$-algebra
+$C(X)$ which is isomorphic to a matrix algebra $A$. Then the question instantly
+arises, if we can construct $X$ given $A$? For a matrix algebra $A$,
+which in most cases is not commutative, the answer is generally no.
 
-To summarize, from a topological discrete space $X$, we can construct a
-$*$-algebra $C(X)$ which is isomorphic to a matrix algebra $A$. Then the
-question instantly arises, if we can construct $X$ given $A$? For a matrix
-algebra $A$, which in most cases is not commutative, the answer is generally
-no. Hence there are two options. We can restrict ourselves to commutative
-matrix algebras, which are the vast minority and not physically interesting.
+Thus there are two options. We can restrict ourselves to commutative matrix algebras,
+which are the vast minority and not physically interesting.
 Or we can allow more morphisms (isomorphisms) between matrix algebras.
 
 \subsubsection{Finite Inner Product Spaces and Representations}
-Until now we have looked at finite topological discrete spaces, moreover we can consider a
-finite dimensional inner product space $H$ (finite Hilbertspaces), with inner product
-$(\cdot,\cdot)\rightarrow \mathbb{C}$. We denote $L(H)$ as the $*$-algebra of operators on $H$
+Until now we looked at finite topological discrete spaces, moreover we can consider a
+finite dimensional inner product space $H$ (finite Hilbert-spaces), with inner product
+$(\cdot,\cdot)\rightarrow \mathbb{C}$. We denote $L(H)$ as  the $*$-algebra of operators on $H$
 equipped with a product given by composition and involution of the adjoint, $T \mapsto T^*$.
 Then $L(H)$ is a \textit{normed vector space} with
 \begin{align}
@@ -110,7 +105,7 @@ Then $L(H)$ is a \textit{normed vector space} with
     \in L(H)\big \},\\
     \|T\| &= \sup\big\{\sqrt{\lambda}:\; \lambda \text{ eigenvalue of } T\big\}.
 \end{align}
-The Hilbert space allows us to define representations of $*$-algebras.
+This allows us to define representations of $*$-algebras.
 \begin{mydefinition}
     The \textit{representation} of a finite dimensional $*$-algebra $A$ is a
     pair $(H, \pi)$, where $H$ is a finite dimensional inner product space
@@ -145,8 +140,8 @@ $U: H_1 \rightarrow H_2$ such that.
 \end{mydefinition}
 
 Furthermore we define a mathematical structure called the structure space,
-which will become important later when speaking of the duality between a
-spectral triple and a space.
+which will later become important, when speaking of the duality between a spectral
+triple and a space.
 \begin{mydefinition}
     Let $A$ a $*$-algebra then, $\hat{A}$ is called the structure space of all \textit{unitary equivalence classes
     of irreducible representations of A}
@@ -158,9 +153,9 @@ spectral triple and a space.
         \pi (A)' = \big\{T \in L(H):\ \pi(a)\ T = T\ \pi(a) \;\; \forall a\in
         A\big\}
     \end{align}
-    The commutant $\pi (A)'$ is also a $*$-algebra, since it has unital,
+    The commutant $\pi (A)'$ is also a $*$-algebra, because it has unital,
     associative and involutive properties.
-    That is $\pi (a) \in L(H)\ \forall a \in A$, unitary property is given
+    We note that $\pi (a) \in L(H)\ \forall a \in A$, unitary property is given
     by the unital operator of the $*$-algebra of operators $L(H)$, which exists
     by definition because H is a inner product space. Associativity is given by
     the $*$-algebra of $L(H)$, where $L(H) \times L(H) \mapsto L(H)$, which is
@@ -170,21 +165,19 @@ spectral triple and a space.
 
 %------------- EXERCISE
     For a unital algebra $*$-algebra $A$, the matrices $M_n(A)$ with entries
-    in $A$ form a unital $*$-algebra, because the unitary operation in
-    $M_n(A)$ is given by the identity Matrix, which has to exists in every
-    entry in $M_n(A)$, and behaves like in $A$. Associativity is given by
-    matrix multiplication. Lastly involution is given by the conjugate
-    transpose.
+    in $A$ form a unital $*$-algebra, because unitary operation in $M_n(A)$ is given by the identity Matrix, which
+    has to exists in every entry in $M_n(A)$, and behaves like in $A$. Associativity is given by
+    matrix multiplication. Lastly involution is given by the conjugate transpose.
 
-    Consider a representation $\pi :A\ \rightarrow \ L(H)$ of a $*$-algebra
-    $A$ and set $H^n = H \oplus ... \oplus H$, $n$ times. Then we have the following
+    A representation $\pi :A\ \rightarrow \ L(H)$ of a $*$-algebra $A$, for
+    $H^n = H \oplus ... \oplus H$, $n$ times.  Then we have the following
     representation $\tilde{\pi}:M_n(A) \rightarrow L(H^n)$ for the Matrix
-    Algebra with $\tilde{\pi}((a_{ij})) = (\tilde{\pi}(a_{ij})) \in M_n(A)$,
-    since a direct isomorphisms of $A \simeq M_n(A)$ and $H \simeq H^n$
-    exists. Meaning $\tilde{\pi}$ is a valid reducible representation.
+    Algebra with $\tilde{\pi}((a_{ij})) = (\tilde{\pi}(a_{ij})) \in M_n(A)$.
+    We have direct isomorphisms of $A \simeq M_n(A)$ and $H \simeq H^n$
+    meaning $\tilde{\pi}$ is a valid reducible representation.
 
-    By looking at $\tilde{\pi}:M_n(A) \rightarrow L(H^n)$ a $*$ algebra
-    representation of $M_n(A)$. We see that $\pi: A \rightarrow L(H^n)$ is a representation of $A$.
+    Let $\tilde{\pi}:M_n(A) \rightarrow L(H^n)$ be a $*$ algebra
+    representation of $M_n(A)$, then $\pi: A \rightarrow L(H^n)$ is a representation of $A$.
     The fact that $\tilde{\pi}$ and $\pi$ are unitary equivalent, there is
     a map $U: H^n \rightarrow H^n$ given by $U=\mathbbm{1}_n$, thus
     \begin{align}
@@ -195,8 +188,10 @@ spectral triple and a space.
 %------------- EXERCISE
 
 
-With help of the structure space $\hat{A}$, a commutative matrix algebra can be used to reconstruct a discrete space.
-Since $A \simeq \mathbb{C}^N$ all irreducible representation are of the form
+A commutative matrix algebra can be used to reconstruct a discrete space.
+The structure space $\hat{A}$ is used for this. Because $A \simeq
+\mathbb{C}^N$ all
+irreducible representation are of the form
 \begin{align}
    \pi _i:(\lambda_1,...,\lambda_N)\in \mathbb{C}^N \mapsto \lambda_i \in
    \mathbb{C}
@@ -214,7 +209,7 @@ Equivalence})
 
 \subsubsection{Algebraic Modules}
 An important notion for Morita Equivalence are algebraic modules, later
-extended by Hilbert bimodules.
+extended with Hilbert bimodules.
 \begin{mydefinition}
     Let $A$, $B$ be algebras (need not be matrix algebras)
     \begin{enumerate}
@@ -283,7 +278,7 @@ which is the inner product of a $*$-algebra.
     \right\}.
     \end{align}
 \end{mydefinition}
-The symbol $/$ denotes the quotient space. By that the operation $\otimes _A$ takes
+The $/$ denotes the quotient space. By that the operation $\otimes _A$ takes
 two left/right modules and makes a bimodule with the help the tensor product of
 the two modules and the quotient space that takes out all the elements from the
 tensor product that don't preserver the left/right representation and that are
@@ -554,7 +549,5 @@ On the other hand we get
 \end{align}
 %---------------- EXAMPLE
 
-To summarize, there is a duality between finite spaces and Morita equivalence
-classes of matrix algebras. By replacing $*$-homomorphism $A\rightarrow B$
-with Hilbert bimodules $(A,B)$ we introduce a richer structure of morphism
-between matrix algebras.
+To summarize, there is a duality between finite spaces and Morita equivalence classes of matrix algebras. By replacing $*$-homomorphism $A\rightarrow B$ with Hilbert bimodules $(A,B)$ we introduce
+a richer structure of morphism between matrix algebras.

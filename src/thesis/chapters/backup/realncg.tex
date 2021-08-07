@@ -15,7 +15,7 @@ properties
     \gamma a &= a \gamma, \;\;\;\; a\in A.
 \end{align}
 Then we can define a finite real spectral triple.
-\begin{mydefinition}
+\begin{definition}
     A \textit{finite real spectral triple} is given by a finite spectral
     triple $(A, H, D)$ and a anti-unitary operator $J:H\rightarrow H$ called
     the \textit{real structure}, such that
@@ -31,8 +31,8 @@ Then we can define a finite real spectral triple.
     The two properties are called the \textit{commutant property}, they
     require that the left action of an element in $A$ and $\Omega _D^1(A)$ commutes with the right
     action on $A$.
-\end{mydefinition}
-\begin{mydefinition}
+\end{definition}
+\begin{definition}
     The $KO$-dimension of a real spectral triple is determined by the sings
     $\epsilon, \epsilon ' ,\epsilon '' \in \{-1, 1\}$ appearing in
     \begin{align}
@@ -40,7 +40,7 @@ Then we can define a finite real spectral triple.
         J\ D &= \epsilon \ D\ J,\\
         J\ \gamma &= \epsilon''\ \gamma\ J.
     \end{align}
-\end{mydefinition}
+\end{definition}
 \begin{table}[h!]
     \centering
     \caption{$KO$-dimension $k$ modulo $8$ of a real spectral triple}
@@ -59,7 +59,7 @@ Even thought the KO-dimension of a real spectral triple is important, we will
 not be doing in-depth introduction of the KO-dimension, for this we reference
 to \cite{ncgwalter}.
 
-\begin{mydefinition}
+\begin{definition}
 An opposite-algebra $A^\circ$ of a $A$ is defined to be equal to $A$ as a
 vector space with the opposite product
 \begin{align}
@@ -67,7 +67,7 @@ vector space with the opposite product
     &\Rightarrow a^\circ = Ja^* J^{-1},
 \end{align}
 which defines the left representation of $A^\circ$ on $H$
-\end{mydefinition}
+\end{definition}
 
 
 %------------EXAMPLE EXERCISE
@@ -92,7 +92,7 @@ multiplication
 
 %------------EXAMPLE EXERCISE
 
-\begin{mydefinition}
+\begin{definition}
     We call $\xi \in H$ \textbf{cyclic vector} in $A$ if:
     \begin{align}
         A\xi := { a\xi:\;\; a\in A} = H
@@ -101,7 +101,7 @@ multiplication
     \begin{align}
         a\xi = 0\;\; \Rightarrow \;\; a=0;\;\;\; a\in A
     \end{align}
-\end{mydefinition}
+\end{definition}
 Suppose $(A, H, D = 0)$ is a finite spectral triple such that $H$ possesses a
 cyclic and separating vector for $A$ and let $J: H \rightarrow H$ be the
 operator in $S = J \Delta ^{1/2}$ with $\Delta = S^*S$ . By composition
@@ -125,7 +125,7 @@ which concludes the anti-unitarity by definition.
 \subsubsection{Morphisms Between Finite Real Spectral Triples}
 Like the unitary equivalence relation for finite spectral triples, we can it
 to finite real spectral triples.
-\begin{mydefinition}
+\begin{definition}
     We call two finite real spectral triples $(A_1, H_1 ,D_1 ; J_1 , \gamma
     _1)$ and $(A_2, H_2, D_2; J_2, \gamma _2)$ unitarily equivalent if $A_1 =
     A_2$ and if there exists a unitary operator $U: H_1 \rightarrow H_2$ such
@@ -136,8 +136,8 @@ to finite real spectral triples.
         U \gamma _1\ U^*  &= \gamma _2,\\
         U\ J_1\ U^* &= J_2.
     \end{align}
-\end{mydefinition}
-\begin{mydefinition}
+\end{definition}
+\begin{definition}
     Let $E$ be a $B$-$A$ bimodule. The \textit{conjugate Module} $E^\circ$ is
     given by the $A$-$B$-bimodule.
     \begin{align}
@@ -148,7 +148,7 @@ to finite real spectral triples.
     a \cdot \bar{e} \cdot b = b^*\ \bar{e}\ a^*, \;\;\;\; \forall a\in A, b \in
         B.
     \end{align}
-\end{mydefinition}
+\end{definition}
 We bear in mind that $E^\circ$ is not a Hilbert bimodule for $(A, B)$ because
 it doesn't have a natural $B$-valued inner product. But there is a $A$-valued
 inner product on the left $A$-module $E^\circ$ with
@@ -239,13 +239,13 @@ Finally for the grading we have
 \end{align}
 
 Summarizing we can write down the following theorem
-\begin{mytheorem}
+\begin{theorem}
     Suppose $(A, H, D; J, \gamma)$ is a finite spectral triple of
     $KO$-dimension $k$, let $\nabla$ be a connection satisfying the
     compatibility condition (same as with finite spectral triples).
     Then $(B, H',D'; J', \gamma')$ is a finite spectral triple of
     $KO$-Dimension $k$. ($H', D', J', \gamma'$)
-\end{mytheorem}
+\end{theorem}
 
 \begin{proof}
     The only thing left is to check if the $KO$-dimension is preserved,

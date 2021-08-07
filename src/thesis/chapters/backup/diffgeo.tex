@@ -1,0 +1,128 @@
+\subsection{Excurse}
+\textbf{Manifold:} A topological space that is locally Euclidean.
+\newline
+\textbf{Riemannian Manifold:}A Manifold equipped with a Riemannian
+Metric, a
+symmetric bilinear form on Vector Fields $\Gamma(TM)$
+\begin{align}
+    &g: \Gamma(TM) \times \Gamma(TM) \rightarrow C(M) \\
+    \text{with}& \nonumber\\
+    &g(X, Y) \in \mathbb{R} \;\;\; \text{if $X, Y \in \mathbb{R}$}\\
+    &\text{$g$ is $C(M)$-bilinear } \forall f\in C(M):\;\; g(fX, Y) =
+    g(X,
+    fY) = fg(X,Y)\\
+    &g(X,X) \begin{cases}\geq 0  \;\;\; \forall X \\ = 0 \;\;\; \forall X
+        =0
+    \end{cases}
+\end{align}
+$g$ on $M$ gives rise to a distance function on $M$
+\begin{align}
+    d_g(x, y) = \inf_\gamma \left\{\int_0^1(\dot{\gamma}(t),
+    \dot{\gamma}(t))dt;\;\; \gamma(0) = x, \gamma(1) = y \right\}
+\end{align}
+Riemannian Manifold is called spin$^c$ if there exists a vector bundle $S
+\rightarrow M$ with an algebra bundle isomorphism
+\begin{align}
+    \mathbb{C}\text{I}(TM) &\simeq \text{End}(S)\;\;\; &\text{($dim(M)$
+    even)}\\
+    \mathbb{C}\text{I}(TM)^\circ &\simeq \text{End}(S)\;\;\;
+    &\text{($dim(M)$ odd)}\\
+\end{align}
+$(M,S)$ is called the \textbf{spin$^c$ structure on $M$}.
+\newline
+$S$ is called the \textbf{spinor Bundle}.
+\newline
+$\Gamma(S)$ are the \textbf{spinors}.
+
+Riemannian spin$^c$ Manifold is called spin if there exists an
+anti-unitary
+operator $J_M:\Gamma(S) \rightarrow \Gamma(S)$ such that:
+\begin{enumerate}
+    \item $J_M$ commutes with the action of real-valued  continuous
+        functions
+        on $\Gamma(S)$.
+    \item $J_M$ commutes with $\text{Cliff}^-(M)$ (even case)\\
+    $J_M$ commutes with $\text{Cliff}^-(M)^\circ$ (odd case)
+\end{enumerate}
+$(S, J_M)$ is called the \textbf{spin Structure on $M$}
+\newline
+$J_M$ is called the \textbf{charge conjugation}.
+
+\subsection{Operators of Laplace Type}
+Let $M$ be a $n$ dimensional compact Riemannian manifold with $\partial M = 0$.
+Then consider a vector bundle $V$ over $M$ (i.e. there is a vector space to
+each point on $M$), so we can define smooth functions. We want to look at
+arbitrary differential operators $D$ of Laplace type on $V$, they have the general
+from
+\begin{align}
+    D = -(g^{\mu\nu} \partial_\mu\partial_\nu + a^\sigma\partial_\sigma +b)
+\end{align}
+where $a^\sigma, b$ are matrix valued functions on $M$ and $g^{\mu\nu}$ is the
+inverse metric on $M$. There is a unique connection on $V$ and a unique
+endomorphism (matrix valued function) $E$ on $V$, then we can rewrite $D$ in
+terms of $E$ and covariant derivatives
+\begin{align}
+    D = -(g^{\mu\nu} \nabla_\mu \nabla_\nu +E)
+\end{align}
+Where the covariant derivative consists of $\nabla = \nabla^{[R]} +\omega$ the
+standard Riemannian covariant derivative $\nabla^{[R]}$ and a "gauge" bundle
+$\omega$ (fluctuations). WE can write $E$ and $\omega$ in terms of geometrical
+identities
+\begin{align}
+    \omega_\delta &= \frac{1}{2}g_{\nu\delta}(a^\nu
+    +g^{\mu\sigma}\Gamma^\nu_{\mu\sigma}I_V)\\
+    E &= b - g^{\nu\mu}(\partial_\mu \omega_\nu + \omega_\nu \omega_\mu -
+    \omega_\sigma \Gamma^\sigma_{\nu\mu})
+\end{align}
+where $I_V$ is the identity in $V$ and the Christoffel symbol
+\begin{align}
+    \Gamma^\sigma_{\mu\nu} = g^{\sigma\varrho} \frac{1}{2} (\partial_\mu
+    g_{\nu\varrho} + \partial_\nu g_{\mu\varrho} - \partial_\varrho g_{\mu\nu})
+\end{align}
+Furthermore we remind ourselves of the Riemmanian curvature tensor, Ricci
+Tensor and the Scalar curavture.
+\begin{align}
+    R^\mu_{\nu\varrho\sigma} &= \partial_\sigma \Gamma^{\mu}_{\nu\varrho}
+    -\partial_\varrho \Gamma^\mu_{\nu\sigma}
+    \Gamma^{\lambda}_{\nu\varrho}\Gamma^{\mu}_{\lambda\sigma}
+    \Gamma^{\lambda}_{\nu\sigma}\Gamma^{\mu}_{\lambda\varrho}\\
+    R_{\mu\nu} &:= R^{\sigma}_{\mu\nu\sigma}\\
+    R &:= R^\mu_{\ \mu}
+\end{align}
+
+The we let $\{e_1, \dots, e_n\}$ be the local orthonormal frame of
+$TM$(tangent bundle $M$), which will be noted with flat indices $i,j,k,l
+\in\{1,\dots, n\}$, we use $e^k_\mu, e^\nu_j$ to transform between flat indices
+and curved indices $\mu, \nu, \varrho$.
+\begin{align}
+    e^\mu_j e^\nu_k g_{\mu\nu} &= \delta_{jk}\\
+    e^\mu_j e^\nu_k \delta^{jk} &= g^{\mu\nu} \\
+    e^j_\mu e^\mu_k  &= \delta^j_k
+\end{align}
+
+The Riemannian part of the covariant derivative contains the standard
+Levi-Civita connection, so that for a $v_\nu$ we write
+\begin{align}
+    \nabla_\mu^{[R]} v_\nu = \partial_\mu v_\nu -
+    \Gamma^{\varrho}_{\mu\nu}v_\varrho.
+\end{align}
+The extended covariant derivative reads then
+\begin{align}
+    \nabla_\mu v^j = \partial_\mu v^j + \sigma^{jk}_\mu v_k.
+\end{align}
+the condition $\nabla_\mu e^k_\nu = 0$ gives us the general connection
+\begin{align}
+    \sigma^{kl}_\mu = e^\nu_l\Gamma^{\varrho}_{\mu\nu}e^k_\varrho - e^\nu_l
+    \partial_\mu e^k_\nu
+\end{align}
+The we may define the field strength $\Omega_{\mu\nu}$ of the connection $\omega$
+\begin{align}
+    \Omega_{\mu\nu} = \partial_\mu \omega_\nu -\partial_\nu \omega_\mu
+    +\omega_\mu \omega_\nu -\omega_\nu\omega_\mu.
+\end{align}
+If we apply the covariant derivative on $\Omega$ we get
+\begin{align}
+    \nabla_\varrho\Omega_{\mu\nu} = \partial_\varrho \Omega_{\mu\nu} -
+    \Gamma^{\sigma}_{\varrho \mu} \Omega_{\sigma\mu} + [\omega_\varrho,
+    \Omega_{\mu\nu}]
+\end{align}

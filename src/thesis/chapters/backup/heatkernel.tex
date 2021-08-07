@@ -1,0 +1,314 @@
+\subsection{Heat Kernel Expansion}
+\subsubsection{The Heat Kernel}
+The heat kernel $K(t; x, y; D)$ is the fundamental solution of the heat
+equation
+\begin{align}
+    (\partial _t + D_x)K(t;x, y;D) =0,
+\end{align}
+which depends on the operator $D$ of Laplacian type.
+
+For a flat manifold $M = \mathbb{R}^n$ and $D = D_0 := -\Delta_\mu\Delta^\mu +m^2$ the
+Laplacian with a mass term and the initial condition
+\begin{align}
+    K(0;x,y;D) = \delta(x,y),
+\end{align}
+takes the form of the standard fundamental solution
+\begin{align}\label{eq:standard}
+    K(t;x,y;D_0) = (4\pi t)^{-n/2}\exp\left(-\frac{(x-y)^2}{4t}-tm^2\right).
+\end{align}
+Let us consider now a more general operator $D$ with a potential term or a
+gauge field, the heat kernel reads then
+\begin{align}
+    K(t;x,y;D) = \langle x|e^{-tD}|y\rangle.
+\end{align}
+We can expand the heat kernel in $t$, still having a
+singularity from the equation \eqref{eq:standard} as $t \rightarrow 0$ thus the
+expansion reads
+\begin{align}
+    K(t;x,y;D) = K(t;x,y;D_0)\left(1 + tb_2(x,y) + t^2b_4(x,y) + \dots
+    \right),
+\end{align}
+where $b_k(x,y)$ become regular as $y \rightarrow x$. These coefficients are called the heat
+kernel coefficients.
+%%----------------------- KANN WEGGELASSEN WERDEN
+%\newline
+%\textbf{KANN WEGELASSEN WERDEN BIS ZUM NÄCHSTEN KAPITEL}
+%Let's turn our attention to a propagator $D^{-1}(x,y)$ defined through the
+%heat kernel, with an integral representation
+%\begin{align}
+%    D^{-1} (x,y) = \int_0^\infty dt K(t;x,y;D).
+%\end{align}
+%If we assume the heat kernel vanishes for $t\rightarrow \infty$, we can
+%integrate formally to get
+%\begin{align}
+%    D^{-1}(x,y) \simeq
+%    2(4\pi)^{-n/2}\sum_{j=0}\left(\frac{|x-y|}{2m}\right)^{-\frac{n}{2}+j+1}
+%    K_{-\frac{n}{2}+j+1}(|x-y|m)b_{2j}(x,y),
+%\end{align}
+%where $b_0 = 1$ and $K_\nu (z)$ is the Bessel function
+%\begin{align}
+%    K_\nu(z) = \frac{1}{\pi} \int_0^\pi \cos(\nu\tau-z\sin(\tau))d\tau.
+%\end{align}
+%The Bessel function solves the following differential equation
+%\begin{align}
+%    z^2 \frac{d^2K}{dz^2} + z \frac{dK}{dz} + (z^2 - \nu^2)=0.
+%\end{align}
+%By looking at an integral approximation for the propagator we conclude that
+%the singularities of $D^{-1}$ coincide with the singularities of the heat
+%kernel coefficients. Thus we can say, that a generating functional in terms of
+%$\det(D)$ is called the one-loop effective action (quantum field theory)
+%\begin{align}
+%    W = \frac{1}{2}\ln(\det D).
+%\end{align}
+%We have a direct relation with one-loop effective action $W$ and the
+%heat kernel. Furthermore notice that for each eigenvalue $\lambda >0$ of $D$
+%we can write the identity.
+%\begin{align}
+%    \ln \lambda  = -\int_0^\infty \frac{e^{-t\lambda}}{t}dt
+%\end{align}
+%This expression is correct up to an infinite constant which does not depend
+%on the eigenvalue $\lambda$, thus we can ignore it. By substituting
+%$\ln(\det D) = \text{Tr}(\ln D)$ we can rewrite the one-loop effective action
+%$W$ into
+%\begin{align}
+%    W = -\frac{1}{2} \int_0^\infty dt \frac{K(t, D)}{t},
+%\end{align}
+%where
+%\begin{align}
+%    K(t, D) = \text{Tr}(e^{-tD}) = \int d^n x \sqrt{g}K(t;x,x;D).
+%\end{align}
+%The problem now is that the integral of $W$ is divergent at both limits. Yet
+%the divergences at $t\rightarrow \infty$ are caused by $\lambda \leq 0$ of $D$
+%(infrared divergences) and can be ignored. The divergences at $t\rightarrow 0$
+%are cutoff at $t=\Lambda^{-2}$, simply written as
+%\begin{align}
+%    W_\Lambda = -\frac{1}{2} \int_{\Lambda^{-2}}^\infty dt \frac{K(t, D)}{t}.
+%\end{align}
+%We can calculate $W_\Lambda$ up to an order of $\lambda ^0$
+%\begin{align}
+%    W_\Lambda &= -(4\pi)^{-n/2} \int d^n x\sqrt{g}\bigg(
+%    \sum_{2(j+l)<n}\Lambda^{n-2j-2l}b_{2j}(x,x) \frac{(-m^2)^l l!}{n-2j-2l} +\\
+%    &+ \sum_{2(j+l) =n }\ln(\Lambda) (-m^2)^l l! b_{2j}(x,x)
+%    \mathcal{O}(\lambda^0) \bigg)
+%\end{align}
+%There is an divergence at $b_2(x,x)$ for $k\leq n$. Computing the limit
+%$\Lambda \rightarrow \infty$ we get
+%\begin{align}
+%    -\frac{1}{2}(4\pi)^{n/2}m^n\int d^n x\sqrt{g} \sum_{2j>n}
+%    \frac{b_{2j}(x,x)}{m^{2j}}\Gamma(2j-n),
+%\end{align}
+%where $\Gamma$ stands for the gamma function.
+%%----------------------- KANN WEGGELASSEN WERDEN
+
+
+\subsubsection{Spectral Functions}
+Manifolds $M$ with a disappearing boundary condition for the operator $e^{-tD}$ for $t>0$ is a
+trace class operator on $L^2(V)$. Meaning for any smooth function $f$ on $M$
+we can define
+\begin{align}
+    K(t,f,D) := \text{Tr}_{L^2}(fe^{-tD}),
+\end{align}
+or alternately write an integral representation
+\begin{align}
+    K(t, f, D) = \int_M d^n x \sqrt{g} \text{Tr}_V(K(t;x,x;D)f(x)),
+\end{align}
+in the regular limit $y\rightarrow y$. We can write the Heat Kernel in terms
+of the spectrum of $D$. So for an orthonormal basis $\{\phi_\lambda\}$ of
+eigenfunctions for $D$, which corresponds to the eigenvalue $\lambda$, we
+can rewrite the heat kernel into
+\begin{align}
+    K(t;x,y;D) = \sum_\lambda \phi^\dagger_\lambda(x)
+    \phi_\lambda(y)e^{-t\lambda}.
+\end{align}
+An asymptotic expansion as $t \rightarrow 0$ for the trace is then
+\begin{align}
+    \text{Tr}_{L^2}(fe^{-tD}) \simeq \sum_{k\geq 0}t^{(k-n)/2}a_k(f,D),
+\end{align}
+where
+\begin{align}
+    a_k(f,D) = (4\pi)^{-n/2} \int_M d^4x \sqrt{g} b_k(x,x) f(x).
+\end{align}
+\subsubsection{General Formulae}
+Let us summarize what we have obtained in the last chapter, we considered a
+compact Riemannian manifold $M$ without boundary condition, a vector bundle
+$V$ over $M$ to define functions which carry discrete (spin or gauge)
+indices, an operator $D$ of Laplace type over $V$ and smooth function $f$ on
+$M$.
+
+There is an asymptotic expansion where the heat kernel coefficients with an
+odd index $k=2j+1$ vanish $a_{2j+1}(f,D) = 0$. On the other hand coefficients
+with an even index are locally computable in terms of geometric invariants
+\begin{align}
+    a_k(f,D) &= \text{Tr}_V\left(\int_M d^n x\sqrt{g}(f(x)a_k(x;D)\right)
+    =\nonumber\\
+    &=\sum_I \text{Tr}_V\left(\int_M d^nx \sqrt{g}(fu^I
+    \mathcal{A}^I_k(D))\right).
+\end{align}
+We denote $\mathcal{A}^I_k$ as all possible independent invariants of
+dimension $k$, and $u^I$ are constants. The invariants are constructed from
+$E, \Omega, R_{\mu\nu\varrho\sigma}$ and their derivatives If $E$ has
+dimension two, then the derivative has dimension one. So if $k=2$ there are
+only two independent invariants, $E$ and $R$. This corresponds to the
+statement $a_{2j+1}=0$.
+
+If we consider $M = M_1 \times M_2$ with coordinates $x_1$ and $x_2$ and a
+decomposed Laplace style operator $D = D_1 \otimes 1 + 1 \otimes D_2$ we can
+separate functions acting on operators and on coordinates linearly by the
+following
+\begin{align}
+    e^{-tD} &= e^{-tD_1} \otimes e^{-tD_2},\\
+    f(x_1, x_2) &= f_1(x_1)f_2(x_2),
+\end{align}
+thus the heat kernel coefficients are separated by
+\begin{align}
+    a_k(x;D) &= \sum_{p+q=k} a_p(x_1; D_1)a_q(x_2;D_2)
+\end{align}
+If we know the eigenvalues of $D_1$ are known,  $l^2, l\in \mathbb{Z}$, we
+can obtain the heat kernel asymmetries with the Poisson summation formula
+giving us an approximation in the order of $e^{-1/t}$
+\begin{align}
+    K(t, D_1) &= \sum_{l\in\mathbb{Z}} e^{-tl^2} = \sqrt{\frac{\pi}{t}}
+    \sum_{l\in\mathbb{Z}} e^{-\frac{\pi^2l^2}{t}} = \nonumber \\
+    &\simeq \sqrt{\frac{\pi}{t}} + \mathcal{O}(e^{-1/t}).
+\end{align}
+The exponentially small terms have no effect on the heat kernel
+coefficients and that the only nonzero coefficient is $a_0(1, D_1) =
+\sqrt{\pi}$, therefore the heat coefficients can be written as
+\begin{align}
+    a_k(f(x^2), D) = \sqrt{\pi}\int_{M_2}
+    d^{n-1}x\sqrt{g}\sum_I\text{Tr}_V\left(f(x^2)u^I_{(n-1)}
+    \mathcal{A}^I_n(D_2)\right).
+\end{align}
+
+Because all of the geometric invariants  associated with $D$ are in the $D_2$
+part, they are independent of $x_1$. Ultimately meaning we are free to choose
+$M_1$. For $M_1 = S^1$ with $x\in (0, 2\pi)$ and $D_1=-\partial_{x_1}^2$
+we can rewrite the heat kernel coefficients into
+\begin{align}
+    a_k(f(x_2), D) &= \int_{S^1\times M_2}d^nx \sqrt{g} \sum_I
+    \text{Tr}_V(f(x_2) u_{(n)}^I \mathcal{A}^I_k(D_2))= \nonumber\\
+    &= 2\pi \int_{M_2} d^nx\sqrt{g} \sum_I\text{Tr}_V(f(x_2) u_{(n)}^I
+    \mathcal{A}^I_k(D_2)).
+\end{align}
+Computing the two equations above we see that
+\begin{align}
+    u_{(n)}^I = \sqrt{4\pi} u^I_{(n+1)}
+\end{align}
+
+\subsubsection{Heat Kernel Coefficients}
+To calculate the heat kernel coefficients we need the following variational
+equations
+\begin{align}
+    &\frac{d}{d\varepsilon}\bigg|_{\varepsilon=0}a_k(1, e^{-2\varepsilon f}D) =
+    (n-k) a_k(f, D),\label{eq:var1}\\
+    &\frac{d}{d\varepsilon}\bigg|_{\varepsilon=0}a_k(1, D-\varepsilon F) =
+    a_{k-2}(F,D),\label{eq:var2}\\
+    &\frac{d}{d\varepsilon}\bigg|_{\varepsilon=0}a_k(e^{-2\varepsilon f}F,
+    e^{-2\varepsilon f}D) =
+    0\label{eq:var3}.
+\end{align}
+Let us explain the equations above. To get the first equation \eqref{eq:var1}
+we differentiate \begin{align}
+    \frac{d}{d\varepsilon}\bigg|_{\varepsilon=0} \text{Tr}(\exp(-e^{-2\varepsilon
+    f}tD) = \text{Tr}(2ftDe^{-tD}) = -2t\frac{d}{dt}\text{Tr}(fe^{-tD}))
+\end{align}
+then we expand both sides in $t$ and get \eqref{eq:var1}. Equation \eqref{eq:var2} is derived similarly.
+
+For equation \eqref{eq:var3} we consider the following operator
+\begin{align}
+    D(\varepsilon,\delta) = e^{-2\varepsilon f}(D-\delta F)
+\end{align}
+for $k=n$ we use equation \eqref{eq:var1} and we get
+\begin{align}
+    \frac{d}{d\varepsilon}\bigg|_{\varepsilon=0}a_n(1,D(\varepsilon,\delta))
+    =0,
+\end{align}
+then we take the variation in terms of $\delta$, evaluated at $\delta =0$ and
+swap the differentiation, allowed by theorem of Schwarz
+\begin{align}
+    0 &=
+    \frac{d}{d\delta}\bigg|_{\delta=0}\frac{d}{d\varepsilon}\bigg|_{\varepsilon=0}a_n(1,
+    D(\varepsilon,\delta)) =\nonumber\\
+      &=\frac{d}{d\varepsilon}\bigg|_{\varepsilon=0}\frac{d}{d\delta}\bigg|_{\delta=0}a_n(1,
+    D(\varepsilon,\delta)) =\nonumber\\
+      &=a_{n-2} ( e^{-2\varepsilon f}F, e^{-2\varepsilon f}D),
+\end{align}
+which gives us equation \eqref{eq:var3}.
+
+Now that we have established the ground basis, we can calculate the constants
+$u^I$, and by that the first three heat kernel coefficients read
+\begin{align}
+    a_0(f, D) &= (4\pi)^{-n/2}\int_Md^n x\sqrt{g} \text{Tr}_V(a_0 f),\\
+    a_2(f, D) &= (4\pi)^{-n/2}\frac{1}{6}\int_Md^n
+    x\sqrt{g}\text{Tr}_V)(f\alpha _1 E+\alpha _2 R),\\
+    a_4(f, D) &= (4\pi)^{-n/2}\frac{1}{360}\int_Md^n
+    x\sqrt{g}\text{Tr}_V(f(\alpha_3 E_{,kk} + \alpha_4\ R\ E + \alpha_5 E^2
+    \alpha_6 R_{,kk} + \nonumber\\
+    &+\alpha_7 R^2 + \alpha_8 R_{ij}R_{ij} + \alpha_9
+    R_{ijkl}R_{ijkl} +\alpha_{10} \Omega_{ij}\Omega{ij})),
+\end{align}
+where the comma subscript $,$ denotes the derivative and constants $\alpha_I$
+do not depend on the dimension of the Manifold and we can compute them with
+our variational identities.
+
+The first coefficient $\alpha_0$ can be read from the heat kernel expansion of
+the Laplacian on $S^1$ (above), $\alpha_0 = 1$. For $\alpha_1$ we use
+\eqref{eq:var2}, the coefficient $k = 2$ is
+\begin{align}
+    \frac{1}{6} \int_M d^n x\sqrt{g} \text{Tr}_V(\alpha_1F) = \int_M d^n
+    x\sqrt{g} \text{Tr}_V(F),
+\end{align}
+which means $\alpha_1 = 6$. Looking at the coefficient $k=4$ we have
+\begin{align}
+    \frac{1}{360}\int_Md^n x \sqrt{g}\text{Tr}_V(\alpha_4\ F\ R + 2\alpha_5\ F\ E)
+    = \frac{1}{6} \int_Md^n x\sqrt{g}\text{Tr}_V(\alpha_1\ F\ E + \alpha_2\ F\ R),
+\end{align}
+thus $\alpha_4 = 60\alpha_2$ and $\alpha_5 = 180$.
+
+By applying  \eqref{eq:var3} to $n=4$ we get
+\begin{align}
+    \frac{d}{d\varepsilon}|_{\varepsilon=0} a_2(e^{-2\varepsilon f}F,
+    e^{-2\varepsilon f}D) = 0.
+\end{align}
+Collecting the terms with $\text{Tr}_V(\int_Md^nx\sqrt{g}(Ff_{,jj}))$ we
+obtain $\alpha_1 = 6\alpha_2$, that is $\alpha_2 = 1$, so $\alpha_4 = 60$.
+
+Now we let $M=M_1\times M_2$ and split $D = -\Delta_1 -\Delta_2$, where
+$\Delta_{1/2}$ are Laplacians for $M_1, M_2$. This allows us to decompose the heat
+kernel coefficient for $k=4$ into
+\begin{align}
+    a_4(1,-\Delta_1-\Delta_2) =& a_4(1, -\Delta_1) a_0(1,
+    -\Delta_2)\nonumber+ \\
+                               &+a_2(1,-\Delta_1) a_2(1,-\Delta_2)\nonumber \\
+                               &+ a_0(1,-\Delta_1)a_4(1,-\Delta_2),
+\end{align}
+with $E=0$ and $\Omega =0$ and by calculating the terms with $R_1R_2$  (scalar
+curvature of $M_{1/2}$) we obtain $\frac{2}{360}\alpha_7 =
+(\frac{\alpha_2}{6})^2$, thus $\alpha_7 = 5$.
+
+For $n=6$ we get
+\begin{align}
+    0 &= \text{Tr}_V(\int_Md^nx\sqrt{g}
+    (F(-2\alpha_3-10\alpha_4+4\alpha_5)f_{,kk}E +\nonumber\\
+    &+(2\alpha_3 + 10\alpha_6)f_{,iijj}+\nonumber\\
+    &+(2\alpha_4 -2\alpha_6 - 20\alpha_7 -2\alpha_8)f_{,ii}R\nonumber\\
+    &+(-8\alpha_8 -8\alpha_6)f_{,ij}R_{ij}))
+\end{align}
+we obtain $\alpha_3 = 60$, $\alpha_6=12$, $\alpha_8 = -2$ and $\alpha_9 = 2$
+
+To get $\alpha_{10}$ we use the Gauss-Bonnet theorem, ultimately giving us
+$\alpha_{10}=30$. We leave out this lengthy calculation and refer to
+\cite{heatkernel} for further reading.
+
+Let us summarize our calculations which ultimately give us the following heat kernel
+coefficients
+\begin{align}
+    \alpha_0(f, D) &= (4\pi)^{-n/2}\int_M d^n x \sqrt{g} \text{Tr}_V(f),\\
+    \alpha_2(f, D) &= (4\pi)^{-n/2}\frac{1}{6}\int_M d^n x \sqrt{g}
+    \text{Tr}_V(f(6E+R)),\\
+    \alpha_4(f, D) &= (4\pi)^{-n/2}\frac{1}{360}\int_M d^n x \sqrt{g}
+    \text{Tr}_V(f(60E_{,kk}+60RE+ 180E^2 +\\
+    &+12R_{,kk} + 5R^2 - 2 R_{ij}R_{ij}
+    2R_{ijkl}R_{ijkl} +30\Omega_{ij}\Omega_{ij})).
+\end{align}
+
