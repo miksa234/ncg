@@ -1,10 +1,10 @@
 \subsection{Finite Real Noncommutative Spaces}
 \subsubsection{Finite Real Spectral Triples}
 In this chapter we supplement the finite spectral triples with a \textit{real
-structure}. We additionally require a symmetry condition that that $H$ is a
+structure}. We additionally require a symmetry condition that that $H$ is an
 $A$-$A$-bimodule rather than only a $A$-left module. This ansatz has tight
-bounds with physical properties such as charge conjugation, which we will
-dive in deeper in later chapters. For this we will need to set a basis
+bounds with physical properties such as charge conjugation, into which we will
+dive in deeper in later chapters. In regards to this we will need to set a basis
 of definitions to get an overview.
 First we introduce a $\mathbb{Z}_2$-grading $\gamma$ with the following
 properties
@@ -57,7 +57,7 @@ Then we can define a finite real spectral triple.
 \noindent
 Even thought the KO-dimension of a real spectral triple is important, we will
 not be doing in-depth introduction of the KO-dimension, for this we reference
-to \cite{ncgwalter}.
+again to \cite{ncgwalter}.
 
 \begin{mydefinition}
 An opposite-algebra $A^\circ$ of a $A$ is defined to be equal to $A$ as a
@@ -102,9 +102,13 @@ multiplication
         a\xi = 0\;\; \Rightarrow \;\; a=0;\;\;\; a\in A
     \end{align}
 \end{mydefinition}
+%------------------- EXERCISE
 Suppose $(A, H, D = 0)$ is a finite spectral triple such that $H$ possesses a
-cyclic and separating vector for $A$ and let $J: H \rightarrow H$ be the
-operator in $S = J \Delta ^{1/2}$ with $\Delta = S^*S$ . By composition
+cyclic and separating vector for $A$ and let
+\begin{align}
+    J: H \rightarrow H
+\end{align}
+be the operator in $S = J \Delta ^{1/2}$ with $\Delta = S^*S$. By composition
 $S(a\xi) = a*\xi$ this is literally anti-linearity, then $S(a \xi) = a* \xi$
 defines a anti-linear operator. Furthermore the operator $S$ is invertible
 because, if a $\xi \in H$ is cyclic then we have $S(A\xi) = A^*\xi = A\xi =
@@ -122,12 +126,13 @@ Also have $J = S \Delta^{-1/2}$ and $\Delta^* = \Delta$, so for a $\xi _1 ,
     &= <\xi _1, \xi_2>^* = <\xi_2 , \xi_1>,
 \end{align}
 which concludes the anti-unitarity by definition.
+%------------------- EXERCISE
 \subsubsection{Morphisms Between Finite Real Spectral Triples}
 Like the unitary equivalence relation for finite spectral triples, we can it
-to finite real spectral triples.
+extend it to finite real spectral triples.
 \begin{mydefinition}
-    We call two finite real spectral triples $(A_1, H_1 ,D_1 ; J_1 , \gamma
-    _1)$ and $(A_2, H_2, D_2; J_2, \gamma _2)$ unitarily equivalent if $A_1 =
+    We call two finite real spectral triples $(A_1, H_1 ,D_1 ; J_1 , \gamma_1)$
+    and $(A_2, H_2, D_2; J_2, \gamma _2)$ unitarily equivalent if $A_1 =
     A_2$ and if there exists a unitary operator $U: H_1 \rightarrow H_2$ such
     that
     \begin{align}
@@ -163,9 +168,9 @@ And linearity in $A$ by the terms
 \end{align}
 
 %------------- EXERCISE
-With this it becomes obvious that $E^\circ$ is a Hilbert bimodule
+It turns out that $E^\circ$ is a Hilbert bimodule
 of $(B^{\circ}, A^{\circ})$. A straightforward calculation of the properties of the Hilbert bimodule and its $B^{\circ}$
-valued inner product gives the results. So for $\bar{e}_1, \bar{e}_2 \in E^{\circ}$ and $a^\circ \in A,
+valued inner product gives the results. For $\bar{e}_1, \bar{e}_2 \in E^{\circ}$ and $a^\circ \in A,
 b^\circ \in B$ we write
 \begin{align}
     \langle\bar{e}_1, a^\circ \bar{e}_2\rangle &= \langle\bar{e}_1, Ja^*J^{-1}
@@ -177,26 +182,26 @@ b^\circ \in B$ we write
     & = \langle (a^\circ)^* \bar{e}_1 , \bar{e}_2\rangle.
 \end{align}
 Next for $\langle\bar{e}_1, \bar{e}_2 b^\circ\rangle = \langle\bar{e}_1,
-\bar{e_2}\rangle b^\circ$ we write
+\bar{e_2}\rangle b^\circ$ we obtain
 \begin{align}
     \langle\bar{e}_1, \bar{e}_2 b^\circ\rangle  &= \langle\bar{e}_1, \bar{e}_2 Jb^*J^{-1}\rangle
     \nonumber\\
     &= \langle\bar{e}_1, \bar{e_2}\rangle Jb^*J^{-1} \nonumber \\
     &= \langle\bar{e}_1, \bar{e}_2\rangle b^\circ.
 \end{align}
-Additionally we have
+Additionally we get
 \begin{align}
     (\langle\bar{e}_1, \bar{e}_2)\rangle_{E^\circ})^* &= (\langle e_2, e_1\rangle_E)^*\nonumber\\
                                           &= \langle e_1, e_2\rangle_E^* \nonumber\\
                                           &= \langle\bar{e}_2, \bar{e}_2\rangle_{E^\circ}.
 \end{align}
-And finally of course we have
+And finally we have
 \begin{align}
     \langle\bar{e}, \bar{e}\rangle = \langle e, e\rangle \geq 0
 \end{align}
 %------------- EXERCISE
 
-Given the results thus far with a Hilbert bimodule $E$ for $(B, A)$, we
+Given the results thus far, given a Hilbert bimodule $E$ for $(B, A)$ one can
 construct a spectral triple $(B, H', D'; J', \gamma ')$ from $(A, H, D; J,
 \gamma)$. For $H'$ we make a $\mathbb{C}$-valued inner product on $H'$ by combining
 the $A$ valued inner product on $E$ and $E^\circ$ with the
@@ -209,19 +214,19 @@ Then the action of $B$ on $H'$ takes the following form
     b(e_2 \otimes \xi \otimes \bar{e}_2 ) = (be_1) \otimes \xi \otimes
     \bar{e}_2.
 \end{align}
-The right action of $B$ on $H'$ defined by action on the right component
+The right action of $B$ on $H'$ defined by action on the right components of
 $E^\circ$ is
 \begin{align}
     J'(e_1 \otimes \xi \otimes \bar{e}_2) = e_2 \otimes J \xi \otimes
     \bar{e}_1,
 \end{align}
-where $b^\circ = J' b^* (J')^{-1}$, $b^* \in B$ is the action on $H'$.
+where $b^\circ = J' b^* (J')^{-1}$ and $b^* \in B$ is the action on $H'$.
 Hence the connection reads
 \begin{align}
     &\nabla: E \rightarrow E\otimes _A \Omega _D ^1(A) \\
     &\bar{\nabla}:E^\circ \rightarrow \Omega _D^1(A) \otimes _A E^\circ,
 \end{align}
-which gives us the Dirac operator on $H' = E \otimes _A H \otimes _A
+which gives the Dirac operator on $H' = E \otimes _A H \otimes _A
 E^\circ$ as
 \begin{align}
     D'(e_1 \otimes \xi \otimes \bar{e}_2) = (\nabla e_1) \xi \otimes
@@ -233,7 +238,7 @@ defined by
 \begin{align}
     \xi \mapsto \epsilon' J \omega ^* J^{-1}\xi.
 \end{align}
-Finally for the grading we have
+Finally for the grading one obtains
 \begin{align}
     \gamma ' = 1 \otimes \gamma \otimes 1.
 \end{align}
@@ -248,13 +253,13 @@ Summarizing we can write down the following theorem
 \end{mytheorem}
 
 \begin{proof}
-    The only thing left is to check if the $KO$-dimension is preserved,
-    for this we check if the $\epsilon$'s are the same.
+    The only thing left is to check is, if the $KO$-dimension is preserved.
+    That is one needs to check if if the $\epsilon$'s are the same.
     \begin{align}
         &(J')^2 = 1 \otimes J^2 \otimes 1 = \epsilon,\\
         &J' \gamma '= \epsilon ''\gamma'J'.
     \end{align}
-    Lastly for $\epsilon '$ we have
+    Lastly for $\epsilon '$ one obtains
     \begin{align}
         J'D'(e_1 \otimes \xi \otimes \bar{e}_2)&=J'\big((\nabla e_1) \xi \otimes
         \bar{e_2} + e_1 \otimes D\xi \otimes \bar{e}_2 + e_1 \otimes \xi (\tau
@@ -264,8 +269,8 @@ Summarizing we can write down the following theorem
     \end{align}
 \end{proof}
 
-Let us take a look at $\nabla : E \Rightarrow E \otimes _A \Omega _d^1 (A)$ right connection on $E$
-and consider the following anti-linear map
+Let us take a look at $\nabla : E \Rightarrow E \otimes _A \Omega _d^1 (A)$,
+the right connection on $E$ and consider the following anti-linear map
 \begin{align}
     \tau : E \otimes_A \Omega _D^1 (A) &\rightarrow \Omega _D^1 (A) \otimes_A E^\circ\\
             e \otimes \omega &\mapsto -\omega ^* \otimes \bar{e}.
