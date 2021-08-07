@@ -5,10 +5,11 @@ One of the basics forms of noncommutative space is the Two-Point space $X
 \begin{align}
     F_X := (C(X) = \mathbb{C}^2, H_F, D_F; J_F, \gamma _f).
 \end{align}
-Three properties of $F_X$ stand out. First of all the action of
-$C(X)$ on $H_F$ is faithful for $dim(H_F) \geq 2$, thus we can make a simple
-choice for the Hilbertspace, $H_F = \mathbb{C}^2$. Furthermore $\gamma_F$ is
-the $\mathbb{Z}_2$ grading, which allows us to decompose $H_F$ into
+Three properties of $F_X$ stand out. First of all the action of $C(X)$ on
+$H_F$ is faithful for $dim(H_F) \geq 2$, thus a simple choice for the
+Hilbertspace can be made, for instance $H_F = \mathbb{C}^2$. Furthermore
+$\gamma_F$ is the $\mathbb{Z}_2$ grading, which allows for a decomposition of
+$H_F$ into
 \begin{align}
    H_F = H_F^+ \otimes H_F^- = \mathbb{C} \otimes \mathbb{C},
 \end{align}
@@ -17,43 +18,44 @@ where
     H_F^\pm = \{\psi \in H_F |\; \gamma_F\psi = \pm \psi\},
 \end{align}
 are two eigenspaces. And lastly the Dirac operator $D_F$ lets us
-interchange between $H_F^\pm$,
+interchange between the two eigenspaces $H_F^\pm$,
 \begin{align}
     D_F =
         \begin{pmatrix}0 & t \\ \bar{t} & 0\end{pmatrix},  \;\;\;\;\;
             \text{with} \;\; t\in\mathbb{C}.
 \end{align}
 
-    The Two-Point space $F_X$ can only have a real structure if the Dirac
-    operator vanishes, i.e. $D_F = 0$. In that case we have KO-dimension of 0,
-    2 or 6. To elaborate on this, we know that there are two diagram representations of
-    $F_X$ at $\underbrace{\mathbb{C} \oplus \mathbb{C}}_{C(X)}$ on
-    $\underbrace{\mathbb{C} \oplus\mathbb{C}}_{H_F}$, which are:
-    \begin{figure}[h!] \centering
-    \begin{tikzpicture}[
-        dot/.style = {draw, circle, inner sep=0.06cm},
-        no/.style = {},
-        ]
-        \node[no](a) at (0,0) [label=left:$\textbf{1}^\circ$] {};
-        \node[no](b) at (0, -1) [label=left:$\textbf{1}^\circ$] {};
-        \node[no](c) at (1, 0.5) [label=above:$\textbf{1}$] {};
-        \node[no](d) at (2, 0.5) [label=above:$\textbf{1}$] {};
-        \node[dot](d0) at (2,0) [] {};
-        \node[dot](d0) at (1,-1) [] {};
+The Two-Point space $F_X$ can only have a real structure if the Dirac
+operator vanishes, i.e. $D_F = 0$. In that case the KO-dimension is 0,
+2 or 6. To elaborate further, we draw the only two diagram representations of
+$F_X$ at $\underbrace{\mathbb{C} \oplus \mathbb{C}}_{C(X)}$ on
+$\underbrace{\mathbb{C} \oplus\mathbb{C}}_{H_F}$, which are
+\begin{figure}[h!] \centering
+\begin{tikzpicture}[
+    dot/.style = {draw, circle, inner sep=0.06cm},
+    no/.style = {},
+    ]
+    \node[no](a) at (0,0) [label=left:$\textbf{1}^\circ$] {};
+    \node[no](b) at (0, -1) [label=left:$\textbf{1}^\circ$] {};
+    \node[no](c) at (1, 0.5) [label=above:$\textbf{1}$] {};
+    \node[no](d) at (2, 0.5) [label=above:$\textbf{1}$] {};
+    \node[dot](d0) at (2,0) [] {};
+    \node[dot](d0) at (1,-1) [] {};
 
-        \node[no](a1) at (6,0) [label=left:$\textbf{1}^\circ$] {};
-        \node[no](b2) at (6, -1) [label=left:$\textbf{1}^\circ$] {};
-        \node[no](c2) at (7, 0.5) [label=above:$\textbf{1}$] {};
-        \node[no](d2) at (8, 0.5) [label=above:$\textbf{1}$] {};
-        \node[dot](d0) at (7,0) [] {};
-        \node[dot](d0) at (8,-1) [] {};
-        \end{tikzpicture}
-    \end{figure}\newline
+    \node[no](a1) at (6,0) [label=left:$\textbf{1}^\circ$] {};
+    \node[no](b2) at (6, -1) [label=left:$\textbf{1}^\circ$] {};
+    \node[no](c2) at (7, 0.5) [label=above:$\textbf{1}$] {};
+    \node[no](d2) at (8, 0.5) [label=above:$\textbf{1}$] {};
+    \node[dot](d0) at (7,0) [] {};
+    \node[dot](d0) at (8,-1) [] {};
+    \end{tikzpicture}
+    \caption{Two diagram representations of $F_X$}
+\end{figure}\newline
 If the Two-Point space $F_X$ would be a real spectral triple then $D_F$ can
 only go vertically or horizontally. This would mean that $D_F$ vanishes.
 As for the KO-dimension The diagram on the left has KO-dimension 2 and 6, the diagram on the
 right 0 and 4. Yet KO-dimension 4 is ruled out because
-$dim(H_F^\pm) = 1$ (see Lemma 3.8 Book), which ultimately means $J_F^2 = -1$ is
+$dim(H_F^\pm) = 1$ (Lemma 3.8 in \cite{ncgwalter}) , which ultimately means $J_F^2 = -1$ is
 not allowed.
 \subsubsection{Product Space}
 By Extending the Two-Point space with a four dimensional Riemannian spin
@@ -69,17 +71,18 @@ where
 According to Gelfand duality the algebra $C^\infty(M, \mathbb{C}^2)$ of the
 spectral triple corresponds to the space
 \begin{align}
-    N:= M\otimes X \simeq M\sqcup X.
+    N:= M\otimes X.
 \end{align}
 Keep in mind that we still need to find an appropriate real structure on the
-Riemannian spin manifold, $J_M$. Furthermore total Hilbertspace can be decomposed into $H = L^2(S) \oplus L^2(S)$, such that for
-$\underbrace{a,b\in C^\infty(M)}_{(a, b) \in C^\infty(N)}$
-and $\underbrace{\psi, \phi \in L^2(S)}_{(\psi, \phi) \in H}$ we have
+Riemannian spin manifold, $J_M$. Furthermore the total Hilbertspace can be
+decomposed into $H = L^2(S) \oplus L^2(S)$, such that for $\underbrace{a,b\in
+C^\infty(M)}_{(a, b) \in C^\infty(N)}$ and $\underbrace{\psi, \phi \in
+L^2(S)}_{(\psi, \phi) \in H}$ we have
 \begin{align}
-    (a, b)(\psi, \phi) = (a\psi, b\phi)
+    (a, b)(\psi, \phi) = (a\psi, b\phi).
 \end{align}
-Along with the decomposition of the total Hilbertspace we can consider a
-distance formula on $M\times F_X$ with
+Along with the decomposition of the total Hilbertspace a
+distance formula on $M\times F_X$ can be considered with
 \begin{align}\label{eq:commutator inequality}
     d_{D_F}(x,y) = \sup\left\{  |a(x) - a(y)|:a\in A_F, ||[D_F, a]|| \leq
     1 \right\}.
@@ -91,15 +94,15 @@ commutator inequality in \eqref{eq:commutator inequality}
 \begin{align}
     &||[D_F , a]|| = ||(a(y) - a(x))\begin{pmatrix}0 &t\\\bar{t} &0
     \end{pmatrix}|| \leq 1,\\
-    &\Leftrightarrow |a(y) - a(x)|\leq \frac{1}{|t|},
+    &\Leftrightarrow |a(y) - a(x)|\leq \frac{1}{|t|}.
 \end{align}
-and the supremum gives us the distance
+The supremum then gives us the distance
 \begin{align}
     d_{D_F} (x,y) = \frac{1}{|t|}.
 \end{align}
 An interesting observation here is that, if the Riemannian spin manifold can be
 represented by a real spectral triple then a real structure $J_M$ exists,
-then it follows that $t=0$ and the distance becomes infinite. This is a
+along the lines it follows that $t=0$ and the distance becomes infinite. This is a
 purely mathematical observation and has no physical meaning.
 
 We can also construct a distance formula on $N$ (in reference to a point $p
@@ -138,7 +141,7 @@ related to the existence of scalar fields.
 \subsubsection{$U(1)$ Gauge Group}
 To get a insight into the physical properties of the almost commutative
 manifold $M\times F_X$, that is to calculate the spectral action, we need to
-determine the corresponding Gauge theory.
+determine the corresponding Gauge group.
 For this we set of with simple definitions and important propositions to
 help us break down and search for the gauge group of the Two-Point $F_X$
 space which we then extend to $M\times F_X$. We will only be diving
@@ -147,32 +150,32 @@ superficially into this chapter, for further reading we refer to
 \begin{mydefinition}
 Gauge Group of a real spectral triple is given by
 \begin{align}
-    \mathfrak{B}(A, H; J) := \{ U = uJuJ^{-1} | u\in U(A)\}
+    \mathfrak{B}(A, H; J) := \{ U = uJuJ^{-1} | u\in U(A)\}.
 \end{align}
 \end{mydefinition}
 \begin{mydefinition}
     A *-automorphism of a *-algebra $A$ is a linear invertible
     map
     \begin{align}
-        &\alpha:A \rightarrow A\;\;\; \text{with}\\
+        &\alpha:A \rightarrow A,\;\;\; \text{with}\\
         \nonumber\\
-        &\alpha(ab) = \alpha(a)\alpha(b)\\
-        &\alpha(a)^* = \alpha(a^*)
+        &\alpha(ab) = \alpha(a)\alpha(b),\\
+        &\alpha(a)^* = \alpha(a^*).
     \end{align}
     The \textbf{Group of automorphisms of the *-Algebra $A$} is denoted by
     $(A)$.\newline
     The automorphism $\alpha$ is called \textbf{inner} if
     \begin{align}
-        \alpha(a) = u a u^* \;\;\; \text{for} \;\; U(A)
+        \alpha(a) = u a u^* \;\;\; \text{for} \;\; U(A),
     \end{align}
     where $U(A)$ is
     \begin{align}
-        U(A) = \{ u\in A|\;\; uu^* = u^*u=1\} \;\;\;
+        U(A) = \{ u\in A|\;\; uu^* = u^*u=1\}. \;\;\;
         \text{(unitary)}
     \end{align}
 \end{mydefinition}
 The Gauge group of $F_X$ is given by the quotient $U(A)/U(A_J)$.
-We want a nontrivial Gauge group so we need to choose a $U(A_J) \neq
+To get a nontrivial Gauge group so we need to choose a $U(A_J) \neq
 U(A)$ and $U((A_F)_{J_F}) \neq U(A_F)$.
 We consider our Two-Point space $F_X$ to be equipped with a real structure,
 which means the operator vanishes, and the spectral triple representation is
