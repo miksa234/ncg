@@ -39,7 +39,7 @@ C(X)$, $\lambda \in \mathbb{C}$ and $x \in X$ they provide the following structu
         \end{align}
     \item \textit{pointwise involution}
         \begin{align}
-        $f^*(x) = \overline{f(x)}.
+        f^*(x) = \overline{f(x)}.
         \end{align}
 \end{itemize}
 The $*$-algebra $C(X)$ is \textit{isomorphic} to a $*$-algebra $\mathbb{C}^N$
@@ -146,10 +146,10 @@ $U: H_1 \rightarrow H_2$ such that.
 
 Furthermore we define a mathematical structure called the structure space,
 which will become important later when speaking of the duality between a
-spectral triple and a space.
+spectral triple and a geometrical space.
 \begin{mydefinition}
-    Let $A$ a $*$-algebra then, $\hat{A}$ is called the structure space of all \textit{unitary equivalence classes
-    of irreducible representations of A}
+    Let $A$ be a $*$-algebra then, $\hat{A}$ is called the structure space of all \textit{unitary equivalence classes
+    of irreducible representations of A}.
 \end{mydefinition}
 %------------- EXERCISE
     Given a representation $(H, \pi)$ of a $*$-algebra $A$, the \textbf{commutant} $\pi (A)'$ of $\pi (A)$ is defined as a set
@@ -159,21 +159,21 @@ spectral triple and a space.
         A\big\}
     \end{align}
     The commutant $\pi (A)'$ is also a $*$-algebra, since it has unital,
-    associative and involutive properties.
-    That is $\pi (a) \in L(H)\ \forall a \in A$, unitary property is given
-    by the unital operator of the $*$-algebra of operators $L(H)$, which exists
-    by definition because H is a inner product space. Associativity is given by
-    the $*$-algebra of $L(H)$, where $L(H) \times L(H) \mapsto L(H)$, which is
-    associative by definition. The involutive property is also given by the $*$-algebra $L(H)$
-    with a map $*: L(H) \mapsto L(H)$ only for a $T$ that commutes with $\pi (a)$.
+    associative and involutive properties.  The unitary property is given by
+    the unital operator of the $*$-algebra of operators $L(H)$, which exists
+    by definition because $H$ is a inner product space. Associativity is
+    given by the $*$-algebra of $L(H)$, where $L(H) \times L(H)~\mapsto
+    L(H)$, which is associative by definition. The involutive property is
+    also given by the $*$-algebra $L(H)$ with a map $*: L(H) \mapsto L(H)$
+    only for a $T \in H$ that commutes with $\pi (a)$.
 %------------- EXERCISE
 
 %------------- EXERCISE
     For a unital algebra $*$-algebra $A$, the matrices $M_n(A)$ with entries
     in $A$ form a unital $*$-algebra, because the unitary operation in
-    $M_n(A)$ is given by the identity Matrix, which has to exists in every
-    entry in $M_n(A)$, and behaves like in $A$. Associativity is given by
-    matrix multiplication. Lastly involution is given by the conjugate
+    $M_n(A)$ is given by the identity Matrix, which exists in every
+    entry in $M_n(A)$ and behaves like in $A$. Associativity is given by
+    matrix multiplication. Lastly, involution is given by the conjugate
     transpose.
 
     Consider a representation $\pi :A\ \rightarrow \ L(H)$ of a $*$-algebra
@@ -201,19 +201,19 @@ Since $A \simeq \mathbb{C}^N$ all irreducible representation are of the form
    \pi _i:(\lambda_1,...,\lambda_N)\in \mathbb{C}^N \mapsto \lambda_i \in
    \mathbb{C}
 \end{align}
-for $i = 1,...,N$ and thus $\hat{A} \simeq \{1,...,N\}$.
-The conclusion is that, there is a duality between discrete spaces and
-commutative matrix algebra this duality is called the \textit{finite
+for $i = 1,...,N$, and thus $\hat{A} \simeq \{1,...,N\}$.
+We can conclude that there is a duality between discrete spaces and
+commutative matrix algebras. This duality is called the \textit{finite
 dimensional Gelfand duality}
 
-Our aim is to construct a duality between finite dimensional spaces and
-\textit{equivalence classes} of matrix algebras, to preserve general
-non-commutativity of matrices.  Equivalence classes are described by a
-generalized notion of isomorphisms between matrix algebras (\textit{Morita
-Equivalence})
+Our aim is to make a further generalization by constructing a duality between
+finite dimensional spaces and \textit{equivalence classes} of matrix
+algebras that preserves general non-commutativity of matrices. Equivalence
+classes are described by a concept of isomorphisms between matrix
+algebras called \textit{Morita Equivalence}.
 
 \subsubsection{Algebraic Modules}
-An important notion for Morita Equivalence are algebraic modules, later
+An important part of the Morita Equivalence are algebraic modules, later
 extended by Hilbert bimodules.
 \begin{mydefinition}
     Let $A$, $B$ be algebras (need not be matrix algebras)
@@ -238,7 +238,7 @@ extended by Hilbert bimodules.
             \end{align}
     \end{enumerate}
 \end{mydefinition}
-An $A$-\textbf{module homomorphism} as linear map $\phi: E\rightarrow F$ which respects the
+An $A$-\textbf{module homomorphism} is linear map $\phi: E\rightarrow F$ which respects the
 representation of A, e.g.\ for left module.
 \begin{align}
     \phi (a\ e) = a \phi (e); \;\;\; a \in A, e \in E.
@@ -272,7 +272,9 @@ which is the inner product of a $*$-algebra.
 %------------------- EXERCISE
 
 \subsubsection{Balanced Tensor Product and Hilbert Bimodules}
-
+In this chapter we introduce the balanced tensor product later called the
+Kasparov product. This operation allows us to naturally construct a bimodule
+of a third algebra in chapter \ref{chap: kasparov product}.
 \begin{mydefinition}
     Let $A$ be an algebra, $E$ be a \textit{right} $A$-module and $F$ be a
     \textit{left} $A$-module.  The \textit{balanced tensor product} of $E$ and
@@ -283,11 +285,11 @@ which is the inner product of a $*$-algebra.
     \right\}.
     \end{align}
 \end{mydefinition}
-The symbol $/$ denotes the quotient space. By that the operation $\otimes _A$ takes
-two left/right modules and makes a bimodule with the help the tensor product of
-the two modules and the quotient space that takes out all the elements from the
-tensor product that don't preserver the left/right representation and that are
-duplicates.
+The symbol $/$ denotes the quotient space. By careful examination we can say
+that the operation $\otimes _A$ takes two left/right modules and makes a
+bimodule. Additionally with the help of the tensor product of the two modules and the quotient
+space which takes out all the elements from the tensor product that don't
+preserver the left/right representation and that are duplicates.
 \begin{mydefinition}
     Let $A$, $B$ be \textit{matrix algebras}. The \textit{Hilbert bimodule} for
     $(A, B)$ is given by an $A$-$B$-bimodue $E$ and by an $B$-valued
@@ -310,7 +312,7 @@ We denote $KK_f(A,\ B)$ as the set of all \textit{Hilbert bimodules} of $(A,\ B)
 
 And indeed the Hilbert bimodule extension takes a representation $\pi:\ A \
 \rightarrow L(H)$ of a matrix algebra $A$ and turns $H$ into a Hilbert bimodule for
-$(A, \mathbb{C})$, because the representation of $a \in A$, $\pi(a)=T \in L(H)$ fulfills
+$(A, \mathbb{C})$, because the representation for a $a \in A$, $\pi(a)=T \in L(H)$ fulfills
 the conditions of the $\mathbb{C}$-valued inner product for $h_1, h_2 \in H$
 \begin{itemize}
     \item $\langle h_1,\ \pi(a)\ h_2\rangle _\mathbb{C} = \langle h_1,\ T\ h_2\rangle _\mathbb{C} =
@@ -325,38 +327,40 @@ the conditions of the $\mathbb{C}$-valued inner product for $h_1, h_2 \in H$
 %-------------- EXERCISE
 
 %-------------- EXERCISE
-Take again the $A-A$ bimodule given by an $*$-algebra $A$, it is in
-$KK_f(A,\ A)$. This becomes clear by looking at the following inner product
-    $\langle \cdot,\cdot\rangle_A:A \times A \rightarrow A$:
-    \begin{align}
-        \langle a,\ a\rangle_A = a^*a' \;\;\;\; a,a'\in A. \label{eq:inner-product}
-    \end{align}
-    Simply checking the conditions in $\langle \cdot, \cdot\rangle _A$ for
-    $a, a_1, a_2 \in A$
-    \begin{align}
-        \langle a_1,\ a\cdot a_2\rangle _A &= a^* a\cdot a_2 =
-            (a^*a_1)^*\ a_2 = \langle  a^*\ a_1,\ a_2\rangle, \\
-        \langle a_1,\ a_2 \cdot a\rangle _A &= a^*_1\ (a_2\cdot a) =
-        (a^*a_2)\cdot a = \langle a_1,\ a_2\rangle _A\ a,\\
-            \langle a_1,\ a_2\rangle _A^* &= (a_1^*\ a_2)^* = a_2^*\
-            (a_1^*)^* = a_2^*\ a_1 = \langle a_2,\ a_1\rangle.
-    \end{align}
+Take again the $A-A$ bimodule given by an $*$-algebra $A$. By looking at the
+following inner product $\langle \cdot,\cdot\rangle_A:A \times A \rightarrow A$
+\begin{align}
+    \langle a,\ a\rangle_A = a^*a' \;\;\;\; a,a'\in A.
+    \label{eq:inner-product},
+\end{align}
+it becomes clear that $A \in KK_f(A,\ A)$.
+Simply checking the conditions in $\langle \cdot, \cdot\rangle _A$ for
+$a, a_1, a_2 \in~A$
+\begin{align}
+    &\langle a_1,\ a\cdot a_2\rangle _A = a^* a\cdot a_2 =
+        (a^*a_1)^*\ a_2 = \langle  a^*\ a_1,\ a_2\rangle, \\
+   &\langle a_1,\ a_2 \cdot a\rangle _A = a^*_1\ (a_2\cdot a) =
+    (a^*a_2)\cdot a = \langle a_1,\ a_2\rangle _A\ a,\\
+   &\langle a_1,\ a_2\rangle _A^* = (a_1^*\ a_2)^* = a_2^*\
+        (a_1^*)^* = a_2^*\ a_1 = \langle a_2,\ a_1\rangle.
+\end{align}
 
 %-------------- EXERCISE
 
 %-------------- EXAMPLE
-As an exemplar for overview consider a $*$ homomorphism between two matrix
-algebras $\phi:A\rightarrow B$, we can construct a Hilbert bimodule
-$E_{\phi} \in KK_f(A, B)$ in the following way. We let $E_{\phi}$ be $B$ in
-as an vector space and an inner product from above in equation
-\eqref{eq:inner-product}, with $A$ acting on the left with $\phi$.
-\begin{align}
-    a\cdot b = \phi(a)\ b
-\end{align}
-for $a\in A, b\in E_{\phi}$.
+%As an for overview consider a $*$ homomorphism between two matrix
+%algebras $\phi:A\rightarrow B$, we can construct a Hilbert bimodule
+%$E_{\phi} \in KK_f(A, B)$ in the following way. We let $E_{\phi}$ be $B$ in
+%as an vector space and an inner product from above in equation
+%\eqref{eq:inner-product}, with $A$ acting on the left with $\phi$.
+%\begin{align}
+%    a\cdot b = \phi(a)\ b
+%\end{align}
+%for $a\in A, b\in E_{\phi}$.
 %-------------- EXAMPLE
 
-\subsubsection{Kasparov Product and Morita Equivalence}
+\subsubsection{Kasparov Product and Morita Equivalence\label{chap: kasparov
+product}}
 \begin{mydefinition}
     Let $E \in KK_f(A, B)$ and $F \in KK_F(B, D)$ the \textit{Kasparov product} is defined as
     with the balanced tensor product
@@ -372,26 +376,26 @@ for $a\in A, b\in E_{\phi}$.
 
 %-------------- EXERCISE
 The Kasparov product for $*$-algebra homomorphism $\phi: A \rightarrow B$ and
-$\psi: B \rightarrow C$ are isomorphisms in the sense of
+$\psi: B \rightarrow C$ are isomorphisms in the sense that
 \begin{align}
                 E_{\psi} \circ E_{\phi}\ \equiv\ E_{\phi} \otimes _B E_{\psi}\
                 \simeq\
                 E_{\psi \circ \phi} \in KK_f(A,C).
 \end{align}
 
-In the direct computation for elements $a \in A$, $b\in B$, and $c\in C$ which
-is $\psi \circ \phi$ gives us
+The direct computation for $a \in A$, $b\in B$, and $c\in C$ which is $\psi
+\circ \phi$ shows us
 \begin{align}
 a \cdot b \cdot c = \psi(\phi (a) \cdot b) \cdot c
 \end{align}
-An interesting case arises when looking at $E_{\text{id}_A} \simeq A \in KK_f(A,A)$ for
-$\text{id}_A: A \rightarrow A$. This is obvious when we let $E_{\phi}$ be $A$
-with a natural right representation. It follows that $E_{\phi}\simeq A$, thus
+An interesting case arises when looking at $E_{\text{id}_A} \simeq A \in
+KK_f(A,A)$, where $\text{id}_A$ is the identity in $A$. Let $E_{\phi}$ be $A$
+with a natural right representation. It follows that $E_{\phi}\simeq A$, where
 an inner product, acting from the left on $A$ for $\phi$, $a', a\in A$ reads
 \begin{align}
     a'\ a = (\phi(a')\ a) \in A,
 \end{align}
-which is satisfied by $\phi = \text{id}_A$
+which is satisfied only by $\phi = \text{id}_A$.
 
 \begin{mydefinition}
     Let $A$, $B$ be \textit{matrix algebras}. They are called \textit{Morita equivalent} if there
@@ -404,12 +408,11 @@ which is satisfied by $\phi = \text{id}_A$
     that $A$ or $B$ is a bimodule by itself.
 \end{mydefinition}
 
-The modules $E$ and $F$ are each others inverse in regards to the Kasparov
-Product, because we land in the same space as we started. To clarify, in
-the definition we have $E \in KK_f(A, B)$. We start from $A$ and $E \otimes
-_B F$, which lands in $A$. Oppositely we have $F \in KK_f(B, D)$ we start
-from $B$ and $F \otimes _A E$, which lands in $B$.
-
+Since we land in the same space as we started, the modules $E$ and $F$ are
+each others inverse in regards to the Kasparov Product. More clearly, in the
+definition we have $E \in KK_f(A, B)$. Naturally we start from $A$ and $E
+\otimes _B F$, which lands in $A$. On the other hand we have $F \in KK_f(B,
+D)$ and start from $B$, $F \otimes _A E$, which lands in $B$.
 
 %------------- EXERCISE
 By definition  $E \otimes _B F$ is a $A-D$ bimodule. Since
@@ -461,7 +464,8 @@ we see that $M_n(\mathbb{C})$ and $\mathbb{C}$ are Morita equivalent!
     of elements).
 \end{mylemma}
 \begin{proof}
-    Let $A$, $B$ be \textit{Morita equivalent}. Then there exist $_A E_B$ and $_B F_A$ with
+    Let $A$, $B$ be \textit{Morita equivalent}. Then there exist the modules
+    $_A E_B$ and $_B F_A$ with
     \begin{align}
         E \otimes _B F \simeq A \;\;\; \text{and} \;\;\; F \otimes _A E \simeq
         B.
@@ -472,7 +476,7 @@ we see that $M_n(\mathbb{C})$ and $\mathbb{C}$ are Morita equivalent!
         \pi _A \rightarrow L(E \otimes _B H)\;\;\; \text{with} \;\;\; \pi _A(a)
         (e \otimes v) = a e \otimes w
     \end{align}
-    Vice versa, we have $[(\pi _A, W)] \in \hat{A}$ we can construct $\pi _B$
+    Vice versa, we have $[(\pi _A, W)] \in \hat{A}$ and we can construct $\pi _B$
     as
     \begin{align}
         \pi _B: B \rightarrow L(F \otimes _A W) \;\;\; \text{and}\;\;\; \pi
@@ -526,7 +530,7 @@ irreducibility $H \simeq \mathbb{C}$.
 \end{proof}
 
 %---------------- EXAMPLE
-Let us look at an examples for two matrix algebras $A$, and $B$.
+Let us look at an example, two matrix algebras $A$, and $B$.
 \begin{align}
     A = \bigoplus ^N_{i=1} M_{n_i}(\mathbb{C}), \;\;\;
     B = \bigoplus ^M_{j=1} M_{m_j}(\mathbb{C}).
@@ -555,6 +559,6 @@ On the other hand we get
 %---------------- EXAMPLE
 
 To summarize, there is a duality between finite spaces and Morita equivalence
-classes of matrix algebras. By replacing $*$-homomorphism $A\rightarrow B$
+classes of matrix algebras. Furthermore by replacing $*$-homomorphism $A\rightarrow B$
 with Hilbert bimodules $(A,B)$ we introduce a richer structure of morphism
 between matrix algebras.
