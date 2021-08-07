@@ -1,6 +1,6 @@
 \subsection{Heat Kernel Expansion}
 \subsubsection{The Heat Kernel}
-The heat kernel $K(t; x, y; D)$ is the fundamental solution of the heat
+The heat kernel $K(t; x, y; D)$ is the fundamental solution to the heat
 equation
 \begin{align}
     (\partial _t + D_x)K(t;x, y;D) =0,
@@ -16,14 +16,15 @@ takes the form of the standard fundamental solution
 \begin{align}\label{eq:standard}
     K(t;x,y;D_0) = (4\pi t)^{-n/2}\exp\left(-\frac{(x-y)^2}{4t}-tm^2\right).
 \end{align}
+
 Let us consider now a more general operator $D$ with a potential term or a
-gauge field, the heat kernel reads then
+gauge field, the heat kernel then reads
 \begin{align}
     K(t;x,y;D) = \langle x|e^{-tD}|y\rangle.
 \end{align}
 We can expand the heat kernel in $t$, still having a
-singularity from the equation \eqref{eq:standard} as $t \rightarrow 0$ thus the
-expansion reads
+singularity from the equation \eqref{eq:standard} as $t \rightarrow 0$, on
+obtains
 \begin{align}
     K(t;x,y;D) = K(t;x,y;D_0)\left(1 + tb_2(x,y) + t^2b_4(x,y) + \dots
     \right),
@@ -102,19 +103,19 @@ kernel coefficients.
 
 
 \subsubsection{Spectral Functions}
-Manifolds $M$ with a disappearing boundary condition for the operator $e^{-tD}$ for $t>0$ is a
-trace class operator on $L^2(V)$. Meaning for any smooth function $f$ on $M$
-we can define
+Manifolds $M$ with a disappearing boundary condition for the operator
+$e^{-tD}$ for $t>0$, i.e. a trace class operator on $L^2(V)$. Meaning for any
+smooth function $f$ on $M$ the Heat kernel can be defined as
 \begin{align}
-    K(t,f,D) := \text{Tr}_{L^2}(fe^{-tD}),
+    K(t,f,D) := \text{Tr}_{L^2}(fe^{-tD}).
 \end{align}
-or alternately write an integral representation
+Alternately an integral representation is
 \begin{align}
     K(t, f, D) = \int_M d^n x \sqrt{g} \text{Tr}_V(K(t;x,x;D)f(x)),
 \end{align}
-in the regular limit $y\rightarrow y$. We can write the Heat Kernel in terms
-of the spectrum of $D$. So for an orthonormal basis $\{\phi_\lambda\}$ of
-eigenfunctions for $D$, which corresponds to the eigenvalue $\lambda$, we
+in the regular limit $y \rightarrow y$. The Heat Kernel can be written in terms
+of the spectrum of $D$. Hence for an orthonormal basis $\{\phi_\lambda\}$ of
+eigenfunctions for $D$, which correspond to the eigenvalue $\lambda$ one
 can rewrite the heat kernel into
 \begin{align}
     K(t;x,y;D) = \sum_\lambda \phi^\dagger_\lambda(x)
@@ -129,7 +130,7 @@ where
     a_k(f,D) = (4\pi)^{-n/2} \int_M d^4x \sqrt{g} b_k(x,x) f(x).
 \end{align}
 \subsubsection{General Formulae}
-Let us summarize what we have obtained in the last chapter, we considered a
+Let us summarize what we have obtained in the last chapter. We considered a
 compact Riemannian manifold $M$ without boundary condition, a vector bundle
 $V$ over $M$ to define functions which carry discrete (spin or gauge)
 indices, an operator $D$ of Laplace type over $V$ and smooth function $f$ on
@@ -144,16 +145,16 @@ with an even index are locally computable in terms of geometric invariants
     &=\sum_I \text{Tr}_V\left(\int_M d^nx \sqrt{g}(fu^I
     \mathcal{A}^I_k(D))\right).
 \end{align}
-We denote $\mathcal{A}^I_k$ as all possible independent invariants of
-dimension $k$, and $u^I$ are constants. The invariants are constructed from
-$E, \Omega, R_{\mu\nu\varrho\sigma}$ and their derivatives If $E$ has
-dimension two, then the derivative has dimension one. So if $k=2$ there are
+The notation $\mathcal{A}^I_k$ corresponds to all possible independent invariants of
+dimension $k$ and $u^I$ are constants. The invariants are constructed from
+$E, \Omega, R_{\mu\nu\varrho\sigma}$ and their derivatives. If $E$ has
+dimension two, then the derivative has dimension one. In this way if $k=2$ there are
 only two independent invariants, $E$ and $R$. This corresponds to the
 statement $a_{2j+1}=0$.
 
 If we consider $M = M_1 \times M_2$ with coordinates $x_1$ and $x_2$ and a
-decomposed Laplace style operator $D = D_1 \otimes 1 + 1 \otimes D_2$ we can
-separate functions acting on operators and on coordinates linearly by the
+decomposed Laplace style operator $D = D_1 \otimes 1 + 1 \otimes D_2$ the
+functions acting on operators and on coordinates are separable linearly by the
 following
 \begin{align}
     e^{-tD} &= e^{-tD_1} \otimes e^{-tD_2},\\
@@ -161,9 +162,9 @@ following
 \end{align}
 thus the heat kernel coefficients are separated by
 \begin{align}
-    a_k(x;D) &= \sum_{p+q=k} a_p(x_1; D_1)a_q(x_2;D_2)
+    a_k(x;D) &= \sum_{p+q=k} a_p(x_1; D_1)a_q(x_2;D_2).
 \end{align}
-If we know the eigenvalues of $D_1$ are known,  $l^2, l\in \mathbb{Z}$, we
+Lets say the eigenvalues of $D_1$ are $l^2, l\in \mathbb{Z}$, we
 can obtain the heat kernel asymmetries with the Poisson summation formula
 giving us an approximation in the order of $e^{-1/t}$
 \begin{align}
@@ -172,7 +173,7 @@ giving us an approximation in the order of $e^{-1/t}$
     &\simeq \sqrt{\frac{\pi}{t}} + \mathcal{O}(e^{-1/t}).
 \end{align}
 The exponentially small terms have no effect on the heat kernel
-coefficients and that the only nonzero coefficient is $a_0(1, D_1) =
+coefficients and the only nonzero coefficient is $a_0(1, D_1) =
 \sqrt{\pi}$, therefore the heat coefficients can be written as
 \begin{align}
     a_k(f(x^2), D) = \sqrt{\pi}\int_{M_2}
@@ -180,9 +181,11 @@ coefficients and that the only nonzero coefficient is $a_0(1, D_1) =
     \mathcal{A}^I_n(D_2)\right).
 \end{align}
 
-Because all of the geometric invariants  associated with $D$ are in the $D_2$
-part, they are independent of $x_1$. Ultimately meaning we are free to choose
-$M_1$. For $M_1 = S^1$ with $x\in (0, 2\pi)$ and $D_1=-\partial_{x_1}^2$
+Since all of the geometric invariants  associated with $D$ are in the $D_2$
+part, they are independent of $x_1$. This allows us to to choose for
+$M_1$.
+
+For $M_1 = S^1$ with $x\in (0, 2\pi)$ and $D_1=-\partial_{x_1}^2$
 we can rewrite the heat kernel coefficients into
 \begin{align}
     a_k(f(x_2), D) &= \int_{S^1\times M_2}d^nx \sqrt{g} \sum_I
@@ -192,11 +195,11 @@ we can rewrite the heat kernel coefficients into
 \end{align}
 Computing the two equations above we see that
 \begin{align}
-    u_{(n)}^I = \sqrt{4\pi} u^I_{(n+1)}
+    u_{(n)}^I = \sqrt{4\pi} u^I_{(n+1)}.
 \end{align}
 
 \subsubsection{Heat Kernel Coefficients}
-To calculate the heat kernel coefficients we need the following variational
+To calculate the heat kernel coefficients consider the following variational
 equations
 \begin{align}
     &\frac{d}{d\varepsilon}\bigg|_{\varepsilon=0}a_k(1, e^{-2\varepsilon f}D) =
@@ -208,22 +211,24 @@ equations
     0\label{eq:var3}.
 \end{align}
 Let us explain the equations above. To get the first equation \eqref{eq:var1}
-we differentiate \begin{align}
-    \frac{d}{d\varepsilon}\bigg|_{\varepsilon=0} \text{Tr}(\exp(-e^{-2\varepsilon
-    f}tD) = \text{Tr}(2ftDe^{-tD}) = -2t\frac{d}{dt}\text{Tr}(fe^{-tD}))
-\end{align}
-then we expand both sides in $t$ and get \eqref{eq:var1}. Equation \eqref{eq:var2} is derived similarly.
-
-For equation \eqref{eq:var3} we consider the following operator
+we simply differentiate
 \begin{align}
-    D(\varepsilon,\delta) = e^{-2\varepsilon f}(D-\delta F)
+    \frac{d}{d\varepsilon}\bigg|_{\varepsilon=0} \text{Tr}(\exp(-e^{-2\varepsilon
+    f}tD) = \text{Tr}(2ftDe^{-tD}) = -2t\frac{d}{dt}\text{Tr}(fe^{-tD})),
 \end{align}
-for $k=n$ we use equation \eqref{eq:var1} and we get
+additionally expand both sides in $t$ and get equation \eqref{eq:var1}. Equation
+\eqref{eq:var2} is derived similarly.
+
+For equation \eqref{eq:var3} look at the following operator
+\begin{align}
+    D(\varepsilon,\delta) = e^{-2\varepsilon f}(D-\delta F),
+\end{align}
+for $k=n$ we take equation \eqref{eq:var1} and we obtain
 \begin{align}
     \frac{d}{d\varepsilon}\bigg|_{\varepsilon=0}a_n(1,D(\varepsilon,\delta))
-    =0,
+    =0.
 \end{align}
-then we take the variation in terms of $\delta$, evaluated at $\delta =0$ and
+Then we take the variation in terms of $\delta$, evaluated at $\delta =0$ and
 swap the differentiation, allowed by theorem of Schwarz
 \begin{align}
     0 &=
@@ -235,7 +240,7 @@ swap the differentiation, allowed by theorem of Schwarz
 \end{align}
 which gives us equation \eqref{eq:var3}.
 
-Now that we have established the ground basis, we can calculate the constants
+Now that the ground basis is established, we can calculate the constants
 $u^I$, and by that the first three heat kernel coefficients read
 \begin{align}
     a_0(f, D) &= (4\pi)^{-n/2}\int_Md^n x\sqrt{g} \text{Tr}_V(a_0 f),\\
@@ -300,7 +305,7 @@ To get $\alpha_{10}$ we use the Gauss-Bonnet theorem, ultimately giving us
 $\alpha_{10}=30$. We leave out this lengthy calculation and refer to
 \cite{heatkernel} for further reading.
 
-Let us summarize our calculations which ultimately give us the following heat kernel
+Let us summarize our calculations which ultimately lead us to the following heat kernel
 coefficients
 \begin{align}
     \alpha_0(f, D) &= (4\pi)^{-n/2}\int_M d^n x \sqrt{g} \text{Tr}_V(f),\\
