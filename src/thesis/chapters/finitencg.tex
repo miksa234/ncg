@@ -1,13 +1,13 @@
 \subsection{Finite Spectral Triples}
 \subsubsection{Metric on Finite Discrete Spaces}
-Let us come back to our finite discrete space $X$, we can describe it by a
-structure space $\hat{A}$ of a matrix algebra $A$. To describe distance between
-two points in $X$ (as we would in a metric space) we use an array $\{d_{ij}\}_{i,
-j \in X}$ of \textit{real non-negative} entries in $X$ such that
+We can describe our finite discrete space $X$ by a structure space $\hat{A}$
+of a matrix algebra $A$. To establish a distance between two points in $X$ (as
+we would in a metric space) we use an array $\{d_{ij}\}_{i, j \in X}$ of
+\textit{real non-negative} entries in $X$ such that
 \begin{itemize}
     \item $d_{ij} = d_{ji}$             Symmetric
     \item $d_{ij} \leq d_{ik} d_{kj}$       Triangle Inequality
-    \item $d_{ij} = 0$ for $i=j$ (the same element)
+    \item $d_{ij} = 0$ for $i=j$
 \end{itemize}
 
 In the commutative case, the algebra $A$ is commutative and can describe the
@@ -30,8 +30,8 @@ metric on $X$ in terms of algebraic data.
         \bigg\{\frac{1}{d_{kl}}\big|a(k) - a(l)\big|\bigg\}
         \label{induction}
     \end{equation}
-    This can be proved with induction. Set $N=2$ then $H=\mathbb{C}^2$, $\pi:A\rightarrow L(H)$ and
-    a hermitian matrix $D$.
+    This can be proven with induction. Let us set $N=2$,
+    $H=\mathbb{C}^2$, $\pi:A\rightarrow L(H)$ and a hermitian matrix $D$.
     \begin{align}
         \pi(a) =
         \begin{pmatrix}
@@ -108,11 +108,11 @@ metric on $X$ in terms of algebraic data.
             0 & a(1)-a(2) & a(1)-a(3)\\
             a(2)-a(1) & 0 & a(2)-a(3)\\
             a(3)-a(1) & a(3)-a(2) & 0
-        \end{pmatrix}
+        \end{pmatrix}.
     \end{align}
 
     Suppose this holds for $N$ with $\pi_N$, $H_N = \mathbb{C}^N$ and $D_N$.
-    Then it has to holds for $N+1$ with $H_{N+1} = H_{N} \oplus \bigoplus_{i=1}^N
+    Then it has to hold for $N+1$ with $H_{N+1} = H_{N} \oplus \bigoplus_{i=1}^N
     H_N^i$, since the representation reads
     \begin{align}
         \pi_{N+1}(a(1),\dots,a(N+1)) &= \pi_N(a(1),\dots,a(N))
@@ -125,7 +125,7 @@ metric on $X$ in terms of algebraic data.
         \begin{pmatrix}
             a(N) & 0 \\
             0  1 & a(N+1)
-        \end{pmatrix}
+        \end{pmatrix}.
     \end{align}
     And the operator $D_{N+1}$ is
     \begin{align}
@@ -139,10 +139,10 @@ metric on $X$ in terms of algebraic data.
         \begin{pmatrix}
             0 & (d_{N(N+1)})^{-1} \\
             (d_{N(N+1)})^{-1}   & 0
-        \end{pmatrix}
+        \end{pmatrix}.
     \end{align}
     From this follows equation \eqref{induction}.
-    Thus we can continue the proof by setting for fixed $i, j$, $a(k) =
+    Hence we can continue the proof by setting for fixed $i, j$, $a(k) =
     d_{ik}$, which then gives $|a(i) - a(j)| = d_{ij}$ and thereby it follows
     that
     \begin{align}
@@ -208,21 +208,23 @@ mathematical structure which encodes finite discrete geometry into algebraic dat
     If $A$ is a unital C* algebra acting faithfully on a finite
     dimensional Hilbert space, then $A$ is a matrix algebra of the Form:
     \begin{align}
-        A \simeq \bigoplus _{i=1}^N M_{n_i}(\mathbb{C})
+        A \simeq \bigoplus _{i=1}^N M_{n_i}(\mathbb{C}).
     \end{align}
-\end{mylemma}
-\begin{proof}
     The wording 'acting faithfully on a Hilbertspace' means that the
     $*$-representation is injective, or for a $*$-homomorphism that means
-    one-to-one correspondence. And since $A$ acts faithfully on a Hilbert
+    one-to-one correspondence
+\end{mylemma}
+\begin{proof}
+    Since $A$ acts faithfully on a Hilbert
     space, this means that $A$ is a $*$ subalgebra of a matrix algebra $L(H) = M_{\dim
-    (H)}(\mathbb{C}$. Hence it follows, that $A$ is isomorphic to a matrix
+    (H)}(\mathbb{C})$. Hence it follows, that $A$ is isomorphic to a matrix
     algebra.
 \end{proof}
 
-A simple illustration would be for an algebra $A = M_n(\mathbb{C})$ and
-$H=\mathbb{C}^n$. Since $A$ acts on $H$ with matrix multiplication and standard
-inner product and $D$ on $H$ is a hermitian matrix $n\times n$ matrix.
+A simple illustration would be $A = M_n(\mathbb{C})$ for the algebra and
+$H=\mathbb{C}^n$ for the Hilbertspace. Since $A$ acts on $H$ with matrix
+multiplication and standard inner product and the operator $D$ on $H$ is a
+hermitian $n\times n$ matrix.
 
 \begin{mydefinition}
     Given an finite spectral triple $(A, H, D)$, the $A$-bimodule of
@@ -232,8 +234,8 @@ inner product and $D$ on $H$ is a hermitian matrix $n\times n$ matrix.
         \right\}.
     \end{align}
 \end{mydefinition}
-Then there is a map $d:A\rightarrow \Omega _D ^1 (A)$, $d = [D, \cdot]$. Where
-$d$ is a derivation of the $*$-algebra in the sense that
+Additionally there is a map $d:A\rightarrow \Omega _D ^1 (A)$, $d = [D,
+\cdot]$, where $d$ is a derivation of the $*$-algebra in the sense that
 \begin{align}
     d(a\ b) = d(a)b + ad(b), \\
     d(a^*) = -d(a)^*.
@@ -286,24 +288,23 @@ rewriting the defining equation \eqref{eq:connesoneforms} into
     \end{align}
 \end{proof}
 
-     Consider an example
-     \begin{align}
-             \left(A=\mathbb{C}^2, H=\mathbb{C}^2,
-                 D = \begin{pmatrix} 0 & \lambda \\ \bar{\lambda} & 0
-         \end{pmatrix}\right)
-     \end{align}
-     with $\lambda \neq 0$. We can show that $\Omega _D^1(A)
-     \simeq M_2(\mathbb{C})$. The Hilbert Basis $D$ can be extended in terms of
-    the basis of $M_2(\mathbb{C})$, plugging this into Equation
-    \eqref{eq:basis} will get us the same cyclic result, thus
-    $\Omega _D^1(A) \simeq M_2(\mathbb{C})$.
-\
+Consider an example
+\begin{align}
+     \left(A=\mathbb{C}^2, H=\mathbb{C}^2,
+         D = \begin{pmatrix} 0 & \lambda \\ \bar{\lambda} & 0
+ \end{pmatrix}\right)
+\end{align}
+with $\lambda \neq 0$. We can show that $\Omega _D^1(A)
+\simeq M_2(\mathbb{C})$. The Hilbert Basis $D$ can be extended in terms of
+the basis of $M_2(\mathbb{C})$, plugging this into equation
+\eqref{eq:basis} will get us the same cyclic result and thus
+$\Omega _D^1(A) \simeq M_2(\mathbb{C})$.
 
 \subsubsection{Morphisms Between Finite Spectral Triples}
 Next we will define an equivalence relation between finite spectral triples, called
-spectral unitary equivalence, which is given by the unitarity of the
-two matrix algebras themselves, and an additional map $U$ which allows us to associate a
-one operator to another second operator.
+spectral unitary equivalence. This equivalence relation is given by the unitarity of the
+two matrix algebras themselves, and an additional map $U$ which allows us to associate
+one operator to a second operator.
 \begin{mydefinition}
     Two finite spectral tripes $(A_1, H_1, D_1)$ and $(A_2, H_2, D_2)$ are
     called unitary equivalent if $A_1 = A_2$ and there exists a map $U:\ H_1
@@ -313,8 +314,12 @@ one operator to another second operator.
         U\ D_1\ U^* &= D_2.
     \end{align}
 \end{mydefinition}
-Notice that for any such $U$ we have the relation $(A, H, D) \sim (A, H, UDU^*)$.
-And hence $U\ D\ U^* = D + U[D, U^*]$ are of the form of elements in $\Omega _D^1 (A)$.
+Notice that for any such $U$ we have the relation $(A, H, D) \sim (A, H,\ UDU^*)$.
+And hence
+\begin{align}
+    U\ D\ U^* = D + U[D,\ U^*],
+\end{align}
+are of the form of elements in $\Omega _D^1 (A)$.
 
 %-------------- EXERCISE
 To make it clear that the above definition is an equivalence relation between
@@ -352,7 +357,8 @@ $U_{23}: H_2 \rightarrow H_3$ are
 \end{align}
 %-------------- EXERCISE
 
-In order to extend this relation we take a look at Morita equivalence of Matrix Algebras.
+In order to extend the equivalence relation we take a look at Morita
+equivalence of Matrix Algebras.
 \begin{mydefinition}
     Let $A$ be an algebra. We say that $I \subset A$, as a vector space, is a
     right(left) ideal if $a\ b \in I$ for $a \in A$ and $b\in I$ (or $b\ a \in
@@ -364,11 +370,15 @@ a finite spectral triple on $B$, $(B, H', D')$
 \begin{equation}
     H' = E \otimes _A H.
 \end{equation}
-We might define $D'$ with $D'(e \otimes \xi) = e\otimes D\xi$, thought this
-would not satisfy the ideal defining the balanced tensor product over $A$,
-which is generated by elements of the form
+We might define $D'$ with
 \begin{align}
-    e\ a \otimes \xi - e\otimes a\ \xi, \;\;\;\;\; e\in E, a\in A, \xi \in H.
+    D'(e \otimes \xi) = e\otimes D\xi
+\end{align}
+Although this would not satisfy the ideal defining the balanced tensor
+product over $A$, which is generated by elements of the form
+\begin{align}
+    e\ a \otimes \xi - e\otimes a\ \xi, \;\;\;\;\; e\in E, a\in A, \xi \in
+    H.
 \end{align}
 This inherits the left action on $B$ from $E$ and has a $\mathbb{C}$
 valued inner product space. $B$ also satisfies the ideal
@@ -378,7 +388,7 @@ valued inner product space. $B$ also satisfies the ideal
 \end{equation}
 where $\nabla$ is called the \textit{connection on the right A-module E}
 associated with the  derivation $d=[D, \cdot]$. The connection needs to
-satisfy the \textit{Leibnitz Rule}
+satisfy the \textit{Leibniz Rule}
 \begin{equation}
     \nabla(ae) = \nabla(e)a + e \otimes [D, a], \;\;\;\;\;  e\in E,\; a\in A.
 \end{equation}
@@ -392,8 +402,8 @@ Hence $D'$ is well defined on $E \otimes _A H$
 \end{align}
 With the information thus far we can prove the following theorem
 \begin{mytheorem}
-    If $(A, H, D)$ a finite spectral triple, $E \in KK_f(B, A)$.
-    Then $(V, E\otimes _A H, D')$ is a finite spectral triple, provided that
+    If $(A, H, D)$ is a finite spectral triple and $E \in KK_f(B, A)$,
+    then $(V, E\otimes _A H, D')$ is a finite spectral triple, provided that
     $\nabla$ satisfies the compatibility condition
     \begin{equation}
         \langle e_1, \nabla e_2 \rangle _E - \langle \nabla e_1, e_2
@@ -401,9 +411,9 @@ With the information thus far we can prove the following theorem
     \end{equation}
 \end{mytheorem}
 \begin{proof}
-    $E\otimes _A H$ was previously. The only thing left is to show that $D'$ is a symmetric
-    operator, this we can just compute. Let $e_1, e_2 \in E$ and $\xi _1,
-    \xi _2 \in H$ then
+    The computation for $E\otimes _A H$ is above . The only thing left is to
+    show is, that $D'$ is a symmetric operator. We can prove this by
+    computing for $e_1, e_2 \in E$ and $\xi _1, \xi _2 \in H$ then
     \begin{align}
         \langle e_1 \otimes \xi _1, D'(e_2 \otimes \xi_2)\rangle _{E\otimes _A H} &=
         \langle \xi _1, \langle e_1, \nabla e_2\rangle _E\ \xi _2\rangle
@@ -417,9 +427,9 @@ With the information thus far we can prove the following theorem
     \end{align}
 \end{proof}
 
-Let us examin what happens if we look at difference of connectoins $\nabla$ and
+Let us examine the scenario where we consider the difference of connections $\nabla$ and
 $\nabla'$ on a right $A$-module $E$. Since both connections need to satisfy
-the Leiblitz rule, the difference should also
+the Leibniz rule, the difference also should
     \begin{align}
         \nabla(ea)-\nabla'(ea)&=\nabla(e) + e\otimes[D, a]\nonumber\\
         &-(\nabla'(e)a + e\otimes[D',a])\nonumber\\
@@ -433,36 +443,34 @@ $E \rightarrow E\otimes _A \Omega _D^1(A)$.
 
 To get a better grasp of the results let us construct a finite spectral
 triple $(A, H', D')$ from $(A, H, D)$. The derivation $d(\cdot):A \rightarrow
-A\otimes _A \Omega_D^1(A)=\Omega_D^1(A)$ is a connection on $A$ considered a
+A\otimes _A \Omega_D^1(A)=\Omega_D^1(A)$ is a connection on $A$, i.e.\ considered a
 right $A$-module
 \begin{align}
         \nabla(e \cdot a) =  d(a),
 \end{align}
 hence $A\otimes_A H\simeq H$. Next we can construct the operator $D'$
-for the connection $d(\cdot)$,
+for the connection $d(\cdot)$
 \begin{align}
     D'(a\xi) = a(D\xi) + (\nabla a) \xi = D(a\xi).
 \end{align}
-By using the identity element in the connection relation
+By using the identity element in the connection relation we conclude
 \begin{align}
    \nabla (e\cdot a) = \nabla(e) a + 1 \otimes d(a)=d(a) \nabla(e) a,
 \end{align}
-we see that any connection $\nabla: A\rightarrow A\otimes_A \Omega_D^1(A)$ is
+thus any connection $\nabla: A\rightarrow A\otimes_A \Omega_D^1(A)$ is
 given by
-\begin{align}
+\begin{align}\label{eq: uniqueconnection}
     \nabla = d + \omega,
 \end{align}
-where $\omega \in \Omega_D^1(A)$. Ultimately the the
-difference operator $D'$ with the connection on $A$ is given by
+where $\omega \in \Omega_D^1(A)$. This becomes clear when looking at the
+difference operator $D'$ with the connection on $A$, which is given by
 \begin{align}
     D'(a\otimes \xi) &= D'(a \xi) = a(D\xi) + (\nabla a)\xi \nonumber \\
                      &=a(D\xi) + \nabla(e \cdot a) \xi \nonumber\\
-                     &= D(a\xi) + \nabla(e) (a\xi).
+                     &= D(a\xi) + \nabla(e) (a\xi),
 \end{align}
-So any such connection is of the form
-\begin{align}
-    \nabla = d + \omega.
-\end{align}
+hence any such connection is of the form as in equation \eqref{eq: unique
+connection}
 
 %\subsubsection{Graphing Finite Spectral Triples}
 %\begin{mydefinition}
