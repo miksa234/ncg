@@ -3,8 +3,8 @@
 To grasp the idea of encoding geometrical data into a spectral triple we
 introduce the first ingredient of a spectral triple, an unital $*$ algebra.
 \begin{mydefinition}
-    A \textit{vector space} $A$ over $\mathbb{C}$ is called a \textit{complex, unital Algebra} if, \\
-    $\forall a,b \in A$ :
+    A \textit{vector space} $A$ over $\mathbb{C}$ is called a
+    \textit{complex, unital Algebra} if for all $a,b \in A$:
             \begin{align}
             A \times A \rightarrow A\\
             (a,\ b)\ &\mapsto \ a\cdot b,
@@ -64,11 +64,11 @@ which `pulls back' values even if $\phi$ is not bijective.
 Note that the pullback does not map points back, but maps functions on an $*$-algebra $C(X)$.
 The pullback, in literature often called a $*$-homomorphism or a $*$-algebra map under
 pointwise product has the following properties
-\begin{itemize}
-    \item $\phi ^*(f\ g) = \phi ^*(f)\ \phi ^*(g)$,
-    \item $\phi ^*(\overline{f}) = \overline{\phi ^*(f)}$,
-    \item $\phi ^*(\lambda\ f + g) = \lambda\ \phi ^*(f) + \phi ^*(g)$.
-\end{itemize}
+\begin{align}
+     \phi ^*(f\ g) = \phi ^*(f)\ \phi ^*(g),
+     \phi ^*(\overline{f}) = \overline{\phi ^*(f)},
+     \phi ^*(\lambda\ f + g) = \lambda\ \phi ^*(f) + \phi ^*(g).
+\end{align}
 %------------ Exercise
     The map $\phi :X_1\ \rightarrow \ X_2$ is an injective (surjective) map,
     if only and if the corresponding pullback $\phi ^* :C(X_2)\ \rightarrow \

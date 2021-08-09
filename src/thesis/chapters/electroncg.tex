@@ -1,26 +1,27 @@
 \subsection{Noncommutative Geometry of Electrodynamics}
-In this chapter we describe Electrodynamics with the almost commutative
-manifold $M\times F_X$ and the abelian gauge group $U(1)$.
-We arrive at a unified description of gravity and electrodynamics although in the classical level.
+In this chapter we go through a derivation Electrodynamics with
+the almost commutative manifold $M\times F_X$ and the abelian gauge group
+$U(1)$. The conclusion is an unified description of gravity and
+electrodynamics although in the classical level.
 
-The almost commutative Manifold $M\times F_X$ describes a local gauge group
+The almost commutative Manifold $M\times F_X$ outlines a local gauge group
 $U(1)$. The inner fluctuations of the Dirac operator relate to $Y_\mu$ the
 gauge field of $U(1)$. According to the setup we ultimately arrive at two
 serious problems.
 
-First of all in the Two-Point space $F_X$, the operator $D_F$ must vanish for
-us to have a real structure. However this implies that the electrons
-are massless, which would be absurd.
+First of all the operator $D_F$, in the Two-Point space $F_X$, must vanish
+such that a real structure can exists. However this implies that the electrons
+are massless.
 
 The second problem arises when looking at the Euclidean action for a free
 Dirac field
 \begin{align}
     S = - \int i \bar{\psi}(\gamma ^\mu\partial _\mu - m) \psi d^4x,
 \end{align}
-where $\psi,\ \bar{\psi}$ must be considered as independent variables, which
-means that the fermionic action $S_f$ needs two independent Dirac spinors.
-Let us try and construct two independent Dirac spinors with our data. To do
-this we take a look at the decomposition of the basis and of the total
+where $\psi,\ \bar{\psi}$ must be considered as two independent variables.
+This means that the fermionic action $S_f$ needs two independent Dirac spinors.
+Let us try and construct two independent Dirac spinors with our data, first
+take a look at the decomposition of the basis and of the total
 Hilbertspace $H = L^2(S) \otimes H_F$. For the orthonormal basis of $H_F$ we
 can write $\{e, \bar{e}\}$ , where $\{e\}$ is the orthonormal basis of
 $H_F^+$ and $\{\bar{e}\}$ the orthonormal basis of $H_F^-$. Accompanied with
@@ -32,31 +33,31 @@ the real structure we arrive at the following relations
 Along with the decomposition of $L^2(S) = L^2(S)^+ \oplus L^2(S)^-$ and  $\gamma = \gamma _M
 \otimes \gamma _F$ we can obtain the positive eigenspace
 \begin{align}
-    H^+ = L^2(S)^+ \otimes H_F^+ \oplus L^(S)^- \otimes H_F^-.
+    H^+ = L^2(S)^+ \otimes H_F^+ \oplus L(S)^- \otimes H_F^-.
 \end{align}
-So, for a $\xi \in H^+$ we can write
+So, for an $\xi \in H^+$ we can write
 \begin{align}
-    \xi = \psi _L \otimes e + \psi _R \otimes \bar{e}
+    \xi = \psi _L \otimes e + \psi _R \otimes \bar{e},
 \end{align}
 where $\psi_L \in L^2(S)^+$ and $\psi _R \in L^2(S)^-$ are the two Wheyl
 spinors. We denote that $\xi$ is only determined by one Dirac spinor $\psi :=
-\psi_L + \psi _R$, \textbf{but we require two independent spinors}. Our
+\psi_L + \psi _R$. Since \textbf{we require two independent spinors}, our
 conclusion is that the definition of the fermionic action gives too much
 restrictions to the Two-Point space $F_X$.
 \subsubsection{The Finite Space}
 To solve the two problems we simply enlarge (double) the Hilbertspace. This
-is visualized by introducing multiplicities in Krajewski Diagrams which will also
-allow us to choose a nonzero Dirac operator that will connect the two
-vertices and preserve real structure making our particles massive and
-bringing anti-particles into the mix.
+is visualized by introducing multiplicities in Krajewski Diagrams
+\cite{ncgwalter} which will also allow us to choose a nonzero Dirac operator
+that will connect the two vertices and preserve real structure making our
+particles massive and bringing anti-particles into the mix.
 
 We start of with the same algebra $C^\infty(M, \mathbb{C}^2)$, corresponding
 to space $N= M\times X$. The Hilbertspace describes four particles, meaning
 it has four orthonormal basis elements. It describes \textbf{left handed
-electrons} and \textbf{right handed positrons}. Pointing this out, we have
+electrons} and \textbf{right handed positrons}. This way we have
 $\{ \underbrace{e_R, e_L}_{\text{left-handed}}, \underbrace{\bar{e}_R,
-\bar{e}_L}_{\text{right-handed}}\}$ the orthonormal basis for $H_F =
-\mathbb{C}^4$. Accompanied with the real structure $J_F$, which allows us to
+\bar{e}_L}_{\text{right-handed}}\}$ an orthonormal basis for $H_F =
+\mathbb{C}^4$. Accompanied with the real structure $J_F$ allowing us to
 interchange particles with antiparticles by the following equations
 \begin{align}
     &J_F e_R = \bar{e}_R, \\
@@ -70,7 +71,7 @@ where $J_F$ and $\gamma_F$ have to following properties
     &J_F^2 = 1,\\
     & J_F \gamma_F  = - \gamma_F J_F.
 \end{align}
-By means of $\gamma_F$ we have two options to decompose the total
+By the means of $\gamma_F$ we have two options to decompose the total
 Hilbertspace $H$, firstly into
 \begin{align}
     H_F = \underbrace{H_F^+}_{\text{ONB } \{e_L, \bar{e}_L\}}
@@ -78,12 +79,12 @@ Hilbertspace $H$, firstly into
 \end{align}
 or alternatively into the eigenspace of particles and their
 antiparticles (electrons and positrons) which is preferred in literature and
-which we will use going further
+which will be used further out
 \begin{align}
     H_F = \underbrace{H_{e}}_{\text{ONB } \{e_L, e_R\}} \oplus
-    \underbrace{H_{\bar{e}}}_{\text{ONB } \{\bar{e}_L, \bar{e}_R\}}.
+    \underbrace{H_{\bar{e}}}_{\text{ONB } \{\bar{e}_L, \bar{e}_R\}},
 \end{align}
-Here ONB means orthonormal basis.
+the shortening `ONB' means orthonormal basis.
 
 The action of $a \in A = \mathbb{C}^2$ on $H$ with respect to the ONB
 $\{e_L, e_R, \bar{e}_L, \bar{e}_R\}$ is represented by
@@ -97,11 +98,10 @@ $\{e_L, e_R, \bar{e}_L, \bar{e}_R\}$ is represented by
             0 &0 &0 &a_2\\
         \end{pmatrix}
 \end{align}
-Do note that this action commutes wit the grading and that
-$[a, b^\circ] = 0$ with $b:= J_F b^*J_F$ because both the left and the right
-action is given by diagonal matrices by equation \eqref{eq:leftrightrepr}. Note
-that we are still left with $D_F = 0$ and the following spectral
-triple
+Do note that this action commutes wit the grading and that $[a, b^\circ] = 0$
+with $b:= J_F b^*J_F$ because both the left and the right action are given by
+diagonal matrices according to equation \eqref{eq:leftrightrepr}. Furthermore
+note that we are still left with $D_F = 0$ and the following spectral triple
 \begin{align}\label{eq:fedfail}
         \left( \mathbb{C}^2, \mathbb{C}^2, D_F=0; J_F =
         \begin{pmatrix}
@@ -114,7 +114,7 @@ triple
         \right).
     \end{align}
 It can be represented in the following Krajewski diagram,
-with two nodes of multiplicity two
+with two nodes of multiplicity two bellow
     \begin{figure}[H] \centering
     \begin{tikzpicture}[
         dot/.style = {draw, circle, inner sep=0.06cm},
@@ -130,6 +130,7 @@ with two nodes of multiplicity two
         \node[bigdot](d0) at (1.5,0) [] {};
         \node[bigdot](d0) at (0.5,-1) [] {};
         \end{tikzpicture}
+        \caption{Krajewski diagram of the spectral triple from equation \ref{eq:fedfail}}
     \end{figure}
 \subsubsection{A noncommutative Finite Dirac Operator}
 To extend our spectral triple with a non-zero Operator, we need to take a
@@ -149,7 +150,7 @@ We can now define the finite space $F_{ED}$.
 \begin{align}
     F_{ED} := (\mathbb{C}^2, \mathbb{C}^4, D_F; J_F, \gamma_F)
 \end{align}
-where $J_F$ and $\gamma_F$ are like in equation \eqref{eq:fedfail} and $D_F$
+where $J_F$ and $\gamma_F$ are as in equation \eqref{eq:fedfail} and $D_F$
 from equation \eqref{eq:feddirac}.
 
 \subsubsection{Almost commutative Manifold of Electrodynamics}
@@ -159,11 +160,11 @@ represented by the following spectral triple
     M\times F_{ED} := \big(C^\infty(M,\mathbb{C}^2),\ L^2(S)\otimes
     \mathbb{C}^4,\
     D_M\otimes 1 +\gamma _M \otimes D_F;\; J_M\otimes J_F,\ \gamma_M\otimes
-    \gamma _F\big)
+    \gamma _F\big).
 \end{align}
 The algebra didn't change, thus we can decompose it like before
 \begin{align}
-    C^\infty(M, \mathbb{C}^2) = C^\infty (M) \oplus C^\infty (M)
+    C^\infty(M, \mathbb{C}^2) = C^\infty (M) \oplus C^\infty (M).
 \end{align}
 As for the Hilbertspace, we can decomposition it in the following way
 \begin{align}
@@ -186,15 +187,15 @@ arbitrary gauge field $B_\mu = A_\mu - J_F A_\mu J_F^{-1}$ we can write
         0 & 0 & 0 & Y_\mu
     \end{pmatrix} \;\;\;\;\;\ \text{for} \;\;\ Y_\mu (x) \in \mathbb{R}.
 \end{align}
-We have one single $U(1)$ gauge field $Y_\mu$, carrying the action of the
+There is one single $U(1)$ gauge field $Y_\mu$, carrying the action of the
 gauge group
 \begin{align}
    \text{$\mathfrak{B}$}(M\times F_{ED}) \simeq C^\infty(M, U(1))
 \end{align}
 
 The space $N = M\times X$ consists of two copies of $M$.
-If $D_F = 0$ we have infinite distance between the two copies. Now have
-hacked the spectral triple to have nonzero Dirac operator $D_F$. The new
+If $D_F = 0$ we have infinite distance between the two copies, yet now we have
+adjusted the spectral triple to have a nonzero Dirac operator. The new
 Dirac operator still has a commuting relation with the algebra $[D_F, a] = 0$
 $\forall a \in A$, and we should note that the distance between the two
 copies of $M$ is still infinite. This is purely an mathematically abstract
@@ -210,8 +211,11 @@ action $S_b$ (bosonic) and of the fermionic action $S_f$.
 
 The simplest spectral action of a spectral triple $(A, H, D)$ is given by the
 trace of a function of $D$. We also consider inner fluctuations of the Dirac
-operator $D_\omega = D + \omega + \varepsilon' J\omega J^{-1}$ where $\omega =
-\omega ^* \in \Omega_D^1(A)$.
+operator
+\begin{align}
+    D_\omega = D + \omega + \varepsilon' J\omega J^{-1},
+\end{align}
+where $\omega = \omega ^* \in \Omega_D^1(A)$.
 \begin{mydefinition}
     Let $f:\mathbb{R} \rightarrow \mathbb{R}$ be a suitable function
     \textbf{positive and even}. The spectral action is then
@@ -224,7 +228,7 @@ operator $D_\omega = D + \omega + \varepsilon' J\omega J^{-1}$ where $\omega =
     independent of the basis. The subscript $b$ in $S_b$ stands for bosonic,
     because in physical applications $\omega$ will describe bosonic fields.
 
-    In addition to the bosonic action $S_b$ we can define a topological spectral
+    In addition to the bosonic action $S_b$, we can define a topological spectral
     action $S_{top}$. Leaning on the grading $\gamma$ the topological spectral action is
     \begin{align}
         S_{\text{top}}[\omega] := \text{Tr}(\gamma\
@@ -237,19 +241,18 @@ operator $D_\omega = D + \omega + \varepsilon' J\omega J^{-1}$ where $\omega =
         S_f[\omega, \psi] = (J\tilde{\psi}, D_\omega \tilde{\psi})
     \end{align}
     with $\tilde{\psi} \in H_{cl}^+ := \{\tilde{\psi}: \psi \in H^+\}$, where
-    $H_{cl}^+$ is a set of Grassmann variables in $H$ in the +1-eigenspace
+    $H_{cl}^+$ is a set of Grassmann variables in $H$ in the $+1$-eigenspace
     of the grading $\gamma$.
 \end{mydefinition}
 
 %---------------------- APPENDIX ?????????????--------------------
-\textbf{APPENDIX??}
 Grassmann variables are a set of Basis vectors of a vector space, they
 form a unital algebra over a vector field $V$, where the generators are
 anti commuting, that is for Grassmann variables $\theta _i, \theta _j$  we have
 \begin{align}
-    &\theta _i \theta _j = -\theta _j \theta _i \\
-    &\theta _i x = x\theta _j \;\;\;\; x\in V \\
-    &(\theta_i)^2 = 0 \;\;\; (\theta _i \theta _i = -\theta _i \theta _i)
+    &\theta _i \theta _j = -\theta _j \theta _i, \\
+    &\theta _i x = x\theta _j \;\;\;\; x\in V, \\
+    &(\theta_i)^2 = 0 \;\;\; (\theta _i \theta _i = -\theta _i \theta _i).
 \end{align}
 %---------------------- APPENDIX ?????????????--------------------
 \begin{myproposition}
@@ -266,17 +269,21 @@ anti commuting, that is for Grassmann variables $\theta _i, \theta _j$  we have
         \mathcal{L}_B(B_\mu)+
         \mathcal{L}_\phi(g_{\mu\nu}, B_\mu, \Phi).
     \end{align}
-    The Lagrangian $\mathcal{L}_M$ is of the spectral triple, represented by
-    the following term
-    $(C^\infty(M) , L^2(S), D_M)$
+    The Lagrangian $\mathcal{L}_M$ is of the spectral triple $(C^\infty(M) ,
+    L^2(S), D_M)$, represented by the following term
     \begin{align}\label{lagr}
         \mathcal{L}_M(g_{\mu\nu}) := \frac{f_4 \Lambda ^4}{2\pi^2} -
         \frac{f_2 \Lambda^2}{24\pi ^2}s - \frac{f(0)}{320\pi^2} C_{\mu\nu
         \varrho \sigma}C^{\mu\nu \varrho \sigma},
     \end{align}
-    here $C^{\mu\nu \varrho \sigma}$ is defined in terms of the Riemannian
+    where $C^{\mu\nu \varrho \sigma}$ is the Weyl tensor defined in terms of the Riemannian
     curvature tensor $R_{\mu\nu \varrho \sigma}$ and the Ricci tensor
-    $R_{\nu\sigma} = g^{\mu\varrho} R_{\mu\nu \varrho\sigma}$.
+    $R_{\nu\sigma} = g^{\mu\varrho} R_{\mu\nu \varrho\sigma}$ such that
+    \begin{align}
+        C^{\mu\nu\varrho\sigma}C_{\mu\nu\varrho\sigma}=
+        R_{\mu\nu\varrho\sigma}R^{\mu\nu\varrho\sigma} -
+        2R_{\nu\sigma}R^{\nu\sigma} + \frac{1}{2}s^2.
+    \end{align}
     The kinetic term of the gauge field is described by the Lagrangian
     $\mathcal{L}_B$, which takes the following shape
     \begin{align}
@@ -308,7 +315,7 @@ anti commuting, that is for Grassmann variables $\theta _i, \theta _j$  we have
      and they are dependent on the fluctuated Dirac operator
      $D_\omega$. We can rewrite the heat kernel coefficients in terms of $D_M$,
      for the first two terms $a_0$ and $a_2$ we use $N:=
-     \text{Tr}\mathbbm{1_{H_F}})$ and write
+     \text{Tr}(\mathbbm{1}_{H_F})$ and one obtains
      \begin{align}
          a_0(D_\omega^2) &= Na_0(D_M^2),\\
          a_2(D_\omega^2 &= Na_2(D_M^2) - \frac{1}{4\pi^2}\int_M
@@ -323,7 +330,7 @@ anti commuting, that is for Grassmann variables $\theta _i, \theta _j$  we have
          &F^2 = \frac{1}{16}s^2\otimes 1 + 1\otimes \Phi^4 - \frac{1}{4}
          \gamma^\mu\gamma^\nu \gamma^\varrho\gamma^\sigma F_{\mu\nu}F^{\mu\nu}+\\
          &\;\;\;\;\;\;\;+\gamma^\mu\gamma^\nu\otimes(D_\mu\Phi)(D_\nu
-         \Phi)+\frac{1}{2}s\otimes \Phi^2 + \ \text{traceless terms}\\
+         \Phi)+\frac{1}{2}s\otimes \Phi^2 + \ \text{traceless terms},\\
          \nonumber\\
          &\frac{1}{360}\text{Tr}(180F^2) = \frac{1}{8}s^2N + 2\text{Tr}(\Phi^4)
          + \text{Tr}(F_{\mu\nu}F^{\mu\nu}) +\\
@@ -335,7 +342,7 @@ anti commuting, that is for Grassmann variables $\theta _i, \theta _j$  we have
      \end{align}
      The cross terms of the trace in $\Omega_{\mu\nu}^E\Omega^{E\mu\nu}$
      vanishes because of the antisymmetric property of the Riemannian
-     curvature tensor, thus we can write
+     curvature tensor, reading
      \begin{align}
          \Omega_{\mu\nu}^E\Omega^{E\mu\nu} = \Omega_{\mu\nu}^S\Omega^{S\mu\nu}
          \otimes 1 - 1\otimes F_{\mu\nu}F^{\mu\nu} + 2i\Omega_{\mu\nu}^S
@@ -353,7 +360,8 @@ anti commuting, that is for Grassmann variables $\theta _i, \theta _j$  we have
          \frac{N}{24}R_{\mu\nu\varrho\sigma}R^{\mu\nu\varrho\sigma}
          -\frac{1}{3}\text{Tr}(F_{\mu\nu}F^{\mu\nu}).
      \end{align}
-     Finally plugging the results into the coefficient $a_4$ and simplifying we get
+     Finally plugging the results into the coefficient $a_4$ and simplifying
+     one gets
      \begin{align}
          a_4(x, D_\omega^4) &= Na_4(x, D_M^2) + \frac{1}{4\pi^2}\bigg(\frac{1}{12} s
          \text{Tr}(\Phi^2) + \frac{1}{2}\text{Tr}(\Phi^4) \nonumber \\
@@ -372,9 +380,9 @@ We remind ourselves the definition of the fermionic action in definition
 \eqref{eq:almost commutative manifold}. The Hilbertspace $H_F$ is separated
 into the particle-antiparticle states with ONB $\{e_R, e_L, \bar{e}_R,
 \bar{e}_L\}$. The orthonormal basis of $H_F^+$ is $\{e_L, \bar{e}_R\}$ and
-consequently for $H_F^-$, $\{e_R, \bar{e}_L\}$. We can decompose a spinor
-$\psi \in L^2(S)$ in each of the eigenspaces $H_F^\pm$, $\psi = \psi_R+
-\psi_L$. That means for an arbitrary $\psi \in H^+$ we can write
+consequently for $H_F^-$, $\{e_R, \bar{e}_L\}$. The decomposition of a spinor
+$\psi \in L^2(S)$ in each of the eigenspaces $H_F^\pm$ is $\psi = \psi_R+
+\psi_L$. Meaning for an arbitrary $\psi \in H^+$ we can write
 \begin{align}
     \psi = \chi_R \otimes e_R + \chi_L \otimes e_L + \psi_L \otimes
     \bar{e}_R+
@@ -383,7 +391,7 @@ $\psi \in L^2(S)$ in each of the eigenspaces $H_F^\pm$, $\psi = \psi_R+
 where $\chi_L, \psi_L \in L^2(S)^+$ and $\chi_R, \psi_R \in L^2(S)^-$.
 
 Since the fermionic action yields too much restriction on $F_{ED}$ (modified
-Two-Point space $F_X$) we redefine it by taking account the fluctuated Dirac
+Two-Point space $F_X$) one redefines it by taking into account the fluctuated Dirac
 operator
 \begin{align}
     D_\omega = D_M \otimes i + \gamma^\mu \otimes B_\mu + \gamma_M \otimes
@@ -439,8 +447,9 @@ Finally the fermionic action of $M\times F_{ED}$ takes the form
         \tilde{\Psi}\big) + \big(S_M\tilde{\chi}_L, \bar{d}\tilde{\psi}_L\big) -
         \big(J_M\tilde{\chi}_R, d \tilde{\psi}_R\big).
     \end{align}
-Ultimately we arrive at the full Lagrangian of $M\times F_{ED}$, which is the
-sum of purely gravitational Lagrangian
+Ultimately we arrive at the full Lagrangian of the almost commutative
+manifold $M\times F_{ED}$, which is the sum of the purely gravitational
+Lagrangian
     \begin{align}
         \mathcal{L}_{grav}(g_{\mu\nu})=4\mathcal{L}_M(g_{\mu\nu})+
         \mathcal{L}_\phi (g_{\mu\nu}),
