@@ -10,10 +10,10 @@
       is followed, the equations have a comma or a dot at the sentence end
       etc. DONE
     2. rethink the chapters DONE
-    3. write introduction
-    4. write conclusion
+    6. write abstract DONE
+    3. write introduction DONE
+    4. write conclusion DONE
     5. cut out exercises and examples in the main part if necessary, read
        through the not cut out and write them up nicely
-    6. write abstract DONE
     7. read through
     8. submit
