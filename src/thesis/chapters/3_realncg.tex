@@ -70,27 +70,27 @@ which defines the left representation of $A^\circ$ on $H$
 \end{mydefinition}
 
 
-%------------EXAMPLE EXERCISE
-Let us examine an example of a matrix algebra $M_N(\mathbb{C})$ acting on
-$H=M_N(\mathbb{C})$ by left matrix multiplication with the Hilbert Schmidt
-inner product.
-\begin{align}
-    \langle a , b \rangle = \text{Tr}(a^* b).
-\end{align}
-We can define $\gamma (a) = a$ and $J(a) = a^*$ with $a\in H$.  Since $D$
-must be odd with respect to $\gamma$ it vanishes identically.  Furthermore we
-know the multiplicity space is $V_i = \mathbb{C}^{m_i}$, and also we know
-that for $T\in H$ and$a\in A'$ to work we need $a\ T=T\ a$. Thus by laws of
-matrix multiplication we need $A' \simeq \bigoplus _i M_{m_i}(\mathbb{C})$. For
-this to work we naturally need $H = \bigoplus_i \mathbb{C}^{n_i} \otimes
-\mathbb{C}^{m_i}$.  Hence the right action of $M_N(\mathbb{C})$ on $H =
-M_N(\mathbb{C})$ as defined by $a \mapsto a^\circ$ is given by right matrix
-multiplication
-\begin{align}
-    a^\circ \xi = J a^* J^{-1}\xi = Ja^* \xi^* = J\xi a=\xi^* a
-\end{align}
-
-%------------EXAMPLE EXERCISE
+%%------------EXAMPLE EXERCISE
+%Let us examine an example of a matrix algebra $M_N(\mathbb{C})$ acting on
+%$H=M_N(\mathbb{C})$ by left matrix multiplication with the Hilbert Schmidt
+%inner product.
+%\begin{align}
+%    \langle a , b \rangle = \text{Tr}(a^* b).
+%\end{align}
+%We can define $\gamma (a) = a$ and $J(a) = a^*$ with $a\in H$.  Since $D$
+%must be odd with respect to $\gamma$ it vanishes identically.  Furthermore we
+%know the multiplicity space is $V_i = \mathbb{C}^{m_i}$, and also we know
+%that for $T\in H$ and $a\in A'$ to work we need $a\ T=T\ a$. Thus by laws of
+%matrix multiplication we need $A' \simeq \bigoplus _i M_{m_i}(\mathbb{C})$. For
+%this to work we naturally need $H = \bigoplus_i \mathbb{C}^{n_i} \otimes
+%\mathbb{C}^{m_i}$.  Hence the right action of $M_N(\mathbb{C})$ on $H =
+%M_N(\mathbb{C})$ as defined by $a \mapsto a^\circ$ is given by right matrix
+%multiplication
+%\begin{align}
+%    a^\circ \xi = J a^* J^{-1}\xi = Ja^* \xi^* = J\xi a=\xi^* a
+%\end{align}
+%
+%%------------EXAMPLE EXERCISE
 
 \begin{mydefinition}
     We call $\xi \in H$ \textbf{cyclic vector} in $A$ if:
@@ -111,12 +111,19 @@ cyclic and separating vector for $A$ and let
 be the operator in $S = J \Delta ^{1/2}$ with $\Delta = S^*S$. By composition
 $S(a\xi) = a*\xi$ this is literally anti-linearity, then $S(a \xi) = a* \xi$
 defines a anti-linear operator. Furthermore the operator $S$ is invertible
-because, if a $\xi \in H$ is cyclic then we have $S(A\xi) = A^*\xi = A\xi =
-H$. Vice versa the same has to work for $S^{-1}$, otherwise $\xi$ wouldn't
-exist. And hence $S^{-1}(A^*\xi) = S^{-1}(H) = H$. Additionally $J$ is
-anti-unitary because firstly, $S$ is bijective thus $\Delta ^{1/2}$ and $J$ need to be bijective.
-Also have $J = S \Delta^{-1/2}$ and $\Delta^* = \Delta$, so for a $\xi _1 ,
-\xi _2 \in H$ we can write
+because, if a $\xi \in H$ is cyclic then we have
+\begin{align}
+    S(A\xi) = A^*\xi = A\xi = H.
+\end{align}
+Vice versa the same has to work for $S^{-1}$, otherwise $\xi$ wouldn't exist,
+hence
+\begin{align}
+    S^{-1}(A^*\xi) = S^{-1}(H) = H.
+\end{align}
+Additionally $J$ is anti-unitary because firstly, $S$ is bijective thus
+$\Delta ^{1/2}$ and $J$ need to be bijective.  Also have $J = S
+\Delta^{-1/2}$ and $\Delta^* = \Delta$, so for a $\xi _1 , \xi _2 \in H$ we
+can write
 \begin{align}
     \langle J \xi _1 , J \xi _2 \rangle  &= \langle  J^*J\xi_1 , \xi_2\rangle ^* =\nonumber\\
     &= \langle (\Delta ^{-1/2})^* S^* S \Delta ^{-1/2} \xi_1, \xi_2\rangle ^* =\nonumber \\
