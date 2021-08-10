@@ -14,6 +14,6 @@
     3. write introduction DONE
     4. write conclusion DONE
     5. cut out exercises and examples in the main part if necessary, read
-       through the not cut out and write them up nicely
-    7. read through
+       through the not cut out and write them up nicely DONE
+    7. read through DONE
     8. submit
